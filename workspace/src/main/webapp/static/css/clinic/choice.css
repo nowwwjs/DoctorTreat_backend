@@ -1,0 +1,92 @@
+@charset "UTF-8";@charset "UTF-8";
+
+main {
+	width: 980px;
+	margin: 0 auto;
+	height: 400px;
+}
+
+.clinicMember-choice {
+	color: #37AA8B;
+	font-weight: bold;
+	font-size: 25px;
+	margin-top: 40px;
+}
+
+.clinicMember-department {
+	display: flex;
+	margin-top: 20px;
+	align-items: center;
+	justify-content: center;
+}
+
+
+.clinicMember-otolaryngology {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	width: 250px;
+	height: 200px;
+	background-color: #37AA8B;
+	color: white;
+	font-weight: bold;
+	border: none;
+	border-radius: 7px;
+	font-size: 30px;
+	margin-right: 50px;
+	cursor: pointer;
+}
+
+.clinicMember-medicine {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	width: 250px;
+	height: 200px;
+	background-color: #37AA8B;
+	color: white;
+	font-weight: bold;
+	border: none;
+	border-radius: 7px;
+	font-size: 30px;
+	cursor: pointer;
+}
+
+#startClinic-startBtn:hover {
+	background-color: #2e9278
+}
+
+.startClinic-title {
+	font-size: 25px;
+	font-weight: bold;
+	color: #37aa8b;
+	margin-top: 40px;
+}
+
+#startClinic-startBtn {
+	margin: 60px auto;
+	background-color: #37aa8b;
+	color: white;
+	font-size: 30px;
+	font-weight: bold;
+	border: none;
+	border-radius: 7px;
+	width: 500px;
+	height: 150px;
+	align-items: center;
+	display: flex;
+	justify-content: center;
+	cursor: pointer;
+}
+
+main a {
+	text-decoration: none;
+}
+
+.clinicMember-otolaryngology:hover{
+	background-color: #2e9278
+}
+.clinicMember-medicine:hover{
+	background-color: #2e9278
+}
+
