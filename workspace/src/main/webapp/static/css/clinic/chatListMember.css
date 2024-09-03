@@ -1,0 +1,127 @@
+@charset "UTF-8";
+* {
+    margin: 0;
+    padding: 0;
+    font-family: 'Noto Sans KR', sans-serif;
+}
+
+.chatList-choice {
+    color: #37AA8B;
+    font-weight: bold;
+    font-size: 25px;
+    margin-top: 40px;
+}
+
+main {
+    width: 980px;
+    margin: 0 auto;
+    height: 1000px;
+}
+
+.chatList-department {
+    display: flex;
+    margin-top: 20px;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 40px;
+}
+
+.chatList-otolaryngology {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 280px;
+    height: 100px;
+    border: 1px solid lightgray;
+    background-color: #37AA8B;
+    color: white;
+    font-weight: bold;
+    border-radius: 7px;
+    font-size: 30px;
+    margin-right: 80px;
+}
+
+.chatList-medicine {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 280px;
+    height: 100px;
+    border: 1px solid lightgray;
+    background-color: #37AA8B;
+    color: white;
+    font-weight: bold;
+    border-radius: 7px;
+    font-size: 30px;
+}
+
+.chatList-otolaryngology a {
+    color: white;
+}
+
+.chatList-medicine a {
+    color: white;
+}
+
+.chatList-wrap-ear {
+    border: 1px solid lightgray;
+    display: flex;
+    width: 450px;
+    justify-content: space-between;
+    height: 150px;
+    border-radius: 7px;
+    align-items: center;
+    margin-top: 30px;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+.chatList-img img {
+    height: 50px;
+}
+
+.chatList-container-detail {
+    position: relative;
+}
+
+.chatList-wrap-medicine-top {
+    position: absolute;
+    border: 1px solid lightgray;
+    display: flex;
+    width: 450px;
+    justify-content: space-between;
+    height: 150px;
+    border-radius: 7px;
+    align-items: center;
+    left: 533px;
+    top: 0;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+.chatList-wrap-medicine-bottom {
+    position: absolute;
+    border: 1px solid lightgray;
+    display: flex;
+    width: 450px;
+    justify-content: space-between;
+    height: 150px;
+    border-radius: 7px;
+    align-items: center;
+    left: 533px;
+    top: 152px;
+    margin-top: 30px;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+.chatList-name {
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.chatList-License-number {
+    font-size: 15px;
+    color: gray;
+    padding-top: 10px;
+}

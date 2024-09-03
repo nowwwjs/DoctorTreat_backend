@@ -1,0 +1,52 @@
+@charset "UTF-8";
+
+* {
+	margin: 0;
+	padding: 0;
+	font-family: 'Noto Sans KR', sans-serif;
+}
+
+main {
+	width: 980px;
+	margin: 0 auto;
+	height: 750px;
+}
+
+.doctorList-ears {
+	color: #37AA8B;
+	font-weight: bold;
+	font-size: 25px;
+	margin-top: 40px;
+}
+
+.doctorList-container {
+	margin-top: 50px;
+	border: 1.5px solid lightgray;
+	border-radius: 7px;
+	font-size: 14px;
+	padding-left: 30px;
+	padding-top: 10px;
+	padding-bottom: 10px;
+}
+
+.pagenation-container {
+	margin-top: 30px;
+	display: flex;
+	justify-content: center;
+	text-align: center;
+}
+
+.doctorList-ear-pagenation {
+	display: flex;
+	list-style: none;
+}
+
+.doctorList-ear-pagenation a {
+	cursor: pointer;
+	letter-spacing: 5px;
+	font-size: 18px;
+	color: black;
+	text-decoration: none;
+}
+
+
