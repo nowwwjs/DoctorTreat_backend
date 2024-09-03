@@ -9,7 +9,7 @@
 	href="${pageContext.request.contextPath}/static/css/clinic/choice.css">
 </head>
 <body>
-	<%-- <jsp:include page="${pageContext.request.contextPath}/header.jsp" /> --%>
+	<jsp:include page="${pageContext.request.contextPath}/header.jsp" />
 	<main>
 		<%-- 일반회원일 경우 --%>
 		<div class="clinicMember-choice">과 선택</div>
@@ -23,6 +23,6 @@
 			<button id="startClinic-startBtn">진료 시작하기</button>
 		</form>
 	</main>
-	<%-- <jsp:include page="${pageContext.request.contextPath}/footer.jsp" /> --%>
+	<jsp:include page="${pageContext.request.contextPath}/footer.jsp" />
 </body>
 </html>
