@@ -1,0 +1,118 @@
+@charset "UTF-8";
+* {
+    margin: 0;
+    padding: 0;
+    font-family: 'Noto Sans KR', sans-serif;
+}
+
+main {
+    width: 980px;
+    margin: 0 auto;
+    height: 1200px;
+}
+
+.doctorDetail-skinny {
+    color: #37AA8B;
+    font-weight: bold;
+    font-size: 25px;
+    margin-top: 40px;
+}
+
+#doctorDetail-uiwon {
+    font-size: 20px;
+    font-weight: bold;
+}
+
+#doctorDetail-uiwon-span {
+    font-size: 10px;
+    font-weight: 500;
+}
+
+.doctorDetail-container {
+    margin-top: 20px;
+    border: 1px solid lightgray;
+    border-radius: 7px;
+}
+
+.doctorDetail-medicine {
+    margin: 15px 15px 15px 15px;
+}
+
+#doctorDetail-clinic-time {
+    font-size: 18px;
+    font-weight: bold;
+    padding: 20px 0px 20px 20px;
+}
+
+.doctorDetail-hours {
+    display: flex;
+    width: 930px;
+    margin: 0 auto;
+    background-color: #ECECEC;
+    border: 1px solid #ECECEC;
+    border-radius: 7px;
+    font-size: 14px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    padding-left: 20px;
+}
+
+.doctorDetail-clinics {
+    padding-left: 450px;
+}
+
+.doctorDetail-hours-day-bottom {
+    margin-top: 30px;
+}
+
+.doctorDetail-closed-bottom {
+    margin-top: 30px;
+}
+
+.hospital-location img {
+    width: 650px;
+    margin: 0 auto;
+}
+
+.hospital-goWrite button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 600px;
+    height: 70px;
+    font-size: 18px;
+    font-weight: bold;
+    border: none;
+    border-radius: 7px;
+    margin: 0 auto 20px auto;
+    color: white;
+    background-color: #37aa8b;
+    cursor: pointer;
+}
+
+.doctorDetail-Info {
+    padding-top: 20px;
+    padding-left: 20px;
+}
+
+#doctorDetail-number {
+    font-size: 18px;
+    font-weight: bold;
+    padding: 20px 0px 20px 20px;
+}
+
+#doctorDetail-hospital-num {
+    font-size: 15px;
+    padding-left: 20px;
+    padding-bottom: 30px;
+}
+
+.hospital-address {
+    font-size: 18px;
+    font-weight: bold;
+    padding: 20px 0px 20px 20px;
+}
+
+.hospital-location {
+    padding-bottom: 30px;
+}

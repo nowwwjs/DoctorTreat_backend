@@ -1,0 +1,116 @@
+@charset "UTF-8";
+* {
+  margin: 0;
+  padding: 0;
+  font-family: 'Noto Sans KR', sans-serif;
+}
+
+main {
+  width: 980px;
+  height: 100%;
+  margin: 0 auto;
+}
+
+.memberList-topContainer {
+  display: flex;
+  justify-content: space-between;
+}
+
+.memberList-title {
+  font-size: 25px;
+  font-weight: bold;
+  color: #37aa8b;
+  margin-top: 40px;
+}
+
+#memberList-exitClinic {
+  width: 130px;
+  height: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 17px;
+  font-weight: bold;
+  color: white;
+  background-color: #37aa8b;
+  border: none;
+  border-radius: 7px;
+  margin: 40px 50px 0 0;
+  cursor: pointer;
+}
+
+li {
+  list-style-type: none;
+}
+
+.memberList-chat {
+  width: 750px;
+  height: 100%;
+  margin: 50px auto;
+  border: 1px solid lightgray;
+  border-radius: 7px;
+}
+
+.memberList-chatList {
+  border-bottom: 1px solid lightgrey;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.memberList-chatList img {
+  display: block;
+  height: 50px;
+  margin: 20px;
+}
+
+#memberList-chatListBottom {
+  border-bottom: none
+}
+
+.memberList-name,
+.memberList-birth {
+  margin: 25px 0 25px 35px;
+}
+
+.memberList-name {
+  font-size: 18px;
+  font-weight: bold;
+  color: black;
+  margin-bottom: 0;
+}
+
+.memberList-birth {
+  font-size: 15px;
+  color: gray;
+  margin-top: 18px;
+}
+
+.memberList-page {
+  width: 500px;
+  margin: 0 auto;
+  margin-bottom: 20px;
+  font-size: 18px;
+  letter-spacing: 5px;
+}
+
+.memberList-pagenation {
+  display: flex;
+  justify-content: center;
+  height: 40px;
+}
+
+a{
+	text-decoration: none;
+}
+
+.memberList-pagenation a {
+  cursor: pointer;
+  letter-spacing: 5px;
+  font-size: 18px;
+  color: black;
+}
+
+#memberList-exitClinic:hover{
+  background-color: #2e9278
+} 
