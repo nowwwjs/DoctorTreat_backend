@@ -1,0 +1,70 @@
+* {
+    margin: 0;
+    padding: 0;
+    font-family: 'Noto Sans KR', sans-serif;
+}
+
+main {
+    width: 980px;
+    margin: 0 auto;
+}
+
+.DoctorOut-complete-title {
+    color: #37AA8B;
+    font-weight: bold;
+    font-size: 25px;
+    margin-top: 40px;
+    margin-bottom: 20px;
+}
+
+.DoctorOut-complete-wrap {
+    border: 1px solid lightgray;
+    border-radius: 7px;
+    margin-bottom: 35px;
+}
+
+.DoctorOut-complete-image {
+    display: flex;
+    justify-content: center;
+    margin-top: 50px;
+    margin-bottom: 20px;
+}
+
+.DoctorOut-complete-image img {
+    width: 50px;
+}
+
+.DoctorOut-complete-text {
+    display: flex;
+    justify-content: center;
+    font-weight: bold;
+    font-size: 25px;
+}
+
+.Doctorout-complete-text-bottom {
+    display: flex;
+    justify-content: center;
+    font-weight: bold;
+    font-size: 15px;
+    color: gray;
+    margin-top: 20px;
+}
+
+.DoctorOut-complete-btn {
+    display: flex;
+    justify-content: center;
+    margin-top: 30px;
+    margin-bottom: 30px;
+}
+
+.DoctorOut-complete-mainbtn {
+    border: none;
+    color: white;
+    background-color: #37AA8B;
+    cursor: pointer;
+    border-radius: 15px;
+    width: 80px;
+    height: 50px;
+    font-weight: bold;
+    font-size: 16px;
+}

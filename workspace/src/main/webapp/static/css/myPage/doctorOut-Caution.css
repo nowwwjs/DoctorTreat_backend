@@ -1,0 +1,101 @@
+* {
+    margin: 0;
+    padding: 0;
+    font-family: 'Noto Sans KR', sans-serif;
+}
+
+main {
+    width: 980px;
+    margin: 0 auto;
+    height: 500px;
+}
+
+li {
+    list-style-type: none;
+}
+
+.DoctorOut-caution-wrap {
+    border: 1px solid lightgray;
+    border-radius: 7px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.DoctorOut-caution-title {
+    color: #37AA8B;
+    font-weight: bold;
+    font-size: 25px;
+    margin-top: 40px;
+}
+
+.DoctorOut-caution-check {
+    color: #37AA8B;
+    font-size: 25px;
+    font-weight: bold;
+    display: flex;
+    justify-content: center;
+    padding-top: 50px;
+    padding-bottom: 20px;
+}
+
+.DoctorOut-caution-check-text {
+    display: flex;
+    justify-content: center;
+    font-weight: bold;
+    color: gray;
+    font-size: 15px;
+}
+
+.DoctorOut-caution-check-text li {
+    padding-top: 10px;
+}
+
+.Doctorout-caution-check-input {
+    display: flex;
+    justify-content: center;
+    color: gray;
+    font-weight: bold;
+    margin-top: 30px;
+    margin-bottom: 50px;
+}
+
+input[type="checkbox"] {
+    width: 20px;
+    height: 20px;
+    border: 2px solid gray;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.DoctorOut-caution-button {
+    display: flex;
+    justify-content: center;
+}
+
+.DoctorOut-caution-ok {
+    border: none;
+    color: white;
+    background-color: #37AA8B;
+    cursor: pointer;
+    border-radius: 15px;
+    width: 90px;
+    height: 50px;
+    font-weight: bold;
+    font-size: 16px;
+}
+
+.DoctorOut-caution-cancell {
+    border: none;
+    color: white;
+    background-color: #37AA8B;
+    cursor: pointer;
+    border-radius: 15px;
+    width: 90px;
+    height: 50px;
+    font-weight: bold;
+    font-size: 16px;
+}
+
+.DoctorOut-caution-cancell a{
+	color: white;
+}
