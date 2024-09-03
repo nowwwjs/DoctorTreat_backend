@@ -25,7 +25,7 @@
         </div>
 
         <button class="memberOut-btn">
-            <a href="./../../../html/myPage/member/memberOut-caution.html">
+            <a href="${pageContext.request.contextPath}/app/myPage/memberout-caution.jsp">
           <p>회원탈퇴</p></a>
         </button>
     </div>
