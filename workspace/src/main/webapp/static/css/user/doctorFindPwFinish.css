@@ -1,0 +1,100 @@
+*{
+  margin: 0;
+  padding: 0;
+  font-family: 'Noto Sans KR', sans-serif;
+}
+
+img{
+  display: block;
+}
+
+.Doctor-findfinish-container{
+  width: 980px;
+ margin:  0 auto;
+ overflow: hidden;
+ background: #fff;
+ padding: 20px;
+ border-radius: 8px;
+ height: 500px;
+} 
+
+.Doctor-findfinish-form {
+ margin: 20px 0;
+ padding: 15px;
+ border: 0.1px solid lightgray;
+ border-radius: 7px;
+ text-align: center;
+ font-size: 14px;
+ margin-bottom: 60px;
+}
+
+h2 {
+ margin-bottom: 10px;
+}
+
+.Doctor-findfinish-button{
+ padding: 10px 15px;
+ border: none;
+ border-radius: 25px;
+ background-color: #37aa8b;
+ color: #fff;
+ cursor: pointer;
+ width: 500px;
+ height: 70px;
+ font-size: 14px;
+ text-align: center;
+ margin-left: 240px;
+}
+
+button:hover {
+ background-color: #2a8a70;
+}
+
+
+.Doctor-findfinish-choicebox{
+ display: flex;
+ margin-left: 20px;
+}
+
+.Doctor-findfinish-choice{
+ border: 0.1px solid lightgray ; 
+ padding: 20px;
+} 
+
+
+.Doctor-findfinish-choice a{
+list-style-type: none;
+text-decoration: none;
+color: black;
+}
+
+.Doctor-findfinish-page-title{
+ color: #37AA8B;
+   font-weight: bold;
+   font-size: 25px;
+   margin-top: 40px;
+   margin-left: 30px;
+}
+
+.Doctor-findfinish-form{
+ margin-top: 100px;
+ text-align: center;
+}
+
+form p{
+ margin-top: 10px;
+}
+
+.Doctor-findfinish-input{
+  height: 50px;
+  width: 450px;
+  border: 0.1px solid lightgray;
+}
+
+.Doctor-findfinish-form-one, .Doctor-findfinish-form-two{
+  text-align: center;
+  margin-top: 10px;
+}
+.Doctor-findfinish-p{
+  font-size: 26px;
+}
