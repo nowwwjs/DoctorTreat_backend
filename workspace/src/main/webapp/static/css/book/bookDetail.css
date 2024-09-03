@@ -1,0 +1,23 @@
+@charset "UTF-8";
+
+main {
+  width: 900px;
+  margin: 0 auto;
+  margin-bottom: 100px;
+}
+
+h2 {
+  color: #37aa8b ;
+}
+
+#book-info {
+  border-bottom: 2px solid gray;
+  padding-bottom: 20px ;
+  margin-bottom: 50px;
+}
+
+#book-content {
+  width: 900px;
+  margin: 0 auto;
+}
+
