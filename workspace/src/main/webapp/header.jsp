@@ -13,7 +13,7 @@
             <div class="header-holder">
                 <div class="header-container">
                     <div class="header-logo">
-                        <a href="./../../html/main/main.html">
+                        <a href="${pageContext.request.contextPath}/index.jsp">
                             <img src="${pageContext.request.contextPath}/static/image/logo.png">
                             <div>DOCTOR TREAT</div>
                         </a>
@@ -31,7 +31,7 @@
                                 <div>로그인</div>
                             </div>
                         </a>
-                        <a href="./../../html/user/member/memberjoin.html">
+                        <a href="${pageContext.request.contextPath}/app/user/joinType.jsp">
                             <div class="header-quickBtn">
                                 <img src="${pageContext.request.contextPath}/static/image/memberJoin.png">
                                 <div>회원가입</div>
