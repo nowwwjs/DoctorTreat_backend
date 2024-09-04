@@ -9,7 +9,7 @@
 	href="${pageContext.request.contextPath}/static/css/clinic/doctorDetail.css">
 </head>
 <body>
-	<%-- <jsp:include page="${pageContext.request.contextPath}/header.jsp" /> --%>
+	<jsp:include page="${pageContext.request.contextPath}/header.jsp" />
 	<main>
 		<div class="doctorDetail-skinny">의사 상세정보</div>
 		<div class="doctorDetail-container">
@@ -57,6 +57,6 @@
 			</form>
 		</div>
 	</main>
-	<%-- <jsp:include page="${pageContext.request.contextPath}/footer.jsp" /> --%>
+	<jsp:include page="${pageContext.request.contextPath}/footer.jsp" />
 </body>
 </html>

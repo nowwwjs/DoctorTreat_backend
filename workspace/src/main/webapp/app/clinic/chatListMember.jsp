@@ -9,7 +9,7 @@
 	href="${pageContext.request.contextPath}/static/css/clinic/chatListMember.css">
 </head>
 <body>
-	<%-- <jsp:include page="${pageContext.request.contextPath}/header.jsp" /> --%>
+	<jsp:include page="${pageContext.request.contextPath}/header.jsp" />
 	<main>
 		<!-- 채팅목록 타이틀-->
 		<div class="chatList-choice">채팅목록</div>
@@ -73,6 +73,6 @@
 			</div>
 		</div>
 	</main>
-	<%-- <jsp:include page="${pageContext.request.contextPath}/footer.jsp" /> --%>
+	<jsp:include page="${pageContext.request.contextPath}/footer.jsp" />
 </body>
 </html>

@@ -9,7 +9,7 @@
 main {
 	width: 980px;
 	margin: 0 auto;
-	height: 750px;
+	height: 500px;
 }
 
 .doctorList-ears {
@@ -48,5 +48,3 @@ main {
 	color: black;
 	text-decoration: none;
 }
-
-

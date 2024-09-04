@@ -91,7 +91,7 @@ document.addEventListener('DOMContentLoaded', function() {
             prevLink.href = '#';
             prevLink.addEventListener('click', function(e) {
                 e.preventDefault();
-                changePage(currentPage - 5);
+                changePage(Math.floor((currentPage - 1) / 5) * 5);
             });
             prevLi.appendChild(prevLink);
             paginationContainer.appendChild(prevLi);
@@ -123,7 +123,7 @@ document.addEventListener('DOMContentLoaded', function() {
             nextLink.href = '#';
             nextLink.addEventListener('click', function(e) {
                 e.preventDefault();
-                changePage(currentPage + 5);
+                changePage(endPage + 1);
             });
             nextLi.appendChild(nextLink);
             paginationContainer.appendChild(nextLi);
@@ -138,4 +138,3 @@ document.addEventListener('DOMContentLoaded', function() {
     // 초기 페이지 렌더링
     renderPage(currentPage);
 });
-

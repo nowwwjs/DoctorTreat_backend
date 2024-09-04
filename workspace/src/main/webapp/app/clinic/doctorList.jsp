@@ -10,7 +10,7 @@
 <script defer src="${pageContext.request.contextPath}/static/js/clinic/doctorList.js"></script>
 </head>
 <body>
-	<%-- <jsp:include page="${pageContext.request.contextPath}/header.jsp" /> --%>
+	<jsp:include page="${pageContext.request.contextPath}/header.jsp" />
 <main>
     <!-- 이비인후과 의사목록 타이틀-->
     <div class="doctorList-ears">이비인후과 의사 목록</div>
@@ -21,6 +21,6 @@
         <ul class="doctorList-ear-pagenation"></ul>
     </div>
 </main>
-	<%-- <jsp:include page="${pageContext.request.contextPath}/footer.jsp" /> --%>
+	<jsp:include page="${pageContext.request.contextPath}/footer.jsp" />
 </body>
 </html>
