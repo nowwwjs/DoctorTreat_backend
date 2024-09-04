@@ -16,7 +16,7 @@
 	<!-- 닥터 보드 컨트롤러 설정 -->
 	<servlet>
 		<servlet-name>DoctorBoard</servlet-name>
-		<servlet-class>com.doctorTreat.app.DoctorBoard.DoctorBoardFrontController</servlet-class>
+		<servlet-class>com.doctorTreat.app.doctorBoard.DoctorBoardFrontController</servlet-class>
 	</servlet>
 
 	<servlet-mapping>
@@ -27,7 +27,7 @@
 	<!-- 멤버 보드 컨트롤러 설정 -->
 	<servlet>
 		<servlet-name>MemberBoard</servlet-name>
-		<servlet-class>com.doctorTreat.app.MemberBoard.MemberBoardFrontController</servlet-class>
+		<servlet-class>com.doctorTreat.app.memberBoard.MemberBoardFrontController</servlet-class>
 	</servlet>
 
 	<servlet-mapping>
@@ -38,7 +38,7 @@
 	<!-- 닥터 클리닉 컨트롤러 설정 -->
 	<servlet>
 		<servlet-name>DoctorClinic</servlet-name>
-		<servlet-class>com.doctorTreat.app.DoctorClinic.DoctorClinicFrontController</servlet-class>
+		<servlet-class>com.doctorTreat.app.doctorClinic.DoctorClinicFrontController</servlet-class>
 	</servlet>
 
 	<servlet-mapping>
@@ -49,7 +49,7 @@
 	<!-- 멤버 클리닉 컨트롤러 설정 -->
 	<servlet>
 		<servlet-name>MemberClinic</servlet-name>
-		<servlet-class>com.doctorTreat.app.MemberClinic.MemberClinicFrontController</servlet-class>
+		<servlet-class>com.doctorTreat.app.memberClinic.MemberClinicFrontController</servlet-class>
 	</servlet>
 
 	<servlet-mapping>
@@ -72,7 +72,7 @@
 	<!-- 닥터 마이페이지 설정 -->
 	<servlet>
 		<servlet-name>DoctorMypage</servlet-name>
-		<servlet-class>com.doctorTreat.app.DoctorMypage.DoctorMypageFrontController</servlet-class>
+		<servlet-class>com.doctorTreat.app.doctorMypage.DoctorMypageFrontController</servlet-class>
 	</servlet>
 
 	<servlet-mapping>
@@ -96,7 +96,7 @@
 	<!-- 멤버 마이페이지 설정 -->
 	<servlet>
 		<servlet-name>MemberMypage</servlet-name>
-		<servlet-class>com.doctorTreat.app.MemberMypage.MemberMypageFrontController</servlet-class>
+		<servlet-class>com.doctorTreat.app.memberMypage.MemberMypageFrontController</servlet-class>
 	</servlet>
 
 	<servlet-mapping>
