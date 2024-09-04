@@ -1,4 +1,12 @@
+<<<<<<< HEAD
+<<<<<<< HEAD
 <?xml version="1.0" encoding="UTF-8"?>
+=======
+<?xml version="1.0" encoding="UTF-8"?>
+>>>>>>> main
+=======
+<?xml version="1.0" encoding="UTF-8"?>
+>>>>>>> main
 <!--
   Licensed to the Apache Software Foundation (ASF) under one or more
   contributor license agreements.  See the NOTICE file distributed with
@@ -162,7 +170,19 @@
              Note: The pattern used is equivalent to using pattern="common" -->
         <Valve className="org.apache.catalina.valves.AccessLogValve" directory="logs" pattern="%h %l %u %t &quot;%r&quot; %s %b" prefix="localhost_access_log" suffix=".txt"/>
 
+<<<<<<< HEAD
       <Context docBase="workspace" path="/" reloadable="true" source="org.eclipse.jst.jee.server:workspace"/></Host>
+=======
+<<<<<<< HEAD
+<<<<<<< HEAD
+      <Context docBase="C:\doctorTreatUP\workspace" path="/" reloadable="true"/><Context docBase="workspace" path="/workspace" reloadable="true" source="org.eclipse.jst.jee.server:workspace"/></Host>
+=======
+      <Context docBase="workspace" path="/" reloadable="true" source="org.eclipse.jst.jee.server:workspace"/></Host>
+>>>>>>> main
+=======
+      <Context docBase="C:\DOCTORTREAT\workspace" path="/" reloadable="true"/><Context docBase="workspace" path="/workspace" reloadable="true" source="org.eclipse.jst.jee.server:workspace"/></Host>
+>>>>>>> main
+>>>>>>> main
     </Engine>
   </Service>
 </Server>
