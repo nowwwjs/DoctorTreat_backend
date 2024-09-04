@@ -98,10 +98,7 @@
     <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
     <script src="${pageContext.request.contextPath}/static/js/main.js"></script>
 </body>
-<<<<<<< HEAD
-   <%-- <jsp:include page="${pageContext.request.contextPath}/footer.jsp" />--%>
 
-=======
 <jsp:include page="${pageContext.request.contextPath}/footer.jsp" />
->>>>>>> main
+
 </html>
