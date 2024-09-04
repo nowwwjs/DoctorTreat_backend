@@ -43,14 +43,7 @@
 		</button>
 	</div>
 
-	<!-- 회원탈퇴 모달창 -->
-	<div id="DoctorOut-modal" class="DoctorOut-modal">
-		<div class="DoctorOut-modal-content">
-			<h2>회원탈퇴 완료</h2>
-			<p>회원탈퇴가 완료되었습니다.</p>
-			<button onclick="closeModal()">닫기</button>
-		</div>
-	</div>
+	
 
 
 
