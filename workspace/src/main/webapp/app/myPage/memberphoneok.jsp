@@ -6,6 +6,12 @@
 <meta charset="UTF-8">
 <title>일반회원휴대폰번호인증</title>
 <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/static/css/myPage/memberphoneok.css">
+<link rel="stylesheet"
+   href="${pageContext.request.contextPath}/static/css/main.css" />
+<link rel="stylesheet"
+   href="https://unpkg.com/swiper/swiper-bundle.min.css" />
+
+<jsp:include page="${pageContext.request.contextPath}/header.jsp" />
 </head>
 <body>
 	<div class="memberPhoneOk-main-container">
@@ -41,4 +47,5 @@
       
       <script src="${pageContext.request.contextPath}/static/js/myPage/memberphoneok.js"></script>
 </body>
+<jsp:include page="${pageContext.request.contextPath}/footer.jsp" />
 </html>

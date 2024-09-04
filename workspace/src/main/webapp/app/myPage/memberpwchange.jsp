@@ -6,6 +6,12 @@
 <meta charset="UTF-8">
 <title>일반회원비밀번호변경페이지</title>
 <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/static/css/myPage/memberpwchange.css">
+<link rel="stylesheet"
+   href="${pageContext.request.contextPath}/static/css/main.css" />
+<link rel="stylesheet"
+   href="https://unpkg.com/swiper/swiper-bundle.min.css" />
+
+<jsp:include page="${pageContext.request.contextPath}/header.jsp" />
 </head>
 <body>
 <div class="memberpwChange-main-container">
@@ -25,9 +31,10 @@
             </form>
         </div>
     
-        <button class="memberpwChange-btn"><a href="./../../../html/myPage/member/memberInfo.html">변경완료</a></button>
+        <button class="memberpwChange-btn"><a href="${pageContext.request.contextPath}/app/myPage/memberinfo.jsp">변경완료</a></button>
     </div>
     
      <script src="${pageContext.request.contextPath}/static/js/myPage/memberpwchange.js"></script>
 </body>
+<jsp:include page="${pageContext.request.contextPath}/footer.jsp" />
 </html>
