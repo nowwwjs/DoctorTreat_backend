@@ -55,7 +55,7 @@
     </form>
   </div>
 
-  <button class="memberInfo-btn"><a href="./../../../html/myPage/member/memberpwOk.html">내 정보 수정</a></button>
+  <button class="memberInfo-btn"><a href="${pageContext.request.contextPath}/app/myPage/memberpwok.jsp">내 정보 수정</a></button>
 </div>
 </body>
 </html>
