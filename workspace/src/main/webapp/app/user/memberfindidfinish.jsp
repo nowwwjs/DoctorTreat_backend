@@ -6,6 +6,12 @@
 <meta charset="UTF-8">
 <title>일반회원아이디찾기완료페이지</title>
 <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/static/css/user/memberfindidfinish.css">
+<link rel="stylesheet"
+   href="${pageContext.request.contextPath}/static/css/main.css" />
+<link rel="stylesheet"
+   href="https://unpkg.com/swiper/swiper-bundle.min.css" />
+
+<jsp:include page="${pageContext.request.contextPath}/header.jsp" />
 </head>
 <body>
 	<main>
@@ -16,10 +22,11 @@
 				<span>계정 : </span>
 				<sapn class="member-findFinish-userId">shjeong1994</sapn>
 			</div>
-			<form action="./../../../html/user/member/memberlogin.html" method="">
+			<form action="${pageContext.request.contextPath}/app/user/memberlogin.jsp" method="">
 				<button id="member-findFinish-goLogin">로그인</button>
 			</form>
 		</div>
 	</main>
 </body>
+<jsp:include page="${pageContext.request.contextPath}/footer.jsp" />
 </html>

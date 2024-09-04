@@ -6,6 +6,12 @@
 <meta charset="UTF-8">
 <title>Insert title here</title>
 <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/static/css/myPage/memberphonechange.css">
+<link rel="stylesheet"
+   href="${pageContext.request.contextPath}/static/css/main.css" />
+<link rel="stylesheet"
+   href="https://unpkg.com/swiper/swiper-bundle.min.css" />
+
+<jsp:include page="${pageContext.request.contextPath}/header.jsp" />
 </head>
 <body>
 	<div class="memberphoneChange-main-container">
@@ -37,4 +43,5 @@
         <button class="memberphoneChange-btn"><a href="${pageContext.request.contextPath}/app/myPage/memberinfo.jsp">변경완료</a></button>
     </div>
 </body>
+<jsp:include page="${pageContext.request.contextPath}/footer.jsp" />
 </html>
