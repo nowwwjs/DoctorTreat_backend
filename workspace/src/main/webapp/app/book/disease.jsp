@@ -21,24 +21,22 @@
 		<div id="disease-title-first">
 			<span>내과</span>
 			<div class="disease-section-first">
-				<div class="disease-detail-first">
-					<a href="./../../html/book/bookDetail.html">2도 동상</a>
-				</div>
-				<div class="disease-detail-first">2도 동상</div>
-				<div class="disease-detail-first">2도 동상</div>
-				<div class="disease-detail-first">2도 동상</div>
-				<div class="disease-detail-first">2도 동상</div>
+				<div class="disease-detail-first" onclick="location.href='content.jsp?page=1'">1도 동상</div>
+				<div class="disease-detail-first" onclick="location.href='content.jsp?page=2'">2도 동상</div>
+				<div class="disease-detail-first" onclick="location.href='content.jsp?page=3'">3도 동상</div>
+				<div class="disease-detail-first" onclick="location.href='content.jsp?page=4'">4도 동상</div>
+				<div class="disease-detail-first" onclick="location.href='content.jsp?page=5'">5도 동상</div>
 			</div>
 		</div>
 
 		<div id="disease-title-second">
 			<span>이비인후과</span>
 			<div class="disease-section-second">
-				<div class="disease-detail-second">2도 동상</div>
-				<div class="disease-detail-second">2도 동상</div>
-				<div class="disease-detail-second">2도 동상</div>
-				<div class="disease-detail-second">2도 동상</div>
-				<div class="disease-detail-second">2도 동상</div>
+				<div class="disease-detail-second" onclick="location.href='content.jsp?page=6'">6도 동상</div>
+				<div class="disease-detail-second" onclick="location.href='content.jsp?page=7'">7도 동상</div>
+				<div class="disease-detail-second" onclick="location.href='content.jsp?page=8'">8도 동상</div>
+				<div class="disease-detail-second" onclick="location.href='content.jsp?page=9'">9도 동상</div>
+				<div class="disease-detail-second" onclick="location.href='content.jsp?page=10'">10도 동상</div>
 			</div>
 		</div>
 	</main>
