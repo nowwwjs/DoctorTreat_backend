@@ -9,13 +9,15 @@
 	font-family: 'Noto Sans KR', sans-serif;
 }
 
+body {
+	position: relative;
+}
+
 footer {
 	width: 100vw;
 	height: 200px;
 	border-top: 0.7px solid #A9AEB1;
-	height:193px;
-    position: relative;
-    transform: translateY(-100%);
+
 }
 
 #footer-footer {
