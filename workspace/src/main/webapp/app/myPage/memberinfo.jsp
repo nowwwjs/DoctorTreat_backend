@@ -6,6 +6,12 @@
 <meta charset="UTF-8">
 <title>일반회원마이페이지</title>
 <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/static/css/myPage/memberinfo.css">
+<link rel="stylesheet"
+   href="${pageContext.request.contextPath}/static/css/main.css" />
+<link rel="stylesheet"
+   href="https://unpkg.com/swiper/swiper-bundle.min.css" />
+
+<jsp:include page="${pageContext.request.contextPath}/header.jsp" />
 </head>
 <body>
 	<div class="memberInfo-main-container">
@@ -58,4 +64,5 @@
   <button class="memberInfo-btn"><a href="${pageContext.request.contextPath}/app/myPage/memberpwok.jsp">내 정보 수정</a></button>
 </div>
 </body>
+<jsp:include page="${pageContext.request.contextPath}/footer.jsp" />
 </html>

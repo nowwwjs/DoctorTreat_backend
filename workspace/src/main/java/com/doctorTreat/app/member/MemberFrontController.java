@@ -10,7 +10,6 @@ import javax.servlet.http.HttpServletResponse;
 /**
  * Servlet implementation class MemberFrontController
  */
-@WebServlet("/MemberFrontController")
 public class MemberFrontController extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
@@ -26,16 +25,28 @@ public class MemberFrontController extends HttpServlet {
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// TODO Auto-generated method stub
-		response.getWriter().append("Served at: ").append(request.getContextPath());
+		doProcess(request, response);
 	}
 
 	/**
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// TODO Auto-generated method stub
-		doGet(request, response);
+		doProcess(request, response);
+	}
+	
+	protected void doProcess(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		String target = request.getRequestURI().substring(request.getContextPath().length());
+		System.out.println(target);
+		switch(target) {
+		case "/user/memberjoin.me":
+			request.getRequestDispatcher("/app/user/memberjoin.jsp").forward(request, response);
+			System.out.println("회원가입 중");
+			break;
+		case "/user/memberjoinOk.me":
+			System.out.println("회원가입 완료");
+			break;
+		}
 	}
 
 }
