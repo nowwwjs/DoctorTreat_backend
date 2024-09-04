@@ -1,4 +1,4 @@
-package com.doctorTreat.app.DoctorBoard;
+package com.doctorTreat.app.doctorBoard;
 
 import java.io.IOException;
 import javax.servlet.ServletException;
