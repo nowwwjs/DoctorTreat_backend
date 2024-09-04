@@ -9,17 +9,11 @@
 	href="${pageContext.request.contextPath}/static/css/board/medicalKnowledgeList.css">
 </head>
 <body>
+	<jsp:include page="/header.jsp" /> 
   <main>
         <div class="medicalKnowledgeList-title">의료지식인</div>
         <div class="medicalKnowledgeList-selectContainer">
             <div id="medicalKnowledgeList-all">전체</div>
-            <form action="">
-                <select class="medicalKnowledgeList-selectBox">
-          <option value="전체">전체</option>
-          <option value="내과">내과</option>
-          <option value="이비인후과">이비인후과</option>
-        </select>
-      </form>
     </div>
     <ul class="medicalKnowledgeList-board">
       <li>
@@ -111,4 +105,5 @@
     </div>
   </main>
 </body>
+<jsp:include page="/footer.jsp" /> 
 </html>

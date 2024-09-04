@@ -7,8 +7,7 @@
 <title>Insert title here</title>
 <link rel="stylesheet"
 	href="${pageContext.request.contextPath}/static/css/board/write.css">
-<script
-	src="${pageContext.request.contextPath}/static/js/board/write.js" defer></script>
+	<jsp:include page="/header.jsp" /> 
 </head>
 <body>
 	<main>
@@ -20,7 +19,8 @@
 			<button class="member-write-register">게시글 등록</button>
 		</form>
 	</main>
-
+<script
+	src="${pageContext.request.contextPath}/static/js/board/write.js"></script>
 </body>
-</body>
+<jsp:include page="/footer.jsp" /> 
 </html>

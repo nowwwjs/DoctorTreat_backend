@@ -11,7 +11,7 @@
 	href="https://unpkg.com/swiper/swiper-bundle.min.css" />
 <link rel="stylesheet"
 	href="${pageContext.request.contextPath}/static/css/book/disease.css">
-<jsp:include page="${pageContext.request.contextPath}/header.jsp" />
+<jsp:include page="/header.jsp" /> 
 
 </head>
 <body>
@@ -45,5 +45,5 @@
 	<script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
 	<script src="${pageContext.request.contextPath}/static/js/main.js"></script>
 </body>
-<jsp:include page="${pageContext.request.contextPath}/footer.jsp" />
+<jsp:include page="/footer.jsp" />
 </html>

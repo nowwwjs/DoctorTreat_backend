@@ -7,6 +7,7 @@
 <title>doctorTreat_질병상세</title>
 <link rel="stylesheet"
 	href="${pageContext.request.contextPath}/static/css/book/bookDetail.css">
+	<jsp:include page="/header.jsp" /> 
 </head>
 <body>
 
@@ -29,6 +30,6 @@
 			염 징후를 보이는 중증 환자는 의료 지원을 받아야 합니다.</div>
 	</main>
 
-
 </body>
+<jsp:include page="/footer.jsp" />
 </html>
