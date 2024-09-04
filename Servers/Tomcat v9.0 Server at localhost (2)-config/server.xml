@@ -70,7 +70,11 @@
          APR (HTTP/AJP) Connector: /docs/apr.html
          Define a non-SSL/TLS HTTP/1.1 Connector on port 8080
     -->
+<<<<<<< HEAD:Servers/Tomcat v9.0 Server at localhost-config/server.xml
+    <Connector connectionTimeout="20000" maxParameterCount="1000" port="9999" protocol="HTTP/1.1" redirectPort="8443"/>
+=======
     <Connector connectionTimeout="20000" maxParameterCount="1000" port="8080" protocol="HTTP/1.1" redirectPort="8443"/>
+>>>>>>> main:Servers/Tomcat v9.0 Server at localhost (2)-config/server.xml
     <!-- A "Connector" using the shared thread pool-->
     <!--
     <Connector executor="tomcatThreadPool"
@@ -174,6 +178,10 @@
 <<<<<<< HEAD
       <Context docBase="workspace" path="/" reloadable="true" source="org.eclipse.jst.jee.server:workspace"/></Host>
 =======
+=======
+<<<<<<< HEAD
+      <Context docBase="workspace" path="/" reloadable="true" source="org.eclipse.jst.jee.server:workspace"/></Host>
+=======
 <<<<<<< HEAD
 <<<<<<< HEAD
       <Context docBase="day08_login" path="/day08_login" reloadable="true" source="org.eclipse.jst.jee.server:day08_login"/></Host>
@@ -195,6 +203,7 @@
 >>>>>>> e57df14907341d4e36c63c7232d4d2c14cabbb9c
 >>>>>>> main
 =======
+>>>>>>> main
       </Host>
 >>>>>>> main:Servers/Tomcat v9.0 Server at localhost (2)-config/server.xml
     </Engine>
