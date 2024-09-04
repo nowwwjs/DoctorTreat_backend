@@ -1,4 +1,4 @@
-package com.doctorTreat.app.clinic;
+package com.doctorTreat.app.doctorClinic;
 
 public class ChatRoomDoctorController {
 

@@ -14,7 +14,7 @@
 		<!-- 환자목록 -->
 		<div class="memberList-topContainer">
 			<div class="memberList-title">비대면진료</div>
-			<form action="./../../html/clinicDoctor/startClinic.html" method="">
+			<form action="${pageContext.request.contextPath}/clinicStartDoctor.doccl" method="get">
 				<button id="memberList-exitClinic">진료 끝내기</button>
 			</form>
 		</div>
