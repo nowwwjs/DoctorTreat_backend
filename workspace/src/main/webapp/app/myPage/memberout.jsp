@@ -6,6 +6,12 @@
 <meta charset="UTF-8">
 <title>일반회원탈퇴페이지</title>
 <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/static/css/myPage/memberout.css">
+<link rel="stylesheet"
+   href="${pageContext.request.contextPath}/static/css/main.css" />
+<link rel="stylesheet"
+   href="https://unpkg.com/swiper/swiper-bundle.min.css" />
+
+<jsp:include page="${pageContext.request.contextPath}/header.jsp" />
 </head>
 <body>
 	<div class="memberOut-main-container">
@@ -31,4 +37,5 @@
     </div>
     <script src="${pageContext.request.contextPath}/static/js/myPage/memberout.js"></script>
 </body>
+<jsp:include page="${pageContext.request.contextPath}/footer.jsp" />
 </html>

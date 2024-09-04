@@ -6,6 +6,12 @@
 <meta charset="UTF-8">
 <title>일반회원마이페이지수정</title>
 <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/static/css/myPage/memberupdate.css">
+<link rel="stylesheet"
+   href="${pageContext.request.contextPath}/static/css/main.css" />
+<link rel="stylesheet"
+   href="https://unpkg.com/swiper/swiper-bundle.min.css" />
+
+<jsp:include page="${pageContext.request.contextPath}/header.jsp" />
 </head>
 <body>
 	<div class="memberupdateMember-main-container">
@@ -27,7 +33,7 @@
           <br>
           <label class="memberupdateMember-input" for="">
               <span>비밀번호</span>
-              <button><a href="./../../../html/myPage/member/memberphoneOk.html">비밀번호 변경</a></button>
+              <button><a href="${pageContext.request.contextPath}/app/myPage/memberphoneok.jsp">비밀번호 변경</a></button>
           </label>
           <br>
           <label class="memberupdateMember-input" for="">
@@ -37,7 +43,7 @@
           <br>
           <label class="memberupdateMember-input" for="">
               <span>휴대폰 번호</span>
-              <button><a href="./../../../html/myPage/member/memberphoneChange.html">휴대폰 번호 변경</a></button>
+              <button><a href="${pageContext.request.contextPath}/app/myPage/memberphonechange.jsp">휴대폰 번호 변경</a></button>
             </label>
             <br>
             <label class="memberupdateMember-input" for="">
@@ -48,9 +54,10 @@
       </form>
   </div>
   <div class="memberupdateMember-botton">          
-      <button class="memberupdateMember-btn"><a href="./../../../html/myPage/member/memberInfo.html">수정완료</a></button>
-      <button class="memberupdateMember-btn"><a href="./../../../html/myPage/member/memberOut.html">회원탈퇴</a></button>
+      <button class="memberupdateMember-btn"><a href="${pageContext.request.contextPath}/app/myPage/memberinfo.jsp">수정완료</a></button>
+      <button class="memberupdateMember-btn"><a href="${pageContext.request.contextPath}/app/myPage/memberout.jsp">회원탈퇴</a></button>
   </div>  
 </div>
 </body>
+<jsp:include page="${pageContext.request.contextPath}/footer.jsp" />
 </html>
