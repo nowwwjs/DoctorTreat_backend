@@ -52,8 +52,10 @@
 			</div>
 			<div class="hospital-address">병원위치</div>
 			<div class="hospital-location">
+				<!--  -->
 				<div class="map_wrap">
-					<div id="map"></div>
+					<div id="map"
+						style="width: 100%; height: 100%; position: relative; overflow: hidden;"></div>
 
 					<div id="menu_wrap" class="bg_white">
 						<div class="option">
@@ -69,6 +71,7 @@
 						<div id="pagination"></div>
 					</div>
 				</div>
+				<!--  -->
 			</div>
 			<form action="" method="" class="hospital-goWrite">
 				<button href="./chatList.html">비대면 진료 신청</button>

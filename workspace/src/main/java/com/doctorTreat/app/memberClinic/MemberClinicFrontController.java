@@ -1,4 +1,4 @@
-package com.doctorTreat.app.clinic;
+package com.doctorTreat.app.memberClinic;
 
 import java.io.IOException;
 import javax.servlet.ServletException;
@@ -10,13 +10,13 @@ import javax.servlet.http.HttpServletResponse;
 /**
  * Servlet implementation class ClinicFrontController
  */
-public class ClinicFrontController extends HttpServlet {
+public class MemberClinicFrontController extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public ClinicFrontController() {
+    public MemberClinicFrontController() {
         super();
         // TODO Auto-generated constructor stub
     }
