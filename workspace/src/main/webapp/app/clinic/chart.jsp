@@ -9,10 +9,15 @@
 	href="${pageContext.request.contextPath}/static/css/clinic/chart.css">
 </head>
 <body>
-	<%-- <jsp:include page="${pageContext.request.contextPath}/header.jsp" /> --%>
+	<jsp:include page="${pageContext.request.contextPath}/header.jsp" />
 	<main>
 		<!-- 처방전 작성 -->
 		<div id="writeChart-title">처방전 확인</div>
+		<div class="chart-notice">
+			<span>※ 처방전은 가장 <span class="chart-important">최근 1건만</span>
+				노출됩니다 ※
+			</span>
+		</div>
 		<div class="writeChart-container">
 			<div class="writeChart-top">처방전</div>
 			<!-- 자동입력 정보 -->
@@ -64,6 +69,6 @@
 			</div>
 		</div>
 	</main>
-	<%-- <jsp:include page="${pageContext.request.contextPath}/footer.jsp" /> --%>
+	<jsp:include page="${pageContext.request.contextPath}/footer.jsp" />
 </body>
 </html>
