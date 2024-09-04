@@ -70,7 +70,7 @@
          APR (HTTP/AJP) Connector: /docs/apr.html
          Define a non-SSL/TLS HTTP/1.1 Connector on port 8080
     -->
-    <Connector connectionTimeout="20000" maxParameterCount="1000" port="8888" protocol="HTTP/1.1" redirectPort="8443"/>
+    <Connector connectionTimeout="20000" maxParameterCount="1000" port="8090" protocol="HTTP/1.1" redirectPort="8443"/>
     <!-- A "Connector" using the shared thread pool-->
     <!--
     <Connector executor="tomcatThreadPool"
@@ -172,6 +172,12 @@
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+      <Context docBase="day08_login" path="/day08_login" reloadable="true" source="org.eclipse.jst.jee.server:day08_login"/></Host>
+=======
+      <Context docBase="C:\DOCTORTREAT\workspace" path="/" reloadable="true"/><Context docBase="workspace" path="/workspace" reloadable="true" source="org.eclipse.jst.jee.server:workspace"/></Host>
+>>>>>>> fac59ab8d7828d9aedb44e4b9ef94b316223a447
+=======
+<<<<<<< HEAD
       <Context docBase="C:\doctorTreatUP\workspace" path="/" reloadable="true"/><Context docBase="workspace" path="/workspace" reloadable="true" source="org.eclipse.jst.jee.server:workspace"/></Host>
 =======
       <Context docBase="workspace" path="/" reloadable="true" source="org.eclipse.jst.jee.server:workspace"/></Host>
@@ -179,6 +185,7 @@
 =======
       <Context docBase="C:\DOCTORTREAT\workspace" path="/" reloadable="true"/><Context docBase="workspace" path="/workspace" reloadable="true" source="org.eclipse.jst.jee.server:workspace"/></Host>
 >>>>>>> main
+>>>>>>> e57df14907341d4e36c63c7232d4d2c14cabbb9c
     </Engine>
   </Service>
 </Server>
