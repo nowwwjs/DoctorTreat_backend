@@ -1,4 +1,4 @@
-package com.doctorTreat.app.mypage;
+package com.doctorTreat.app.memberMypage;
 
 import java.io.IOException;
 import javax.servlet.ServletException;
