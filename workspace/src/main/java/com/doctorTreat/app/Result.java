@@ -1,24 +1,28 @@
 package com.doctorTreat.app;
 
 public class Result {
-   private String path;
-   private boolean isRedirect;
-   
-   public Result() {}
 
-   public String getPath() {
-      return path;
-   }
+	private String path;
+	private boolean isRedirect;
 
-   public void setPath(String path) {
-      this.path = path;
-   }
+	public Result() {
+		super();
+	}
 
-   public boolean isRedirect() {
-      return isRedirect;
-   }
+	public String getPath() {
+		return path;
+	}
 
-   public void setRedirect(boolean isRedirect) {
-      this.isRedirect = isRedirect;
-   }
+	public void setPath(String path) {
+		this.path = path;
+	}
+
+	public boolean isRedirect() {
+		return isRedirect;
+	}
+
+	public void setRedirect(boolean isRedirect) {
+		this.isRedirect = isRedirect;
+	}
+
 }
