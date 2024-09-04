@@ -7,9 +7,11 @@
 <title>DoctorTreat</title>
 <link rel="stylesheet"
 	href="${pageContext.request.contextPath}/static/css/clinic/doctorDetail.css">
+	<script defer src="${pageContext.request.contextPath}/static/js/clinic/doctorDetail.js"></script>
+	<script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=2f5631b219152660381440f62ca9ef14"></script>
 </head>
 <body>
-	<%-- <jsp:include page="${pageContext.request.contextPath}/header.jsp" /> --%>
+	<jsp:include page="${pageContext.request.contextPath}/header.jsp" />
 	<main>
 		<div class="doctorDetail-skinny">의사 상세정보</div>
 		<div class="doctorDetail-container">
@@ -48,15 +50,13 @@
 			</div>
 			<div class="hospital-address">병원위치</div>
 			<div class="hospital-location">
-				<div>
-					<img src="${pageContext.request.contextPath}/static/image/hospitalMap.png">
-				</div>
+				<div id="map"></div>
 			</div>
 			<form action="" method="" class="hospital-goWrite">
 				<button href="./chatList.html">비대면 진료 신청</button>
 			</form>
 		</div>
 	</main>
-	<%-- <jsp:include page="${pageContext.request.contextPath}/footer.jsp" /> --%>
+	<jsp:include page="${pageContext.request.contextPath}/footer.jsp" />
 </body>
 </html>

@@ -8,9 +8,10 @@
 
 main {
 	width: 980px;
-	height: 710px;
+	height: 700px;
 	margin: 0 auto;
 	position: relative;
+	padding-bottom: 400px;
 }
 
 #writeChart-title {
@@ -84,4 +85,16 @@ input {
 
 #writeChart-submit:hover {
 	background-color: #2e9278
+}
+
+.chart-notice {
+	font-size: 14px;
+	padding: 10px;
+	display: flex;
+	justify-content: center;
+}
+
+.chart-important {
+	color: red;
+	font-weight: bold;
 }

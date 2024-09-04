@@ -1,8 +1,12 @@
+<<<<<<< HEAD
 <<<<<<< HEAD:Servers/Tomcat v9.0 Server at localhost-config/server.xml
 <?xml version="1.0" encoding="UTF-8"?>
 =======
 <?xml version="1.0" encoding="UTF-8"?>
 >>>>>>> main:Servers/Tomcat v9.0 Server at localhost (2)-config/server.xml
+=======
+<?xml version="1.0" encoding="UTF-8"?>
+>>>>>>> main
 <!--
   Licensed to the Apache Software Foundation (ASF) under one or more
   contributor license agreements.  See the NOTICE file distributed with
@@ -171,8 +175,35 @@
         <Valve className="org.apache.catalina.valves.AccessLogValve" directory="logs" pattern="%h %l %u %t &quot;%r&quot; %s %b" prefix="localhost_access_log" suffix=".txt"/>
 
 <<<<<<< HEAD:Servers/Tomcat v9.0 Server at localhost-config/server.xml
+<<<<<<< HEAD
       <Context docBase="workspace" path="/" reloadable="true" source="org.eclipse.jst.jee.server:workspace"/></Host>
 =======
+=======
+<<<<<<< HEAD
+      <Context docBase="workspace" path="/" reloadable="true" source="org.eclipse.jst.jee.server:workspace"/></Host>
+=======
+<<<<<<< HEAD
+<<<<<<< HEAD
+      <Context docBase="day08_login" path="/day08_login" reloadable="true" source="org.eclipse.jst.jee.server:day08_login"/></Host>
+=======
+      <Context docBase="C:\DOCTORTREAT\workspace" path="/" reloadable="true"/><Context docBase="workspace" path="/workspace" reloadable="true" source="org.eclipse.jst.jee.server:workspace"/></Host>
+>>>>>>> fac59ab8d7828d9aedb44e4b9ef94b316223a447
+=======
+<<<<<<< HEAD
+      <Context docBase="C:\doctorTreatUP\workspace" path="/" reloadable="true"/><Context docBase="workspace" path="/workspace" reloadable="true" source="org.eclipse.jst.jee.server:workspace"/></Host>
+=======
+      <Context docBase="workspace" path="/" reloadable="true" source="org.eclipse.jst.jee.server:workspace"/></Host>
+>>>>>>> main
+=======
+      <Context docBase="C:\DOCTORTREAT\workspace" path="/" reloadable="true"/><Context docBase="workspace" path="/workspace" reloadable="true" source="org.eclipse.jst.jee.server:workspace"/></Host>
+>>>>>>> main
+<<<<<<< HEAD
+>>>>>>> main
+=======
+>>>>>>> e57df14907341d4e36c63c7232d4d2c14cabbb9c
+>>>>>>> main
+=======
+>>>>>>> main
       </Host>
 >>>>>>> main:Servers/Tomcat v9.0 Server at localhost (2)-config/server.xml
     </Engine>
