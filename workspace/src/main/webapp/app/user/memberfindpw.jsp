@@ -6,6 +6,11 @@
 <meta charset="UTF-8">
 <title>일반 비밀번호 찾기 페이지</title>
 <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/static/css/user/memberfindpw.css">
+<link rel="stylesheet"
+   href="${pageContext.request.contextPath}/static/css/main.css" />
+<link rel="stylesheet"
+   href="https://unpkg.com/swiper/swiper-bundle.min.css" />
+   <jsp:include page="${pageContext.request.contextPath}/header.jsp" />
 </head>
 <body>
 <main>
@@ -14,8 +19,8 @@
       <h2 class="findPw-page-title">비밀번호 찾기</h2>
       <br>
       <div class="findPw-choicebox">
-        <div class="findPw-choice"><a href="./../../../html/user/member/memberfindId.html">아이디찾기</a></div>
-        <div class="findPw-choice"><a href="./../../../html/user/member/memberfindPw.html">비밀번호찾기</a></div>
+        <div class="findPw-choice"><a href="${pageContext.request.contextPath}/app/user/memberfindid.jsp">아이디찾기</a></div>
+        <div class="findPw-choice"><a href="${pageContext.request.contextPath}/app/user/memberfindpw.jsp">비밀번호찾기</a></div>
       </div>
       <br><br>
       <section class="findPw-form-one">
@@ -30,8 +35,9 @@
         </form>
       </section>
       <br><br><br>
-      <a href="./../../../html/myPage/member/memberphoneOk.html"><button type="submit" class="findPw-button">휴대폰 인증</button></a>
+      <a href="${pageContext.request.contextPath}/app/myPage/memberphoneok.jsp"><button type="submit" class="findPw-button">휴대폰 인증</button></a>
     </div>
   </main>
 </body>
+<jsp:include page="${pageContext.request.contextPath}/footer.jsp" />
 </html>

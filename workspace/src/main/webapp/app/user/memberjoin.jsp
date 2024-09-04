@@ -6,6 +6,11 @@
 <meta charset="UTF-8">
 <title>일반 회원가입</title>
 <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/static/css/user/memberjoin.css">
+<link rel="stylesheet"
+   href="${pageContext.request.contextPath}/static/css/main.css" />
+<link rel="stylesheet"
+   href="https://unpkg.com/swiper/swiper-bundle.min.css" />
+   <jsp:include page="${pageContext.request.contextPath}/header.jsp" />
 
 </head>
 <body>
@@ -26,16 +31,16 @@
         <label for="password">비밀번호</label>
         <div class="member-input-group">
           <input type="password" id="password" name="password" required>
-          <img class="memberjoin-view-first" src="./../../../image/view.png">
-          <img class="memberjoin-noview-first" src="./../../../image/noview.png">
+          <img class="memberjoin-view-first" src="${pageContext.request.contextPath}/static/image/view.png">
+          <img class="memberjoin-noview-first" src="${pageContext.request.contextPath}/static/image/noview.png">
           <p class="memberjoin-Null"></p>
         </div>
 
         <label for="confirm-password">비밀번호 확인</label>
         <div class="member-input-group">
           <input type="password" id="confirm-password" name="confirm-password" required>
-          <img class="memberjoin-view-second" src="./../../../image/view.png">
-          <img class="memberjoin-noview-second" src="./../../../image/noview.png">
+          <img class="memberjoin-view-second" src="${pageContext.request.contextPath}/static/image/view.png">
+          <img class="memberjoin-noview-second" src="${pageContext.request.contextPath}/static/image/noview.png">
           <p class="memberjoin-Null"></p>
         </div>
 
@@ -99,11 +104,13 @@
 
         <br><br>
 
-        <button type="submit" class="signup-btn"><a href="./../../../html/user/member/memberjoinFinish.html">가입하기</a></button>
+        <button type="submit" class="signup-btn"><a href="${pageContext.request.contextPath}/app/user/memberjoinfinish.jsp">가입하기</a></button>
       </form>
     </div>
   </main>
   
   <script src="${pageContext.request.contextPath}/static/js/user/memberjoin.js"></script>
+  
+  <jsp:include page="${pageContext.request.contextPath}/footer.jsp" />
 </body>
 </html>
