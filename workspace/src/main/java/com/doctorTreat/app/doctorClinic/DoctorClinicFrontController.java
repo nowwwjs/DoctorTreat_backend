@@ -25,14 +25,41 @@ public class DoctorClinicFrontController extends HttpServlet {
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// TODO Auto-generated method stub
+		doProcess(request, response);
 	}
 
 	/**
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// TODO Auto-generated method stub
+		doProcess(request, response);
 	}
 
+	protected void doProcess(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		System.out.println("의사 비대면진료 시작");
+		
+		 // 전체 URI에서 ContextPath를 제외시킨 부분만 변수에 저장(분기처리할 때 비교할 변수로 사용)
+	      String target = request.getRequestURI().substring(request.getContextPath().length());
+	      System.out.println(target);
+
+//	      Result result = null; // Result 클래스 객체
+
+	      switch (target) {
+	      case "/chatListDoctor.doccl":
+	         request.getRequestDispatcher("/app/clinic/chatListDoctor.jsp").forward(request, response);
+	         break;
+	      case "/clinicStartDoctor.doccl":
+	    	  request.getRequestDispatcher("/app/clinic/clinicStartDoctor.jsp").forward(request, response);
+	    	  break;
+	      }
+
+//	      if (result != null) {
+//	         if (result.isRedirect()) {
+//	            response.sendRedirect(result.getPath());
+//	         } else {
+//	            request.getRequestDispatcher(result.getPath()).forward(request, response);
+//	         }
+//	      }
+	}
+	
 }
