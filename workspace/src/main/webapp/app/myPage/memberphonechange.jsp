@@ -5,7 +5,7 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
-<link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/static/css/myPage/memberphonechage.css">
+<link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/static/css/myPage/memberphonechange.css">
 </head>
 <body>
 	<div class="memberphoneChange-main-container">
@@ -34,7 +34,7 @@
             </form>
         </div>
     
-        <button class="memberphoneChange-btn"><a href="./../../../html/myPage/member/memberInfo.html">변경완료</a></button>
+        <button class="memberphoneChange-btn"><a href="${pageContext.request.contextPath}/app/myPage/memberinfo.jsp">변경완료</a></button>
     </div>
 </body>
 </html>
