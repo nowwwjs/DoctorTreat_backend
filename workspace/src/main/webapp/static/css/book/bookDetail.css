@@ -1,9 +1,15 @@
 @charset "UTF-8";
 
-body {
+main {
   width: 900px;
+  height: 600px;
   margin: 0 auto;
   margin-bottom: 100px;
+}
+
+.detail-sick {
+	width: 200px;
+	height: 200px;
 }
 
 h2 {
