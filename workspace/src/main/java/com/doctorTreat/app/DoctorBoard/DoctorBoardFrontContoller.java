@@ -1,4 +1,4 @@
-package com.doctorTreat.app.board;
+package com.doctorTreat.app.DoctorBoard;
 
 import java.io.IOException;
 import javax.servlet.ServletException;
@@ -11,13 +11,13 @@ import javax.servlet.http.HttpServletResponse;
  * Servlet implementation class BoardFrontContoller
  */
 @WebServlet("/BoardFrontContoller")
-public class BoardFrontContoller extends HttpServlet {
+public class DoctorBoardFrontContoller extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public BoardFrontContoller() {
+    public DoctorBoardFrontContoller() {
         super();
         // TODO Auto-generated constructor stub
     }
