@@ -1,4 +1,4 @@
-package com.doctorTreat.app.mypage;
+package com.doctorTreat.app.doctorMypage;
 
 import java.io.IOException;
 import javax.servlet.ServletException;
@@ -8,16 +8,16 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 /**
- * Servlet implementation class MemberMypageFrontController
+ * Servlet implementation class DoctorMypageFrontController
  */
-@WebServlet("/MemberMypageFrontController")
-public class MemberMypageFrontController extends HttpServlet {
+@WebServlet("/DoctorMypageFrontController")
+public class DoctorMypageFrontController extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public MemberMypageFrontController() {
+    public DoctorMypageFrontController() {
         super();
         // TODO Auto-generated constructor stub
     }

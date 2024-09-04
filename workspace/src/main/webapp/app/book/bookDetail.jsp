@@ -13,7 +13,7 @@
 	href="https://unpkg.com/swiper/swiper-bundle.min.css" />
 <link rel="stylesheet"
 	href="${pageContext.request.contextPath}/static/css/book/bookDetail.css">
-<jsp:include page="/header.jsp" />
+<jsp:include page="${pageContext.request.contextPath}/header.jsp" />
 </head>
 <body>
 	<main>
@@ -74,5 +74,5 @@
 
 	</main>
 </body>
-<jsp:include page="/footer.jsp" /> 
+<jsp:include page="${pageContext.request.contextPath}/footer.jsp" /> 
 </html>
