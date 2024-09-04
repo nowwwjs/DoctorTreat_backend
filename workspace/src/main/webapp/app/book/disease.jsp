@@ -14,7 +14,7 @@
         <div id="disease-title-first">
             <span>내과</span>
             <div class="disease-section-first">
-                <div class="disease-detail-first"><a href="bookDetail.jsp?page=1">1도 동상</a></div>
+                <div class="disease-detail-first"><a href="bookDetail.jsp?page=1">위염</a></div>
                 <div class="disease-detail-first"><a href="bookDetail.jsp?page=2">2도 동상</a></div>
                 <div class="disease-detail-first"><a href="bookDetail.jsp?page=3">3도 동상</a></div>
                 <div class="disease-detail-first"><a href="bookDetail.jsp?page=4">4도 동상</a></div>
