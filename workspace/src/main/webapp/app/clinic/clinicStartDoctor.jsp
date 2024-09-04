@@ -13,7 +13,7 @@
 	<main>
 		<%-- 의사회원일 경우 --%>
 		<div class="startClinic-title">비대면진료</div>
-		<form action="" method="">
+		<form action="${pageContext.request.contextPath}/chatListDoctor.doccl" method="post">
 			<button id="startClinic-startBtn">진료 시작하기</button>
 		</form>
 	</main>
