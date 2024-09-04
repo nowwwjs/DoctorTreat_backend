@@ -7,6 +7,7 @@
 <title>Insert title here</title>
 <link rel="stylesheet"
 	href="${pageContext.request.contextPath}/static/css/board/updateBoard.css">
+	<jsp:include page="/header.jsp" /> 
 </head>
 <body>
 <main>
@@ -19,4 +20,5 @@
     </main>
     <script src="${pageContext.request.contextPath}/static/js/board/updateBoard.js"></script>
 </body>
+<jsp:include page="/footer.jsp" /> 
 </html>
