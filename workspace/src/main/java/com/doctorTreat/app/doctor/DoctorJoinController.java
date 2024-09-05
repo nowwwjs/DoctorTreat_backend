@@ -45,6 +45,13 @@ public class DoctorJoinController implements Execute{
 	    	doctorDTO.setHospitalNumber(Integer.parseInt(hospitalParam));
 	    }
 	    
+	    doctorDTO.setHospitalName(request.getParameter("hospitalName"));
+	    doctorDTO.setAddressPostal(request.getParameter("addressPostal"));
+	    doctorDTO.setAddressAddress(request.getParameter("addressAddress"));
+	    doctorDTO.setAddressDetail(request.getParameter("addressDetail"));
+	    
+	    
+	    
 	    // 문자열 Integer로 변환
 //	    String ageParam = request.getParameter("doctorAge");
 //	    if (ageParam != null && !ageParam.isEmpty()) {
@@ -56,7 +63,12 @@ public class DoctorJoinController implements Execute{
 	    System.out.println("DoctorDTO : " + doctorDTO);
 
 	    // 데이터베이스에 회원 정보 저장
-	    doctorDAO.join(doctorDTO);
+	    try {
+			doctorDAO.joinDoctor(doctorDTO);
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 
 	    // 결과 처리
 	    result.setRedirect(true);
