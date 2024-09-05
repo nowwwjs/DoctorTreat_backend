@@ -32,5 +32,11 @@
    <mappers>
       <mapper resource="com/mybatis/mapper/MemberMapper.xml" />
       <mapper resource="com/mybatis/mapper/MemberBoardMapper.xml" />
+      <mapper resource="com/mybatis/mapper/DoctorClinicMapper.xml" />
+      <mapper resource="com/mybatis/mapper/DoctorCommentMapper.xml" />
+      <mapper resource="com/mybatis/mapper/DoctorMapper.xml" />
+      <mapper resource="com/mybatis/mapper/DoctorMypageMapper.xml" />
+      <mapper resource="com/mybatis/mapper/MemberClinicMapper.xml" />
+      <mapper resource="com/mybatis/mapper/MemberMypageMapper.xml" />
    </mappers>
 </configuration>
