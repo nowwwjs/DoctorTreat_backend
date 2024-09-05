@@ -28,10 +28,10 @@
 
 	<main class="member-background">
 		<div class="Doctor-signup-container">
-			<a href="./../../../html/user/member/memberjoin.html">
+			<!--   <a href="./../../../html/user/member/memberjoin.html">
 				<h2>회원가입</h2>
-			</a>
-			<form action="#" method="post">
+			</a> -->
+			<form action="/doctorjoinOk.do" method="post">
 
 				<label for="userId">아이디</label>
 				<div class="Doctor-input-group">
@@ -143,7 +143,7 @@
 		</div>
 	</main>
 
-	
+
 	<script src="https://ssl.daumcdn.net/dmaps/map_js_init/postcode.v2.js"></script>
 	<script
 		src="${pageContext.request.contextPath}/static/js/user/doctorJoin.js"></script>
