@@ -41,45 +41,45 @@ public class MemberClinicFrontController extends HttpServlet {
 		doProcess(request, response);
 	}
 
-	protected void doProcess(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+	protected void doProcess(HttpServletRequest request, HttpServletResponse response)
+			throws ServletException, IOException {
 		System.out.println("의사 비대면진료 시작");
-		
-		 // 전체 URI에서 ContextPath를 제외시킨 부분만 변수에 저장(분기처리할 때 비교할 변수로 사용)
-	      String target = request.getRequestURI().substring(request.getContextPath().length());
+
+		// 전체 URI에서 ContextPath를 제외시킨 부분만 변수에 저장(분기처리할 때 비교할 변수로 사용)
+		String target = request.getRequestURI().substring(request.getContextPath().length());
 //	      System.out.println(target);
 
 //	      Result result = null; // Result 클래스 객체
 
-	      switch (target) {
-	      Result result = new Result();
-	      case "/doctorListEar.memcl":
+		Result result = new Result();
+		switch (target) {
+		case "/doctorListEar.memcl":
 //	    	 new DoctorListController().execute(request, response);
 //	    	 response.sendRedirect(request.getContextPath());
-	           result = new DoctorListController().execute(request, response);
-	        // 기타 case 처리
-	    }
+			result = new DoctorListController().execute(request, response);
+			// 기타 case 처리
 
-	    if (result != null) {
-	        if (result.isRedirect()) {
-	            response.sendRedirect(result.getPath());
-	        } else {
-	            request.getRequestDispatcher(result.getPath()).forward(request, response);
-	        }
-	    }
-	         break;
-	      case "/doctorListInner.memcl":
-	    	  request.getRequestDispatcher("/app/clinic/doctorListInner.jsp").forward(request, response);
-	    	  break;
-	      case "/app/clinic/doctorDetail.memcl":
-	    	  request.getRequestDispatcher("/app/clinic/doctorDetail.jsp").forward(request, response);
-	    	  break;
-	      case "/chatListMember.memcl":
-	    	  request.getRequestDispatcher("/app/clinic/chatListMember.jsp").forward(request, response);
-	    	  break;
-	      case "/app/clinic/chatRoomMember.memcl":
-	    	  request.getRequestDispatcher("/app/clinic/chatRoomMember.jsp").forward(request, response);
-	    	  break;
-	      }
+			if (result != null) {
+				if (result.isRedirect()) {
+					response.sendRedirect(result.getPath());
+				} else {
+					request.getRequestDispatcher(result.getPath()).forward(request, response);
+				}
+			}
+			break;
+		case "/doctorListInner.memcl":
+			request.getRequestDispatcher("/app/clinic/doctorListInner.jsp").forward(request, response);
+			break;
+		case "/app/clinic/doctorDetail.memcl":
+			request.getRequestDispatcher("/app/clinic/doctorDetail.jsp").forward(request, response);
+			break;
+		case "/chatListMember.memcl":
+			request.getRequestDispatcher("/app/clinic/chatListMember.jsp").forward(request, response);
+			break;
+		case "/app/clinic/chatRoomMember.memcl":
+			request.getRequestDispatcher("/app/clinic/chatRoomMember.jsp").forward(request, response);
+			break;
+		}
 
 //	      if (result != null) {
 //	         if (result.isRedirect()) {
@@ -88,6 +88,5 @@ public class MemberClinicFrontController extends HttpServlet {
 //	            request.getRequestDispatcher(result.getPath()).forward(request, response);
 //	         }
 //	      }
-}
-
+	}
 }

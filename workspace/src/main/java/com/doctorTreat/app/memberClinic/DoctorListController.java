@@ -35,13 +35,13 @@ public class DoctorListController implements Execute {
 		request.setAttribute("currentPage", currentPage);
 		request.setAttribute("maxPages", maxPages);
 
-		System.out.println("doctorList size: " + doctorList.size());
+		System.out.println("doctorList: " + doctorList);
 		System.out.println("currentPage: " + currentPage);
 		System.out.println("maxPages: " + maxPages);
-		
+
 		// 결과 처리
-		result.setRedirect(false);
-		result.setPath(request.getContextPath() + "/clinic/doctorListEar.jsp");
+		result.setRedirect(true);
+		result.setPath(request.getContextPath() + "/app/clinic/doctorListEar.jsp");
 		// 성공후 이동할 페이지 설정
 		return result;
 	}
