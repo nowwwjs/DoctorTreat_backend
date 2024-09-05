@@ -38,5 +38,6 @@
       <mapper resource="com/mybatis/mapper/DoctorMypageMapper.xml" />
       <mapper resource="com/mybatis/mapper/MemberClinicMapper.xml" />
       <mapper resource="com/mybatis/mapper/MemberMypageMapper.xml" />
+      <mapper resource="com/mybatis/mapper/Main.xml" />
    </mappers>
 </configuration>
