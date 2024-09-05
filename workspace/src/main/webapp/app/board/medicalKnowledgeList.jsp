@@ -17,8 +17,10 @@
 		<div class="medicalKnowledgeList-selectContainer">
 			<div id="medicalKnowledgeList-all">전체</div>
 		</div>
+
+
 		<ul class="medicalKnowledgeList-board">
-			<c:forEach var="board" items="${memberBoardList}">
+			<c:forEach var="board" items="${memberBoardshowlist}">
 				<li>
 					<hr> <a
 					href="${pageContext.request.contextPath}/html/board/member/boardDetail.html">

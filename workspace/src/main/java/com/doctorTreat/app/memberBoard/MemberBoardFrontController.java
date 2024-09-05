@@ -35,8 +35,7 @@ public class MemberBoardFrontController extends HttpServlet {
 
 		switch (target) {
 		case "/memberBoardList.membo":
-			System.out.println("게시글 리스트 !");
-			new MemberBoardListController().execute(request, response);
+			result = new MemberBoardListController().execute(request, response);
 			break;
 		case "/memberBoard/write.membo":
 			System.out.println("글 작성!");
@@ -48,6 +47,15 @@ public class MemberBoardFrontController extends HttpServlet {
 			System.out.println("삭제!");
 			break;
 
+		}
+
+		// Result 객체가 null이 아닌 경우, 리다이렉트 또는 포워드 처리
+		if (result != null) {
+			if (result.isRedirect()) {
+				response.sendRedirect(result.getPath()); // 리다이렉트 처리
+			} else {
+				request.getRequestDispatcher(result.getPath()).forward(request, response); // 포워드 처리
+			}
 		}
 	}
 

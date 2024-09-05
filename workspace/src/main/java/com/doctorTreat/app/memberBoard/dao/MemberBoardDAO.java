@@ -17,6 +17,8 @@ public class MemberBoardDAO {
     public List<MemberBoardDTO> showList() {
         return sqlSession.selectList("memberBoard.showlist");
     }
+    
+    
 
 	
 }
