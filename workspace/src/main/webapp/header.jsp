@@ -63,7 +63,7 @@
                         <img src="${pageContext.request.contextPath}/static/image/encyclopedia.png">
                     </div>
                 </a>
-                <a href="./../../html/board/member/medicalKnowledgeList.html">
+                <a href="${pageContext.request.contextPath}/memberBoardList.membo">
                     <div class="header-menu">
                         의료지식인
                         <img src="${pageContext.request.contextPath}/static/image/Knowledge.png">

@@ -13,7 +13,6 @@
    </settings>
    
    <typeAliases>
-      <typeAlias type="com.doctortreat.app.dto.MemberDTO" alias="MemberDTO" />
       <typeAlias type="com.doctortreat.app.dto.MemberBoardDTO" alias="MemberBoardDTO" />
    </typeAliases>
 
