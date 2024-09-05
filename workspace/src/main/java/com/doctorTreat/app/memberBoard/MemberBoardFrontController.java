@@ -46,7 +46,6 @@ public class MemberBoardFrontController extends HttpServlet {
 		case "/memberBoard/delete.membo":
 			System.out.println("삭제!");
 			break;
-
 		}
 
 		// Result 객체가 null이 아닌 경우, 리다이렉트 또는 포워드 처리
