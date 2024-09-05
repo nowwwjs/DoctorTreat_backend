@@ -14,35 +14,63 @@ import com.doctorTreat.app.dto.DoctorDTO;
 public class DoctorJoinController implements Execute{
 
 	
-	
-	
-	
 	public Result execute(HttpServletRequest request, HttpServletResponse response) throws IOException, ServerException {
 		// TODO Auto-generated method stub
 		  // 인코딩 설정확인
 	    request.setCharacterEncoding("UTF-8");
 
 	    // MemberDTO와 DAO 객체 생성
-	    DoctorDTO memberDTO = new DoctorDTO();
-	    DoctorDAO memberDAO = new DoctorDAO();
+	    DoctorDTO doctorDTO = new DoctorDTO();
+	    DoctorDAO doctorDAO = new DoctorDAO();
 	    Result result = new Result();
 
 	    // 폼데이터 받아오기
-	    memberDTO.setDoctorId(request.getParameter("doctorId"));
-	    memberDTO.setDoctorPw(request.getParameter("doctorPw"));
-	    memberDTO.setDoctorName(request.getParameter("doctorName"));
-	    // 문자열 Integer로 변환
-	    String ageParam = request.getParameter("doctorAge");
-	    if (ageParam != null && !ageParam.isEmpty()) {
-	       memberDTO.setDoctorAge(Integer.parseInt(ageParam));
+	    String numberParam = request.getParameter("doctorNumber");
+	    if(numberParam != null && !numberParam.isEmpty()) {
+	    	doctorDTO.setDoctorNumber(Integer.parseInt(numberParam));
 	    }
-	    memberDTO.setDoctorGender(request.getParameter("doctorGender"));
+	    
+	    doctorDTO.setDoctorId(request.getParameter("doctorId"));
+	    doctorDTO.setDoctorPw(request.getParameter("doctorPw"));
+	    doctorDTO.setDoctorName(request.getParameter("doctorName"));
+	    doctorDTO.setDoctorPhone(request.getParameter("doctorPhone"));
+	    doctorDTO.setDoctorLicense(request.getParameter("doctorLicense"));
+	    doctorDTO.setDoctorMajor(request.getParameter("doctorMajor"));
+	    
+	    String hospitalParam = request.getParameter("hospitalNumber");
+	    if(hospitalParam != null && hospitalParam.isEmpty()) {
+	    	doctorDTO.setHospitalNumber(Integer.parseInt(hospitalParam));
+	    }
+	    
+	    doctorDTO.setHospitalName(request.getParameter("hospitalName"));
+	    doctorDTO.setAddressPostal(request.getParameter("addressPostal"));
+	    doctorDTO.setAddressAddress(request.getParameter("addressAddress"));
+	    doctorDTO.setAddressDetail(request.getParameter("addressDetail"));
+	    
+	    String hospitalParam1 = request.getParameter("hospitalNumber");
+	    if (hospitalParam1 != null && hospitalParam1.isEmpty()) {
+	        doctorDTO.setHospitalNumber(Integer.parseInt(hospitalParam1));
+	    }
+	    
+	    
+	    
+	    // 문자열 Integer로 변환
+//	    String ageParam = request.getParameter("doctorAge");
+//	    if (ageParam != null && !ageParam.isEmpty()) {
+//	       doctorDTO.setDoctorAge(Integer.parseInt(ageParam));
+//	    }
+//	    doctorDTO.setDoctorGender(request.getParameter("doctorGender"));
 
 	    // 디버깅용 로그 출력
-	    System.out.println("MemberDTO : " + memberDTO);
+	    System.out.println("DoctorDTO : " + doctorDTO);
 
 	    // 데이터베이스에 회원 정보 저장
-	    memberDAO.join(memberDTO);
+	    try {
+			doctorDAO.joinDoctor(doctorDTO);
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 
 	    // 결과 처리
 	    result.setRedirect(true);
@@ -52,3 +80,4 @@ public class DoctorJoinController implements Execute{
 	 }
 
 	}
+
