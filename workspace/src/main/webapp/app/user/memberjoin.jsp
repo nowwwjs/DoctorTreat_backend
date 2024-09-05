@@ -19,7 +19,7 @@
       <a href="./../../../html/user/member/memberjoin.html">
         <h2>회원가입</h2>
       </a>
-      <form action="#" method="post">
+      <form action="" method="post">
 
         <label for="userId">아이디</label>
         <div class="member-input-group">
