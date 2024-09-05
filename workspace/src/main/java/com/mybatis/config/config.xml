@@ -13,10 +13,8 @@
    </settings>
    
    <typeAliases>
-<<<<<<< HEAD
       <typeAlias type="com.doctortreat.app.dto.MemberDTO" alias="MemberDTO" />
       <typeAlias type="com.doctortreat.app.dto.DoctorDTO" alias="DoctorDTO" />
-=======
       <typeAlias type="com.doctorTreat.app.dto.MemberDTO" alias="MemberDTO" />
       <typeAlias type="com.doctorTreat.app.dto.MemberBoardDTO" alias="MemberBoardDTO" />
       <typeAlias type="com.doctorTreat.app.dto.ClinicDoctorListDTO" alias="ClinicDoctorListDTO" />
@@ -27,7 +25,7 @@
       <typeAlias type="com.doctorTreat.app.dto.DoctorDTO" alias="DoctorDTO" />
       <typeAlias type="com.doctorTreat.app.dto.HospitalDTO" alias="HospitalDTO" />
       <typeAlias type="com.doctorTreat.app.dto.MainMedicalInfoDTO" alias="MainMedicalInfoDTO" />
->>>>>>> main
+
    </typeAliases>
 
    <environments default="oracle">

@@ -14,9 +14,6 @@ import com.doctorTreat.app.dto.DoctorDTO;
 public class DoctorJoinController implements Execute{
 
 	
-	
-	
-	
 	public Result execute(HttpServletRequest request, HttpServletResponse response) throws IOException, ServerException {
 		// TODO Auto-generated method stub
 		  // 인코딩 설정확인
@@ -50,6 +47,11 @@ public class DoctorJoinController implements Execute{
 	    doctorDTO.setAddressAddress(request.getParameter("addressAddress"));
 	    doctorDTO.setAddressDetail(request.getParameter("addressDetail"));
 	    
+	    String hospitalParam1 = request.getParameter("hospitalNumber");
+	    if (hospitalParam1 != null && hospitalParam1.isEmpty()) {
+	        doctorDTO.setHospitalNumber(Integer.parseInt(hospitalParam1));
+	    }
+	    
 	    
 	    
 	    // 문자열 Integer로 변환
@@ -78,3 +80,4 @@ public class DoctorJoinController implements Execute{
 	 }
 
 	}
+
