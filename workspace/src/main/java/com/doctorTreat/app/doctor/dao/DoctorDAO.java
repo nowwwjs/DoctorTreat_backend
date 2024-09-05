@@ -2,7 +2,7 @@ package com.doctorTreat.app.doctor.dao;
 
 import org.apache.ibatis.session.SqlSession;
 
-import com.doctorTreat.app.doctor.dto.DoctorDTO;
+import com.doctorTreat.app.dto.DoctorDTO;
 import com.mybatis.config.MyBatisConfig;
 
 public class DoctorDAO {

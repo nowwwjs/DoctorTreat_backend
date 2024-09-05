@@ -9,7 +9,7 @@ import javax.servlet.http.HttpServletResponse;
 import com.doctorTreat.app.Execute;
 import com.doctorTreat.app.Result;
 import com.doctorTreat.app.doctor.dao.DoctorDAO;
-import com.doctorTreat.app.doctor.dto.DoctorDTO;
+import com.doctorTreat.app.dto.DoctorDTO;
 
 public class DoctorJoinController implements Execute{
 
