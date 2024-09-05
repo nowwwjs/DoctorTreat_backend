@@ -50,14 +50,18 @@
 
             <!-- 네비바 -->
             <div class="header-navContainer">
-                <a href="./../../html/clinicMember/choice.html">
+                <a href="${pageContext.request.contextPath}/app/clinic/clinicStartMember.memcl">
                     <div class="header-menu">
                         비대면진료
                         <img src="${pageContext.request.contextPath}/static/image/Clinic.png">
                     </div>
                 </a>
 
+<<<<<<< HEAD
+                <a href="${pageContext.request.contextPath}/app/book/bookDetail.jsp">
+=======
                 <a href="${pageContext.request.contextPath}/app/book/disease.jsp">
+>>>>>>> main
                     <div class="header-menu">
                         질병백과
                         <img src="${pageContext.request.contextPath}/static/image/encyclopedia.png">

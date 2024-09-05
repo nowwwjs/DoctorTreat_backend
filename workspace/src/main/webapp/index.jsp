@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
+<%@ page import="java.util.List" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -9,11 +10,12 @@
 	href="${pageContext.request.contextPath}/static/css/main.css" />
 <link rel="stylesheet"
 	href="https://unpkg.com/swiper/swiper-bundle.min.css" />
-
+<%@ page import="java.util.List" %>
 <jsp:include page="${pageContext.request.contextPath}/header.jsp" />
 </head>
 
 <body>
+	
 	<main>
 		<!-- 유튜브  -->
 		<iframe width="980" height="400"
@@ -31,7 +33,7 @@
 				<div class="main-content-border">
 					<div class="main-content-detail">내과 / 코로나 증상 / 20대 / 3일전부터 /
 						그게 그러니까 음</div>
-					<div class="main-content-detail">내과 / 코로나 증상 / 2 0대 / 3일전부터 /
+					<div class="main-content-detail">내과 / 코로나 증상 / 20대 / 3일전부터 /
 						그게 그러니까 음</div>
 					<div class="main-content-detail">내과 / 코로나 증상 / 20대 / 3일전부터 /
 						그게 그러니까 음</div>
@@ -101,6 +103,22 @@
 				</div>
 			</div>
 		</div>
+  	<ul>
+        <%
+            List<String> titles = (List<String>) request.getAttribute("medicalInfoTitles");
+            if (titles != null && !titles.isEmpty()) {
+                for (String title : titles) {
+        %>
+            <li><%= title %></li>
+        <%
+                }
+            } else {
+        %>
+            <li>데이터가 없습니다.</li>
+        <%
+            }
+        %>
+    </ul>
 
 		<!-- 광고창 -->
 		<div id="main-ad" class="swiper-container">
