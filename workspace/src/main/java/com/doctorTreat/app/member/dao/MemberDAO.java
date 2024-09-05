@@ -2,7 +2,7 @@ package com.doctorTreat.app.member.dao;
 
 import org.apache.ibatis.session.SqlSession;
 
-import com.doctorTreat.app.member.dto.MemberDTO;
+import com.doctorTreat.app.dto.MemberDTO;
 import com.mybatis.config.MyBatisConfig;
 
 public class MemberDAO {
