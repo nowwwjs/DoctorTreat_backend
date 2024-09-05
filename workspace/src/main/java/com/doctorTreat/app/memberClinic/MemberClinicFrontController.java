@@ -58,7 +58,6 @@ public class MemberClinicFrontController extends HttpServlet {
 //	    	 response.sendRedirect(request.getContextPath());
 			result = new DoctorListController().execute(request, response);
 			// 기타 case 처리
-
 			if (result != null) {
 				if (result.isRedirect()) {
 					response.sendRedirect(result.getPath());

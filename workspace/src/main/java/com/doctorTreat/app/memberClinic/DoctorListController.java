@@ -17,6 +17,7 @@ public class DoctorListController implements Execute {
 	@Override
 	public Result execute(HttpServletRequest request, HttpServletResponse response)
 			throws IOException, ServletException {
+		
 		request.setCharacterEncoding("UTF-8");
 		// 페이지 처리 관련 변수
 		int itemsPerPage = 5;
