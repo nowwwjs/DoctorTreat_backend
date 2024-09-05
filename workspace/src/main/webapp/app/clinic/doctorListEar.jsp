@@ -30,15 +30,15 @@
         <div class="pagination-container">
             <ul class="doctorList-ear-pagenation">
                 <c:if test="${currentPage > 5}">
-                    <li><a href="?page=${currentPage - 5}">&lt;</a></li>
+                    <li><a href="${currentPage - 5}">&lt;</a></li>
                 </c:if>
                 <c:forEach begin="1" end="${maxPages}" var="i">
                     <li>
-                        <a href="?page=${i}" style="${i == currentPage ? 'font-weight:bold;' : ''}">${i}</a>
+                        <a href="${i}" style="${i == currentPage ? 'font-weight:bold;' : ''}">${i}</a>
                     </li>
                 </c:forEach>
                 <c:if test="${currentPage + 5 <= maxPages}">
-                    <li><a href="?page=${currentPage + 5}">&gt;</a></li>
+                    <li><a href="${currentPage + 5}">&gt;</a></li>
                 </c:if>
             </ul>
         </div>
