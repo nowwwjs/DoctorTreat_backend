@@ -1,1 +1,45 @@
 <?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="memberClinic">
+	<!-- 이비인후과 의사목록 -->
+<select id="doctorListEar" parameterType="map" resultType="ClinicDoctorListDTO">
+		SELECT
+		DD.DOCTOR_NAME ,DD.DOCTOR_MAJOR ,DH.HOSPITAL_NAME ,DH.HOSPITAL_CALL
+		FROM DT_DOCTOR DD JOIN DT_HOSPITAL DH ON DD.HOSPITAL_NUMBER =
+		DH.HOSPITAL_NUMBER
+		WHERE DD.DOCTOR_MAJOR = '이비인후과'
+</select>
+
+	<!-- 내과 의사목록 -->
+	<select id="doctorListInner" parameterType="map" resultType="ClinicDoctorListDTO">
+		SELECT
+		DD.DOCTOR_NAME ,DD.DOCTOR_MAJOR ,DH.HOSPITAL_NAME ,DH.HOSPITAL_CALL
+		FROM DT_DOCTOR DD JOIN DT_HOSPITAL DH ON DD.HOSPITAL_NUMBER =
+		DH.HOSPITAL_NUMBER
+		WHERE DD.DOCTOR_MAJOR = '내과'
+	</select>
+
+	<!-- 이비인후과 의사 수 -->
+	<select id="getTotalDoctorEarCount" resultType="int">
+		SELECT
+		COUNT(DD.DOCTOR_NUMBER)
+		FROM
+		DT_DOCTOR dd
+		JOIN DT_HOSPITAL dh ON
+		DD.HOSPITAL_NUMBER = DH.HOSPITAL_NUMBER
+		WHERE
+		DD.DOCTOR_MAJOR = '이비인후과'
+	</select>
+	
+	<!-- 내과 의사 수 -->
+	<select id="getTotalDoctorInnerCount" resultType="int">
+		SELECT
+		COUNT(DD.DOCTOR_NUMBER)
+		FROM
+		DT_DOCTOR dd
+		JOIN DT_HOSPITAL dh ON
+		DD.HOSPITAL_NUMBER = DH.HOSPITAL_NUMBER
+		WHERE
+		DD.DOCTOR_MAJOR = '내과'
+	</select>
+</mapper>
