@@ -57,11 +57,7 @@
                     </div>
                 </a>
 
-<<<<<<< HEAD
-                <a href="${pageContext.request.contextPath}/app/book/bookDetail.jsp">
-=======
                 <a href="${pageContext.request.contextPath}/app/book/disease.jsp">
->>>>>>> main
                     <div class="header-menu">
                         질병백과
                         <img src="${pageContext.request.contextPath}/static/image/encyclopedia.png">
