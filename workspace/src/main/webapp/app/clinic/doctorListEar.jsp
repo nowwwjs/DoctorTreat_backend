@@ -1,3 +1,4 @@
+<%@page import="org.apache.ibatis.reflection.SystemMetaObject"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <!DOCTYPE html>
@@ -14,12 +15,12 @@
         <div id="doctorList">
             <c:forEach var="doctor" items="${doctorList}">
                 <div class="doctorList-container">
-                    <a href="${pageContext.request.contextPath}/app/clinic/doctorDetail.memcl?name=${doctor.getDoctorName}">
+                    <a href="${pageContext.request.contextPath}/app/clinic/doctorDetail.memcl?name=${doctor.doctorName}">
                         <div class="doctorList-name">
-                            의사명: ${doctor.getDoctorName} <span>${doctor.getDoctorMajor}</span>
+                            의사명: ${doctor.doctorName} <span>${doctor.doctorMajor}</span>
                         </div>
-                        <div class="doctorList-HospitalName">병원 이름: ${doctor.getHospitalName}</div>
-                        <div class="doctorList-MainNumber">${doctor.getHospitalCall}</div>
+                        <div class="doctorList-HospitalName">병원 이름: ${doctor.hospitalName}</div>
+                        <div class="doctorList-MainNumber">${doctor.hospitalCall}</div>
                     </a>
                 </div>
             </c:forEach>
