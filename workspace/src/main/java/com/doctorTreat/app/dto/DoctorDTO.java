@@ -1,4 +1,4 @@
-package com.doctorTreat.app.doctor.dto;
+package com.doctorTreat.app.dto;
 
 public class DoctorDTO {
 //	 DOCTOR_NUMBER NUMBER,
