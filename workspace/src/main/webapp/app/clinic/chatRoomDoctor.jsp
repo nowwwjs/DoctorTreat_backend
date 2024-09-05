@@ -16,7 +16,7 @@
 		<div class="chatRoom-topContainer">
 			<div class="chatRoom-title">비대면진료</div>
 			<form action="./../../html/clinicDoctor/memberList.html" method="">
-				<button id="chatRoom-exitChatBtn">채팅 나가기</button>
+				<button id="chatRoom-exitChatBtn">채팅 목록으로</button>
 			</form>
 		</div>
 		<div class="chatRoom-chatBox">

@@ -8,13 +8,17 @@
 <link rel="stylesheet"
 	href="${pageContext.request.contextPath}/static/css/clinic/chart.css">
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-<script defer src="${pageContext.request.contextPath}/static/js/clinic/chart.js"></script>
+<script defer
+	src="${pageContext.request.contextPath}/static/js/clinic/chart.js"></script>
 </head>
 <body>
 	<jsp:include page="${pageContext.request.contextPath}/header.jsp" />
 	<main>
 		<!-- 처방전 작성 -->
 		<div id="writeChart-title">처방전 작성</div>
+		<div class="chart-notice">
+			<span>※ 처방전은 등록 후 <span class="chart-important">수정이 불가</span>합니다 ※ </span>
+		</div>
 		<div class="writeChart-container">
 			<div class="writeChart-top">처방전</div>
 			<!-- 자동입력 정보 -->

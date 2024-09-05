@@ -15,34 +15,34 @@ document.addEventListener('DOMContentLoaded', function() {
     { name: "신승민", department: "이비인후과", address: "서울시 *** ****", phone: "02-0000-3333" },
     { name: "김규열", department: "이비인후과", address: "서울시 *** ****", phone: "02-0000-4444" },
     { name: "서원우", department: "이비인후과", address: "부천시 *** ****", phone: "032-0000-5555" },
-    { name: "송아성", department: "이비인후과", address: "서울시 *** ****", phone: "02-0000-0000" },
-    { name: "정승환", department: "이비인후과", address: "수원시 *** ****", phone: "031-1111-0000" },
-    { name: "김승진", department: "이비인후과", address: "안양시 *** ****", phone: "031-3333-0000" },
-    { name: "양혁수", department: "이비인후과", address: "성남시 *** ****", phone: "031-4444-0000" },
-    { name: "이재서", department: "이비인후과", address: "화성시 *** ****", phone: "031-5555-0000" },
-    { name: "정재우", department: "이비인후과", address: "서울시 *** ****", phone: "02-6666-0000" },
-    { name: "김영선", department: "이비인후과", address: "용인시 *** ****", phone: "031-7777-0000" },
-    { name: "김민채", department: "이비인후과", address: "시흥시 *** ****", phone: "031-8888-0000" },
-    { name: "강수정", department: "이비인후과", address: "서울시 *** ****", phone: "02-9999-0000" },
-    { name: "정시우", department: "이비인후과", address: "시흥시 *** ****", phone: "031-0000-1111" },
-    { name: "이기철", department: "이비인후과", address: "화성시 *** ****", phone: "031-0000-2222" },
-    { name: "신승민", department: "이비인후과", address: "서울시 *** ****", phone: "02-0000-3333" },
-    { name: "김규열", department: "이비인후과", address: "서울시 *** ****", phone: "02-0000-4444" },
-    { name: "서원우", department: "이비인후과", address: "부천시 *** ****", phone: "032-0000-5555" },
-    { name: "송아성", department: "이비인후과", address: "서울시 *** ****", phone: "02-0000-0000" },
-    { name: "정승환", department: "이비인후과", address: "수원시 *** ****", phone: "031-1111-0000" },
-    { name: "김승진", department: "이비인후과", address: "안양시 *** ****", phone: "031-3333-0000" },
-    { name: "양혁수", department: "이비인후과", address: "성남시 *** ****", phone: "031-4444-0000" },
-    { name: "이재서", department: "이비인후과", address: "화성시 *** ****", phone: "031-5555-0000" },
-    { name: "정재우", department: "이비인후과", address: "서울시 *** ****", phone: "02-6666-0000" },
-    { name: "김영선", department: "이비인후과", address: "용인시 *** ****", phone: "031-7777-0000" },
-    { name: "김민채", department: "이비인후과", address: "시흥시 *** ****", phone: "031-8888-0000" },
-    { name: "강수정", department: "이비인후과", address: "서울시 *** ****", phone: "02-9999-0000" },
-    { name: "정시우", department: "이비인후과", address: "시흥시 *** ****", phone: "031-0000-1111" },
-    { name: "이기철", department: "이비인후과", address: "화성시 *** ****", phone: "031-0000-2222" },
-    { name: "신승민", department: "이비인후과", address: "서울시 *** ****", phone: "02-0000-3333" },
-    { name: "김규열", department: "이비인후과", address: "서울시 *** ****", phone: "02-0000-4444" },
-    { name: "서원우", department: "이비인후과", address: "부천시 *** ****", phone: "032-0000-5555" }
+    { name: "송아성", department: "내과", address: "서울시 *** ****", phone: "02-0000-0000" },
+    { name: "정승환", department: "내과", address: "수원시 *** ****", phone: "031-1111-0000" },
+    { name: "김승진", department: "내과", address: "안양시 *** ****", phone: "031-3333-0000" },
+    { name: "양혁수", department: "내과", address: "성남시 *** ****", phone: "031-4444-0000" },
+    { name: "이재서", department: "내과", address: "화성시 *** ****", phone: "031-5555-0000" },
+    { name: "정재우", department: "내과", address: "서울시 *** ****", phone: "02-6666-0000" },
+    { name: "김영선", department: "내과", address: "용인시 *** ****", phone: "031-7777-0000" },
+    { name: "김민채", department: "내과", address: "시흥시 *** ****", phone: "031-8888-0000" },
+    { name: "강수정", department: "내과", address: "서울시 *** ****", phone: "02-9999-0000" },
+    { name: "정시우", department: "내과", address: "시흥시 *** ****", phone: "031-0000-1111" },
+    { name: "이기철", department: "내과", address: "화성시 *** ****", phone: "031-0000-2222" },
+    { name: "신승민", department: "내과", address: "서울시 *** ****", phone: "02-0000-3333" },
+    { name: "김규열", department: "내과", address: "서울시 *** ****", phone: "02-0000-4444" },
+    { name: "서원우", department: "내과", address: "부천시 *** ****", phone: "032-0000-5555" },
+    { name: "송아성", department: "내과", address: "서울시 *** ****", phone: "02-0000-0000" },
+    { name: "정승환", department: "내과", address: "수원시 *** ****", phone: "031-1111-0000" },
+    { name: "김승진", department: "내과", address: "안양시 *** ****", phone: "031-3333-0000" },
+    { name: "양혁수", department: "내과", address: "성남시 *** ****", phone: "031-4444-0000" },
+    { name: "이재서", department: "내과", address: "화성시 *** ****", phone: "031-5555-0000" },
+    { name: "정재우", department: "내과", address: "서울시 *** ****", phone: "02-6666-0000" },
+    { name: "김영선", department: "내과", address: "용인시 *** ****", phone: "031-7777-0000" },
+    { name: "김민채", department: "내과", address: "시흥시 *** ****", phone: "031-8888-0000" },
+    { name: "강수정", department: "내과", address: "서울시 *** ****", phone: "02-9999-0000" },
+    { name: "정시우", department: "내과", address: "시흥시 *** ****", phone: "031-0000-1111" },
+    { name: "이기철", department: "내과", address: "화성시 *** ****", phone: "031-0000-2222" },
+    { name: "신승민", department: "내과", address: "서울시 *** ****", phone: "02-0000-3333" },
+    { name: "김규열", department: "내과", address: "서울시 *** ****", phone: "02-0000-4444" },
+    { name: "서원우", department: "내과", address: "부천시 *** ****", phone: "032-0000-5555" }
     ];
     
     const itemsPerPage = 5;
@@ -66,7 +66,7 @@ document.addEventListener('DOMContentLoaded', function() {
             doctorDiv.className = 'doctorList-container';
 
             doctorDiv.innerHTML = `
-                <a href="./doctorDetail.html">
+                <a href="http://localhost:8888/app/clinic/doctorDetail.memcl">
                     <div class="doctorList-name">
                         의사명 : ${doctor.name} <span>과 : ${doctor.department}</span>
                     </div>
