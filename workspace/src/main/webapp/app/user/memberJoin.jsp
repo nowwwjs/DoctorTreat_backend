@@ -114,7 +114,7 @@
 		</div>
 	</main>
 
-	<script src="${pageContext.request.contextPath}/static/js/user/memberJoin.js"></script>
+	<!-- <script src="${pageContext.request.contextPath}/static/js/user/memberJoin.js"></script> -->
 
 	<jsp:include page="${pageContext.request.contextPath}/footer.jsp" />
 </body>
