@@ -5,7 +5,7 @@
 <head>
 <meta charset="UTF-8">
 <title>일반 비밀번호 찾기 페이지</title>
-<link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/static/css/user/memberfindpw.css">
+<link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/static/css/user/memberFindPw.css">
 <link rel="stylesheet"
    href="${pageContext.request.contextPath}/static/css/main.css" />
 <link rel="stylesheet"
@@ -19,8 +19,8 @@
       <h2 class="findPw-page-title">비밀번호 찾기</h2>
       <br>
       <div class="findPw-choicebox">
-        <div class="findPw-choice"><a href="${pageContext.request.contextPath}/app/user/memberfindid.jsp">아이디찾기</a></div>
-        <div class="findPw-choice"><a href="${pageContext.request.contextPath}/app/user/memberfindpw.jsp">비밀번호찾기</a></div>
+        <div class="findPw-choice"><a href="${pageContext.request.contextPath}/app/user/memberFindId.jsp">아이디찾기</a></div>
+        <div class="findPw-choice"><a href="${pageContext.request.contextPath}/app/user/memberFindPw.jsp">비밀번호찾기</a></div>
       </div>
       <br><br>
       <section class="findPw-form-one">
