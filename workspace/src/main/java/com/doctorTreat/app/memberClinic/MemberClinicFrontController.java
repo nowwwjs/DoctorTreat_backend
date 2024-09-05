@@ -7,31 +7,37 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import com.doctorTreat.app.Result;
+
 /**
  * Servlet implementation class ClinicFrontController
  */
 public class MemberClinicFrontController extends HttpServlet {
 	private static final long serialVersionUID = 1L;
-       
-    /**
-     * @see HttpServlet#HttpServlet()
-     */
-    public MemberClinicFrontController() {
-        super();
-        // TODO Auto-generated constructor stub
-    }
 
 	/**
-	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
+	 * @see HttpServlet#HttpServlet()
 	 */
-	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+	public MemberClinicFrontController() {
+		super();
+		// TODO Auto-generated constructor stub
+	}
+
+	/**
+	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse
+	 *      response)
+	 */
+	protected void doGet(HttpServletRequest request, HttpServletResponse response)
+			throws ServletException, IOException {
 		doProcess(request, response);
 	}
 
 	/**
-	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
+	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse
+	 *      response)
 	 */
-	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+	protected void doPost(HttpServletRequest request, HttpServletResponse response)
+			throws ServletException, IOException {
 		doProcess(request, response);
 	}
 
@@ -45,8 +51,21 @@ public class MemberClinicFrontController extends HttpServlet {
 //	      Result result = null; // Result 클래스 객체
 
 	      switch (target) {
+	      Result result = new Result();
 	      case "/doctorListEar.memcl":
-	         request.getRequestDispatcher("/app/clinic/doctorListEar.jsp").forward(request, response);
+//	    	 new DoctorListController().execute(request, response);
+//	    	 response.sendRedirect(request.getContextPath());
+	           result = new DoctorListController().execute(request, response);
+	        // 기타 case 처리
+	    }
+
+	    if (result != null) {
+	        if (result.isRedirect()) {
+	            response.sendRedirect(result.getPath());
+	        } else {
+	            request.getRequestDispatcher(result.getPath()).forward(request, response);
+	        }
+	    }
 	         break;
 	      case "/doctorListInner.memcl":
 	    	  request.getRequestDispatcher("/app/clinic/doctorListInner.jsp").forward(request, response);
@@ -69,7 +88,6 @@ public class MemberClinicFrontController extends HttpServlet {
 //	            request.getRequestDispatcher(result.getPath()).forward(request, response);
 //	         }
 //	      }
-	}
-	
+}
 
 }
