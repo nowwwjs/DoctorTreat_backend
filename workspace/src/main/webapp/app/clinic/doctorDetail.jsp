@@ -73,8 +73,8 @@
 				</div>
 				<!--  -->
 			</div>
-			<form action="" method="" class="hospital-goWrite">
-				<button href="./chatList.html">비대면 진료 신청</button>
+			<form action="${pageContext.request.contextPath}/chatListMember.memcl" method="post" class="hospital-goWrite">
+				<button>비대면 진료 신청</button>
 			</form>
 		</div>
 	</main>

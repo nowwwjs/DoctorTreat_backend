@@ -24,7 +24,7 @@
 				<div class="chatList-wrap-ear">
 
 					<div class="chatList-ear">
-						<a href="./../../html/clinicMember/chatRoom.html">
+						<a href="http://localhost:8888/app/clinic/chatRoomMember.memcl">
 							<div class="chatList-name">정승환</div>
 							<div class="chatList-License-number">12345678</div>
 						</a>
