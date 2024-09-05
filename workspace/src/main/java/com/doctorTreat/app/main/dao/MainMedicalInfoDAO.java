@@ -19,6 +19,7 @@ public class MainMedicalInfoDAO {
         
         try (SqlSession session = sqlSessionFactory.openSession()) {
             return session.selectList("main.MedicalInfo");
+           
         }
     }
 }

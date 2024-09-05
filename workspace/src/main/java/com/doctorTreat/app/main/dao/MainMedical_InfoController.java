@@ -26,9 +26,10 @@ public class MainMedical_InfoController implements Execute {
         
         // 요청 속성에 제목 목록 설정
         request.setAttribute("medicalInfoTitles", titles);
+        System.out.println(123);
         
         // 결과 페이지 설정
-        result.setPath("/index.jsp");  // 결과 페이지 경로 설정
+        result.setPath("/index.jsp");
 
         return result;
     }

@@ -50,14 +50,14 @@
 
             <!-- 네비바 -->
             <div class="header-navContainer">
-                <a href="./../../html/clinicMember/choice.html">
+                <a href="${pageContext.request.contextPath}/app/clinic/clinicStartMember.memcl">
                     <div class="header-menu">
                         비대면진료
                         <img src="${pageContext.request.contextPath}/static/image/Clinic.png">
                     </div>
                 </a>
 
-                <a href="./../../html/book/disease.html">
+                <a href="${pageContext.request.contextPath}/app/book/bookDetail.jsp">
                     <div class="header-menu">
                         질병백과
                         <img src="${pageContext.request.contextPath}/static/image/encyclopedia.png">
@@ -69,7 +69,7 @@
                         <img src="${pageContext.request.contextPath}/static/image/Knowledge.png">
                     </div>
                 </a>
-                <a href="./../../html/hospital/hospitalInfo.html">
+                <a href="${pageContext.request.contextPath}/app/hospital/hospitalInfo.jsp">
                     <div class="header-menu">
                         지역별 병원정보
                         <img src="${pageContext.request.contextPath}/static/image/hospitalInfo.png">
