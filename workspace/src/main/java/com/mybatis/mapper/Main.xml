@@ -1,29 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="main">
-<<<<<<< HEAD:workspace/src/main/java/com/mybatis/mapper/Main.xml
     <select id="MedicalInfo" resultType="String">
         SELECT MEDICAL_INFO_TITLE FROM DT_MEDICAL_INFO
     </select>
 </mapper>
-=======
-	<!-- 회원 삽입 -->
-	<insert id="join" parameterType="MemberDTO">
-		INSERT INTO DT_MEMBER (MEMBER_NUMBER, MEMBER_ID, MEMBER_PW, MEMBER_NAME,
-		MEMBER_BIRTH, MEMBER_PHONE, ADDRESS_NUMBER)
-		VALUES (SEQ_MEMBER.NEXTVAL, #{memberId}, #{memberPw}, #{memberName},
-		#{memberBirth}, #{memberPhone}, #{addressNumber})
-	</insert>
-
-	<!-- 주소 삽입 -->
-	<insert id="joinAddress" parameterType="MemberDTO" useGeneratedKeys="true"
-		keyProperty="addressNumber">
-		INSERT INTO DT_ADDRESS (ADDRESS_NUMBER, ADDRESS_POSTAL, ADDRESS_ADDRESS,
-		ADDRESS_DETAIL)
-		VALUES (SEQ_ADDRESS.NEXTVAL, #{addressPostal}, #{addressAddress},
-		#{addressDetail})
-	</insert>
-
-
-</mapper>
->>>>>>> main:workspace/src/main/java/com/mybatis/mapper/MemberMapper.xml
