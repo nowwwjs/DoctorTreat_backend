@@ -2,11 +2,14 @@ package com.doctorTreat.app.dto;
 
 public class MemberBoardDTO {
 
-	private String medicalInfoTitle; // 의료 정보 제목
-	private String medicalInfoText; // 의료 정보 내용
-	private String memberName; // 회원 이름
+	private String medicalInfoTitle;
+	private String medicalInfoText;
+	private String memberName;
+	private String medicalInfoDate;
+	private String doctorMajor;
+	private String doctorName;
+	private String doctorCommentText;
 
-	// Getters and Setters
 	public String getMedicalInfoTitle() {
 		return medicalInfoTitle;
 	}
@@ -31,9 +34,43 @@ public class MemberBoardDTO {
 		this.memberName = memberName;
 	}
 
+	public String getMedicalInfoDate() {
+		return medicalInfoDate;
+	}
+
+	public void setMedicalInfoDate(String medicalInfoDate) {
+		this.medicalInfoDate = medicalInfoDate;
+	}
+
+	public String getDoctorMajor() {
+		return doctorMajor;
+	}
+
+	public void setDoctorMajor(String doctorMajor) {
+		this.doctorMajor = doctorMajor;
+	}
+
+	public String getDoctorName() {
+		return doctorName;
+	}
+
+	public void setDoctorName(String doctorName) {
+		this.doctorName = doctorName;
+	}
+
+	public String getDoctorCommentText() {
+		return doctorCommentText;
+	}
+
+	public void setDoctorCommentText(String doctorCommentText) {
+		this.doctorCommentText = doctorCommentText;
+	}
+
 	@Override
 	public String toString() {
-		return "memberboard";
+		return "MemberBoardDTO [medicalInfoTitle=" + medicalInfoTitle + ", medicalInfoText=" + medicalInfoText
+				+ ", memberName=" + memberName + ", medicalInfoDate=" + medicalInfoDate + ", doctorMajor=" + doctorMajor
+				+ ", doctorName=" + doctorName + ", doctorCommentText=" + doctorCommentText + "]";
 	}
-	
+
 }
