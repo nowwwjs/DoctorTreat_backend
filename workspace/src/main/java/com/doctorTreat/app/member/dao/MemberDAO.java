@@ -6,13 +6,13 @@ import com.doctorTreat.app.dto.MemberDTO;
 import com.mybatis.config.MyBatisConfig;
 
 public class MemberDAO {
-	SqlSession sqlSession;
+	private SqlSession sqlSession;
 	
 	public MemberDAO() {
 		sqlSession = MyBatisConfig.getSqlSessionFactory().openSession(true);
 	}
 	
 	public void join(MemberDTO memberDTO) {
-		sqlSession.insert("member.join",memberDTO);
+		sqlSession.insert("user.memberjoin",memberDTO);
 	}
 }
