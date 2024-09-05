@@ -20,7 +20,7 @@ public class MyBatisConfig {
          //Resource 클래스를 이용하여 리소스를 읽어들여 Reader 객체로 만든다
          Reader reader = Resources.getResourceAsReader(resource);
          
-         //세션팩토리 빌더에게 팩토리를 지어달라고 한다 .build()
+         //세션팩토리 빌더에게 팩토리를 지어달라고 한다 .build()																																																																																																																																																																																																																															
          //공장을 짓기 위해 설계도가 필요하다
          //설계도는 설정값을 저장하고 있는 reader이다
          sqlSessionFactory = new SqlSessionFactoryBuilder().build(reader);

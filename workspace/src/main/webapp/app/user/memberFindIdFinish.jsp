@@ -5,7 +5,7 @@
 <head>
 <meta charset="UTF-8">
 <title>일반회원아이디찾기완료페이지</title>
-<link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/static/css/user/memberfindidfinish.css">
+<link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/static/css/user/memberFindIdFinish.css">
 <link rel="stylesheet"
    href="${pageContext.request.contextPath}/static/css/main.css" />
 <link rel="stylesheet"
