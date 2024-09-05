@@ -5,14 +5,12 @@
 <head>
 <meta charset="UTF-8">
 <title>일반 아이디 찾기 페이지</title>
-<link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/static/css/user/memberfindid.css">
-<link rel="stylesheet"
-   href="${pageContext.request.contextPath}/static/css/main.css" />
-<link rel="stylesheet"
-   href="https://unpkg.com/swiper/swiper-bundle.min.css" />
+<link rel="stylesheet" href="${pageContext.request.contextPath}/static/css/main.css" />
+<link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
+<link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/static/css/user/memberFindId.css">
 
-<jsp:include page="${pageContext.request.contextPath}/header.jsp" />
 </head>
+<jsp:include page="${pageContext.request.contextPath}/header.jsp" />
 <body>
 	<main>
         <!-- <h2 class="findId-page-title">아이디 찾기</h2> -->
@@ -20,8 +18,8 @@
             <h2 class="findId-page-title">아이디 찾기</h2>
             <br>
             <div class="findId-choicebox">
-                <div class="findId-choice"><a href="${pageContext.request.contextPath}/app/user/memberfindid.jsp">아이디찾기</a></div>
-                <div class="findId-choice"><a href="${pageContext.request.contextPath}/app/user/memberfindpw.jsp">비밀번호찾기</a></div>
+                <div class="findId-choice"><a href="${pageContext.request.contextPath}/app/user/memberFindId.jsp">아이디찾기</a></div>
+                <div class="findId-choice"><a href="${pageContext.request.contextPath}/app/user/memberFindPw.jsp">비밀번호찾기</a></div>
             </div>
             <section class="findId-form">
                 <form>

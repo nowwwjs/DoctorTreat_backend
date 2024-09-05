@@ -1,78 +1,103 @@
 package com.doctorTreat.app.dto;
 
 public class MemberDTO {
-	
 	private int memberNumber;
 	private String memberId;
-	private String memberPassword;
+	private String memberPw;
 	private String memberName;
 	private String memberBirth;
 	private String memberPhone;
-	private String memberPostcode;
-	private String memberAddress;
-	private String memberAddress1;
-	
+	private int addressNumber; // 주소 번호
+	private String addressPostal;
+	private String addressAddress;
+	private String addressDetail;
+
 	public int getMemberNumber() {
 		return memberNumber;
 	}
+
 	public void setMemberNumber(int memberNumber) {
 		this.memberNumber = memberNumber;
 	}
+
 	public String getMemberId() {
 		return memberId;
 	}
+
 	public void setMemberId(String memberId) {
 		this.memberId = memberId;
 	}
-	public String getMemberPassword() {
-		return memberPassword;
+
+	public String getMemberPw() {
+		return memberPw;
 	}
-	public void setMemberPassword(String memberPassword) {
-		this.memberPassword = memberPassword;
+
+	public void setMemberPw(String memberPw) {
+		this.memberPw = memberPw;
 	}
+
 	public String getMemberName() {
 		return memberName;
 	}
+
 	public void setMemberName(String memberName) {
 		this.memberName = memberName;
 	}
+
 	public String getMemberBirth() {
 		return memberBirth;
 	}
+
 	public void setMemberBirth(String memberBirth) {
 		this.memberBirth = memberBirth;
 	}
+
 	public String getMemberPhone() {
 		return memberPhone;
 	}
+
 	public void setMemberPhone(String memberPhone) {
 		this.memberPhone = memberPhone;
 	}
-	public String getMemberPostcode() {
-		return memberPostcode;
+
+	public int getAddressNumber() {
+		return addressNumber;
 	}
-	public void setMemberPostcode(String memberPostcode) {
-		this.memberPostcode = memberPostcode;
+
+	public void setAddressNumber(int addressNumber) {
+		this.addressNumber = addressNumber;
 	}
-	public String getMemberAddress() {
-		return memberAddress;
+
+	public String getAddressPostal() {
+		return addressPostal;
 	}
-	public void setMemberAddress(String memberAddress) {
-		this.memberAddress = memberAddress;
+
+	public void setAddressPostal(String addressPostal) {
+		this.addressPostal = addressPostal;
 	}
-	public String getMemberAddress1() {
-		return memberAddress1;
+
+	public String getAddressAddress() {
+		return addressAddress;
 	}
-	public void setMemberAddress1(String memberAddress1) {
-		this.memberAddress1 = memberAddress1;
+
+	public void setAddressAddress(String addressAddress) {
+		this.addressAddress = addressAddress;
 	}
+
+	public String getAddressDetail() {
+		return addressDetail;
+	}
+
+	public void setAddressDetail(String addressDetail) {
+		this.addressDetail = addressDetail;
+	}
+
 	@Override
 	public String toString() {
-		return "MemberDTO [memberNumber=" + memberNumber + ", memberId=" + memberId + ", memberPassword="
-				+ memberPassword + ", memberName=" + memberName + ", memberBirth=" + memberBirth + ", memberPhone="
-				+ memberPhone + ", memberPostcode=" + memberPostcode + ", memberAddress=" + memberAddress
-				+ ", memberAddress1=" + memberAddress1 + "]";
+		return "MemberDTO [memberNumber=" + memberNumber + ", memberId=" + memberId + ", memberPw=" + memberPw
+				+ ", memberName=" + memberName + ", memberBirth=" + memberBirth + ", memberPhone=" + memberPhone
+				+ ", addressNumber=" + addressNumber + ", addressPostal=" + addressPostal + ", addressAddress="
+				+ addressAddress + ", addressDetail=" + addressDetail + "]";
 	}
-	
-	
+
 }
