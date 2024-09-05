@@ -40,16 +40,26 @@ public class MemberClinicFrontController extends HttpServlet {
 		
 		 // 전체 URI에서 ContextPath를 제외시킨 부분만 변수에 저장(분기처리할 때 비교할 변수로 사용)
 	      String target = request.getRequestURI().substring(request.getContextPath().length());
-	      System.out.println(target);
+//	      System.out.println(target);
 
 //	      Result result = null; // Result 클래스 객체
 
 	      switch (target) {
-	      case "/chatListDoctor.doccl":
-	         request.getRequestDispatcher("/app/clinic/chatListDoctor.jsp").forward(request, response);
+	      case "/doctorListEar.memcl":
+	         request.getRequestDispatcher("/app/clinic/doctorListEar.jsp").forward(request, response);
 	         break;
-	      case "/clinicStartDoctor.doccl":
-
+	      case "/doctorListInner.memcl":
+	    	  request.getRequestDispatcher("/app/clinic/doctorListInner.jsp").forward(request, response);
+	    	  break;
+	      case "/app/clinic/doctorDetail.memcl":
+	    	  request.getRequestDispatcher("/app/clinic/doctorDetail.jsp").forward(request, response);
+	    	  break;
+	      case "/chatListMember.memcl":
+	    	  request.getRequestDispatcher("/app/clinic/chatListMember.jsp").forward(request, response);
+	    	  break;
+	      case "/app/clinic/chatRoomMember.memcl":
+	    	  request.getRequestDispatcher("/app/clinic/chatRoomMember.jsp").forward(request, response);
+	    	  break;
 	      }
 
 //	      if (result != null) {

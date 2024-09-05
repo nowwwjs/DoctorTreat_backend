@@ -1,4 +1,5 @@
-@charset "UTF-8";@charset "UTF-8";
+@charset "UTF-8";
+@charset "UTF-8";
 
 main {
 	width: 980px;
@@ -20,23 +21,16 @@ main {
 	justify-content: center;
 }
 
-
-.clinicMember-otolaryngology {
-	display: flex;
-	align-items: center;
-	justify-content: center;
-	width: 250px;
-	height: 200px;
-	background-color: #37AA8B;
-	color: white;
-	font-weight: bold;
-	border: none;
-	border-radius: 7px;
-	font-size: 30px;
+.clinicMember-form {
 	margin-right: 50px;
-	cursor: pointer;
 }
 
+.clinicMember-form:last-child {
+	margin-right: 0;
+	/* 마지막 form 요소는 오른쪽 여백 제거 */
+}
+
+.clinicMember-otolaryngology,
 .clinicMember-medicine {
 	display: flex;
 	align-items: center;
@@ -52,41 +46,7 @@ main {
 	cursor: pointer;
 }
 
-#startClinic-startBtn:hover {
-	background-color: #2e9278
+.clinicMember-otolaryngology:hover,
+.clinicMember-medicine:hover {
+	background-color: #2e9278;
 }
-
-.startClinic-title {
-	font-size: 25px;
-	font-weight: bold;
-	color: #37aa8b;
-	margin-top: 40px;
-}
-
-#startClinic-startBtn {
-	margin: 60px auto;
-	background-color: #37aa8b;
-	color: white;
-	font-size: 30px;
-	font-weight: bold;
-	border: none;
-	border-radius: 7px;
-	width: 500px;
-	height: 150px;
-	align-items: center;
-	display: flex;
-	justify-content: center;
-	cursor: pointer;
-}
-
-main a {
-	text-decoration: none;
-}
-
-.clinicMember-otolaryngology:hover{
-	background-color: #2e9278
-}
-.clinicMember-medicine:hover{
-	background-color: #2e9278
-}
-
