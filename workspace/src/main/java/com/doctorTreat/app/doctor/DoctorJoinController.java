@@ -23,26 +23,40 @@ public class DoctorJoinController implements Execute{
 	    request.setCharacterEncoding("UTF-8");
 
 	    // MemberDTO와 DAO 객체 생성
-	    DoctorDTO memberDTO = new DoctorDTO();
-	    DoctorDAO memberDAO = new DoctorDAO();
+	    DoctorDTO doctorDTO = new DoctorDTO();
+	    DoctorDAO doctorDAO = new DoctorDAO();
 	    Result result = new Result();
 
 	    // 폼데이터 받아오기
-	    memberDTO.setDoctorId(request.getParameter("doctorId"));
-	    memberDTO.setDoctorPw(request.getParameter("doctorPw"));
-	    memberDTO.setDoctorName(request.getParameter("doctorName"));
-	    // 문자열 Integer로 변환
-	    String ageParam = request.getParameter("doctorAge");
-	    if (ageParam != null && !ageParam.isEmpty()) {
-	       memberDTO.setDoctorAge(Integer.parseInt(ageParam));
+	    String numberParam = request.getParameter("doctorNumber");
+	    if(numberParam != null && !numberParam.isEmpty()) {
+	    	doctorDTO.setDoctorNumber(Integer.parseInt(numberParam));
 	    }
-	    memberDTO.setDoctorGender(request.getParameter("doctorGender"));
+	    
+	    doctorDTO.setDoctorId(request.getParameter("doctorId"));
+	    doctorDTO.setDoctorPw(request.getParameter("doctorPw"));
+	    doctorDTO.setDoctorName(request.getParameter("doctorName"));
+	    doctorDTO.setDoctorPhone(request.getParameter("doctorPhone"));
+	    doctorDTO.setDoctorLicense(request.getParameter("doctorLicense"));
+	    doctorDTO.setDoctorMajor(request.getParameter("doctorMajor"));
+	    
+	    String hospitalParam = request.getParameter("hospitalNumber");
+	    if(hospitalParam != null && hospitalParam.isEmpty()) {
+	    	doctorDTO.setHospitalNumber(Integer.parseInt(hospitalParam));
+	    }
+	    
+	    // 문자열 Integer로 변환
+//	    String ageParam = request.getParameter("doctorAge");
+//	    if (ageParam != null && !ageParam.isEmpty()) {
+//	       doctorDTO.setDoctorAge(Integer.parseInt(ageParam));
+//	    }
+//	    doctorDTO.setDoctorGender(request.getParameter("doctorGender"));
 
 	    // 디버깅용 로그 출력
-	    System.out.println("MemberDTO : " + memberDTO);
+	    System.out.println("DoctorDTO : " + doctorDTO);
 
 	    // 데이터베이스에 회원 정보 저장
-	    memberDAO.join(memberDTO);
+	    doctorDAO.join(doctorDTO);
 
 	    // 결과 처리
 	    result.setRedirect(true);
