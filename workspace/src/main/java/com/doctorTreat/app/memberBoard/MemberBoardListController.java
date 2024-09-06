@@ -31,7 +31,7 @@ public class MemberBoardListController implements Execute {
         List<MemberBoardDTO> memberBoardList = memberBoardDAO.showList(page, pageSize);
 
         // 전체 게시물 수와 총 페이지 수 계산
-        int totalCount = memberBoardDAO.getTotalCount(); // getTotalCount() 메서드를 DAO에 추가해야 합니다.
+        int totalCount = memberBoardDAO.getTotalCount(); 
         int totalPage = (int) Math.ceil((double) totalCount / pageSize);
 
         // request에 필요한 데이터 설정
