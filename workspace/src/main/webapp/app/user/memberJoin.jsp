@@ -114,8 +114,8 @@
 		</div>
 	</main>
 
-	<!--   <script src="${pageContext.request.contextPath}/static/js/user/memberJoin.js"></script> -->
-	<!--  <script src="https://t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script> -->
+	 <!--  <script src="${pageContext.request.contextPath}/static/js/user/memberJoin.js"></script> -->
+	 <!-- <script src="https://t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script> -->
 
 	<jsp:include page="${pageContext.request.contextPath}/footer.jsp" />
 	

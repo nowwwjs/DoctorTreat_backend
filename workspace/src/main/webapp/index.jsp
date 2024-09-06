@@ -23,6 +23,7 @@
 			allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
 			referrerpolicy="strict-origin-when-cross-origin" allowfullscreen>
 		</iframe>
+		s
 
 		<!-- 의료 지식인  -->
 		<div id="main-medic">
@@ -119,6 +120,7 @@
 	<!-- 버튼들  -->
 	<div id="main-scroll-book">
 		<div id="main-book">
+		
 			<a href="./../../html/clinicMember/choice.html"><span>진료하러
 					가기</span></a>
 		</div>

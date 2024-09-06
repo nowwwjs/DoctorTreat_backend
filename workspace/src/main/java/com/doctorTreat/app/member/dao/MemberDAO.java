@@ -17,6 +17,7 @@ public class MemberDAO {
 
 			sqlSession.insert("main.joinAddress", member);
 
+			
 			sqlSession.insert("main.join", member);
 
 			sqlSession.commit();

@@ -1,7 +1,6 @@
 package com.doctorTreat.app.dto;
 
 public class MemberDTO {
-	private int memberNumber;
 	private String memberId;
 	private String memberPw;
 	private String memberName;
@@ -10,15 +9,8 @@ public class MemberDTO {
 	private String addressDetail;
 	private String memberBirth;
 	private String memberPhone;
-	private int addressNumber; // 주소 번호
 
-	public int getMemberNumber() {
-		return memberNumber;
-	}
 
-	public void setMemberNumber(int memberNumber) {
-		this.memberNumber = memberNumber;
-	}
 
 	public String getMemberId() {
 		return memberId;
@@ -84,21 +76,16 @@ public class MemberDTO {
 		this.memberPhone = memberPhone;
 	}
 
-	public int getAddressNumber() {
-		return addressNumber;
-	}
-
-	public void setAddressNumber(int addressNumber) {
-		this.addressNumber = addressNumber;
-	}
-
 	@Override
 	public String toString() {
-		return "MemberDTO [memberNumber=" + memberNumber + ", memberId=" + memberId + ", memberPw=" + memberPw
-				+ ", memberName=" + memberName + ", addressPostal=" + addressPostal + ", addressAddress="
-				+ addressAddress + ", addressDetail=" + addressDetail + ", memberBirth=" + memberBirth
-				+ ", memberPhone=" + memberPhone + ", addressNumber=" + addressNumber + "]";
+		return "MemberDTO [memberId=" + memberId + ", memberPw=" + memberPw + ", memberName=" + memberName
+				+ ", addressPostal=" + addressPostal + ", addressAddress=" + addressAddress + ", addressDetail="
+				+ addressDetail + ", memberBirth=" + memberBirth + ", memberPhone=" + memberPhone + "]";
 	}
+
+
+
+	
 
 	
 }

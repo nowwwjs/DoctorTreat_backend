@@ -149,7 +149,7 @@ document.querySelector(".signup-btn").addEventListener("click", function (event)
   if (!allFilled || !allCheckboxesChecked) {
       alert("입력란과 체크박스를 확인하세요."); // alert 창 표시
   } else {
-      window.location.href = "memberJoinFinish.me"; // 이동
+      window.location.href = "memberJoinFinish.jsp"; // 이동
   }
 });
 
