@@ -20,9 +20,9 @@
 		<div class="doctorDetail-container">
 			<div class="doctorDetail-Info">
 				<div id="doctorDetail-uiwon">
-					${doctorDetailPage.hospitalName} <span id="doctorDetail-uiwon-span">전문의 : ${doctorDetailPage.doctorName}</span>
+					${doctorDetail[0].hospitalName} <span id="doctorDetail-uiwon-span">전문의 : ${doctorDetail[0].doctorName}</span>
 				</div>
-				<div class="doctorDetail-medicine">${doctorDetailPage.doctorMajor}</div>
+				<div class="doctorDetail-medicine">${doctorDetail[0].doctorMajor}</div>
 			</div>
 			<div id="doctorDetail-clinic-time">진료시간</div>
 			<div class="doctorDetail-hours">
@@ -43,13 +43,13 @@
 					</div>
 					<div class="doctorDetail-closed-bottom">
 						<div>야간진료</div>
-						<div>${doctorDetailPage.doctorNightWork}</div>
+						<div>${doctorDetail[0].doctorNightWork}</div>
 					</div>
 				</div>
 			</div>
 			<div class="hospital-phoneNumber">
 				<div id="doctorDetail-number">병원 번호</div>
-				<div id="doctorDetail-hospital-num">${doctorDetailPage.doctorHospitalCall}</div>
+				<div id="doctorDetail-hospital-num">${doctorDetail[0].doctorHospitalCall}</div>
 			</div>
 			<div class="hospital-address">병원위치</div>
 			<div class="hospital-location">

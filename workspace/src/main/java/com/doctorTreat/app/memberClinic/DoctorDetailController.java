@@ -22,11 +22,11 @@ public class DoctorDetailController implements Execute{
 		System.out.println(hospitalCall);
 		
 		MemberClinicDAO memberClinicDAO = new MemberClinicDAO();
-		List<DoctorDetailDTO> doctorDetailPage = memberClinicDAO.getDoctorDetail(hospitalCall);
-		System.out.println(doctorDetailPage);
+		List<DoctorDetailDTO> doctorDetail = memberClinicDAO.getDoctorDetail(hospitalCall);
+		System.out.println(doctorDetail);
 		
 		  // JSP로 데이터를 전달
-        request.setAttribute("doctorDetail", doctorDetailPage);
+        request.setAttribute("doctorDetail", doctorDetail);
 
 //		결과처리
         Result result = new Result();
