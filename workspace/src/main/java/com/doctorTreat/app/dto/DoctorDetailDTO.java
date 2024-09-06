@@ -4,9 +4,6 @@ public class DoctorDetailDTO {
 	private String hospitalName;
 	private String doctorName;
 	private String doctorMajor;
-	private String hospitalWorkTime;
-	private String hospitalLunchTime;
-	private String hospitalRestTime;
 	private String hospitalNightWork;
 	private String hospitalCall;
 
@@ -34,30 +31,6 @@ public class DoctorDetailDTO {
 		this.doctorMajor = doctorMajor;
 	}
 
-	public String getHospitalWorkTime() {
-		return hospitalWorkTime;
-	}
-
-	public void setHospitalWorkTime(String hospitalWorkTime) {
-		this.hospitalWorkTime = hospitalWorkTime;
-	}
-
-	public String getHospitalLunchTime() {
-		return hospitalLunchTime;
-	}
-
-	public void setHospitalLunchTime(String hospitalLunchTime) {
-		this.hospitalLunchTime = hospitalLunchTime;
-	}
-
-	public String getHospitalRestTime() {
-		return hospitalRestTime;
-	}
-
-	public void setHospitalRestTime(String hospitalRestTime) {
-		this.hospitalRestTime = hospitalRestTime;
-	}
-
 	public String getHospitalNightWork() {
 		return hospitalNightWork;
 	}
@@ -77,9 +50,7 @@ public class DoctorDetailDTO {
 	@Override
 	public String toString() {
 		return "DoctorDetailDTO [hospitalName=" + hospitalName + ", doctorName=" + doctorName + ", doctorMajor="
-				+ doctorMajor + ", hospitalWorkTime=" + hospitalWorkTime + ", hospitalLunchTime=" + hospitalLunchTime
-				+ ", hospitalRestTime=" + hospitalRestTime + ", hospitalNightWork=" + hospitalNightWork
-				+ ", hospitalCall=" + hospitalCall + "]";
+				+ doctorMajor + ", hospitalNightWork=" + hospitalNightWork + ", hospitalCall=" + hospitalCall + "]";
 	}
 
 }

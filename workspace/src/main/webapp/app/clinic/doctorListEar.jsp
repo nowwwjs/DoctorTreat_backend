@@ -1,7 +1,7 @@
-<%@page import="org.apache.ibatis.reflection.SystemMetaObject"%>
+<%-- <%@ page import="org.apache.ibatis.reflection.SystemMetaObject" %> --%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
-<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -18,15 +18,15 @@
 			<c:forEach var="doctor" items="${doctorList}">
 				<div class="doctorList-container">
 					<a
-						href="${pageContext.request.contextPath}/app/clinic/doctorDetail.memcl?name=${doctor.doctorName}">
+						href="${pageContext.request.contextPath}/app/clinic/doctorDetail.memcl?hospitalCall=${doctor.hospitalCall}">
 						<div class="doctorList-name">
-							의사명 : ${doctor.doctorName} / <span>진료과 :
-								${doctor.doctorMajor}</span>
+							의사명 : ${doctor.doctorName} / 진료과 : <span>${doctor.doctorMajor}</span>
 						</div>
 						<div class="doctorList-HospitalName">병원이름 :
 							${doctor.hospitalName}</div>
-						<div class="doctorList-MainNumber">전화번호 :
-							${doctor.hospitalCall}</div>
+						<div class="doctorList-MainNumber">
+							전화번호 : ${doctor.hospitalCall}
+						</div>
 					</a>
 				</div>
 			</c:forEach>

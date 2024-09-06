@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -19,9 +20,9 @@
 		<div class="doctorDetail-container">
 			<div class="doctorDetail-Info">
 				<div id="doctorDetail-uiwon">
-					강남정내과의원 <span id="doctorDetail-uiwon-span">전문의 : 정승환</span>
+					${doctorDetailPage.hospitalName} <span id="doctorDetail-uiwon-span">전문의 : ${doctorDetailPage.doctorName}</span>
 				</div>
-				<div class="doctorDetail-medicine">내과</div>
+				<div class="doctorDetail-medicine">${doctorDetailPage.doctorMajor}</div>
 			</div>
 			<div id="doctorDetail-clinic-time">진료시간</div>
 			<div class="doctorDetail-hours">
@@ -42,13 +43,13 @@
 					</div>
 					<div class="doctorDetail-closed-bottom">
 						<div>야간진료</div>
-						<div>없음</div>
+						<div>${doctorDetailPage.doctorNightWork}</div>
 					</div>
 				</div>
 			</div>
 			<div class="hospital-phoneNumber">
 				<div id="doctorDetail-number">병원 번호</div>
-				<div id="doctorDetail-hospital-num">0508-0321-3678</div>
+				<div id="doctorDetail-hospital-num">${doctorDetailPage.doctorHospitalCall}</div>
 			</div>
 			<div class="hospital-address">병원위치</div>
 			<div class="hospital-location">

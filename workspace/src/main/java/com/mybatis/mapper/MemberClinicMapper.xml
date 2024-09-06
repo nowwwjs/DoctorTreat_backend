@@ -2,46 +2,38 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="memberClinic">
 	<!-- 이비인후과 의사목록 -->
-<select id="doctorListEar" resultType="ClinicDoctorListDTO">
+	<select id="doctorListEar" resultType="ClinicDoctorListDTO">
 		SELECT
-		DD.DOCTOR_NAME ,DD.DOCTOR_MAJOR ,DH.HOSPITAL_NAME ,DH.HOSPITAL_CALL
-		FROM DT_DOCTOR DD JOIN DT_HOSPITAL DH ON DD.HOSPITAL_NUMBER =
+		DD.DOCTOR_NAME
+		,DD.DOCTOR_MAJOR ,DH.HOSPITAL_NAME ,DH.HOSPITAL_CALL
+		FROM DT_DOCTOR DD
+		JOIN DT_HOSPITAL DH ON DD.HOSPITAL_NUMBER =
 		DH.HOSPITAL_NUMBER
-		WHERE DD.DOCTOR_MAJOR = '이비인후과'
-</select>
+		WHERE
+		DD.DOCTOR_MAJOR = '이비인후과'
+	</select>
 
 	<!-- 내과 의사목록 -->
 	<select id="doctorListInner" resultType="ClinicDoctorListDTO">
 		SELECT
-		DD.DOCTOR_NAME ,DD.DOCTOR_MAJOR ,DH.HOSPITAL_NAME ,DH.HOSPITAL_CALL
-		FROM DT_DOCTOR DD JOIN DT_HOSPITAL DH ON DD.HOSPITAL_NUMBER =
+		DD.DOCTOR_NAME
+		,DD.DOCTOR_MAJOR ,DH.HOSPITAL_NAME ,DH.HOSPITAL_CALL
+		FROM DT_DOCTOR DD
+		JOIN DT_HOSPITAL DH ON DD.HOSPITAL_NUMBER =
 		DH.HOSPITAL_NUMBER
-		WHERE DD.DOCTOR_MAJOR = '내과'
-	</select>
-
-	<!-- 이비인후과 의사 수 -->
-	<select id="getTotalDoctorEarCount" resultType="int">
-		SELECT
-		COUNT(DD.DOCTOR_NUMBER)
-		FROM
-		DT_DOCTOR dd
-		JOIN DT_HOSPITAL dh ON
-		DD.HOSPITAL_NUMBER = DH.HOSPITAL_NUMBER
-		WHERE
-		DD.DOCTOR_MAJOR = '이비인후과'
-	</select>
-	
-	<!-- 내과 의사 수 -->
-	<select id="getTotalDoctorInnerCount" resultType="int">
-		SELECT
-		COUNT(DD.DOCTOR_NUMBER)
-		FROM
-		DT_DOCTOR dd
-		JOIN DT_HOSPITAL dh ON
-		DD.HOSPITAL_NUMBER = DH.HOSPITAL_NUMBER
 		WHERE
 		DD.DOCTOR_MAJOR = '내과'
 	</select>
-	
-	
+
+	<!-- 의사상세정보 페이지 조회 -->
+	<select id="getDoctorDetail" parameterType="String" resultType="DoctorDetailDTO">
+		SELECT DH.HOSPITAL_NAME ,
+		DD.DOCTOR_NAME ,
+		DD.DOCTOR_MAJOR ,
+		DH.HOSPITAL_NIGHT_WORK ,
+		DH.HOSPITAL_CALL
+		FROM DT_DOCTOR DD JOIN DT_HOSPITAL DH
+		ON DD.HOSPITAL_NUMBER = DH.HOSPITAL_NUMBER
+		WHERE DH.HOSPITAL_CALL = #{hospitalCall}
+	</select>
 </mapper>
