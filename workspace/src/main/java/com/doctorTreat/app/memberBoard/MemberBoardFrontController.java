@@ -34,14 +34,17 @@ public class MemberBoardFrontController extends HttpServlet {
 		Result result = null;
 
 		switch (target) {
-		case "/memberBoardList.membo":
+		case "/BoardList.membo":
 			result = new MemberBoardListController().execute(request, response);
 			break;
-		case "/memberBoard/write.membo":
-			System.out.println("글 작성!");
+		case "/memberBoardDetail.membo":
+			result = new MemberBoardDetailController().execute(request, response);
+			if(result != null) {
+				System.out.println("되나 ?");				
+			}
 			break;
-		case "/memberBoard/update.membo":
-			System.out.println("업데이트!");
+		case "/memberBoardWrite.membo":
+			System.out.println("글 작성!");
 			break;
 		case "/memberBoard/delete.membo":
 			System.out.println("삭제!");

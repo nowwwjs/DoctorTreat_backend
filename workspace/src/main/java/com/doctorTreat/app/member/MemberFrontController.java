@@ -47,7 +47,7 @@ public class MemberFrontController extends HttpServlet {
 		    System.out.println("회원가입 완료");
 		    new MemberJoinOkController().execute(request, response);
 		    break;
-		case "/member/memberLogin.me":
+		case "/memberlogin.me":
 		     System.out.println("Login!!");
 		     request.getRequestDispatcher("/app/user/memberLogin.jsp").forward(request, response);
 		     break;	

@@ -23,10 +23,10 @@
 			<c:forEach var="board" items="${memberBoardshowlist}">
 				<li>
 					<hr> <a
-					href="${pageContext.request.contextPath}/html/board/member/boardDetail.html">
+					href="${pageContext.request.contextPath}/memberBoardDetail.membo?id=${board.medicalInfoNumber}">
 						<div class="medicalKnowledgeList-boardList">${board.medicalInfoTitle}</div>
 						<div class="medicalKnowledgeList-text">
-							${board.medicalInfoText}...</div>
+							${board.medicalInfoText}</div>
 						<div class="medicalKnowledgeList-writer">
 							<img
 								src="${pageContext.request.contextPath}/static/image/QnA.png">
@@ -39,19 +39,28 @@
 
 		<!-- 글쓰기 버튼 -->
 		<form
-			action="${pageContext.request.contextPath}/html/board/member/write.html">
+			action="${pageContext.request.contextPath}/memberBoardWrite.membo">
 			<button class="medicalKnowledgeList-goWrite">의료지식인 질문하러 가기</button>
 		</form>
 
-		<!-- 페이지 -->
+		<!-- 페이지네이션 -->
 		<div class="medicalKnowledgeList-page">
 			<ul class="medicalKnowledgeList-pagenation">
-				<li><a href="">1</a></li>
-				<li><a href="">2</a></li>
-				<li><a href="">3</a></li>
-				<li><a href="">4</a></li>
-				<li><a href="">5</a></li>
-				<li><a href="">&gt;</a></li>
+				<!-- 이전 페이지 링크 -->
+				<c:if test="${currentPage > 1}">
+					<li><a href="?page=${currentPage - 1}">&lt;</a></li>
+				</c:if>
+
+				<!-- 페이지 번호 링크 -->
+				<c:forEach var="i" begin="1" end="${totalPage}">
+					<li class="${i == currentPage ? 'active' : ''}"><a
+						href="?page=${i}">${i}</a></li>
+				</c:forEach>
+
+				<!-- 다음 페이지 링크 -->
+				<c:if test="${currentPage < totalPage}">
+					<li><a href="?page=${currentPage + 1}">&gt;</a></li>
+				</c:if>
 			</ul>
 		</div>
 	</main>
