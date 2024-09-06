@@ -23,7 +23,7 @@
 			<c:forEach var="board" items="${memberBoardshowlist}">
 				<li>
 					<hr> <a
-					href="${pageContext.request.contextPath}/memberBoardDetail.membo?id=${board.medicalInfoNumber}">
+					href="${pageContext.request.contextPath}/memberBoardDetail.membo">
 						<div class="medicalKnowledgeList-boardList">${board.medicalInfoTitle}</div>
 						<div class="medicalKnowledgeList-text">
 							${board.medicalInfoText}</div>

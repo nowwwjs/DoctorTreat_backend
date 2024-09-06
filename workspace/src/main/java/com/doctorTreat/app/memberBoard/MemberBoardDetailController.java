@@ -10,29 +10,24 @@ import com.doctorTreat.app.dto.MemberBoardDTO;
 import com.doctorTreat.app.memberBoard.dao.MemberBoardDAO;
 
 public class MemberBoardDetailController implements Execute {
-	@Override
-	public Result execute(HttpServletRequest request, HttpServletResponse response)
-			throws IOException, ServletException {
-		request.setCharacterEncoding("UTF-8");
-		Result result = new Result();
 
-		MemberBoardDAO memberBoardDAO = new MemberBoardDAO();
+    @Override
+    public Result execute(HttpServletRequest request, HttpServletResponse response) throws IOException, ServletException {
+        request.setCharacterEncoding("UTF-8");
+        Result result = new Result();
 
-		// 요청에서 ID 가져오기
-		String medicalInfoNumberParam = request.getParameter("medicalInfoNumber");
-		Integer medicalInfoNumber = Integer.valueOf(medicalInfoNumberParam);
+        MemberBoardDAO memberBoardDAO = new MemberBoardDAO();
 
-		// DAO 호출해서 특정 게시글의 상세 정보 가져오기
-		MemberBoardDTO memberBoardDetail = memberBoardDAO.showDetail(medicalInfoNumber);
+        String medicalInfoNumberParam = request.getParameter("medicalInfoNumber");
+        Integer medicalInfoNumber = Integer.valueOf(medicalInfoNumberParam);
 
-		// 가져온 상세 정보를 request에 저장
-		request.setAttribute("memberBoardshowDetail", memberBoardDetail);
+        MemberBoardDTO memberBoardDetail = memberBoardDAO.showDetail(medicalInfoNumber);
 
-		// 리다이렉트 대신 포워딩을 사용하여 뷰로 이동
-		result.setRedirect(false);
-		result.setPath("/app/board/boardDetailAuth.jsp");
+        request.setAttribute("memberBoardshowDetail", memberBoardDetail);
 
-		// 프론트 컨트롤러에서 포워드 처리
-		return result;
-	}
+        result.setRedirect(false);
+        result.setPath("/app/board/boardDetailAuth.jsp");
+
+        return result;
+    }
 }
