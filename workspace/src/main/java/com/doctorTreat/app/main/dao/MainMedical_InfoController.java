@@ -22,11 +22,12 @@ public class MainMedical_InfoController implements Execute {
         Result result = new Result();
 
         // DAO를 사용하여 의료 정보 제목 목록 가져오기
-        List<String> titles = mainMedicalInfoDAO.getAllMedicalInfoTitles();
+        List<String> titles = mainMedicalInfoDAO.getMedicalInfoTitles();
+        System.out.println("DB에서 가져온 제목 리스트: " + titles);
         
         // 요청 속성에 제목 목록 설정
         request.setAttribute("medicalInfoTitles", titles);
-        System.out.println(123);
+
         
         // 결과 페이지 설정
         result.setPath("/index.jsp");
