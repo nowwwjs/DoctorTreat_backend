@@ -27,8 +27,6 @@ public class DoctorDetailController implements Execute{
 		
 		  // JSP로 데이터를 전달
         request.setAttribute("doctorDetail", doctorDetailPage);
-        System.out.println();
-        System.out.println("출력==========");
 
 //		결과처리
         Result result = new Result();
