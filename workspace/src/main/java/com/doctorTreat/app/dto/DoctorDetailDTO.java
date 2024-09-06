@@ -12,5 +12,12 @@ public class DoctorDetailDTO {
 //FROM DT_DOCTOR DD JOIN DT_HOSPITAL DH 
 //ON DD.HOSPITAL_NUMBER = DH.HOSPITAL_NUMBER
 //WHERE ;
-
+	String hospitalName;
+	String doctorName;
+	String doctorMajor;
+	String hospitalWorkTime;
+	String hospitalLunchTime;
+	String hospitalRestTime;
+	String hospitalNightWork;
+	String hospitalCall;
 }
