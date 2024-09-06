@@ -29,9 +29,9 @@
 	<main class="member-background">
 		<div class="Doctor-signup-container">
 			<!--   <a href="./../../../html/user/member/memberjoin.html">
-				<h2>회원가입</h2>
 			</a> -->
-			<form action="/doctorjoinOk.do" method="post">
+			<form action="${pageContext.request.contextPath}/doctor/doctorJoin.do" method="post">
+				<h2>회원가입</h2>
 
 				<label for="userId">아이디</label>
 				<div class="Doctor-input-group">
@@ -53,8 +53,8 @@
 				<div class="Doctor-input-group">
 					<input type="password" id="confirm-password"
 						name="confirm-password" required> <img
-						class="Doctor-view-second" src="./../../../image/view.png">
-					<img class="Doctor-noview-second" src="./../../../image/noview.png">
+						class="Doctor-view-second" src="${pageContext.request.contextPath}/static/image/view.png">
+					<img class="Doctor-noview-second" src="${pageContext.request.contextPath}/static/image/noview.png">
 					<p class="Doctorjoin-Null"></p>
 				</div>
 
