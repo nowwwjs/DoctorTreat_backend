@@ -51,6 +51,7 @@ public class DoctorBoardFrontController extends HttpServlet {
 			result = new DoctorBoardListController().execute(request, response);
 			request.getRequestDispatcher(result.getPath()).forward(request, response);
 			System.out.println("의료 게시판 보이기");
+			System.out.println("안녕");
 			break;
 		}
 	}
