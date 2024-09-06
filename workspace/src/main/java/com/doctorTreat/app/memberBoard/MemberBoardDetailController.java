@@ -10,29 +10,37 @@ import com.doctorTreat.app.dto.MemberBoardDTO;
 import com.doctorTreat.app.memberBoard.dao.MemberBoardDAO;
 
 public class MemberBoardDetailController implements Execute {
-    @Override
-    public Result execute(HttpServletRequest request, HttpServletResponse response)
-            throws IOException, ServletException {
-        request.setCharacterEncoding("UTF-8");
-        Result result = new Result();
 
-        MemberBoardDAO memberBoardDAO = new MemberBoardDAO();
+	@Override
+	public Result execute(HttpServletRequest request, HttpServletResponse response) throws IOException, ServletException {
+	    request.setCharacterEncoding("UTF-8");
+	    Result result = new Result();
 
-        // 요청에서 ID 가져오기
-        String medicalInfoNumberParam = request.getParameter("medicalInfoNumber");
-        int medicalInfoNumber = Integer.parseInt(medicalInfoNumberParam); // ID를 정수로 변환
+	    MemberBoardDAO memberBoardDAO = new MemberBoardDAO();
 
-        // DAO 호출해서 특정 게시글의 상세 정보 가져오기
-        MemberBoardDTO memberBoardDetail = memberBoardDAO.showDetail(medicalInfoNumber);
+	    // 요청 파라미터에서 info_number만 가져옵니다.
+	    String infoNumberStr = request.getParameter("infoNumber");
 
-        // 가져온 상세 정보를 request에 저장
-        request.setAttribute("memberBoardshowDetail", memberBoardDetail);
+	    
+	    // infoNumberStr을 정수로 변환
+	    int infoNumber = Integer.valueOf(infoNumberStr);
 
-        // 리다이렉트 대신 포워딩을 사용하여 뷰로 이동
-        result.setRedirect(false);
-        result.setPath("/app/board/boardDetailAuth.jsp");
+	    // 값이 제대로 담겼는지 확인하기 위한 출력
+	    System.out.println("Info Number: " + infoNumber);
 
-        // 프론트 컨트롤러에서 포워드 처리
-        return result;
-    }
+	    // DAO 메서드를 호출하여 상세 정보를 가져옵니다.
+	    MemberBoardDTO memberBoardDetail = memberBoardDAO.showDetail(infoNumber);
+	   
+	    // 결과를 요청 속성에 저장합니다.
+	    request.setAttribute("memberBoardshowDetail", memberBoardDetail);
+	    
+	    result.setRedirect(true);
+	    result.setPath("/app/board/boardDetailAuth.jsp");
+
+	    System.out.println(result);
+	    
+	    return result;
+	    
+	}
+
 }
