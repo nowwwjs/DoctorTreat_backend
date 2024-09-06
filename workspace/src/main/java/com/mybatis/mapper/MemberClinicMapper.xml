@@ -42,4 +42,6 @@
 		WHERE
 		DD.DOCTOR_MAJOR = '내과'
 	</select>
+	
+	
 </mapper>
