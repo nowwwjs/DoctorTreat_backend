@@ -14,26 +14,36 @@ import com.doctorTreat.app.memberBoard.dao.MemberBoardDAO;
 
 public class MemberBoardListController implements Execute {
 
-	@Override
-	public Result execute(HttpServletRequest request, HttpServletResponse response)
-			throws IOException, ServletException {
+    @Override
+    public Result execute(HttpServletRequest request, HttpServletResponse response)
+            throws IOException, ServletException {
 
-		request.setCharacterEncoding("UTF-8");
-		Result result = new Result();
-		System.out.println("안녕 ! 컨틀롤러당");
+        request.setCharacterEncoding("UTF-8");
+        Result result = new Result();
 
-		MemberBoardDAO memberBoardDAO = new MemberBoardDAO();
+        MemberBoardDAO memberBoardDAO = new MemberBoardDAO();
 
-		// 리스트를 가져와서 request에 설정
-		List<MemberBoardDTO> memberBoardList = memberBoardDAO.showList();
-		request.setAttribute("memberBoardshowlist", memberBoardList);
-		
-		result.setRedirect(false);
-		result.setPath(request.getContextPath() + "/app/board/medicalKnowledgeList.jsp");
-		
-		// 포워드 처리는 프론트 컨트롤러에서 담당
-		return result;
+        // 페이지 번호와 페이지 크기를 파라미터로 받음. 기본값은 페이지 1, 페이지 크기 5로 설정
+        int page = request.getParameter("page") != null ? Integer.parseInt(request.getParameter("page")) : 1;
+        int pageSize = 5; // 한 페이지에 보여줄 게시물 수
 
-	}
+        // DAO 호출해서 페이지네이션 적용된 리스트 가져오기
+        List<MemberBoardDTO> memberBoardList = memberBoardDAO.showList(page, pageSize);
 
+        // 전체 게시물 수와 총 페이지 수 계산
+        int totalCount = memberBoardDAO.getTotalCount(); // getTotalCount() 메서드를 DAO에 추가해야 합니다.
+        int totalPage = (int) Math.ceil((double) totalCount / pageSize);
+
+        // request에 필요한 데이터 설정
+        request.setAttribute("memberBoardshowlist", memberBoardList);
+        request.setAttribute("currentPage", page);
+        request.setAttribute("totalPage", totalPage);
+
+        // 리다이렉트 대신 포워딩을 사용하여 뷰로 이동
+        result.setRedirect(false);
+        result.setPath("/app/board/medicalKnowledgeList.jsp");
+
+        // 프론트 컨트롤러에서 포워드 처리
+        return result;
+    }
 }

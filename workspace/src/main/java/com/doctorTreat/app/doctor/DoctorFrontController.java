@@ -43,7 +43,8 @@ public class DoctorFrontController extends HttpServlet {
          request.getRequestDispatcher("/app/user/doctorJoin.jsp").forward(request, response);
          System.out.println("회원가입 중");
          break;
-      case "/doctor/doctorJoinOk.do":
+
+      case "/doctor/doctorjoinOk.do":
     	 request.getRequestDispatcher("/app/user/doctorJoinFinish.jsp").forward(request, response);
          System.out.println("회원가입 완료");
          break;
