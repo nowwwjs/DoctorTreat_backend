@@ -10,8 +10,7 @@
 	</insert>
 
 	<!-- 주소 삽입 -->
-	<insert id="joinAddress" parameterType="MemberDTO" useGeneratedKeys="true"
-		keyProperty="addressNumber">
+	<insert id="joinAddress" parameterType="MemberDTO">
 		INSERT INTO DT_ADDRESS (ADDRESS_NUMBER, ADDRESS_POSTAL, ADDRESS_ADDRESS,
 		ADDRESS_DETAIL)
 		VALUES (SEQ_ADDRESS.NEXTVAL, #{addressPostal}, #{addressAddress},
