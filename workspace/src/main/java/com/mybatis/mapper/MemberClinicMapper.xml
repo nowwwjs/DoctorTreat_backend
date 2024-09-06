@@ -11,7 +11,7 @@
 </select>
 
 	<!-- 내과 의사목록 -->
-	<select id="doctorListInner" parameterType="map" resultType="ClinicDoctorListDTO">
+	<select id="doctorListInner" resultType="ClinicDoctorListDTO">
 		SELECT
 		DD.DOCTOR_NAME ,DD.DOCTOR_MAJOR ,DH.HOSPITAL_NAME ,DH.HOSPITAL_CALL
 		FROM DT_DOCTOR DD JOIN DT_HOSPITAL DH ON DD.HOSPITAL_NUMBER =
