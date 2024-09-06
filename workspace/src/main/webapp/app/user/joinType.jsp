@@ -15,7 +15,7 @@
         <div class="jointype-choice">회원 유형</div>
         <div class="jointype-sort">
             <div class="jointype-member"><a href="${request.contextPath}/member/memberJoin.me">일반 회원</a></div>
-            <div class="jointype-doctor"><a href="${request.contextPath}/member/doctorJoin.do">의료 회원</a></div>
+            <div class="jointype-doctor"><a href="${request.contextPath}/doctor/doctorJoin.do">의료 회원</a></div>
         </div>
     </main>
 </body>
