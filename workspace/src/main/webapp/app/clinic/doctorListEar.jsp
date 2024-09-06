@@ -6,7 +6,7 @@
 <head>
     <meta charset="UTF-8">
     <title>DoctorTreat</title>
-    <link rel="stylesheet" href="${pageContext.request.contextPath}/static/css/clinic/doctorList.css">
+    <link rel="stylesheet" href="${pageContext.request.contextPath}/static/css/clinic/doctorList.css?v=1.0">
 </head>
 <body>
     <jsp:include page="${pageContext.request.contextPath}/header.jsp" />
@@ -17,10 +17,10 @@
                 <div class="doctorList-container">
                     <a href="${pageContext.request.contextPath}/app/clinic/doctorDetail.memcl?name=${doctor.doctorName}">
                         <div class="doctorList-name">
-                            의사명: ${doctor.doctorName} <span>${doctor.doctorMajor}</span>
+                            의사명 : ${doctor.doctorName} / <span>진료과 : ${doctor.doctorMajor}</span>
                         </div>
-                        <div class="doctorList-HospitalName">병원 이름: ${doctor.hospitalName}</div>
-                        <div class="doctorList-MainNumber">${doctor.hospitalCall}</div>
+                        <div class="doctorList-HospitalName">병원이름 : ${doctor.hospitalName}</div>
+                        <div class="doctorList-MainNumber">전화번호 : ${doctor.hospitalCall}</div>
                     </a>
                 </div>
             </c:forEach>

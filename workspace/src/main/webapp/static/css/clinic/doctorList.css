@@ -29,16 +29,28 @@ main {
 	padding-bottom: 10px;
 }
 
-.pagenation-container {
-	margin-top: 30px;
-	display: flex;
-	justify-content: center;
-	text-align: center;
+.pagination-container {
+    text-align: center;
+    margin-top: 20px;
 }
 
 .doctorList-ear-pagenation {
-	display: flex;
-	list-style: none;
+    display: inline-block;
+    list-style: none;
+    padding: 0;
+}
+
+.doctorList-ear-pagenation li {
+    display: inline;
+    margin: 0 5px;
+}
+
+.doctorList-ear-pagenation a {
+    cursor: pointer;
+    letter-spacing: 5px;
+    font-size: 18px;
+    color: black;
+    text-decoration: none;
 }
 
 .doctorList-ear-pagenation a {
