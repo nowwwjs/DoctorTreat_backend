@@ -1,39 +1,50 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+
 <!DOCTYPE html>
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Insert title here</title>
+<title>게시글 상세보기</title>
 <link rel="stylesheet"
 	href="${pageContext.request.contextPath}/static/css/board/boardDetail.css">
-	<jsp:include page="/header.jsp" /> 
+<jsp:include page="/header.jsp" />
 </head>
 <body>
 	<main>
 		<!-- 의료지식인 게시글 상세페이지 -->
-		<div class="boardDetail-title">의료지식인</div>
-		<div class="boardDetail-boardTextContainer">
-			<div class="boardDetail-boardTop">
-				<div class="boardDetail-boardTitle">방구 참으면 어떻게 되나요</div>
-				<div class="boardDetail-writer">
-					<div class="boardDetail-name">김OO</div>
-					<div class="boardDetail-date">2024-08-27</div>
+		<c:if test="${not empty memberBoardshowDetail}">
+			<div class="boardDetail-title">의료지식인</div>
+			<div class="boardDetail-boardTextContainer">
+				<div class="boardDetail-boardTop">
+					<div class="boardDetail-boardTitle">${memberBoardshowDetail.medicalInfoTitle}</div>
+					<div class="boardDetail-writer">
+						<div class="boardDetail-name">${memberBoardshowDetail.memberName}</div>
+						<div class="boardDetail-date">${memberBoardshowDetail.date}</div>
+					</div>
+					<form
+						action="${pageContext.request.contextPath}/memberBoard/updateBoard.membo?id=${memberBoardshowDetail.id}"
+						method="post">
+						<button type="submit" class="boardDetail-modifyBtn">글 수정</button>
+						<button type="submit"
+							formaction="${pageContext.request.contextPath}/memberBoard/deleteBoard.membo?id=${memberBoardshowDetail.id}"
+							class="boardDetail-deleteBtn">삭제</button>
+					</form>
 				</div>
-				<form action="./../../../html/board/member/updateBoard.html">
-					<button class="boardDetail-modifyBtn">글 수정</button>
-					<button class="boardDetail-deleteBtn">삭제</button>
-				</form>
+				<div class="boardDetail-boardText">${memberBoardshowDetail.medicalInfoText}</div>
 			</div>
-			<div class="boardDetail-boardText">방구참기 챌린지 중인데 혹시 오래참으면 어떻게
-				되는지 궁금합니다</div>
-		</div>
-		<!-- 의사댓글창 -->
-		<div class="boardDetail-comentBox">
-			<div class="boardDetail-doctorName">내과 전문의 : 김규열</div>
-			<div class="boardDetail-doctorComent">내공 냠냠</div>
-		</div>
+
+			<!-- 의사댓글창 -->
+			<c:if test="${not empty doctorCommentText}">
+				<div class="boardDetail-comentBox">
+					<div class="boardDetail-doctorName">내과 전문의 :
+						${doctorComment.doctorName}</div>
+					<div class="boardDetail-doctorComent">${doctorComment.commentText}</div>
+				</div>
+			</c:if>
+		</c:if>
 	</main>
 </body>
-<jsp:include page="/footer.jsp" /> 
+<jsp:include page="/footer.jsp" />
 </html>
