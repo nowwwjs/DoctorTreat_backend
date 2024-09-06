@@ -1,19 +1,18 @@
 package com.doctorTreat.app.member.dao;
 
 import org.apache.ibatis.session.SqlSession;
-import org.apache.ibatis.session.SqlSessionFactory;
 
 import com.doctorTreat.app.dto.MemberDTO;
+import com.mybatis.config.MyBatisConfig;
 
 public class MemberDAO {
-	private SqlSessionFactory sqlSessionFactory;
-
-	public MemberDAO(SqlSessionFactory sqlSessionFactory) {
-		this.sqlSessionFactory = sqlSessionFactory;
+	private SqlSession sqlSession;
+	
+	public MemberDAO() {
+		sqlSession = MyBatisConfig.getSqlSessionFactory().openSession(true);
 	}
 
 	public void join(MemberDTO member) throws Exception {
-		SqlSession sqlSession = sqlSessionFactory.openSession();
 		try {
 
 			sqlSession.insert("main.joinAddress", member);
@@ -25,5 +24,8 @@ public class MemberDAO {
 			sqlSession.close();
 		}
 	}
+	
+
+	
 
 }

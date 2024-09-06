@@ -5,12 +5,12 @@ public class MemberDTO {
 	private String memberId;
 	private String memberPw;
 	private String memberName;
-	private String memberBirth;
-	private String memberPhone;
-	private int addressNumber; // 주소 번호
 	private String addressPostal;
 	private String addressAddress;
 	private String addressDetail;
+	private String memberBirth;
+	private String memberPhone;
+	private int addressNumber; // 주소 번호
 
 	public int getMemberNumber() {
 		return memberNumber;
@@ -44,30 +44,6 @@ public class MemberDTO {
 		this.memberName = memberName;
 	}
 
-	public String getMemberBirth() {
-		return memberBirth;
-	}
-
-	public void setMemberBirth(String memberBirth) {
-		this.memberBirth = memberBirth;
-	}
-
-	public String getMemberPhone() {
-		return memberPhone;
-	}
-
-	public void setMemberPhone(String memberPhone) {
-		this.memberPhone = memberPhone;
-	}
-
-	public int getAddressNumber() {
-		return addressNumber;
-	}
-
-	public void setAddressNumber(int addressNumber) {
-		this.addressNumber = addressNumber;
-	}
-
 	public String getAddressPostal() {
 		return addressPostal;
 	}
@@ -92,12 +68,37 @@ public class MemberDTO {
 		this.addressDetail = addressDetail;
 	}
 
+	public String getMemberBirth() {
+		return memberBirth;
+	}
+
+	public void setMemberBirth(String memberBirth) {
+		this.memberBirth = memberBirth;
+	}
+
+	public String getMemberPhone() {
+		return memberPhone;
+	}
+
+	public void setMemberPhone(String memberPhone) {
+		this.memberPhone = memberPhone;
+	}
+
+	public int getAddressNumber() {
+		return addressNumber;
+	}
+
+	public void setAddressNumber(int addressNumber) {
+		this.addressNumber = addressNumber;
+	}
+
 	@Override
 	public String toString() {
 		return "MemberDTO [memberNumber=" + memberNumber + ", memberId=" + memberId + ", memberPw=" + memberPw
-				+ ", memberName=" + memberName + ", memberBirth=" + memberBirth + ", memberPhone=" + memberPhone
-				+ ", addressNumber=" + addressNumber + ", addressPostal=" + addressPostal + ", addressAddress="
-				+ addressAddress + ", addressDetail=" + addressDetail + "]";
+				+ ", memberName=" + memberName + ", addressPostal=" + addressPostal + ", addressAddress="
+				+ addressAddress + ", addressDetail=" + addressDetail + ", memberBirth=" + memberBirth
+				+ ", memberPhone=" + memberPhone + ", addressNumber=" + addressNumber + "]";
 	}
 
+	
 }
