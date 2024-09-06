@@ -13,7 +13,7 @@ document.addEventListener('DOMContentLoaded', function() {
     { name: "정시우", department: "이비인후과", address: "시흥시 *** ****", phone: "031-0000-1111" },
     { name: "이기철", department: "이비인후과", address: "화성시 *** ****", phone: "031-0000-2222" },
     { name: "신승민", department: "이비인후과", address: "서울시 *** ****", phone: "02-0000-3333" },
-    { name: "김규열", department: "이비인후과", address: "서울시 *** ****", phone: "02-0000-4444" },
+    { name: "김규열", department: "이비인후과", address: "과천시 *** ****", phone: "02-0000-4444" },
     { name: "서원우", department: "이비인후과", address: "부천시 *** ****", phone: "032-0000-5555" },
     { name: "송아성", department: "내과", address: "서울시 *** ****", phone: "02-0000-0000" },
     { name: "정승환", department: "내과", address: "수원시 *** ****", phone: "031-1111-0000" },
