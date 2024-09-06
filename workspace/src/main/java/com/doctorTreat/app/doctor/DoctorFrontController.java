@@ -39,11 +39,11 @@ public class DoctorFrontController extends HttpServlet {
       String target = request.getRequestURI().substring(request.getContextPath().length());
       System.out.println(target);
       switch(target) {
-      case "/doctorjoin.do":
+      case "/doctor/doctorJoin.do":
          request.getRequestDispatcher("/app/user/doctorJoin.jsp").forward(request, response);
          System.out.println("회원가입 중");
          break;
-      case "/doctorjoinOk.do":
+      case "/doctor/doctorjoinOk.do":
     	 request.getRequestDispatcher("/app/user/doctorJoinFinish.jsp").forward(request, response);
          System.out.println("회원가입 완료");
          break;
