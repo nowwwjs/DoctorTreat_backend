@@ -16,16 +16,14 @@ public class MemberClinicDAO {
 		sqlSession = MyBatisConfig.getSqlSessionFactory().openSession(true);
 	}
 
-//	이비인후과 의사 리스트 조회
-	public List<ClinicDoctorListDTO> getEarDoctors(int offset, int limit) {
-		Map<String, Object> params = new HashMap<>();
-		params.put("offset", offset);
-		params.put("limit", limit);
-		return sqlSession.selectList("memberClinic.doctorListEar", params);
-	}
+    // 이비인후과 의사 전체 리스트 조회 (매개변수 없음)
+    public List<ClinicDoctorListDTO> getEarDoctors() {
+        return sqlSession.selectList("memberClinic.doctorListEar");
+    }
 
-	public int getTotalEarDoctorCount() {
-		return sqlSession.selectOne("memberClinic.getTotalDoctorEarCount");
-	}
+    // 이비인후과 의사 수 조회 (페이지네이션에 필요)
+    public int getTotalEarDoctorCount() {
+        return sqlSession.selectOne("memberClinic.getTotalDoctorEarCount");
+    }
 
 }
