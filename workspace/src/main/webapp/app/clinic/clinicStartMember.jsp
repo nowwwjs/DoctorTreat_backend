@@ -11,7 +11,6 @@
 <body>
 	<jsp:include page="${pageContext.request.contextPath}/header.jsp" />
 	<main>
-		<%-- 일반회원일 경우 --%>
 		<div class="clinicMember-choice">과 선택</div>
 		<div class="clinicMember-department">
 			<form action="${pageContext.request.contextPath}/doctorListEar.memcl"
