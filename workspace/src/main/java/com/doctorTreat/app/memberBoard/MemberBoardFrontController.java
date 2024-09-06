@@ -37,12 +37,9 @@ public class MemberBoardFrontController extends HttpServlet {
 		case "/BoardList.membo":
 			result = new MemberBoardListController().execute(request, response);
 			break;
-//		case "/memberBoardDetail.membo":
-//			result = new MemberBoardDetailController().execute(request, response);
-//			if(result != null) {
-//				System.out.println("되나 ?");				
-//			}
-//			break;
+		case "/memberBoardDetail.membo":
+			result = new MemberBoardDetailController().execute(request, response);
+			break;
 		case "/memberBoardWrite.membo":
 			System.out.println("글 작성!");
 			break;

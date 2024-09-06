@@ -20,21 +20,21 @@
 
 
 		<ul class="medicalKnowledgeList-board">
-			<c:forEach var="board" items="${memberBoardshowlist}">
-				<li>
-					<hr> <a
-					href="${pageContext.request.contextPath}/memberBoardDetail.membo">
-						<div class="medicalKnowledgeList-boardList">${board.medicalInfoTitle}</div>
-						<div class="medicalKnowledgeList-text">
-							${board.medicalInfoText}</div>
-						<div class="medicalKnowledgeList-writer">
-							<img
-								src="${pageContext.request.contextPath}/static/image/QnA.png">
-							${board.memberName}
-						</div>
-				</a>
-				</li>
-			</c:forEach>
+				<c:forEach var="board" items="${memberBoardshowlist}">
+					<li>
+						<hr> <a
+						href="${pageContext.request.contextPath}/memberBoardDetail.membo?infoNumber=${board.medicalInfoNumber}">
+							<div class="medicalKnowledgeList-boardList">${board.medicalInfoTitle}</div>
+							<div class="medicalKnowledgeList-text">
+								${board.medicalInfoText}</div>
+							<div class="medicalKnowledgeList-writer">
+								<img
+									src="${pageContext.request.contextPath}/static/image/QnA.png">
+								${board.memberName}
+							</div>
+					</a>
+					</li>
+				</c:forEach>
 		</ul>
 
 		<!-- 글쓰기 버튼 -->
