@@ -53,16 +53,20 @@ public class MemberClinicFrontController extends HttpServlet {
 
 		Result result = new Result();
 		switch (target) {
+		case "/app/clinic/clinicStartMember.memcl":
+			request.getRequestDispatcher("/app/clinic/clinicStartMember.jsp").forward(request, response);
+			break;
 		case "/doctorListEar.memcl":
 //	    	 new DoctorListController().execute(request, response);
 //	    	 response.sendRedirect(request.getContextPath());
 			result = new DoctorListController().execute(request, response);
 			// 기타 case 처리
+//			request.getRequestDispatcher(result.getPath()).forward(request, response);
 			if (result != null) {
 				if (result.isRedirect()) {
-					response.sendRedirect(result.getPath());
-				} else {
 					request.getRequestDispatcher(result.getPath()).forward(request, response);
+				} else {
+					response.sendRedirect(result.getPath());
 				}
 			}
 			break;
