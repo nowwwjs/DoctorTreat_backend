@@ -36,4 +36,8 @@
 		ON DD.HOSPITAL_NUMBER = DH.HOSPITAL_NUMBER
 		WHERE DH.HOSPITAL_CALL = #{hospitalCall}
 	</select>
+	
+	<!--  -->
+	
+	
 </mapper>

@@ -29,9 +29,7 @@ public class MemberClinicDAO {
 
 	// 의사 상세정보 조회
 	public List<DoctorDetailDTO> getDoctorDetail(String hospitalCall) {
-		System.out.println("메소드");
-		return sqlSession.selectList("memberClinic.getDoctorDetail", hospitalCall); //+++++++
-		//쿼리스트링으로 들어가는 값을 전달하지 않음
+		return sqlSession.selectList("memberClinic.getDoctorDetail", hospitalCall);
 	}
 
 }
