@@ -53,28 +53,31 @@ public class MemberClinicFrontController extends HttpServlet {
 		case "/app/clinic/clinicStartMember.memcl":
 			request.getRequestDispatcher("/app/clinic/clinicStartMember.jsp").forward(request, response);
 			break;
-			
+
 //		과 선택에서 이비인후과 선택시 이비인후과컨트롤러 실행 후 의사리스트목록 출력
 		case "/doctorListEar.memcl":
 			result = new EarDoctorListController().execute(request, response);
 			request.getRequestDispatcher(result.getPath()).forward(request, response);
 			break;
-			
+
 //		과 선택에서 내과 선택시 내과컨트롤러 실행 후 의사리스트목록 출력
 		case "/doctorListInner.memcl":
 			result = new InnerDoctorListController().execute(request, response);
 			request.getRequestDispatcher(result.getPath()).forward(request, response);
 			break;
-			
+
 //		의사 목록에서 의사 선택시 해당 의사와 일치하는 상세페이지
 		case "/app/clinic/doctorDetail.memcl":
 			result = new DoctorDetailController().execute(request, response);
 			request.getRequestDispatcher(result.getPath()).forward(request, response);
 			break;
-			
+
+//		의사 상세정보에서 진료신청 제출시 해당의사와의 채팅 연결 후 채팅리스트 페이지
 		case "/chatListMember.memcl":
-			request.getRequestDispatcher("/app/clinic/chatListMember.jsp").forward(request, response);
+			result = new ChatListMemberController().execute(request, response);
+			request.getRequestDispatcher(result.getPath()).forward(request, response);
 			break;
+
 		case "/app/clinic/chatRoomMember.memcl":
 			request.getRequestDispatcher("/app/clinic/chatRoomMember.jsp").forward(request, response);
 			break;
@@ -87,6 +90,7 @@ public class MemberClinicFrontController extends HttpServlet {
 //					response.sendRedirect(result.getPath());
 //				}
 //			}
+		
 //	      if (result != null) {
 //	         if (result.isRedirect()) {
 //	            response.sendRedirect(result.getPath());
