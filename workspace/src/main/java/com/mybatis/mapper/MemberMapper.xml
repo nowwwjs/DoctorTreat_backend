@@ -4,9 +4,9 @@
 	<!-- 회원 삽입 -->
 	<insert id="join" parameterType="memberDTO">
 		INSERT INTO DT_MEMBER (MEMBER_NUMBER, MEMBER_ID, MEMBER_PW, MEMBER_NAME,
-		MEMBER_BIRTH, MEMBER_PHONE, ADDRESS_NUMBER)
+		MEMBER_BIRTH, MEMBER_PHONE)
 		VALUES (MEMBER_SEQ.NEXTVAL, #{memberId}, #{memberPw}, #{memberName},
-		#{memberBirth}, #{memberPhone}, #{addressNumber})
+		#{memberBirth}, #{memberPhone})
 	</insert>
 
 	<!-- 주소 삽입 -->
