@@ -25,131 +25,124 @@
 
 <body>
 
-
 	<main class="member-background">
 		<div class="Doctor-signup-container">
-			<!--   <a href="./../../../html/user/member/memberjoin.html">
-			</a> -->
-			<form action="${pageContext.request.contextPath}/doctor/doctorJoin.do" method="get">
+			<form
+				action="${pageContext.request.contextPath}/doctor/doctorJoinOk.do"
+				method="get">
 				<h2>회원가입</h2>
 
-				<label for="userId">아이디</label>
+				<label for="doctorId">아이디</label>
 				<div class="Doctor-input-group">
-					<input class="member-input-focus" type="text" id="userId"
-						name="userId" required>
+					<input class="member-input-focus" type="text" id="doctorId"
+						name="doctorId" required>
 					<button class="Doctor-join-checkIdBtn">중복 확인</button>
 					<p class="Doctorjoin-Null"></p>
 				</div>
 
-				<label for="password">비밀번호</label>
+				<label for="doctorPassword">비밀번호</label>
 				<div class="Doctor-input-group">
-					<input type="password" id="password" name="password" required>
+					<input type="password" id="doctorPassword" name="doctorPassword" required>
 					<img class="Doctor-view-first" src="./../../../image/view.png">
 					<img class="Doctor-noview-first" src="./../../../image/noview.png">
 					<p class="Doctorjoin-Null"></p>
 				</div>
 
-				<label for="confirm-password">비밀번호 확인</label>
+				<label for="doctorConfirmPassword">비밀번호 확인</label>
 				<div class="Doctor-input-group">
-					<input type="password" id="confirm-password"
-						name="confirm-password" required> <img
-						class="Doctor-view-second" src="${pageContext.request.contextPath}/static/image/view.png">
-					<img class="Doctor-noview-second" src="${pageContext.request.contextPath}/static/image/noview.png">
+					<input type="password" id="doctorConfirmPassword"
+						name="doctorConfirmPassword" required> <img
+						class="Doctor-view-second"
+						src="${pageContext.request.contextPath}/static/image/view.png">
+					<img class="Doctor-noview-second"
+						src="${pageContext.request.contextPath}/static/image/noview.png">
 					<p class="Doctorjoin-Null"></p>
 				</div>
 
-				<label for="userName">이름</label>
+				<label for="doctorName">이름</label>
 				<div class="Doctor-input-group">
-					<input type="text" id="userName" name="userName" required>
+					<input type="text" id="doctorName" name="doctorName" required>
 					<p class="Doctorjoin-Null"></p>
 				</div>
 
-				<label for="importAdress">주소</label>
+				<label for="doctorPostcode">주소</label>
 				<div class="Doctor-input-group">
-					<input type="text" id="postcode" placeholder="우편번호">
+					<input type="text" id="doctorPostcode" name="addressPostal" placeholder="우편번호">
 					<p class="Doctorjoin-Null"></p>
 					<button class="postcode-search" onclick="execDaumPostcode()">주소
 						찾기</button>
 				</div>
 
 				<div class="Doctor-input-group">
-					<input type="text" id="address" placeholder="주소">
+					<input type="text" id="doctorAddress" name="addressAddress" placeholder="주소">
 					<p class="Doctorjoin-Null"></p>
 				</div>
 
 				<div class="Doctor-input-group">
-					<input type="text" id="detailAddress" placeholder="상세 주소">
+					<input type="text" id="doctorDetailAddress" name="addressDetail" placeholder="상세 주소">
 					<p class="Doctorjoin-Null"></p>
 				</div>
 
-				<label for="phoneNumber">핸드폰 번호</label>
+				<label for="doctorPhoneNumber">핸드폰 번호</label>
 				<div class="Doctor-input-group">
-					<input type="text" id="phoneNumber" name="phoneNumber" required>
+					<input type="text" id="doctorPhoneNumber" name="doctorPhoneNumber" required>
 					<button class="Doctor-join-request">인증 요청</button>
 					<p class="Doctorjoin-Null"></p>
 				</div>
-				<br> <label for="DoctorName">병원이름</label>
+				<br> <label for="doctorHospitalName">병원이름</label>
 				<div class="Doctor-input-group">
-					<input type="text" id="DoctorName" name="DoctorName" required>
+					<input type="text" id="doctorHospitalName" name="doctorHospitalName" required>
 					<p class="Doctorjoin-Null"></p>
 				</div>
-				<br> <label for="DoctorLicense">면허번호</label>
+				<br> <label for="doctorLicense">면허번호</label>
 				<div class="Doctor-input-group">
-					<input type="text" id="DoctorLicense" name="DoctorLicense" required>
+					<input type="text" id="doctorLicense" name="doctorLicense" required>
 					<p class="Doctorjoin-Null"></p>
 				</div>
-				<br> <label for="DoctormedicalSubject">진료과목</label>
+				<br> <label for="doctorMedicalSubject">진료과목</label>
 				<div class="Doctor-input-group">
-					<input type="text" id="Doctormedicalsubject"
-						name="DoctormedicalSubject" required>
+					<input type="text" id="doctorMedicalSubject"
+						name="doctorMedicalSubject" required>
 					<p class="Doctorjoin-Null"></p>
 				</div>
 				<br>
 
-
 				<div class="container">
-					<form id="terms-form" action="submit_form.php" method="post">
-						<!-- 전체 동의 체크박스 -->
-						<div class="checkbox-container">
-							<input type="checkbox" id="agree-all-checkbox"> <label
-								for="agree-all-checkbox"><strong>전체 약관에 동의합니다.</strong></label>
-						</div>
-						<hr>
-						<br>
-						<!-- 개별 약관 체크박스들 -->
-						<div class="checkbox-container">
-							<input type="checkbox" id="terms1" class="agree-checkbox">
-							<label for="terms1">전화처방 등 원격진료 서비스는 정부 정책의 변경에 따라 예고 없이
-								중단될 수 있으며, 회사는 이에 대해 아무런 책임을 지지 않습니다.</label>
-						</div>
-						<br>
-						<div class="checkbox-container">
-							<input type="checkbox" id="terms2" class="agree-checkbox">
-							<label for="terms2">닥터트리 및 닥터트리 관련 제반 서비스의 이용과 관련하여 필요한
-								사항을 규정합니다.</label>
-						</div>
-						<br>
-						<div class="checkbox-container">
-							<input type="checkbox" id="terms3" class="agree-checkbox">
-							<label for="terms3">개인 정보 수집 및 이용에 동의합니다.</label>
-						</div>
-					</form>
+					<div class="checkbox-container">
+						<input type="checkbox" id="agree-all-checkbox"> <label
+							for="agree-all-checkbox"><strong>전체 약관에 동의합니다.</strong></label>
+					</div>
+					<hr>
+					<br>
+					<!-- 개별 약관 체크박스들 -->
+					<div class="checkbox-container">
+						<input type="checkbox" id="terms1" class="agree-checkbox">
+						<label for="terms1">전화처방 등 원격진료 서비스는 정부 정책의 변경에 따라 예고 없이
+							중단될 수 있으며, 회사는 이에 대해 아무런 책임을 지지 않습니다.</label>
+					</div>
+					<br>
+					<div class="checkbox-container">
+						<input type="checkbox" id="terms2" class="agree-checkbox">
+						<label for="terms2">닥터트리 및 닥터트리 관련 제반 서비스의 이용과 관련하여 필요한
+							사항을 규정합니다.</label>
+					</div>
+					<br>
+					<div class="checkbox-container">
+						<input type="checkbox" id="terms3" class="agree-checkbox">
+						<label for="terms3">개인 정보 수집 및 이용에 동의합니다.</label>
+					</div>
 				</div>
 
 				<br> <br>
 
-				<button type="submit" class="Doctor-signup-btn">가입하기</button>
+				<button class="Doctor-signup-btn">가입하기</button>
 			</form>
 		</div>
 	</main>
 
 
 	<script src="https://ssl.daumcdn.net/dmaps/map_js_init/postcode.v2.js"></script>
-	<script
-		src="${pageContext.request.contextPath}/static/js/user/doctorJoin.js"></script>
+
 </body>
 <jsp:include page="${pageContext.request.contextPath}/footer.jsp" />
 </html>
-
-
-
