@@ -12,7 +12,7 @@ import com.doctorTreat.app.Result;
 import com.doctorTreat.app.dto.ClinicDoctorListDTO;
 import com.doctorTreat.app.memberClinic.dao.MemberClinicDAO;
 
-public class DoctorListController implements Execute {
+public class EarDoctorListController implements Execute {
 
 	@Override
 	public Result execute(HttpServletRequest request, HttpServletResponse response)
