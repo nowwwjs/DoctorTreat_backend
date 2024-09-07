@@ -29,7 +29,7 @@
 		<div class="Doctor-signup-container">
 			<form
 				action="${pageContext.request.contextPath}/doctor/doctorJoinOk.do"
-				method="get">
+				method="post">
 				<h2>회원가입</h2>
 
 				<label for="doctorId">아이디</label>
