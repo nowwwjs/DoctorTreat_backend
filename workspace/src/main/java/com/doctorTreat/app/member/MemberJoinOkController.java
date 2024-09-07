@@ -34,13 +34,6 @@ public class MemberJoinOkController implements Execute {
 		memberDTO.setAddressAddress(request.getParameter("addressAddress"));
 		memberDTO.setAddressDetail(request.getParameter("addressDetail"));
 
-		// 문자열 Integer로 변환
-//           String ageParam = request.getParameter("memberAge");
-//           if (ageParam != null && !ageParam.isEmpty()) {
-//              memberDTO.setMemberAge(Integer.parseInt(ageParam));
-//           }
-//           memberDTO.setMemberGender(request.getParameter("memberGender"));
-
 		// 디버깅용 로그 출력
 		System.out.println("MemberDTO : " + memberDTO);
 

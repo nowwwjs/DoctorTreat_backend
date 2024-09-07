@@ -2,18 +2,18 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="main">
 	<!-- 회원 삽입 -->
-	<insert id="join" parameterType="MemberDTO">
+	<insert id="join" parameterType="memberDTO">
 		INSERT INTO DT_MEMBER (MEMBER_NUMBER, MEMBER_ID, MEMBER_PW, MEMBER_NAME,
-		MEMBER_BIRTH, MEMBER_PHONE, ADDRESS_NUMBER)
-		VALUES (SEQ_MEMBER.NEXTVAL, #{memberId}, #{memberPw}, #{memberName},
-		#{memberBirth}, #{memberPhone}, #{addressNumber})
+		MEMBER_BIRTH, MEMBER_PHONE)
+		VALUES (MEMBER_SEQ.NEXTVAL, #{memberId}, #{memberPw}, #{memberName},
+		#{memberBirth}, #{memberPhone})
 	</insert>
 
 	<!-- 주소 삽입 -->
-	<insert id="joinAddress" parameterType="MemberDTO">
+	<insert id="joinAddress" parameterType="memberDTO">
 		INSERT INTO DT_ADDRESS (ADDRESS_NUMBER, ADDRESS_POSTAL, ADDRESS_ADDRESS,
 		ADDRESS_DETAIL)
-		VALUES (SEQ_ADDRESS.NEXTVAL, #{addressPostal}, #{addressAddress},
+		VALUES (ADDRESS_SEQ.NEXTVAL, #{addressPostal}, #{addressAddress},
 		#{addressDetail})
 	</insert>
 

@@ -23,6 +23,7 @@
 			allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
 			referrerpolicy="strict-origin-when-cross-origin" allowfullscreen>
 		</iframe>
+		s
 
 		<!-- 의료 지식인  -->
 		<div id="main-medic">
@@ -119,6 +120,7 @@
 	<!-- 버튼들  -->
 	<div id="main-scroll-book">
 		<div id="main-book">
+		
 			<a href="./../../html/clinicMember/choice.html"><span>진료하러
 					가기</span></a>
 		</div>
@@ -127,8 +129,8 @@
 				src="${pageContext.request.contextPath}/static/image/toTop.png"></span>
 		</div>
 	</div>
-	<script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
-	<script src="${pageContext.request.contextPath}/static/js/main.js"></script>
+	<!--  <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script> -->
+	<!--  <script src="${pageContext.request.contextPath}/static/js/main.js"></script> -->
 </body>
 
 <jsp:include page="${pageContext.request.contextPath}/footer.jsp" />
