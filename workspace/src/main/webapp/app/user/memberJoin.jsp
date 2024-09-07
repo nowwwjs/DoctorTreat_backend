@@ -28,7 +28,7 @@
 
 				<label for="password">비밀번호</label>
 				<div class="member-input-group">
-					<input type="password" id="password" name="memberPassword" required>
+					<input type="password" id="password" name="memberPw" required>
 					<img class="memberjoin-view-first"
 						src="${pageContext.request.contextPath}/static/image/view.png">
 					<img class="memberjoin-noview-first"
@@ -64,7 +64,7 @@
 				</div>
 				<div class="input-group1">
 					<input type="text" id="detailAddress" name="adressDetail"
-						placeholder="상세 주소">
+						placeholder="상세 주소">	
 				</div>
 
 				<label for="birth">생년월일</label>
