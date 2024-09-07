@@ -43,13 +43,13 @@
 					</div>
 					<div class="doctorDetail-closed-bottom">
 						<div>야간진료</div>
-						<div>${doctorDetail[0].doctorNightWork}</div>
+						<div>${doctorDetail[0].hospitalNightWork}</div>
 					</div>
 				</div>
 			</div>
 			<div class="hospital-phoneNumber">
 				<div id="doctorDetail-number">병원 번호</div>
-				<div id="doctorDetail-hospital-num">${doctorDetail[0].doctorHospitalCall}</div>
+				<div id="doctorDetail-hospital-num">${doctorDetail[0].hospitalCall}</div>
 			</div>
 			<div class="hospital-address">병원위치</div>
 			<div class="hospital-location">
