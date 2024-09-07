@@ -1,8 +1,6 @@
 package com.doctorTreat.app.doctor;
 
 import java.io.IOException;
-import java.rmi.ServerException;
-
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
@@ -11,73 +9,48 @@ import com.doctorTreat.app.Result;
 import com.doctorTreat.app.doctor.dao.DoctorDAO;
 import com.doctorTreat.app.dto.DoctorDTO;
 
-public class DoctorJoinController implements Execute{
+public class DoctorJoinController implements Execute {
 
-	
-	public Result execute(HttpServletRequest request, HttpServletResponse response) throws IOException, ServerException {
-		// TODO Auto-generated method stub
-		  // 인코딩 설정확인
-	    request.setCharacterEncoding("UTF-8");
+    @Override
+    public Result execute(HttpServletRequest request, HttpServletResponse response)
+            throws IOException {
+        // 인코딩 설정
+        request.setCharacterEncoding("UTF-8");
 
-	    // MemberDTO와 DAO 객체 생성
-	    DoctorDTO doctorDTO = new DoctorDTO();
-	    DoctorDAO doctorDAO = new DoctorDAO();
-	    Result result = new Result();
+        // DTO와 DAO 객체 생성
+        DoctorDTO doctorDTO = new DoctorDTO();
+        DoctorDAO doctorDAO = new DoctorDAO();
+        Result result = new Result();
 
-	    // 폼데이터 받아오기
-	    String numberParam = request.getParameter("doctorNumber");
-	    if(numberParam != null && !numberParam.isEmpty()) {
-	    	doctorDTO.setDoctorNumber(Integer.parseInt(numberParam));
-	    }
-	    
-	    doctorDTO.setDoctorId(request.getParameter("doctorId"));
-	    doctorDTO.setDoctorPw(request.getParameter("doctorPw"));
-	    doctorDTO.setDoctorName(request.getParameter("doctorName"));
-	    doctorDTO.setDoctorPhone(request.getParameter("doctorPhone"));
-	    doctorDTO.setDoctorLicense(request.getParameter("doctorLicense"));
-	    doctorDTO.setDoctorMajor(request.getParameter("doctorMajor"));
-	    
-	    String hospitalParam = request.getParameter("hospitalNumber");
-	    if(hospitalParam != null && hospitalParam.isEmpty()) {
-	    	doctorDTO.setHospitalNumber(Integer.parseInt(hospitalParam));
-	    }
-	    
-	    doctorDTO.setHospitalName(request.getParameter("hospitalName"));
-	    doctorDTO.setAddressPostal(request.getParameter("addressPostal"));
-	    doctorDTO.setAddressAddress(request.getParameter("addressAddress"));
-	    doctorDTO.setAddressDetail(request.getParameter("addressDetail"));
-	    
-	    String hospitalParam1 = request.getParameter("hospitalNumber");
-	    if (hospitalParam1 != null && hospitalParam1.isEmpty()) {
-	        doctorDTO.setHospitalNumber(Integer.parseInt(hospitalParam1));
-	    }
-	    
-	    
-	    
-	    // 문자열 Integer로 변환
-//	    String ageParam = request.getParameter("doctorAge");
-//	    if (ageParam != null && !ageParam.isEmpty()) {
-//	       doctorDTO.setDoctorAge(Integer.parseInt(ageParam));
-//	    }
-//	    doctorDTO.setDoctorGender(request.getParameter("doctorGender"));
+        // 폼 데이터 받아오기 및 DTO 설정
+        doctorDTO.setDoctorId(request.getParameter("doctorId"));
+        doctorDTO.setDoctorPw(request.getParameter("doctorPassword"));
+        doctorDTO.setDoctorName(request.getParameter("doctorName"));
+        doctorDTO.setDoctorPhone(request.getParameter("doctorPhoneNumber"));
+        doctorDTO.setDoctorLicense(request.getParameter("doctorLicense"));
+        doctorDTO.setDoctorMajor(request.getParameter("doctorMedicalSubject"));
+        doctorDTO.setHospitalName(request.getParameter("doctorHospitalName"));
+        doctorDTO.setAddressPostal(request.getParameter("addressPostal"));
+        doctorDTO.setAddressAddress(request.getParameter("addressAddress"));
+        doctorDTO.setAddressDetail(request.getParameter("addressDetail"));
 
-	    // 디버깅용 로그 출력
-	    System.out.println("DoctorDTO : " + doctorDTO);
+        System.out.println(doctorDTO);
 
-	    // 데이터베이스에 회원 정보 저장
-	    try {
-			doctorDAO.joinDoctor(doctorDTO);
-		} catch (Exception e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
+        try {
+            // DAO 메서드 호출
+          doctorDAO.joinDoctorTransaction(doctorDTO); // 트랜잭션 메서드 호출
 
-	    // 결과 처리
-	    result.setRedirect(true);
-	    result.setPath(request.getContextPath() + "/doctor/doctorLogin.jsp");
-	    // 성공후 이동할 페이지 설정
-	    return result;
-	 }
+            // 성공 처리
+            result.setRedirect(true);
+        } catch (Exception e) {
+            e.printStackTrace(); // 에러 로그 기록
+            result.setRedirect(false);
+            System.out.println("에러!");
+            // 에러 처리: 적절한 에러 메시지를 설정하거나 페이지로 리다이렉트
+        }
+        
+        
 
-	}
-
+        return result;
+    }
+}
