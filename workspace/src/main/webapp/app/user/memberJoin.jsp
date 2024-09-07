@@ -38,7 +38,7 @@
 
 				<label for="confirm-password">비밀번호 확인</label>
 				<div class="member-input-group">
-					<input type="password" id="confirm-password" name="memberPassword"
+					<input type="password" id="confirm-password" name="memberPasswordconfirm"
 						required> <img class="memberjoin-view-second"
 						src="${pageContext.request.contextPath}/static/image/view.png">
 					<img class="memberjoin-noview-second"

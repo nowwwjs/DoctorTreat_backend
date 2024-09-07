@@ -129,8 +129,8 @@
 				src="${pageContext.request.contextPath}/static/image/toTop.png"></span>
 		</div>
 	</div>
-	<script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
-	<script src="${pageContext.request.contextPath}/static/js/main.js"></script>
+	<!--  <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script> -->
+	<!--  <script src="${pageContext.request.contextPath}/static/js/main.js"></script> -->
 </body>
 
 <jsp:include page="${pageContext.request.contextPath}/footer.jsp" />
