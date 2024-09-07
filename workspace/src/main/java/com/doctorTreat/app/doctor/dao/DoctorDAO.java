@@ -11,31 +11,34 @@ public class DoctorDAO {
     private SqlSessionFactory sqlSessionFactory;
 
     public DoctorDAO() {
-       System.out.println(456);
         this.sqlSessionFactory = MyBatisConfig.getSqlSessionFactory();
-        System.out.println(123);
     }
 
-    public void joinDoctor(DoctorDTO doctorDTO) throws Exception {
-        try (SqlSession session = sqlSessionFactory.openSession(false)) { // 트랜잭션 관리
-            try {
-                // 1. 주소 삽입
-                session.insert("main.joinAddress", doctorDTO);
+    public void joinDoctorTransaction(DoctorDTO doctorDTO) {
+        SqlSession sqlSession = sqlSessionFactory.openSession();
+        try {
+            // 주소 삽입
+            sqlSession.insert("doctor.doctorJoinAddress", doctorDTO);
+            System.out.println("주소 삽입 성공");
 
-                // 2. 삽입된 주소의 ADDRESS_NUMBER 가져오기
-                Integer addressNumber = (Integer) session.selectOne("main.getLastAddressNumber");
-                doctorDTO.setAddressNumber(addressNumber);
+            // 주소 삽입 후 ADDRESS_NUMBER가 doctorDTO에 설정되어 있어야 함
+            // 병원 삽입
+            sqlSession.insert("doctor.doctorJoinHospital", doctorDTO);
+            System.out.println("병원 삽입 성공");
 
-                // 3. 회원 정보 삽입
-                session.insert("main.doctorJoin", doctorDTO);
+            // 병원 삽입 후 HOSPITAL_NUMBER가 doctorDTO에 설정되어 있어야 함
+            // 의사 삽입
+            sqlSession.insert("doctor.doctorJoin", doctorDTO);
+            System.out.println("의사 삽입 성공");
 
-                // 4. 트랜잭션 커밋
-                session.commit();
-            } catch (Exception e) {
-                // 예외 발생 시 트랜잭션 롤백
-                session.rollback();
-                throw e;
-            }
+            // 모든 작업이 성공하면 커밋
+            sqlSession.commit();
+        } catch (Exception e) {
+            // 에러 발생 시 롤백
+            sqlSession.rollback();
+            e.printStackTrace(); // 로그에 에러를 기록
+        } finally {
+            sqlSession.close(); // 세션 닫기
         }
     }
 }

@@ -1,11 +1,13 @@
 package com.doctorTreat.app.doctor;
 
 import java.io.IOException;
+
 import javax.servlet.ServletException;
-import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+
+import com.doctorTreat.app.Result;
 
 /**
  * Servlet implementation class MemberFrontController
@@ -38,13 +40,19 @@ public class DoctorFrontController extends HttpServlet {
    protected void doProcess(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
       String target = request.getRequestURI().substring(request.getContextPath().length());
       System.out.println(target);
+      Result result = null;
+      
       switch(target) {
       case "/doctor/doctorJoin.do":
          request.getRequestDispatcher("/app/user/doctorJoin.jsp").forward(request, response);
          System.out.println("회원가입 중");
          break;
 
-      case "/doctor/doctorjoinOk.do":
+      case "/doctor/doctorJoinOk.do":
+    	 result = new DoctorJoinController().execute(request, response); 
+    	 if(result != null) {
+    		 System.out.println("ㅇ미어니ㅏㅜ");
+    	 }
     	 request.getRequestDispatcher("/app/user/doctorJoinFinish.jsp").forward(request, response);
          System.out.println("회원가입 완료");
          break;
