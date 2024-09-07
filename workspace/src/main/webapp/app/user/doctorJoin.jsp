@@ -30,7 +30,7 @@
 		<div class="Doctor-signup-container">
 			<!--   <a href="./../../../html/user/member/memberjoin.html">
 			</a> -->
-			<form action="${pageContext.request.contextPath}/doctor/doctorJoin.do" method="post">
+			<form action="${pageContext.request.contextPath}/doctor/doctorJoin.do" method="get">
 				<h2>회원가입</h2>
 
 				<label for="userId">아이디</label>
