@@ -13,7 +13,7 @@ public class MemberDAO {
 	}
 
 	public void join(MemberDTO memberDTO){
-		sqlSession.insert("user.memberJoin",memberDTO);
+		sqlSession.insert("main.join",memberDTO);
 	}
 	
 
