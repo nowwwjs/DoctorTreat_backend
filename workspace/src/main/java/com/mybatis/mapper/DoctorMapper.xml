@@ -1,41 +1,29 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="main">
+<mapper namespace="doctor">
   
-  <!--의료 회원가입-->
+  <!-- 의료 회원가입 -->
   
-   <insert id="doctorJoin" parameterType="DoctorDTO">
-      INSERT INTO DT_doctor (doctor_NUMBER, doctor_ID, doctor_PW, doctor_NAME,
-      doctor_phone, doctor_license, doctor_major, hospital_number)
-      VALUES (SEQ_doctor.NEXTVAL, #{doctorId}, #{doctorPw}, #{doctorName},
-      #{doctorPhone}, #{doctorLicense}, #{doctorMajor}, #{hospitalNumber})
-   </insert>
-   
-  
-   <insert id="doctorjoinHospital">
-	 insert into dt_hospital(hospital_number, hospital_call, hospital_name, hospital_work_time,
-	 hospital_lunch_time, hospital_rest_time, hospital_night_work, address_number)
-	 values (seq_hospital.NEXTVAL, #{hospitalCall}, #{hospitalName}, #{hospitalWorkTime},#{hospitalLunchTime},
-	 #{hospitalRestTime},#{hospitalNightWork},#{addressNumber})
-	   
-   </insert>
-   
-   <insert id="doctorjoinAddress" parameterType="DoctorDTO" useGeneratedKeys="true"
-      keyProperty="addressNumber">
-      INSERT INTO DT_ADDRESS (ADDRESS_NUMBER, ADDRESS_POSTAL, ADDRESS_ADDRESS,
-      ADDRESS_DETAIL)
-      VALUES (SEQ_ADDRESS.NEXTVAL, #{addressPostal}, #{addressAddress},
-      #{addressDetail})
-   </insert>
-   
-   
-   
-   
+  <!-- 주소 삽입 -->
+  <insert id="doctorJoinAddress" parameterType="DoctorDTO" useGeneratedKeys="true" keyProperty="addressNumber">
+      INSERT INTO DT_ADDRESS (ADDRESS_NUMBER, ADDRESS_POSTAL, ADDRESS_ADDRESS, ADDRESS_DETAIL)
+      VALUES (ADDRESS_SEQ.NEXTVAL, #{addressPostal}, #{addressAddress}, #{addressDetail})
+  </insert>
 
+  <!-- 병원 삽입 -->
+  <insert id="doctorJoinHospital" parameterType="DoctorDTO">
+      INSERT INTO DT_HOSPITAL (HOSPITAL_NUMBER, HOSPITAL_CALL, HOSPITAL_NAME, HOSPITAL_WORK_TIME,
+      HOSPITAL_LUNCH_TIME, HOSPITAL_REST_TIME, HOSPITAL_NIGHT_WORK, ADDRESS_NUMBER)
+      VALUES (HOSPITAL_SEQ.NEXTVAL, #{hospitalCall}, #{hospitalName}, #{hospitalWorkTime},
+      #{hospitalLunchTime}, #{hospitalRestTime}, #{hospitalNightWork}, #{addressNumber})
+  </insert>
   
-   
-   
-
+  <!-- 의사 삽입 -->
+  <insert id="doctorJoin" parameterType="DoctorDTO">
+      INSERT INTO DT_DOCTOR (DOCTOR_NUMBER, DOCTOR_ID, DOCTOR_PW, DOCTOR_NAME,
+      DOCTOR_PHONE, DOCTOR_LICENSE, DOCTOR_MAJOR, HOSPITAL_NUMBER)
+      VALUES (DOCTOR_SEQ.NEXTVAL, #{doctorId}, #{doctorPassword}, #{doctorName},
+      #{doctorPhoneNumber}, #{doctorLicense}, #{doctorMajorSubject}, #{hospitalNumber})
+  </insert>
 
 </mapper>
-
