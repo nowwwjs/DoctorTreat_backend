@@ -58,6 +58,7 @@ public class MemberFrontController extends HttpServlet {
 		     break;	
 		case "/member/memberLoginOk.me" :
 			System.out.println("로그인 완료");
+			break;
 			
 		}
 	}
