@@ -29,7 +29,7 @@
 		<div class="Doctor-signup-container">
 			<form
 				action="${pageContext.request.contextPath}/doctor/doctorJoinOk.do"
-				method="get">
+				method="post">
 				<h2>회원가입</h2>
 
 				<label for="doctorId">아이디</label>
@@ -42,9 +42,10 @@
 
 				<label for="doctorPassword">비밀번호</label>
 				<div class="Doctor-input-group">
-					<input type="password" id="doctorPassword" name="doctorPassword" required>
-					<img class="Doctor-view-first" src="./../../../image/view.png">
-					<img class="Doctor-noview-first" src="./../../../image/noview.png">
+					<input type="password" id="doctorPassword" name="doctorPassword"
+						required> <img class="Doctor-view-first"
+						src="./../../../image/view.png"> <img
+						class="Doctor-noview-first" src="./../../../image/noview.png">
 					<p class="Doctorjoin-Null"></p>
 				</div>
 
@@ -67,31 +68,36 @@
 
 				<label for="doctorPostcode">주소</label>
 				<div class="Doctor-input-group">
-					<input type="text" id="doctorPostcode" name="addressPostal" placeholder="우편번호">
+					<input type="text" id="doctorPostcode" name="addressPostal"
+						placeholder="우편번호">
 					<p class="Doctorjoin-Null"></p>
 					<button class="postcode-search" onclick="execDaumPostcode()">주소
 						찾기</button>
 				</div>
 
 				<div class="Doctor-input-group">
-					<input type="text" id="doctorAddress" name="addressAddress" placeholder="주소">
+					<input type="text" id="doctorAddress" name="addressAddress"
+						placeholder="주소">
 					<p class="Doctorjoin-Null"></p>
 				</div>
 
 				<div class="Doctor-input-group">
-					<input type="text" id="doctorDetailAddress" name="addressDetail" placeholder="상세 주소">
+					<input type="text" id="doctorDetailAddress" name="addressDetail"
+						placeholder="상세 주소">
 					<p class="Doctorjoin-Null"></p>
 				</div>
 
 				<label for="doctorPhoneNumber">핸드폰 번호</label>
 				<div class="Doctor-input-group">
-					<input type="text" id="doctorPhoneNumber" name="doctorPhoneNumber" required>
+					<input type="text" id="doctorPhoneNumber" name="doctorPhoneNumber"
+						required>
 					<button class="Doctor-join-request">인증 요청</button>
 					<p class="Doctorjoin-Null"></p>
 				</div>
 				<br> <label for="doctorHospitalName">병원이름</label>
 				<div class="Doctor-input-group">
-					<input type="text" id="doctorHospitalName" name="doctorHospitalName" required>
+					<input type="text" id="doctorHospitalName"
+						name="doctorHospitalName" required>
 					<p class="Doctorjoin-Null"></p>
 				</div>
 				<br> <label for="doctorLicense">면허번호</label>
