@@ -7,12 +7,22 @@ public class MemberBoardDTO {
 
 	private String medicalInfoTitle;
 	private String medicalInfoText;
+	private int memberNumber;
+
 	private String memberName;
 	private String medicalInfoDate;
 	private String doctorMajor;
 	private String doctorName;
 	private String doctorCommentText;
 
+	public int getMemberNumber() {
+		return memberNumber;
+	}
+	
+	public void setMemberNumber(int memberNumber) {
+		this.memberNumber = memberNumber;
+	}
+	
 	public int getMedicalInfoNumber() {
 		return medicalInfoNumber;
 	}
