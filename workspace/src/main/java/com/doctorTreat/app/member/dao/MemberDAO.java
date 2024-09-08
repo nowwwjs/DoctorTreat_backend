@@ -3,7 +3,6 @@ package com.doctorTreat.app.member.dao;
 import org.apache.ibatis.session.SqlSession;
 import org.apache.ibatis.session.SqlSessionFactory;
 
-import com.doctorTreat.app.dto.DoctorDTO;
 import com.doctorTreat.app.dto.MemberDTO;
 import com.mybatis.config.MyBatisConfig;
 
