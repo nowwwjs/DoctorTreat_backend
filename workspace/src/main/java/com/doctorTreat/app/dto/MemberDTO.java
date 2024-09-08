@@ -1,16 +1,33 @@
 package com.doctorTreat.app.dto;
 
 public class MemberDTO {
+	private int memberNumber;
 	private String memberId;
 	private String memberPw;
 	private String memberName;
+	private int addressNumber;
 	private String addressPostal;
 	private String addressAddress;
 	private String addressDetail;
 	private String memberBirth;
 	private String memberPhone;
 
+	
+	public int getAddressNumber() {
+		return addressNumber;
+	}
 
+	public void setAddressNumber(int addressNumber) {
+		this.addressNumber = addressNumber;
+	}
+
+	public int getMemberNumber() {
+		return memberNumber;
+	}
+
+	public void setMemberNumber(int memberNumber) {
+		this.memberNumber = memberNumber;
+	}
 
 	public String getMemberId() {
 		return memberId;
@@ -78,10 +95,13 @@ public class MemberDTO {
 
 	@Override
 	public String toString() {
-		return "MemberDTO [memberId=" + memberId + ", memberPw=" + memberPw + ", memberName=" + memberName
-				+ ", addressPostal=" + addressPostal + ", addressAddress=" + addressAddress + ", addressDetail="
-				+ addressDetail + ", memberBirth=" + memberBirth + ", memberPhone=" + memberPhone + "]";
+		return "MemberDTO [memberNumber=" + memberNumber + ", memberId=" + memberId + ", memberPw=" + memberPw
+				+ ", memberName=" + memberName + ", addressNumber=" + addressNumber + ", addressPostal=" + addressPostal
+				+ ", addressAddress=" + addressAddress + ", addressDetail=" + addressDetail + ", memberBirth="
+				+ memberBirth + ", memberPhone=" + memberPhone + "]";
 	}
+
+
 
 
 
