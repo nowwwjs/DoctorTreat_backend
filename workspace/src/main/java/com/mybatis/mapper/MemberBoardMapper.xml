@@ -63,6 +63,7 @@
 	<!-- 게시글 삭제 -->
 	<delete id="delete" parameterType="MemberBoardDTO">
 		
+		
 	</delete>
 
 
