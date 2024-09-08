@@ -29,17 +29,39 @@
 
 
 	<!-- 게시글 디테일 -->
-	<select id="showDetail" parameterType="int" resultType="MemberBoardDTO">
-    SELECT dmi.MEDICAL_INFO_TITLE, dm.MEMBER_NAME, dmi.MEDICAL_INFO_DATE,
-           dmi.MEDICAL_INFO_TEXT,
-           dd.DOCTOR_MAJOR, dd.DOCTOR_NAME, ddc.DOCTOR_COMMENT_TEXT
-    FROM DT_MEDICAL_INFO dmi
-    JOIN DT_MEMBER dm ON dmi.MEMBER_NUMBER = dm.MEMBER_NUMBER
-    JOIN DT_DOCTOR_COMMENT ddc ON ddc.MEDICAL_INFO_NUMBER = dmi.MEDICAL_INFO_NUMBER
-    JOIN DT_DOCTOR dd ON ddc.DOCTOR_NUMBER = dd.DOCTOR_NUMBER
-    WHERE dmi.MEDICAL_INFO_NUMBER = #{medicalInfoNumber}
-</select>
+	<select id="showDetail" parameterType="int"
+		resultType="MemberBoardDTO">
+		SELECT dmi.MEDICAL_INFO_TITLE, dm.MEMBER_NAME,
+		dmi.MEDICAL_INFO_DATE,
+		dmi.MEDICAL_INFO_TEXT,
+		dd.DOCTOR_MAJOR,
+		dd.DOCTOR_NAME, ddc.DOCTOR_COMMENT_TEXT
+		FROM DT_MEDICAL_INFO dmi
+		JOIN
+		DT_MEMBER dm ON dmi.MEMBER_NUMBER = dm.MEMBER_NUMBER
+		JOIN
+		DT_DOCTOR_COMMENT ddc ON ddc.MEDICAL_INFO_NUMBER =
+		dmi.MEDICAL_INFO_NUMBER
+		JOIN DT_DOCTOR dd ON ddc.DOCTOR_NUMBER =
+		dd.DOCTOR_NUMBER
+		WHERE dmi.MEDICAL_INFO_NUMBER = #{medicalInfoNumber}
+	</select>
 
+	<!-- 게시글 작성 -->
+	<insert id="write" parameterType="MemberBoardDTO">
+		INSERT INTO DT_MEDICAL_INFO ( MEDICAL_INFO_NUMBER, MEDICAL_INFO_TITLE, MEDICAL_INFO_TEXT, MEDICAL_INFO_DATE , MEMBER_NUMBER)
+		VALUES ( MEDICAL_INFO_SEQ.NEXTVAL, #{medicalInfoTitle}, #{medicalInfoText}, SYSDATE , #{memberNumber})
+	</insert>
+	
+	<!-- 게시글 수정 -->
+	
+	
+	
+	<!-- 게시글 삭제 -->
+	<delete id="delete" parameterType="MemberBoardDTO">
+		delete 
+		from DT_
+	</delete>
 
 
 

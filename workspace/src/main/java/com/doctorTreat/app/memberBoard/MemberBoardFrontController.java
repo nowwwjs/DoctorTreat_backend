@@ -41,10 +41,20 @@ public class MemberBoardFrontController extends HttpServlet {
 			result = new MemberBoardDetailController().execute(request, response);
 			break;
 		case "/memberBoardWrite.membo":
-			System.out.println("글 작성!");
+			System.out.println("Ddd");
+			request.getRequestDispatcher("/app/board/write.jsp").forward(request, response);
 			break;
-		case "/memberBoard/delete.membo":
+		case "/memberBoardWriteOk.membo":
+			System.out.println("글 작성!");
+			result = new MemberBoardWriteController().execute(request, response);
+			break;
+		case "/updateBoard.membo":
+			System.out.println("글 수정!");
+			result = new MemberBoardUpdateController().execute(request, response);
+			break;
+		case "deleteBoard.membo":
 			System.out.println("삭제!");
+			result = new MemberBoardDeleteController().execute(request, response);
 			break;
 		}
 

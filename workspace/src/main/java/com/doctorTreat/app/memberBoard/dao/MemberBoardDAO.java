@@ -34,9 +34,19 @@ public class MemberBoardDAO {
 
 	// 게시글 디테일 가져오기
 	public MemberBoardDTO showDetail(int medicalInfoNumber) {
-	    return sqlSession.selectOne("memberBoard.showDetail",  medicalInfoNumber);  // int 타입으로 직접 넘김
+	    return sqlSession.selectOne("memberBoard.showDetail",  medicalInfoNumber);  
 	}
 
+	//게시글 작성
+	 public void write(MemberBoardDTO memberBoardDTO) {
+	        sqlSession.insert("memberBoard.write", memberBoardDTO);
+	    }
+	 
+	 //게시글 삭제
+	 
+	 
+	 
+	 //게시글 업데이트
 
 
 }
