@@ -37,18 +37,21 @@ public class MemberJoinOkController implements Execute {
 		// 디버깅용 로그 출력
 		System.out.println("MemberDTO : " + memberDTO);
 
-		// 데이터베이스에 회원 정보 저장
 		try {
-			memberDAO.join(memberDTO);
-		} catch (Exception e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
+            // DAO 메서드 호출
+          memberDAO.joinMemberTransaction(memberDTO); // 트랜잭션 메서드 호출
 
-		// 결과 처리
-		result.setRedirect(true);
-		result.setPath(request.getContextPath() + "/member/login.jsp");
-		// 성공후 이동할 페이지 설정
-		return result;
-	}
+            // 성공 처리
+            result.setRedirect(true);
+        } catch (Exception e) {
+            e.printStackTrace(); // 에러 로그 기록
+            result.setRedirect(false);
+            System.out.println("에러!");
+            // 에러 처리: 적절한 에러 메시지를 설정하거나 페이지로 리다이렉트
+        }
+        
+        
+
+        return result;
+    }
 }

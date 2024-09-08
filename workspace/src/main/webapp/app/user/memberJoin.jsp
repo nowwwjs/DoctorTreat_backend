@@ -38,7 +38,7 @@
 
 				<label for="confirm-password">비밀번호 확인</label>
 				<div class="member-input-group">
-					<input type="password" id="confirm-password" name="memberPasswordconfirm"
+					<input type="password" id="confirm-password" name="memberPwConfirm"
 						required> <img class="memberjoin-view-second"
 						src="${pageContext.request.contextPath}/static/image/view.png">
 					<img class="memberjoin-noview-second"
@@ -53,23 +53,28 @@
 				</div>
 
 				<div class="input-group1">
-					<input type="text" id="postcode" name="adressPostal"
+					<input type="text" id="postcode" name="addressPostal"
 						placeholder="우편번호">
 					<button class="postcode-search" onclick="execDaumPostcode()">주소
 						찾기</button>
 				</div>
 				<div class="input-group1">
-					<input type="text" id="address" name="adressAddress"
+					<input type="text" id="address" name="addressAddress"
 						placeholder="주소">
 				</div>
 				<div class="input-group1">
+<<<<<<< HEAD
 					<input type="text" id="detailAddress" name="adressDetail"
 						placeholder="상세 주소">	
+=======
+					<input type="text" id="detailAddress" name="addressDetail"
+						placeholder="상세 주소">
+>>>>>>> main
 				</div>
 
 				<label for="birth">생년월일</label>
 				<div class="member-input-group">
-					<input type="text" id="birth" name="birth" name="memberBirth"
+					<input type="text" id="birth" name="memberBirth"
 						required>
 					<p class="memberjoin-Null"></p>
 				</div>
@@ -114,7 +119,7 @@
 		</div>
 	</main>
 
-	 <!--  <script src="${pageContext.request.contextPath}/static/js/user/memberJoin.js"></script> -->
+	 <!--   <script src="${pageContext.request.contextPath}/static/js/user/memberJoin.js"></script> -->
 	 <!-- <script src="https://t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script> -->
 
 	<jsp:include page="${pageContext.request.contextPath}/footer.jsp" />

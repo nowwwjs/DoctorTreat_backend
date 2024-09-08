@@ -1,6 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<<<<<<< HEAD
 <mapper namespace="user">
+=======
+<mapper namespace="member">
+>>>>>>> main
 	<!-- 회원 삽입 -->
 	<insert id="memberJoin" parameterType="MemberDTO">
 		INSERT INTO DT_MEMBER (MEMBER_NUMBER, MEMBER_ID, MEMBER_PW, MEMBER_NAME,
@@ -10,7 +14,11 @@
 	</insert>
 
 	<!-- 주소 삽입 -->
+<<<<<<< HEAD
 	<insert id="joinAddress" parameterType="MemberDTO">
+=======
+	<insert id="memberAddress" parameterType="MemberDTO">
+>>>>>>> main
 		INSERT INTO DT_ADDRESS (ADDRESS_NUMBER, ADDRESS_POSTAL, ADDRESS_ADDRESS,
 		ADDRESS_DETAIL)
 		VALUES (ADDRESS_SEQ.NEXTVAL, #{addressPostal}, #{addressAddress},
