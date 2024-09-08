@@ -4,7 +4,6 @@ public class DoctorDetailDTO {
 	private String hospitalName;
 	private String doctorName;
 	private String doctorMajor;
-	private String hospitalNightWork;
 	private String hospitalCall;
 
 	public String getHospitalName() {
@@ -31,14 +30,6 @@ public class DoctorDetailDTO {
 		this.doctorMajor = doctorMajor;
 	}
 
-	public String getHospitalNightWork() {
-		return hospitalNightWork;
-	}
-
-	public void setHospitalNightWork(String hospitalNightWork) {
-		this.hospitalNightWork = hospitalNightWork;
-	}
-
 	public String getHospitalCall() {
 		return hospitalCall;
 	}
@@ -50,7 +41,7 @@ public class DoctorDetailDTO {
 	@Override
 	public String toString() {
 		return "DoctorDetailDTO [hospitalName=" + hospitalName + ", doctorName=" + doctorName + ", doctorMajor="
-				+ doctorMajor + ", hospitalNightWork=" + hospitalNightWork + ", hospitalCall=" + hospitalCall + "]";
+				+ doctorMajor + ", hospitalCall=" + hospitalCall + "]";
 	}
 
 }
