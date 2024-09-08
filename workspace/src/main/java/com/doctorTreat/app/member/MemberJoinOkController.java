@@ -26,7 +26,7 @@ public class MemberJoinOkController implements Execute {
 
 		// DTO 객체 생성 및 폼 데이터 받아오기
 		memberDTO.setMemberId(request.getParameter("memberId"));
-		memberDTO.setMemberPw(request.getParameter("memberPassword"));
+		memberDTO.setMemberPw(request.getParameter("memberPw"));
 		memberDTO.setMemberName(request.getParameter("memberName"));
 		memberDTO.setMemberBirth(request.getParameter("memberBirth"));
 		memberDTO.setMemberPhone(request.getParameter("memberPhone"));

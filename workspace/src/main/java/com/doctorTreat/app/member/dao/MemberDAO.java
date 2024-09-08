@@ -18,11 +18,11 @@ public class MemberDAO {
 	        SqlSession sqlSession = sqlSessionFactory.openSession();
 	        try {
 	            // 주소 삽입
-	            sqlSession.insert("main.joinAddress", memberDTO);
+	            sqlSession.insert("member.memberAddress", memberDTO);
 	            System.out.println("주소 삽입 성공");
 	            
 	            // 회원 삽입
-	            sqlSession.insert("main.join", memberDTO);
+	            sqlSession.insert("member.memberJoin", memberDTO);
 	            System.out.println("회원 삽입 성공");
 
 	            // 모든 작업이 성공하면 커밋

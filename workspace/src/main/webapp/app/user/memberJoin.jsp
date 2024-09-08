@@ -28,7 +28,7 @@
 
 				<label for="password">비밀번호</label>
 				<div class="member-input-group">
-					<input type="password" id="password" name="memberPassword" required>
+					<input type="password" id="password" name="memberPw" required>
 					<img class="memberjoin-view-first"
 						src="${pageContext.request.contextPath}/static/image/view.png">
 					<img class="memberjoin-noview-first"
@@ -38,7 +38,7 @@
 
 				<label for="confirm-password">비밀번호 확인</label>
 				<div class="member-input-group">
-					<input type="password" id="confirm-password" name="memberPasswordconfirm"
+					<input type="password" id="confirm-password" name="memberPwConfirm"
 						required> <img class="memberjoin-view-second"
 						src="${pageContext.request.contextPath}/static/image/view.png">
 					<img class="memberjoin-noview-second"

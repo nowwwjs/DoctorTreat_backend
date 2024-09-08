@@ -12,15 +12,6 @@ public class MemberDTO {
 	private String memberBirth;
 	private String memberPhone;
 
-	
-	public int getAddressNumber() {
-		return addressNumber;
-	}
-
-	public void setAddressNumber(int addressNumber) {
-		this.addressNumber = addressNumber;
-	}
-
 	public int getMemberNumber() {
 		return memberNumber;
 	}
@@ -51,6 +42,14 @@ public class MemberDTO {
 
 	public void setMemberName(String memberName) {
 		this.memberName = memberName;
+	}
+
+	public int getAddressNumber() {
+		return addressNumber;
+	}
+
+	public void setAddressNumber(int addressNumber) {
+		this.addressNumber = addressNumber;
 	}
 
 	public String getAddressPostal() {
@@ -101,11 +100,6 @@ public class MemberDTO {
 				+ memberBirth + ", memberPhone=" + memberPhone + "]";
 	}
 
-
-
-
-
 	
 
-	
 }
