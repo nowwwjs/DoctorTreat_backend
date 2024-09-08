@@ -48,9 +48,6 @@
 	</select>
 
 	<!-- 게시글 작성 -->
-
-
-
 	<insert id="write" parameterType="MemberBoardDTO">
 		INSERT INTO DT_MEDICAL_INFO (
 		MEDICAL_INFO_NUMBER, MEDICAL_INFO_TITLE, MEDICAL_INFO_TEXT,
@@ -61,25 +58,6 @@
 
 	<!-- 게시글 수정 -->
 
-	SELECT dmi.MEDICAL_INFO_TITLE, dm.MEMBER_NAME,
-	dmi.MEDICAL_INFO_DATE,
-	dmi.MEDICAL_INFO_TEXT,
-	dd.DOCTOR_MAJOR,
-	dd.DOCTOR_NAME,
-	ddc.DOCTOR_COMMENT_TEXT
-	FROM DT_MEDICAL_INFO dmi
-	JOIN
-	DT_MEMBER dm ON
-	dmi.MEMBER_NUMBER = dm.MEMBER_NUMBER
-	JOIN
-	DT_DOCTOR_COMMENT ddc ON
-	ddc.MEDICAL_INFO_NUMBER =
-	dmi.MEDICAL_INFO_NUMBER
-	JOIN DT_DOCTOR dd ON
-	ddc.DOCTOR_NUMBER =
-	dd.DOCTOR_NUMBER
-	WHERE dmi.MEDICAL_INFO_NUMBER =
-	#{medicalInfoNumber}
 
 	<!-- 게시글 삭제 -->
 	<delete id="delete" parameterType="int">

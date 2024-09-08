@@ -42,6 +42,8 @@ public class MemberBoardDAO {
 	        sqlSession.insert("memberBoard.write", memberBoardDTO);
 	    }
 	 
+	 
+	 
 	 //게시글 삭제
 	 public void delete(int medicalInfoNumber) {
 		 sqlSession.delete("memberBoard.delete", medicalInfoNumber);

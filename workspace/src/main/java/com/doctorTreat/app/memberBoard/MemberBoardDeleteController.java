@@ -8,14 +8,24 @@ import javax.servlet.http.HttpServletResponse;
 
 import com.doctorTreat.app.Execute;
 import com.doctorTreat.app.Result;
+import com.doctorTreat.app.memberBoard.dao.MemberBoardDAO;
 
 public class MemberBoardDeleteController implements Execute {
+
+	private MemberBoardDAO memberBoardDAO = new MemberBoardDAO(); // DAO 객체 생성
 
 	@Override
 	public Result execute(HttpServletRequest request, HttpServletResponse response)
 			throws IOException, ServletException {
-		// TODO Auto-generated method stub
-		return null;
-	}
+		Result result = new Result();
 
+		int medicalInfoNumber = Integer.parseInt(request.getParameter("medicalInfoNumber")); // 게시글 번호 가져오기
+		memberBoardDAO.delete(medicalInfoNumber); // 게시글 삭제
+
+		// 삭제 후 목록 페이지로 리다이렉트
+		result.setRedirect(true);
+		result.setPath("/index.jsp");
+
+		return result; // Result 반환
+	}
 }

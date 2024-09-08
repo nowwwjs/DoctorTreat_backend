@@ -39,6 +39,7 @@ public class MemberBoardListController implements Execute {
         request.setAttribute("currentPage", page);
         request.setAttribute("totalPage", totalPage);
 
+   
         // 리다이렉트 대신 포워딩을 사용하여 뷰로 이동
         result.setRedirect(false);
         result.setPath("/app/board/medicalKnowledgeList.jsp");
