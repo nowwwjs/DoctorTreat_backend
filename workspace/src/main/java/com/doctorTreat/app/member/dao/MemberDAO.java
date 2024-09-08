@@ -7,14 +7,14 @@ import com.doctorTreat.app.dto.MemberDTO;
 import com.mybatis.config.MyBatisConfig;
 
 public class MemberDAO {
-	private SqlSessionFactory sqlSessionFactory;
+	private SqlSession sqlSession;
 	
 	public MemberDAO() {
-        this.sqlSessionFactory = MyBatisConfig.getSqlSessionFactory();
+        this.sqlSession = MyBatisConfig.getSqlSession();
     }
 	
 	 public void joinMemberTransaction(MemberDTO memberDTO) {
-	        SqlSession sqlSession = sqlSessionFactory.openSession();
+	        SqlSession sqlSession = sqlSession.openSession();
 	        try {
 	            // 주소 삽입
 	            sqlSession.insert("member.memberAddress", memberDTO);
@@ -34,4 +34,9 @@ public class MemberDAO {
 	            sqlSession.close(); // 세션 닫기
 	        }
 	    }
+	 
+	 public MemberDTO memberLogin(MemberDTO memberDTO) {
+		 	MemberDTO member = sqlSession.selectOne("member.memberLogin", memberDTO);
+		 	return member;
+	 }
 }

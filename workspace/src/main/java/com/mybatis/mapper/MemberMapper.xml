@@ -17,5 +17,8 @@
 		#{addressDetail})
 	</insert>
 
-
+	<select id="memberLogin" parameterType ="MemberDTO" resultType = "memberDTO">
+		select member_number from dt_member
+		where  member_id = #{memberId} and member_pw = #{memberPw}
+	</select>
 </mapper>
