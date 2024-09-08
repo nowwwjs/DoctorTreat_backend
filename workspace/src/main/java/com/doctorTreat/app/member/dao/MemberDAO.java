@@ -25,10 +25,9 @@ public class MemberDAO {
 		memberDTO.setAddressNumber(addressNumber); // DTO에 시퀀스 값 설정
 		System.out.println("생성된 주소번호: " + addressNumber);
 
-		// 주소 삽입 후 ADDRESS_NUMBER가 doctorDTO에 설정되어 있어야 함
-		// 병원 삽입
+		// 주소 삽입 후 ADDRESS_NUMBER가 memberDTO에 설정되어 있어야 함
+		// 멤버 추가
 		sqlSession.insert("member.memberJoin", memberDTO);
-		System.out.println("병원 삽입 성공");
 	}
 
 }
