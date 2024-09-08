@@ -21,8 +21,12 @@ public class DoctorJoinController implements Execute {
 		DoctorDAO doctorDAO = new DoctorDAO();
 		Result result = new Result();
 
-		// 폼 데이터 받아오기 및 DTO 설정
-
+		  String doctorNumber = request.getParameter("doctorNumber");
+		  
+	      if (doctorNumber != null && !doctorNumber.isEmpty()) {
+	         doctorDTO.setAddressNumber(Integer.valueOf(doctorNumber));
+	      }
+	      
 		doctorDTO.setDoctorId(request.getParameter("doctorId"));
 		doctorDTO.setDoctorPw(request.getParameter("doctorPassword"));
 		doctorDTO.setDoctorName(request.getParameter("doctorName"));
