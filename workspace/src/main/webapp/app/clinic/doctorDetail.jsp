@@ -43,7 +43,7 @@
 					</div>
 					<div class="doctorDetail-closed-bottom">
 						<div>야간진료</div>
-						<div>${doctorDetail[0].hospitalNightWork}</div>
+						<div>없음</div>
 					</div>
 				</div>
 			</div>
