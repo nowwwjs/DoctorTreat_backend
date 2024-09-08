@@ -37,7 +37,7 @@
 		WHERE DH.HOSPITAL_CALL = #{hospitalCall}
 	</select>
 	
-	<!--  -->
+	<!-- -->
 	
 	
 </mapper>
