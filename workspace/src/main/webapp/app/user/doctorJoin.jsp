@@ -2,13 +2,6 @@
    pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
-<head>
-<meta charset="UTF-8">
-<title>회원가입</title>
-</head>
-<body>
-   <!DOCTYPE html>
-<html lang="en">
 
 <head>
 <meta charset="UTF-8">
