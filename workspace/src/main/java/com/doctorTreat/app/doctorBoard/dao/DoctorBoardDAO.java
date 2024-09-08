@@ -19,8 +19,8 @@ public class DoctorBoardDAO {
         return sqlSession.selectList("DoctorBoard.showlist");
     }
 
-//    // 회원 번호로 게시글 상세 조회
-//    public List<DoctorBoardDTO> showDetail(int memberNumber) {
-//        return sqlSession.selectList("DoctorBoard.showDetail", memberNumber);
-//    }
+    // 회원 번호로 게시글 상세 조회
+    public List<DoctorBoardDTO> showDetail(int memberNumber) {
+        return sqlSession.selectList("DoctorBoard.showListDetail",memberNumber);
+    }
 }
