@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="doctor">
-  
+
   <!-- 의료 회원가입 -->
   
   <!-- 주소 삽입 -->
@@ -12,10 +12,10 @@
 
   <!-- 병원 삽입 -->
   <insert id="doctorJoinHospital" parameterType="DoctorDTO">
-      INSERT INTO DT_HOSPITAL (HOSPITAL_NUMBER, HOSPITAL_CALL, HOSPITAL_NAME, HOSPITAL_WORK_TIME,
-      HOSPITAL_LUNCH_TIME, HOSPITAL_REST_TIME, HOSPITAL_NIGHT_WORK, ADDRESS_NUMBER)
-      VALUES (HOSPITAL_SEQ.NEXTVAL, #{hospitalCall}, #{hospitalName}, #{hospitalWorkTime},
-      #{hospitalLunchTime}, #{hospitalRestTime}, #{hospitalNightWork}, #{addressNumber})
+      INSERT INTO DT_HOSPITAL (HOSPITAL_NUMBER, HOSPITAL_CALL, HOSPITAL_NAME, 
+       HOSPITAL_REST_TIME, HOSPITAL_NIGHT_WORK, ADDRESS_NUMBER)
+      VALUES (HOSPITAL_SEQ.NEXTVAL, #{hospitalCall}, #{hospitalName}, 
+       #{hospitalRestTime}, #{hospitalNightWork}, #{addressNumber})
   </insert>
   
   <!-- 의사 삽입 -->
