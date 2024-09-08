@@ -49,7 +49,7 @@ public class MemberFrontController extends HttpServlet {
 			break;
 		case "/member/memberJoinOk.me":
 			result = new MemberJoinOkController().execute(request, response);
-			request.getRequestDispatcher("/app/user/memberJoinFinish.jsp").forward(request, response);
+			request.getRequestDispatcher(result.getPath()).forward(request, response);
 		    System.out.println("회원가입 완료");
 		    break;
 		case "/memberlogin.me":
