@@ -12,10 +12,6 @@ public class DoctorDTO {
 	private int hospitalNumber; // 병원 번호
 	private String hospitalCall;
 	private String hospitalName;
-	private String hospitalWorkTime;
-	private String hospitalLunchTime;
-	private String hospitalRestTime;
-	private String hospitalNightWork;
 	private int addressNumber; // 주소 번호
 	private String addressPostal;
 	private String addressAddress;
@@ -102,38 +98,6 @@ public class DoctorDTO {
 		this.hospitalName = hospitalName;
 	}
 
-	public String getHospitalWorkTime() {
-		return hospitalWorkTime;
-	}
-
-	public void setHospitalWorkTime(String hospitalWorkTime) {
-		this.hospitalWorkTime = hospitalWorkTime;
-	}
-
-	public String getHospitalLunchTime() {
-		return hospitalLunchTime;
-	}
-
-	public void setHospitalLunchTime(String hospitalLunchTime) {
-		this.hospitalLunchTime = hospitalLunchTime;
-	}
-
-	public String getHospitalRestTime() {
-		return hospitalRestTime;
-	}
-
-	public void setHospitalRestTime(String hospitalRestTime) {
-		this.hospitalRestTime = hospitalRestTime;
-	}
-
-	public String getHospitalNightWork() {
-		return hospitalNightWork;
-	}
-
-	public void setHospitalNightWork(String hospitalNightWork) {
-		this.hospitalNightWork = hospitalNightWork;
-	}
-
 	public int getAddressNumber() {
 		return addressNumber;
 	}
@@ -171,10 +135,9 @@ public class DoctorDTO {
 		return "DoctorDTO [doctorNumber=" + doctorNumber + ", doctorId=" + doctorId + ", doctorPw=" + doctorPw
 				+ ", doctorName=" + doctorName + ", doctorPhone=" + doctorPhone + ", doctorLicense=" + doctorLicense
 				+ ", doctorMajor=" + doctorMajor + ", hospitalNumber=" + hospitalNumber + ", hospitalCall="
-				+ hospitalCall + ", hospitalName=" + hospitalName + ", hospitalWorkTime=" + hospitalWorkTime
-				+ ", hospitalLunchTime=" + hospitalLunchTime + ", hospitalRestTime=" + hospitalRestTime
-				+ ", hospitalNightWork=" + hospitalNightWork + ", addressNumber=" + addressNumber + ", addressPostal="
-				+ addressPostal + ", addressAddress=" + addressAddress + ", addressDetail=" + addressDetail + "]";
+				+ hospitalCall + ", hospitalName=" + hospitalName + ", addressNumber=" + addressNumber
+				+ ", addressPostal=" + addressPostal + ", addressAddress=" + addressAddress + ", addressDetail="
+				+ addressDetail + "]";
 	}
 
 }
