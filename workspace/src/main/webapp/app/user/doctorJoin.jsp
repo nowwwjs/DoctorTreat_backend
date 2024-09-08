@@ -87,39 +87,6 @@
                <p class="Doctorjoin-Null"></p>
             </div>
 
-<<<<<<< HEAD
-				<label for="doctorPhoneNumber">핸드폰 번호</label>
-				<div class="Doctor-input-group">
-					<input type="text" id="doctorPhoneNumber" name="doctorPhoneNumber"
-						required>
-					<button class="Doctor-join-request">인증 요청</button>
-					<p class="Doctorjoin-Null"></p>
-				</div>
-				<br> <label for="doctorHospitalName">병원이름</label>
-				<div class="Doctor-input-group">
-					<input type="text" id="doctorHospitalName"
-						name="doctorHospitalName" required>
-					<p class="Doctorjoin-Null"></p>
-				</div>
-				<br> <label for="doctorHospitalName">병원번호</label>
-				<div class="Doctor-input-group">
-					<input type="text" id="doctorHospitalCall"
-						name="doctorHospitalCall" required>
-					<p class="Doctorjoin-Null"></p>
-				</div>
-				<br> <label for="doctorLicense">면허번호</label>
-				<div class="Doctor-input-group">
-					<input type="text" id="doctorLicense" name="doctorLicense" required>
-					<p class="Doctorjoin-Null"></p>
-				</div>
-				<br> <label for="doctorMedicalSubject">진료과목</label>
-				<div class="Doctor-input-group">
-					<input type="text" id="doctorMedicalSubject"
-						name="doctorMedicalSubject" required>
-					<p class="Doctorjoin-Null"></p>
-				</div>
-				<br>
-=======
             <label for="doctorPhoneNumber">핸드폰 번호</label>
             <div class="Doctor-input-group">
                <input type="text" id="doctorPhoneNumber" name="doctorPhoneNumber"
@@ -151,7 +118,6 @@
                <p class="Doctorjoin-Null"></p>
             </div>
             <br>
->>>>>>> main
 
             <div class="container">
                <div class="checkbox-container">

@@ -21,30 +21,6 @@ public class DoctorJoinController implements Execute {
       DoctorDAO doctorDAO = new DoctorDAO();
       Result result = new Result();
 
-<<<<<<< HEAD
-		doctorDTO.setDoctorId(request.getParameter("doctorId"));
-		doctorDTO.setDoctorPw(request.getParameter("doctorPassword"));
-		doctorDTO.setDoctorName(request.getParameter("doctorName"));
-		doctorDTO.setDoctorPhone(request.getParameter("doctorPhoneNumber"));
-		doctorDTO.setDoctorLicense(request.getParameter("doctorLicense"));
-		doctorDTO.setDoctorMajor(request.getParameter("doctorMedicalSubject"));
-		doctorDTO.setHospitalName(request.getParameter("doctorHospitalName"));
-		doctorDTO.setHospitalCall(request.getParameter("doctorHospitalCall"));
-		doctorDTO.setAddressPostal(request.getParameter("addressPostal"));
-		doctorDTO.setAddressAddress(request.getParameter("addressAddress"));
-		doctorDTO.setAddressDetail(request.getParameter("addressDetail"));
-
-		System.out.println(doctorDTO);
-		doctorDAO.inputAddress(doctorDTO);
-		doctorDAO.inputHospital(doctorDTO);
-		doctorDAO.inputDoctor(doctorDTO);
-
-		result.setRedirect(true);
-		result.setPath("/app/user/doctorJoinFinish.jsp");
-
-		return result;
-	}
-=======
       doctorDTO.setDoctorId(request.getParameter("doctorId"));
       doctorDTO.setDoctorPw(request.getParameter("doctorPassword"));
       doctorDTO.setDoctorName(request.getParameter("doctorName"));
@@ -67,5 +43,4 @@ public class DoctorJoinController implements Execute {
 
       return result;
    }
->>>>>>> main
 }
