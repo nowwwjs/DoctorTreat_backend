@@ -43,6 +43,9 @@ public class MemberBoardDAO {
 	    }
 	 
 	 //게시글 삭제
+	 public void delete(int medicalInfoNumber) {
+		 sqlSession.delete("memberBoard.delete", medicalInfoNumber);
+	 }
 	 
 	 
 	 

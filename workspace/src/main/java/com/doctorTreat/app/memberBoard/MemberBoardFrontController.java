@@ -58,14 +58,6 @@ public class MemberBoardFrontController extends HttpServlet {
 			break;
 		}
 
-		// Result 객체가 null이 아닌 경우, 리다이렉트 또는 포워드 처리
-		if (result != null) {
-			if (result.isRedirect()) {
-				response.sendRedirect(result.getPath()); // 리다이렉트 처리
-			} else {
-				request.getRequestDispatcher(result.getPath()).forward(request, response); // 포워드 처리
-			}
-		}
 	}
 
 }
