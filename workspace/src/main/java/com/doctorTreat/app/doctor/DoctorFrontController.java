@@ -53,13 +53,7 @@ public class DoctorFrontController extends HttpServlet {
   		result = new DoctorJoinController().execute(request, response);
 		request.getRequestDispatcher(result.getPath()).forward(request, response);
 		break;
-//    	 result = new DoctorJoinController().execute(request, response); 
-//    	 if(result != null) {
-//    		 System.out.println("ㅇ미어니ㅏㅜ");
-//    	 }
-//    	 request.getRequestDispatcher("/app/user/doctorJoinFinish.jsp").forward(request, response);
-//         System.out.println("회원가입 완료");
-//         break;
+
       }
    }
 

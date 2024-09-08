@@ -40,20 +40,6 @@ public class DoctorJoinController implements Execute {
 
 		result.setRedirect(true);
 		result.setPath("/app/user/doctorJoinFinish.jsp");
-//		try {
-//			// DAO 메서드 호출
-//			doctorDAO.inputAddress(doctorDTO);
-//			doctorDAO.inputHospital(doctorDTO);
-//			doctorDAO.inputDoctor(doctorDTO);
-//
-//			// 성공 처리
-//			result.setRedirect(false);
-//		} catch (Exception e) {
-//			e.printStackTrace(); // 에러 로그 기록
-//			result.setRedirect(true);
-//			System.out.println("에러!");
-//			// 에러 처리: 적절한 에러 메시지를 설정하거나 페이지로 리다이렉트
-//		}
 
 		return result;
 	}
