@@ -16,7 +16,7 @@ public class DoctorBoardDAO {
 
     // 게시글 목록 조회
     public List<DoctorBoardDTO> showList() {
-        return sqlSession.selectList("DoctorBoard.showList");
+        return sqlSession.selectList("DoctorBoard.showlist");
     }
 
 //    // 회원 번호로 게시글 상세 조회
