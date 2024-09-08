@@ -30,7 +30,7 @@ public class MemberBoardDetailController implements Execute {
 
 	    // DAO 메서드를 호출하여 상세 정보를 가져옵니다.
 	    MemberBoardDTO memberBoardDetail = memberBoardDAO.showDetail(infoNumber);
-	   System.out.println(memberBoardDetail);
+	    System.out.println(memberBoardDetail);
 	    // 결과를 요청 속성에 저장합니다.
 	    request.setAttribute("memberBoardshowDetail", memberBoardDetail);
 	    

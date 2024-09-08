@@ -41,21 +41,23 @@ public class MemberBoardFrontController extends HttpServlet {
 			result = new MemberBoardDetailController().execute(request, response);
 			break;
 		case "/memberBoardWrite.membo":
-			System.out.println("글 작성!");
+			System.out.println("Ddd");
+			request.getRequestDispatcher("/app/board/write.jsp").forward(request, response);
 			break;
-		case "/memberBoard/delete.membo":
+		case "/memberBoardWriteOk.membo":
+			System.out.println("글 작성!");
+			result = new MemberBoardWriteController().execute(request, response);
+			break;
+		case "/updateBoard.membo":
+			System.out.println("글 수정!");
+			result = new MemberBoardUpdateController().execute(request, response);
+			break;
+		case "deleteBoard.membo":
 			System.out.println("삭제!");
+			result = new MemberBoardDeleteController().execute(request, response);
 			break;
 		}
 
-		// Result 객체가 null이 아닌 경우, 리다이렉트 또는 포워드 처리
-		if (result != null) {
-			if (result.isRedirect()) {
-				response.sendRedirect(result.getPath()); // 리다이렉트 처리
-			} else {
-				request.getRequestDispatcher(result.getPath()).forward(request, response); // 포워드 처리
-			}
-		}
 	}
 
 }
