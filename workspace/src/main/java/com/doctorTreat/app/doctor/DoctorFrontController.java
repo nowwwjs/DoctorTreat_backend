@@ -50,9 +50,15 @@ public class DoctorFrontController extends HttpServlet {
          break;
 
       case "/doctor/doctorJoinOk.do":
+<<<<<<< HEAD
   		result = new DoctorJoinController().execute(request, response);
 		request.getRequestDispatcher(result.getPath()).forward(request, response);
 		break;
+=======
+        result = new DoctorJoinController().execute(request, response);
+      request.getRequestDispatcher(result.getPath()).forward(request, response);
+      break;
+>>>>>>> main
 
       }
    }
