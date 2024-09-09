@@ -55,10 +55,20 @@ public class MemberBoardFrontController extends HttpServlet {
          break;
       case "/updateBoard.membo":
          System.out.println("글 수정!");
-         result = new MemberBoardUpdateController().execute(request, response);
-         request.getRequestDispatcher("/index.jsp").forward(request, response);
+         
+         // medicalInfoNumber 값을 세션에 저장
+         String medicalInfoNumber = request.getParameter("infoNumber3");
+         request.getSession().setAttribute("medicalInfoNumber", medicalInfoNumber);
+         
+         request.getRequestDispatcher("/app/board/updateBoard.jsp").forward(request, response);
          break;
-      case "deleteBoard.membo":
+      case "/updateBoardOk.membo":
+          System.out.println("글 수정이미!");
+          result = new MemberBoardUpdateController().execute(request, response);
+          request.getRequestDispatcher("/index.jsp").forward(request, response);
+          break;
+         
+      case "/deleteBoard.membo":
          System.out.println("글 삭제!");
          result = new MemberBoardDeleteController().execute(request, response);
          request.getRequestDispatcher("/index.jsp").forward(request, response);
