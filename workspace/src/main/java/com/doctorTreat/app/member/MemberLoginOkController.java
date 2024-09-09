@@ -27,9 +27,7 @@ public class MemberLoginOkController implements Execute {
       memberDTO.setMemberPw(request.getParameter("memberPw"));
       MemberDTO member = memberDAO.memberLogin(memberDTO);
       Result result = new Result();
-      
-      System.out.println("확인 : " + member);
-      
+
       System.out.println("----------------");
       if ( member == null) {
          result.setPath("/user/memberLogin.jsp");
@@ -39,21 +37,10 @@ public class MemberLoginOkController implements Execute {
           session.setAttribute("userType", "member");
           session.setAttribute("memberNumber", member.getMemberNumber());   
 
-<<<<<<< HEAD
          result.setPath(request.getContextPath() + "/index.jsp");
          result.setRedirect(true);
       }
        return result;
-=======
-		System.out.println("----------------");
-		if ( member == null) {
-			result.setPath("/user/memberLogin.jsp");
-			result.setRedirect(false);
-		} else {
-		    HttpSession session = request.getSession();
-		    session.setAttribute("userType", "member");
-		    session.setAttribute("memberNumber", member.getMemberNumber());	
->>>>>>> main
 
    }
 }
