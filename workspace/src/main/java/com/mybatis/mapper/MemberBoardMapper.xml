@@ -14,7 +14,7 @@
 		FROM
 		DT_MEDICAL_INFO dmi
 		JOIN DT_MEMBER dm ON dmi.MEMBER_NUMBER =
-		dm.MEMBER_NUMBER
+		dm.MEMBER_NUMBER	
 		)
 		WHERE row_num BETWEEN #{offset} + 1 AND #{offset} +
 		#{pageSize}
