@@ -60,9 +60,14 @@ public class DoctorDAO {
    }
    
    //회원탈퇴
-   public void quit(int memberNumber) {
-      sqlSession.delete("member.quit", memberNumber);
+   public void quit(int doctorNumber) {
+      sqlSession.delete("doctor.quit", doctorNumber);
    }
+   
+   
+   
+   
+   
    
 }
 
