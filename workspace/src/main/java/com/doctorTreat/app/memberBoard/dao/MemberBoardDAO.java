@@ -43,13 +43,29 @@ public class MemberBoardDAO {
 	        sqlSession.insert("memberBoard.write", memberBoardDTO);
 	    }
 	 
-	 //게시글 삭제
-	 public void delete(int medicalInfoNumber) {
-		 sqlSession.delete("memberBoard.delete", medicalInfoNumber);
+	 //게시글 삭제 1
+	 public void delete1(int medicalInfoNumber) {
+		 sqlSession.delete("memberBoard.deleteDoctorComment", medicalInfoNumber);
 	 }
 	 
+	 //게시글 삭제 2
+	 public void delete2(int medicalInfoNumber) {
+		 sqlSession.delete("memberBoard.deleteMedicalInfo", medicalInfoNumber);
+	 }
+	 
+	 //게시글 삭제 3
+	 public void delete3(int medicalInfoNumber) {
+		 sqlSession.delete("memberBoard.deleteMember", medicalInfoNumber);
+	 }
+	 
+	 //게시글 삭제 4
+	 public void delete4(int medicalInfoNumber) {
+		 sqlSession.delete("memberBoard.deleteDoctor", medicalInfoNumber);
+	 }
 	 
 	 //게시글 수정
-
+	 public void update(MemberBoardDTO memberBoardDTO) {
+		 sqlSession.update("memberBoard.update" , memberBoardDTO);
+	 }
 
 }
