@@ -82,12 +82,11 @@
 	</delete>
 
 
-	<!--(의료회원)아이디 찾기-->
-	<select id="doctorFindId" parameterType="DoctorDTO"
-		resultType="DoctorDTO">
-		SELECT DOCTOR_ID
+	<!-- 의사 비밀번호 찾기 -->
+	<select id="findPassword" parameterType="DoctorDTO" resultType="String">
+		SELECT DOCTOR_PW
 		FROM DT_DOCTOR
-		WHERE DOCTOR_NUMBER = #{doctorNumber}
+		WHERE DOCTOR_ID = #{doctorId} AND DOCTOR_NAME = #{doctorName}
 	</select>
 
 

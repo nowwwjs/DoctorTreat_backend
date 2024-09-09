@@ -67,7 +67,14 @@ public class DoctorDAO {
    
    
    
-   
-   
+// 비밀번호 찾기 메소드
+   public String findPassword(DoctorDTO doctorDTO) {
+       return sqlSession.selectOne("doctor.findPassword", doctorDTO);
+   }
 }
+   
+   
+  
+   
+   
 

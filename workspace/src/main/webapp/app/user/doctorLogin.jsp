@@ -36,8 +36,8 @@
 					<!-- 메시지 표시 공간 -->
 				</div>
 				<div class="login-findmessage">
-					<a href="./../../../html/user/doctor/DoctorfindId.html"><span>아이디
-							찾기</span></a> <a href="./../../../html/user/doctor/DoctorfindPw.html"><span>비밀번호
+					<a href="${pageContext.request.contextPath}/app/user/doctorFindId.jsp"><span>아이디
+							찾기</span></a> <a href="${pageContext.request.contextPath}/app/user/doctorFindPw.jsp"><span>비밀번호
 							찾기</span></a>
 				</div>
 

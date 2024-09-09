@@ -155,7 +155,7 @@ document.querySelector(".signup-btn").addEventListener("click", function (event)
   if (!allFilled || !allCheckboxesChecked) {
     alert("입력란과 체크박스를 확인하세요."); // alert 창 표시
   } else {
-    window.location.href = "memberJoinfinish.html"; // 이동
+    window.location.href = "<%= request.getContextPath() %>/app/user/doctorJoinFinish.jsp"; // 이동
   }
 });
 
@@ -192,3 +192,32 @@ function execDaumPostcode() {
       }
   }).open();
 }
+
+
+//약관동의 전체 체크박스 변화
+document.addEventListener("DOMContentLoaded", () => {
+   const agreeAllCheckbox = document.getElementById("agree-all-checkbox");
+   const individualCheckboxes = document.querySelectorAll(".agree-checkbox");
+
+   // 개별 체크박스의 변화에 따라 전체 체크박스의 상태를 업데이트
+   individualCheckboxes.forEach((checkbox) => {
+      checkbox.addEventListener("change", () => {
+         // 모든 개별 체크박스가 체크되어 있는지 확인
+         const allChecked = Array.from(individualCheckboxes).every((cb) => cb.checked);
+         agreeAllCheckbox.checked = allChecked;
+      });
+   });
+
+   // 전체 체크박스의 변화에 따라 개별 체크박스의 상태를 업데이트
+   agreeAllCheckbox.addEventListener("change", () => {
+      individualCheckboxes.forEach((checkbox) => {
+         checkbox.checked = agreeAllCheckbox.checked;
+      });
+   });
+});
+
+
+
+
+
+
