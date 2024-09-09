@@ -9,7 +9,7 @@
 <title>게시글 상세보기</title>
 <link rel="stylesheet"
     href="${pageContext.request.contextPath}/static/css/board/boardDetail.css">
-<jsp:include page="/header.jsp" />
+<jsp:include page="/headerMember.jsp" />
 </head>
 <body>
     <main>
@@ -29,7 +29,7 @@
                     method="post">
                     <button type="submit" class="boardDetail-modifyBtn">글 수정</button>
                     <button type="submit"
-                        formaction="${pageContext.request.contextPath}/memberBoard/deleteBoard.membo"
+                        formaction="${pageContext.request.contextPath}/memberBoard/deleteBoard.membo?infoNumber2=${memberBoardshowDetail.medicalInfoNumber}"
                         class="boardDetail-deleteBtn">삭제</button>
                 </form>
             </div>

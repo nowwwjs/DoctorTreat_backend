@@ -16,6 +16,7 @@
 </head>
 <body>
 	<main>
+<<<<<<< HEAD
 		<div class="member-container">
 			<h1>로그인</h1>
 			<form
@@ -45,6 +46,30 @@
 					href="${pageContext.request.contextPath}/app/user/memberFindPw.jsp"><span>비밀번호
 						찾기</span></a>
 			</div>
+=======
+    <div class="member-container">
+      <h1>로그인</h1>
+      <form action="${pageContext.request.contextPath}/member/memberLoginOk.me" method="POST">
+        <div class="member-input-group">
+          <label for="username">아이디</label>
+          <input type="text" id="username" name="memberId" required>
+          <div class="memberjoin-Null"></div> <!-- 메시지 표시 공간 -->
+        </div>
+        <div class="member-input-group">
+          <label for="password">비밀번호</label>
+          <input type="password" id="password" name="memberPw" required>
+          <div class="memberjoin-Null"></div> <!-- 메시지 표시 공간 -->
+        </div>
+        <div class="member-input-group">
+          <button type="submit"></button>
+        </div>
+      </form>
+    <br>
+    <div class="memberlogin-findmessage">
+      <a href="${pageContext.request.contextPath}/app/user/memberFindId.jsp"><span>아이디 찾기</span></a>
+      <a href="${pageContext.request.contextPath}/app/user/memberFindPw.jsp"><span>비밀번호 찾기</span></a>
+    </div>
+>>>>>>> main
 
 
 			<br>
