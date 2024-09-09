@@ -186,9 +186,9 @@ function execDaumPostcode() {
 
               addr += extraAddr;
           }
-          document.getElementById('postcode').value = data.zonecode;
-          document.getElementById("address").value = addr;
-          document.getElementById("detailAddress").focus();
+          document.getElementById('doctorPostcode').value = data.zonecode;
+          document.getElementById("doctorAddress").value = addr;
+          document.getElementById("doctorDetailAddress").focus();
       }
   }).open();
 }
