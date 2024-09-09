@@ -99,7 +99,7 @@
                   name="doctorHospitalCall" required>
                <p class="Doctorjoin-Null"></p>
             </div>
-    		<br> <label for="doctorLicense">면허번호</label>
+          <br> <label for="doctorLicense">면허번호</label>
             <div class="Doctor-input-group">
                <input type="text" id="doctorLicense" name="doctorLicense" required>
                <p class="Doctorjoin-Null"></p>

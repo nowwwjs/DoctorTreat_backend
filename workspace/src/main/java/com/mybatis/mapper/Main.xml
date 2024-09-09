@@ -5,3 +5,4 @@
     SELECT MEDICAL_INFO_TITLE FROM DT_MEDICAL_INFO
 </select>
 </mapper>
+

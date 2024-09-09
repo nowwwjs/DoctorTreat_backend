@@ -1,6 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
-<%@ page import="java.util.List" %>
+<%@ page import="java.util.List"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -10,11 +10,11 @@
 	href="${pageContext.request.contextPath}/static/css/main.css" />
 <link rel="stylesheet"
 	href="https://unpkg.com/swiper/swiper-bundle.min.css" />
-<jsp:include page="${pageContext.request.contextPath}/header.jsp" />
+<jsp:include page="${pageContext.request.contextPath}/headerMember.jsp" />
 </head>
 
 <body>
-	
+
 	<main>
 		<!-- 유튜브  -->
 		<iframe width="980" height="400"
@@ -31,23 +31,22 @@
 			<br>
 			<div id="main-medic-content">
 				<div class="main-content-border">
-					<% 
-					// request에 저장된 medicalInfoTitles 리스트를 가져옴
+					<%
+					// request 속성에서 medicalInfoTitles 가져오기
 					List<String> medicalInfoTitles = (List<String>) request.getAttribute("medicalInfoTitles");
-					System.out.println("JSP에서 받은 제목 리스트: " + medicalInfoTitles);
-					
-					// medicalInfoTitles가 null이 아니고 비어있지 않을 때만 출력
+
+					// null 체크 및 리스트가 비어 있지 않은 경우에만 출력
 					if (medicalInfoTitles != null && !medicalInfoTitles.isEmpty()) {
-					    for (String title : medicalInfoTitles) { 
+						for (String title : medicalInfoTitles) {
 					%>
-						<div class="main-content-detail"><%= title %></div>
-					<% 
-					    } 
-					} else { 
+					<div class="main-content-detail"><%=title%></div>
+					<%
+					}
+					} else {
 					%>
-					    <div class="main-content-detail">의료 정보가 없습니다.</div>
-					<% 
-					} 
+					<div class="main-content-detail">표시할 제목이 없습니다.</div>
+					<%
+					}
 					%>
 				</div>
 			</div>
@@ -61,8 +60,7 @@
 				<div class="main-dicease-section">
 					<div class="main-dicease-mini">
 						<p>감기</p>
-						<br>
-						<br>
+						<br> <br>
 						<p>감기는 걸리면 아픕니다 아주 !!</p>
 					</div>
 					<img src="${pageContext.request.contextPath}/static/image/cold.png">
@@ -70,8 +68,7 @@
 				<div class="main-dicease-section">
 					<div class="main-dicease-mini">
 						<p>감기</p>
-						<br>
-						<br>
+						<br> <br>
 						<p>감기는 걸리면 아픕니다 아주 !!</p>
 					</div>
 					<img
@@ -80,8 +77,7 @@
 				<div class="main-dicease-section">
 					<div class="main-dicease-mini">
 						<p>감기</p>
-						<br>
-						<br>
+						<br> <br>
 						<p>감기는 걸리면 아픕니다 아주 !!</p>
 					</div>
 					<img
@@ -90,8 +86,7 @@
 				<div class="main-dicease-section">
 					<div class="main-dicease-mini">
 						<p>감기</p>
-						<br>
-						<br>
+						<br> <br>
 						<p>감기는 걸리면 아픕니다 아주 !!</p>
 					</div>
 					<img
@@ -120,7 +115,7 @@
 	<!-- 버튼들  -->
 	<div id="main-scroll-book">
 		<div id="main-book">
-		
+
 			<a href="./../../html/clinicMember/choice.html"><span>진료하러
 					가기</span></a>
 		</div>
