@@ -10,6 +10,7 @@
 	href="${pageContext.request.contextPath}/static/css/main.css" />
 <link rel="stylesheet"
 	href="https://unpkg.com/swiper/swiper-bundle.min.css" />
+
 <jsp:include page="${pageContext.request.contextPath}/header.jsp" />
 </head>
 
@@ -32,20 +33,16 @@
 			<div id="main-medic-content">
 				<div class="main-content-border">
 					<%
-					// request 속성에서 medicalInfoTitles 가져오기
+					// medicalInfoTitles가 제대로 전달됐는지 출력
 					List<String> medicalInfoTitles = (List<String>) request.getAttribute("medicalInfoTitles");
-
-					// null 체크 및 리스트가 비어 있지 않은 경우에만 출력
-					if (medicalInfoTitles != null && !medicalInfoTitles.isEmpty()) {
-						for (String title : medicalInfoTitles) {
-					%>
-					<div class="main-content-detail"><%=title%></div>
-					<%
-					}
+					if (medicalInfoTitles == null) {
+						System.out.println("medicalInfoTitles가 null입니다.");
+					} else if (medicalInfoTitles.isEmpty()) {
+						System.out.println("medicalInfoTitles가 비어 있습니다.");
 					} else {
-					%>
-					<div class="main-content-detail">표시할 제목이 없습니다.</div>
-					<%
+						for (String title : medicalInfoTitles) {
+							System.out.println("제목: " + title);
+						}
 					}
 					%>
 				</div>
