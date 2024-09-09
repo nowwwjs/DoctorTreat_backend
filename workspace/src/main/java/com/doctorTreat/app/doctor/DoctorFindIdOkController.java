@@ -1,5 +1,5 @@
 package com.doctorTreat.app.doctor;
 
-public class DoctorFindIdController {
+public class DoctorFindIdOkController {
 
 }

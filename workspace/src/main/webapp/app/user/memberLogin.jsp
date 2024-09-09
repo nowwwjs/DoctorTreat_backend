@@ -14,18 +14,18 @@
 <jsp:include page="${pageContext.request.contextPath}/header.jsp" />
 </head>
 <body>
-	<main>
+   <main>
     <div class="member-container">
       <h1>로그인</h1>
       <form action="${pageContext.request.contextPath}/member/memberLoginOk.me" method="POST">
         <div class="member-input-group">
-          <label for="username">아이디</label>
-          <input type="text" id="username" name="memberId" required>
+          <label for="memberId">아이디</label>
+          <input type="text" id="memberId" name="memberId" required>
           <div class="memberjoin-Null"></div> <!-- 메시지 표시 공간 -->
         </div>
         <div class="member-input-group">
-          <label for="password">비밀번호</label>
-          <input type="password" id="password" name="memberPw" required>
+          <label for="memberPw">비밀번호</label>
+          <input type="password" id="memberPw" name="memberPw" required>
           <div class="memberjoin-Null"></div> <!-- 메시지 표시 공간 -->
         </div>
         <div class="member-input-group">
