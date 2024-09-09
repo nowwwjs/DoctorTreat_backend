@@ -6,7 +6,7 @@ import com.doctorTreat.app.Result;
 import com.doctorTreat.app.doctor.dao.DoctorDAO;
 import com.doctorTreat.app.dto.DoctorDTO;
 
-public class DoctorFindPwController {
+public class DoctorFindPwOkController {
 
 //    public Result execute(HttpServletRequest request, HttpServletResponse response) {
         

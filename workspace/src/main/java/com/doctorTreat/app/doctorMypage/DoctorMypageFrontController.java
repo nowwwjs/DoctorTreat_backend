@@ -46,6 +46,13 @@ public class DoctorMypageFrontController extends HttpServlet {
 		String target = request.getRequestURI().substring(request.getContextPath().length());
 		System.out.println(target);
 		Result result = null;
+		
+		switch(target) {
+		case "/doctor/doctorInfo.dm":
+			request.getRequestDispatcher("app/myPage/doctorInfo.jsp").forward(request, response);
+			System.out.println("나 여기까지 왔어요");
+		}
+		
 	}
 
 }
