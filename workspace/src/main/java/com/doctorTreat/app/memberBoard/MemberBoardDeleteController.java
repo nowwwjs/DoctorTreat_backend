@@ -23,6 +23,8 @@ public class MemberBoardDeleteController implements Execute {
 
 		int medicalInfoNumber = Integer.parseInt(request.getParameter("InfoNumber2")); // 게시글 번호 가져오기
 		memberBoardDAO.delete(medicalInfoNumber); // 게시글 삭제
+		
+		System.out.println("삭제 완료");
 
 		// 삭제 후 목록 페이지로 리다이렉트
 		result.setRedirect(true);

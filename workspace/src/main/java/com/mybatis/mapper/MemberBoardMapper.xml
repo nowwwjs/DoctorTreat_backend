@@ -32,6 +32,7 @@
 	<select id="showDetail" parameterType="int"
 		resultType="MemberBoardDTO">
 		SELECT
+		dmi.MEDICAL_INFO_NUMBER,
 		dmi.MEDICAL_INFO_TITLE,
 		dm.MEMBER_NAME,
 		dmi.MEDICAL_INFO_DATE,
