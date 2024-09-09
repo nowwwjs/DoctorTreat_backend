@@ -33,7 +33,6 @@ public class MemberBoardWriteController implements Execute {
 
         // 결과 설정
         result.setRedirect(true);
-        result.setPath("/index.jsp");
         
         return result;
     }
