@@ -29,7 +29,7 @@
                     method="post">
                     <button type="submit" class="boardDetail-modifyBtn">글 수정</button>
                     <button type="submit"
-                        formaction="${pageContext.request.contextPath}/memberBoard/deleteBoard.membo"
+                        formaction="${pageContext.request.contextPath}/memberBoard/deleteBoard.membo?infoNumber2=${memberBoardshowDetail.medicalInfoNumber}"
                         class="boardDetail-deleteBtn">삭제</button>
                 </form>
             </div>
