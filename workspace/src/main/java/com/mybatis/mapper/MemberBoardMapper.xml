@@ -14,7 +14,7 @@
 		FROM
 		DT_MEDICAL_INFO dmi
 		JOIN DT_MEMBER dm ON dmi.MEMBER_NUMBER =
-		dm.MEMBER_NUMBER
+		dm.MEMBER_NUMBER	
 		)
 		WHERE row_num BETWEEN #{offset} + 1 AND #{offset} +
 		#{pageSize}
@@ -32,6 +32,7 @@
 	<select id="showDetail" parameterType="int"
 		resultType="MemberBoardDTO">
 		SELECT
+		dmi.MEDICAL_INFO_NUMBER,
 		dmi.MEDICAL_INFO_TITLE,
 		dm.MEMBER_NAME,
 		dmi.MEDICAL_INFO_DATE,
