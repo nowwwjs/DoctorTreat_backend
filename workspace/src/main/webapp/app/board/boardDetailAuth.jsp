@@ -19,10 +19,10 @@
 
         <div class="boardDetail-boardTextContainer">
             <div class="boardDetail-boardTop">
-                <div class="boardDetail-boardTitle">${memberBoardshowDetail1.medicalInfoTitle}</div>
+                <div class="boardDetail-boardTitle">${memberBoardshowDetail.medicalInfoTitle}</div>
                 <div class="boardDetail-writer">
-                    <div class="boardDetail-name">${memberBoardshowDetail1.memberName}</div>
-                    <div class="boardDetail-date">${memberBoardshowDetail1.medicalInfoDate}</div>
+                    <div class="boardDetail-name">${memberBoardshowDetail.memberName}</div>
+                    <div class="boardDetail-date">${memberBoardshowDetail.medicalInfoDate}</div>
                 </div>
                 <form
                     action="${pageContext.request.contextPath}/updateBoard.membo"
@@ -35,14 +35,14 @@
                     <button type="submit" class="boardDetail-deleteBtn">삭제</button>
                 </form>
             </div>
-            <div class="boardDetail-boardText">${memberBoardshowDetail1.medicalInfoText}</div>
+            <div class="boardDetail-boardText">${memberBoardshowDetail.medicalInfoText}</div>
         </div>
 
         <!-- 의사댓글창 -->
         <div class="boardDetail-comentBox">
-            <div class="boardDetail-doctorName">${memberBoardshowDetail2.doctorMajor}
-                : ${memberBoardshowDetail2.doctorName}</div>
-            <div class="boardDetail-doctorComent">${memberBoardshowDetail2.doctorCommentText}</div>
+            <div class="boardDetail-doctorName">${memberBoardshowDetail.doctorMajor}
+                : ${memberBoardshowDetail.doctorName}</div>
+            <div class="boardDetail-doctorComent">${memberBoardshowDetail.doctorCommentText}</div>
         </div>
 
     </main>

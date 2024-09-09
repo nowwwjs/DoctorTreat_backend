@@ -33,7 +33,7 @@ public class MemberBoardDetailController implements Execute {
 		System.out.println(memberBoardDetail);
 
 		// 결과를 요청 속성에 저장합니다.
-		request.setAttribute("memberBoardshowDetail1", memberBoardDetail);
+		request.setAttribute("memberBoardshowDetail", memberBoardDetail);
 
 		result.setRedirect(true);
 

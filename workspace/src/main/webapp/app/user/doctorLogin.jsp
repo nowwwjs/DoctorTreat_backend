@@ -17,21 +17,21 @@
 </head>
 
 <body>
-
-
 	<main>
 		<div class="Doctor-container">
 			<h1>로그인</h1>
-			<form action="/login" method="POST">
+			<form
+				action="${pageContext.request.contextPath}/doctor/doctorLoginOk.do"
+				method="POST">
 				<div class="Doctor-input-group">
-					<label for="username">아이디</label> <input type="text" id="username"
-						name="username" required>
+					<label for="doctorId">아이디</label> <input type="text" id="doctorId"
+						name="doctorId" required>
 					<div class="doctorjoin-Null"></div>
 					<!-- 메시지 표시 공간 -->
 				</div>
 				<div class="Doctor-input-group">
-					<label for="password">비밀번호</label> <input type="password"
-						id="password" name="password" required>
+					<label for="doctorPw">비밀번호</label> <input type="password"
+						id="doctorPw" name="doctorPw" required>
 					<div class="doctorjoin-Null"></div>
 					<!-- 메시지 표시 공간 -->
 				</div>
@@ -42,9 +42,7 @@
 				</div>
 
 				<br>
-				<button type="submit" class="Doctor-button">
-					<a href="./../../../html/main/main.html">로그인</a>
-				</button>
+				<button type="submit" class="Doctor-button">로그인</button>
 			</form>
 			<br> <br> <span class="Doctor-login-messagetwo">DOCTOR
 				TREAT 계정이 없으신가요? 지금 바로 만들어보세요!</span> <br> <br>
@@ -58,9 +56,9 @@
 			</a>
 		</div>
 	</main>
-	
-	<script
-		src="${pageContext.request.contextPath}/static/js/user/doctorLogin.js"></script>
+
 </body>
 <jsp:include page="${pageContext.request.contextPath}/footer.jsp" />
 </html>
+	<!--  <script
+		src="${pageContext.request.contextPath}/static/js/user/doctorLogin.js"></script>-->
