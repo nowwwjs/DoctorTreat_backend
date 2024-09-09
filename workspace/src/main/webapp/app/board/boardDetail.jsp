@@ -7,7 +7,7 @@
 <title>Insert title here</title>
 <link rel="stylesheet"
 	href="${pageContext.request.contextPath}/static/css/board/boardDetail.css">
-	<jsp:include page="/header.jsp" /> 
+	<jsp:include page="/headerMember.jsp" /> 
 </head>
 <body>
   <main>

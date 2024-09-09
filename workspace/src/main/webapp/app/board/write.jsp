@@ -9,7 +9,7 @@
 	href="${pageContext.request.contextPath}/static/css/board/write.css">
 <link rel="stylesheet" href="${pageContext.request.contextPath}/static/summernote/summernote-lite.css">
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-<jsp:include page="/header.jsp" />
+<jsp:include page="/headerMember.jsp" />
 </head>
 <body>
 	<main>

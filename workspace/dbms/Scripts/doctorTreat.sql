@@ -393,6 +393,9 @@ WHERE
 --   아이디 찾기
 --   비밀번호 찾기
    
+   SELECT * FROM DT_DOCTOR dd ;
+  SELECT*FROM DT_MEMBER dm ;
+   SELECT*FROM DT_MEDICAL_INFO;
 --   의사,일반 회원가입 페이지 ID 중복확인 조회
 SELECT login.USER_ID
 FROM (
