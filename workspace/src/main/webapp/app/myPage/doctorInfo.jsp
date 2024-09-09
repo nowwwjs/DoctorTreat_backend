@@ -11,7 +11,7 @@
 	href="https://unpkg.com/swiper/swiper-bundle.min.css" />
 <link rel="stylesheet" type="text/css"
 	href="${pageContext.request.contextPath}/static/css/myPage/doctorInfo.css">
-<jsp:include page="${pageContext.request.contextPath}/header.jsp" />
+<jsp:include page="${pageContext.request.contextPath}/headerDoctor.jsp" />
 <title>DoctorTreat - 병원 정보</title>
 </head>
 <body>
