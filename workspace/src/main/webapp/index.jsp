@@ -1,3 +1,4 @@
+<%@page import="org.apache.ibatis.reflection.SystemMetaObject"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%@ page import="java.util.List"%>
@@ -48,9 +49,10 @@
 						System.out.println("medicalInfoTitles가 비어 있습니다.");
 					} else {
 						for (String title : medicalInfoTitles) {
-							System.out.println("제목: " + title);
+							System.out.println("제목: 왜안될까?" + title);
 						}
 					}
+					
 					%>
 				</div>
 			</div>
