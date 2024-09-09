@@ -32,17 +32,16 @@ public class MemberBoardDAO {
 		return sqlSession.selectOne("memberBoard.getTotalCount");
 	}
 
-	// 게시글 디테일 가져오기
+	// 게시글 상세
 	public MemberBoardDTO showDetail(int medicalInfoNumber) {
 	    return sqlSession.selectOne("memberBoard.showDetail",  medicalInfoNumber);  
 	}
+	
 
 	//게시글 작성
 	 public void write(MemberBoardDTO memberBoardDTO) {
 	        sqlSession.insert("memberBoard.write", memberBoardDTO);
 	    }
-	 
-	 
 	 
 	 //게시글 삭제
 	 public void delete(int medicalInfoNumber) {
@@ -50,8 +49,7 @@ public class MemberBoardDAO {
 	 }
 	 
 	 
-	 
-	 //게시글 업데이트
+	 //게시글 수정
 
 
 }

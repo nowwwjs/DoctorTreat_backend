@@ -57,13 +57,13 @@ public class DoctorDTO {
    public void setDoctorPhone(String doctorPhone) {
       this.doctorPhone = doctorPhone;
    }
-
+   
    public String getDoctorLicense() {
-      return doctorLicense;
+       return doctorLicense;
    }
 
    public void setDoctorLicense(String doctorLicense) {
-      this.doctorLicense = doctorLicense;
+       this.doctorLicense = doctorLicense;
    }
 
    public String getDoctorMajor() {
@@ -133,8 +133,8 @@ public class DoctorDTO {
    @Override
    public String toString() {
       return "DoctorDTO [doctorNumber=" + doctorNumber + ", doctorId=" + doctorId + ", doctorPw=" + doctorPw
-            + ", doctorName=" + doctorName + ", doctorPhone=" + doctorPhone + ", doctorLicense=" + doctorLicense
-            + ", doctorMajor=" + doctorMajor + ", hospitalNumber=" + hospitalNumber + ", hospitalCall="
+            + ", doctorName=" + doctorName + ", doctorPhone=" + doctorPhone +  ", doctorMajor=" + doctorMajor 
+            + ", hospitalNumber=" + hospitalNumber + ", hospitalCall="
             + hospitalCall + ", hospitalName=" + hospitalName + ", addressNumber=" + addressNumber
             + ", addressPostal=" + addressPostal + ", addressAddress=" + addressAddress + ", addressDetail="
             + addressDetail + "]";
