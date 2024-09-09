@@ -8,4 +8,13 @@
 	FROM DT_MEDICAL_INFO dmi JOIN DT_MEMBER dm ON dmi.MEMBER_NUMBER = dm.MEMBER_NUMBER
 	</select>
 	
+	<!--  게시글 상세페이지 보여주기 -->
+	<select id="showListDetail" parameterType="int" resultType="DoctorBoardDTO">
+	SELECT MI.MEDICAL_INFO_TITLE, M.MEMBER_NAME, MI.MEDICAL_INFO_DATE, MI.MEDICAL_INFO_TEXT
+    FROM DT_MEDICAL_INFO MIJOIN DT_MEMBER M ON MI.MEMBER_NUMBER = M.MEMBER_NUMBER
+    WHERE MI.MEMBER_NUMBER = #{memberNumber}
+	</select>
+	
+
+	
 </mapper>

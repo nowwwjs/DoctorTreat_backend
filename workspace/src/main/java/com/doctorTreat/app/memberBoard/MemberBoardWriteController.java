@@ -19,10 +19,11 @@ public class MemberBoardWriteController implements Execute {
 
         MemberBoardDAO memberBoardDAO = new MemberBoardDAO();
         MemberBoardDTO memberBoardDTO = new MemberBoardDTO();
-        
+              
         // 폼에서 전달된 데이터 가져오기
         String writeTitle = request.getParameter("medicalInfoTitle");
         String writeText = request.getParameter("medicalInfoText");
+        
         
         // DTO에 데이터 설정
         memberBoardDTO.setMedicalInfoTitle(writeTitle);

@@ -28,7 +28,7 @@ public class DoctorBoardListController implements Execute {
 		request.setAttribute("doctorBoardshowlist", doctorBoardList);
 		
 		System.out.println(doctorBoardList);
-		result.setRedirect(true);
+		result.setRedirect(false);
 		result.setPath(request.getContextPath() + "/app/board/doctorMedicalKnowledgeList.jsp");
 		
 		// 포워드 처리는 프론트 컨트롤러에서 담당
