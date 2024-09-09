@@ -12,9 +12,10 @@
 <body>
 <main>
         <div class="member-write-update">의료 지식IN</div>
-        <form class="member-write-wrap-update" action="" method="">
-            <input class="member-write-title-update" type="text" name="" placeholder="제목을 입력해 주세요.">
-            <textarea class="member-write-content-update" placeholder="내용을 입력해주세요."></textarea>
+        <form class="member-write-wrap-update" 
+        action="${pageContext.request.contextPath}/updateBoardOk.membo?infoNumber3=${memberBoardshowDetail.medicalInfoNumber}" method="post">
+            <input class="member-write-title-update" type="text" name="updateTitle" placeholder="제목을 입력해 주세요.">
+            <textarea class="member-write-content-update" name="updateText" placeholder="내용을 입력해주세요."></textarea>
             <button class="member-write-register-update">수정 완료</button>
         </form>
     </main>
