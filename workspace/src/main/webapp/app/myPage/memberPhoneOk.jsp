@@ -11,7 +11,7 @@
 <link rel="stylesheet"
    href="https://unpkg.com/swiper/swiper-bundle.min.css" />
 
-<jsp:include page="${pageContext.request.contextPath}/header.jsp" />
+<jsp:include page="${pageContext.request.contextPath}/headerMember.jsp" />
 </head>
 <body>
 	<div class="memberPhoneOk-main-container">

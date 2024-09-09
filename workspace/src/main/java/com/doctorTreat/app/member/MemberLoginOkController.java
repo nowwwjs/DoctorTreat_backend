@@ -22,9 +22,11 @@ public class MemberLoginOkController implements Execute {
 
 		MemberDTO memberDTO = new MemberDTO();
 		MemberDAO memberDAO = new MemberDAO();
+		
 
 		memberDTO.setMemberId(request.getParameter("memberId"));
 		memberDTO.setMemberPw(request.getParameter("memberPw"));
+		System.out.println("확인=========");
 		MemberDTO member = memberDAO.memberLogin(memberDTO);
 		Result result = new Result();
 
