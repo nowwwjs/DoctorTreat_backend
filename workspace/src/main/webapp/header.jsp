@@ -29,7 +29,7 @@
 						</a> <a href="${request.contextPath}/app/user/loginType.jsp">
 							<div class="header-quickBtn">
 								<img
-									src="${pageContext.request.contextPath}/static/image/login.png">
+									src="${pageContext.request.contextPath}/static/image/loginTt.png">
 								<div>로그인</div>
 							</div>
 						</a> <a
@@ -54,23 +54,23 @@
 			<!-- 네비바 -->
 			<div class="header-navContainer">
 				<a
-					href="${pageContext.request.contextPath}/app/clinic/clinicStartMember.memcl">
+					href="${pageContext.request.contextPath}/app/user/loginType.jsp">
 					<div class="header-menu">
 						비대면진료 <img
 							src="${pageContext.request.contextPath}/static/image/Clinic.png">
 					</div>
-				</a> <a href="${pageContext.request.contextPath}/app/book/disease.jsp">
+				</a> <a href="${pageContext.request.contextPath}/app/user/loginType.jsp">
 					<div class="header-menu">
 						질병백과 <img
 							src="${pageContext.request.contextPath}/static/image/encyclopedia.png">
 					</div>
-				</a> <a href="${pageContext.request.contextPath}/BoardList.membo">
+				</a> <a href="${pageContext.request.contextPath}/app/user/loginType.jsp">
 					<div class="header-menu">
 						의료지식인 <img
 							src="${pageContext.request.contextPath}/static/image/Knowledge.png">
 					</div>
 				</a> <a
-					href="${pageContext.request.contextPath}/app/hospital/hospitalInfo.jsp">
+					href="${pageContext.request.contextPath}/app/user/loginType.jsp">
 					<div class="header-menu">
 						지역별 병원정보 <img
 							src="${pageContext.request.contextPath}/static/image/hospitalInfo.png">
