@@ -33,19 +33,19 @@
                <p class="Doctorjoin-Null"></p>
             </div>
 
-            <label for="doctorPassword">비밀번호</label>
+            <label for="doctorPw">비밀번호</label>
             <div class="Doctor-input-group">
-               <input type="password" id="doctorPassword" name="doctorPassword"
+               <input type="password" id="doctorPw" name="doctorPw"
                   required> <img class="Doctor-view-first"
                   src="./../../../image/view.png"> <img
                   class="Doctor-noview-first" src="./../../../image/noview.png">
                <p class="Doctorjoin-Null"></p>
             </div>
 
-            <label for="doctorConfirmPassword">비밀번호 확인</label>
+            <label for="doctorConfirmPw">비밀번호 확인</label>
             <div class="Doctor-input-group">
-               <input type="password" id="doctorConfirmPassword"
-                  name="doctorConfirmPassword" required> <img
+               <input type="password" id="doctorConfirmPw"
+                  name="doctorConfirmPw" required> <img
                   class="Doctor-view-second"
                   src="${pageContext.request.contextPath}/static/image/view.png">
                <img class="Doctor-noview-second"
@@ -99,11 +99,11 @@
                   name="doctorHospitalCall" required>
                <p class="Doctorjoin-Null"></p>
             </div>
-            <br> <label for="doctorLicense">면허번호</label>
+    		<br> <label for="doctorLicense">면허번호</label>
             <div class="Doctor-input-group">
                <input type="text" id="doctorLicense" name="doctorLicense" required>
                <p class="Doctorjoin-Null"></p>
-            </div>
+            </div> 
             <br> <label for="doctorMedicalSubject">진료과목</label>
             <div class="Doctor-input-group">
                <input type="text" id="doctorMedicalSubject"
