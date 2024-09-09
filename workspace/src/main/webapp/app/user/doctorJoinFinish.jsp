@@ -23,8 +23,8 @@
 			<p>회원가입이 성공적으로 완료되었습니다.</p>
 			<p>이제 로그인하여 서비스를 이용할 수 있습니다.</p>
 		</div>
-		<a href="./../../../html/user/doctor/Doctorlogin.html"><div
-				class="Doctor-joinFinish-button">로그인 바로하기</div></a>
+		<button type="button" onclick="location.href='${pageContext.request.contextPath}/doctor/doctorLogin.do'">
+		<div class="Doctor-joinFinish-button">로그인 바로하기</div></button>
 	</main>
 
 </body>

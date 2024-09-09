@@ -8,7 +8,7 @@
 <link rel="stylesheet" href="${pageContext.request.contextPath}/static/css/header.css" />
 </head>
 <body>
-	<header>
+   <header>
         <div id="header-fixed">
             <div class="header-holder">
                 <div class="header-container">
@@ -25,6 +25,10 @@
                                 <div>닥터트리톡</div>
                             </div>
                         </a>
+<<<<<<< HEAD
+=======
+                        <!-- login 페이지 추가 -->
+>>>>>>> main
                         <a href="${request.contextPath}/app/user/loginType.jsp">
                             <div class="header-quickBtn">
                                 <img src="${pageContext.request.contextPath}/static/image/login.png">

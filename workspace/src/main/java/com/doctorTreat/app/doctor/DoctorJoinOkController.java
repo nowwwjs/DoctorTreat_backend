@@ -9,7 +9,7 @@ import com.doctorTreat.app.Result;
 import com.doctorTreat.app.doctor.dao.DoctorDAO;
 import com.doctorTreat.app.dto.DoctorDTO;
 
-public class DoctorJoinController implements Execute {
+public class DoctorJoinOkController implements Execute {
 
    @Override
    public Result execute(HttpServletRequest request, HttpServletResponse response) throws IOException {
