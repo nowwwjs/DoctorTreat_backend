@@ -24,7 +24,7 @@
 			allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
 			referrerpolicy="strict-origin-when-cross-origin" allowfullscreen>
 		</iframe>
-		s
+		
 
 		<!-- 의료 지식인  -->
 		<div id="main-medic">
