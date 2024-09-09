@@ -13,34 +13,42 @@ import com.doctorTreat.app.memberBoard.dao.MemberBoardDAO;
 
 public class MemberBoardUpdateController implements Execute {
 
-    @Override
-    public Result execute(HttpServletRequest request, HttpServletResponse response)
-            throws IOException, ServletException {
-        request.setCharacterEncoding("UTF-8");
-        Result result = new Result();
+	@Override
+	public Result execute(HttpServletRequest request, HttpServletResponse response)
+			throws IOException, ServletException {
+		request.setCharacterEncoding("UTF-8");
+		Result result = new Result();
 
-        MemberBoardDAO memberBoardDAO = new MemberBoardDAO();
+		MemberBoardDAO memberBoardDAO = new MemberBoardDAO();
 
-        // 폼에서 전달된 데이터 가져오기
-        String updateTitle = request.getParameter("updateTitle");
-        String updateText = request.getParameter("updateText");
-        String sessionNumber = (String) request.getSession().getAttribute("medicalInfoNumber");
-        
-        // 세션에서 게시글 번호 가져오기
-        int medicalInfoNumber = Integer.valueOf(sessionNumber); 
+		// 폼에서 전달된 데이터 가져오기
+		String updateTitle = request.getParameter("updateTitle");
+		String updateText = request.getParameter("updateText");
+		String sessionNumber = (String) request.getSession().getAttribute("medicalInfoNumber");
 
-        // DTO 객체 생성 및 값 설정
-        MemberBoardDTO memberBoardDTO = new MemberBoardDTO();
-        memberBoardDTO.setMedicalInfoNumber(medicalInfoNumber);
-        memberBoardDTO.setMedicalInfoTitle(updateTitle);
-        memberBoardDTO.setMedicalInfoText(updateText);
+		// 세션에서 게시글 번호 가져오기
+		int medicalInfoNumber = Integer.valueOf(sessionNumber);
 
-        // DAO 호출하여 업데이트 수행
-        memberBoardDAO.update(memberBoardDTO);
+		// DTO 객체 생성 및 값 설정
+		MemberBoardDTO memberBoardDTO = new MemberBoardDTO();
+		memberBoardDTO.setMedicalInfoNumber(medicalInfoNumber);
+		memberBoardDTO.setMedicalInfoTitle(updateTitle);
+		memberBoardDTO.setMedicalInfoText(updateText);
+		
+		// DAO 호출하여 업데이트 수행
+		memberBoardDAO.update(memberBoardDTO);
+		
+		// 내용과 제목 가져오기 
+		MemberBoardDTO memberBoardDTO2 = new MemberBoardDTO();
+		
+		memberBoardDTO2 = memberBoardDAO.show(medicalInfoNumber);
+	
+		// 결과를 요청 속성에 저장합니다.
+		request.setAttribute("memberBoardshowContent", memberBoardDTO2);
 
-        // 결과 설정
-        result.setRedirect(true);
+		// 결과 설정
+		result.setRedirect(true);
 
-        return result;
-    }
+		return result;
+	}
 }

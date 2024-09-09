@@ -104,6 +104,13 @@
 		medical_info_text = #{medicalInfoText}
 		WHERE medical_info_number = #{medicalInfoNumber}
 	</update>
+	
+	<!-- 게시글 선택  -->
+	<select id ="content"  parameterType="int" resultType="MemberBoardDTO" >
+		select m.medical_info_title , m.medical_info_text
+		from dt_medical_info m
+		where medical_info_number = #{medicalInfoNumber}
+	</select>
 
 
 

@@ -8,8 +8,25 @@
 <title>doctorTreat_질병상세</title>
 <link rel="stylesheet"
 	href="${pageContext.request.contextPath}/static/css/book/bookDetail.css">
-<jsp:include page="${pageContext.request.contextPath}/header.jsp" />
 </head>
+<c:choose>
+    <c:when test="${sessionScope.memberNumber == null && sessionScope.doctorNumber == null}">
+        <jsp:include page="${pageContext.request.contextPath}/header.jsp" />
+    </c:when>
+    <c:when test="${sessionScope.doctorNumber != null}">
+        <jsp:include page="${pageContext.request.contextPath}/headerDoctor.jsp" />
+    </c:when>
+    <c:when test="${sessionScope.memberNumber != null}">
+        <jsp:include page="${pageContext.request.contextPath}/headerMember.jsp" />
+    </c:when>
+    <c:otherwise>
+        <!-- 기본적으로 포함할 내용이 필요하다면 여기에 추가 -->
+        <jsp:include page="${pageContext.request.contextPath}/defaultHeader.jsp" />
+    </c:otherwise>
+</c:choose>
+
+
+
 <body>
 	<main>
 		<c:choose>

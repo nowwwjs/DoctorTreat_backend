@@ -67,5 +67,9 @@ public class MemberBoardDAO {
 	 public void update(MemberBoardDTO memberBoardDTO) {
 		 sqlSession.update("memberBoard.update" , memberBoardDTO);
 	 }
+	 
+	 public MemberBoardDTO show (int medicalInfoNumber) {
+		 return sqlSession.selectOne("memberBoard.content" , medicalInfoNumber);
+	 }
 
 }
