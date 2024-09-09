@@ -17,7 +17,7 @@
 	<main>
     <div class="member-container">
       <h1>로그인</h1>
-      <form action="/login" method="POST">
+      <form action="${pageContext.request.contextPath}/member/memberLoginOk.me" method="POST">
         <div class="member-input-group">
           <label for="username">아이디</label>
           <input type="text" id="username" name="username" required>
