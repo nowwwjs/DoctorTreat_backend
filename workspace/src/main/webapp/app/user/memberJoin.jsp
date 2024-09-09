@@ -6,19 +6,11 @@
 <meta charset="UTF-8">
 <title>일반 회원가입</title>
 <link rel="stylesheet"
-<<<<<<< HEAD
    href="${pageContext.request.contextPath}/static/css/user/memberJoin.css">
 <link rel="stylesheet"
    href="${pageContext.request.contextPath}/static/css/main.css" />
 <link rel="stylesheet"
    href="https://unpkg.com/swiper/swiper-bundle.min.css" />
-=======
-	href="${pageContext.request.contextPath}/static/css/user/memberJoin.css">
-<link rel="stylesheet"
-	href="${pageContext.request.contextPath}/static/css/main.css" />
-<link rel="stylesheet"
-	href="https://unpkg.com/swiper/swiper-bundle.min.css" />
->>>>>>> main
 <jsp:include page="${pageContext.request.contextPath}/header.jsp" />
 
 </head>
@@ -29,17 +21,17 @@
          <form
             action="${pageContext.request.contextPath}/member/memberJoinOk.me"
             method="post">
-            <label for="userId">아이디</label>
+            <label for="memberId">아이디</label>
             <div class="member-input-group">
-               <input class="member-input-focus" type="text" id="userId"
+               <input class="member-input-focus" type="text" id="memberId"
                   name="memberId" required>
                <button class="join-checkIdBtn">중복 확인</button>
                <p class="memberjoin-Null"></p>
             </div>
 
-            <label for="password">비밀번호</label>
+            <label for="memberPw">비밀번호</label>
             <div class="member-input-group">
-               <input type="password" id="password" name="memberPw" required>
+               <input type="password" id="memberPw" name="memberPw" required>
                <img class="memberjoin-view-first"
                   src="${pageContext.request.contextPath}/static/image/view.png">
                <img class="memberjoin-noview-first"
@@ -47,9 +39,9 @@
                <p class="memberjoin-Null"></p>
             </div>
 
-            <label for="confirm-password">비밀번호 확인</label>
+            <label for="memberConfirmPw">비밀번호 확인</label>
             <div class="member-input-group">
-               <input type="password" id="confirm-password" name="memberPwConfirm"
+               <input type="password" id="memberConfirmPw" name="memberConfirmPw"
                   required> <img class="memberjoin-view-second"
                   src="${pageContext.request.contextPath}/static/image/view.png">
                <img class="memberjoin-noview-second"
@@ -57,63 +49,38 @@
                <p class="memberjoin-Null"></p>
             </div>
 
-            <label for="userName">이름</label>
+            <label for="memberName">이름</label>
             <div class="member-input-group">
-               <input type="text" id="userName" name="memberName" required>
+               <input type="text" id="memberName" name="memberName" required>
                <p class="memberjoin-Null"></p>
             </div>
 
-<<<<<<< HEAD
             <div class="input-group1">
-               <input type="text" id="postcode" name="addressPostal"
+               <input type="text" id="memberPostcode" name="addressPostal"
                   placeholder="우편번호">
                <button class="postcode-search" onclick="execDaumPostcode()">주소
                   찾기</button>
             </div>
             <div class="input-group1">
-               <input type="text" id="address" name="addressAddress"
+               <input type="text" id="memberAddress" name="addressAddress"
                   placeholder="주소">
             </div>
             <div class="input-group1">
 
-               <input type="text" id="detailAddress" name="adressDetail"
+               <input type="text" id="memberDetailAddress" name="addressDetail"
                   placeholder="상세 주소">
-=======
-				<div class="input-group1">
-					<input type="text" id="postcode" name="addressPostal"
-						placeholder="우편번호">
-					<button class="postcode-search" onclick="execDaumPostcode()">주소
-						찾기</button>
-				</div>
-				<div class="input-group1">
-					<input type="text" id="address" name="addressAddress"
-						placeholder="주소">
-				</div>
-				<div class="input-group1">
-
-					<input type="text" id="detailAddress" name="adressDetail"
-						placeholder="상세 주소">
-
-				</div>
-
-				<label for="birth">생년월일</label>
-				<div class="member-input-group">
-					<input type="date" id="birth" name="memberBirth" required>
-					<p class="memberjoin-Null"></p>
-				</div>
->>>>>>> main
 
             </div>
 
-            <label for="birth">생년월일</label>
+            <label for="memberBirth">생년월일</label>
             <div class="member-input-group">
-               <input type="date" id="birth" name="memberBirth" required>
+               <input type="date" id="memberBirth" name="memberBirth" required>
                <p class="memberjoin-Null"></p>
             </div>
 
-            <label for="phoneNumber">핸드폰 번호</label>
+            <label for="memberPhone">핸드폰 번호</label>
             <div class="member-input-group">
-               <input type="text" id="phoneNumber" name="memberPhone" required>
+               <input type="text" id="memberPhone" name="memberPhone" required>
                <button class="join-request">인증 요청</button>
                <p class="memberjoin-Null"></p>
             </div>
@@ -156,15 +123,6 @@
 
    <jsp:include page="${pageContext.request.contextPath}/footer.jsp" />
 
-<<<<<<< HEAD
 
-=======
-	<!--   <script src="${pageContext.request.contextPath}/static/js/user/memberJoin.js"></script> -->
-	<!-- <script src="https://t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script> -->
-
-	<jsp:include page="${pageContext.request.contextPath}/footer.jsp" />
-
-
->>>>>>> main
 </body>
 </html>

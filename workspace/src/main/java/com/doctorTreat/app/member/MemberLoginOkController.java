@@ -14,34 +14,35 @@ import com.doctorTreat.app.member.dao.MemberDAO;
 
 public class MemberLoginOkController implements Execute {
 
-	@Override
-	public Result execute(HttpServletRequest request, HttpServletResponse response)
-			throws IOException, ServletException {
+   @Override
+   public Result execute(HttpServletRequest request, HttpServletResponse response)
+         throws IOException, ServletException {
 
-		response.setContentType("text/html; charset=utf-8");
+      response.setContentType("text/html; charset=utf-8");
 
-		MemberDTO memberDTO = new MemberDTO();
-		MemberDAO memberDAO = new MemberDAO();
-		
+      MemberDTO memberDTO = new MemberDTO();
+      MemberDAO memberDAO = new MemberDAO();
 
-		memberDTO.setMemberId(request.getParameter("memberId"));
-		memberDTO.setMemberPw(request.getParameter("memberPw"));
-		System.out.println("확인=========");
-		MemberDTO member = memberDAO.memberLogin(memberDTO);
-		Result result = new Result();
+      memberDTO.setMemberId(request.getParameter("memberId"));
+      memberDTO.setMemberPw(request.getParameter("memberPw"));
+      MemberDTO member = memberDAO.memberLogin(memberDTO);
+      Result result = new Result();
+      
+      System.out.println("확인 : " + member);
+      
+      System.out.println("----------------");
+      if ( member == null) {
+         result.setPath("/user/memberLogin.jsp");
+         result.setRedirect(false);
+      } else {
+          HttpSession session = request.getSession();
+          session.setAttribute("userType", "member");
+          session.setAttribute("memberNumber", member.getMemberNumber());   
 
-		if ( member == null) {
-			result.setPath("/user/memberLogin.jsp");
-			result.setRedirect(false);
-		} else {
-		    HttpSession session = request.getSession();
-		    session.setAttribute("userType", "member");
-		    session.setAttribute("memberNumber", member.getMemberNumber());	
+         result.setPath(request.getContextPath() + "/index.jsp");
+         result.setRedirect(true);
+      }
+       return result;
 
-			result.setPath(request.getContextPath() + "/index.jsp");
-			result.setRedirect(true);
-		}
-	    return result;
-
-	}
+   }
 }
