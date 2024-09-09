@@ -25,7 +25,7 @@
                                 <div>닥터트리톡</div>
                             </div>
                         </a>
-                        <a href="${request.contextPath}/memberlogin.me">
+                        <a href="${request.contextPath}/app/user/loginType.jsp">
                             <div class="header-quickBtn">
                                 <img src="${pageContext.request.contextPath}/static/image/login.png">
                                 <div>로그인</div>
