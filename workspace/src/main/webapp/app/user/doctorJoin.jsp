@@ -37,8 +37,8 @@
             <div class="Doctor-input-group">
                <input type="password" id="doctorPw" name="doctorPw"
                   required> <img class="Doctor-view-first"
-                  src="./../../../image/view.png"> <img
-                  class="Doctor-noview-first" src="./../../../image/noview.png">
+                  src="${pageContext.request.contextPath}/static/image/view.png"> <img
+                  class="Doctor-noview-first" src="${pageContext.request.contextPath}/static/image/noview.png">
                <p class="Doctorjoin-Null"></p>
             </div>
 
@@ -150,4 +150,6 @@
 
 </body>
 <jsp:include page="${pageContext.request.contextPath}/footer.jsp" />
+<script
+		src="${pageContext.request.contextPath}/static/js/user/doctorJoin.js"></script>
 </html>

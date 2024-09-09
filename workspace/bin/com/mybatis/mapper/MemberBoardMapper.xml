@@ -10,15 +10,13 @@
 		dmi.MEDICAL_INFO_TITLE,
 		dmi.MEDICAL_INFO_TEXT,
 		dm.MEMBER_NAME,
-		ROW_NUMBER() OVER (ORDER BY dmi.MEDICAL_INFO_DATE) AS row_num
-		FROM
-		DT_MEDICAL_INFO dmi
-		JOIN DT_MEMBER dm ON dmi.MEMBER_NUMBER =
-		dm.MEMBER_NUMBER	
+		ROW_NUMBER() OVER (ORDER BY dmi.MEDICAL_INFO_DATE DESC) AS row_num
+		FROM DT_MEDICAL_INFO dmi
+		JOIN DT_MEMBER dm ON dmi.MEMBER_NUMBER = dm.MEMBER_NUMBER
 		)
-		WHERE row_num BETWEEN #{offset} + 1 AND #{offset} +
-		#{pageSize}
+		WHERE row_num BETWEEN #{offset} + 1 AND #{offset} + #{pageSize}
 	</select>
+
 
 
 	<!-- 총 게시물 수 가져오기 -->
@@ -40,12 +38,17 @@
 		dd.DOCTOR_MAJOR,
 		dd.DOCTOR_NAME,
 		ddc.DOCTOR_COMMENT_TEXT
-		FROM DT_MEDICAL_INFO dmi
-		JOIN DT_MEMBER dm ON dmi.MEMBER_NUMBER = dm.MEMBER_NUMBER
-		LEFT JOIN DT_DOCTOR_COMMENT ddc ON ddc.MEDICAL_INFO_NUMBER =
+		FROM
+		DT_MEDICAL_INFO dmi
+		JOIN DT_MEMBER dm ON dmi.MEMBER_NUMBER =
+		dm.MEMBER_NUMBER
+		LEFT JOIN DT_DOCTOR_COMMENT ddc ON
+		ddc.MEDICAL_INFO_NUMBER =
 		dmi.MEDICAL_INFO_NUMBER
-		LEFT JOIN DT_DOCTOR dd ON ddc.DOCTOR_NUMBER = dd.DOCTOR_NUMBER
-		WHERE dmi.MEDICAL_INFO_NUMBER = #{medicalInfoNumber}
+		LEFT JOIN DT_DOCTOR dd
+		ON ddc.DOCTOR_NUMBER = dd.DOCTOR_NUMBER
+		WHERE dmi.MEDICAL_INFO_NUMBER =
+		#{medicalInfoNumber}
 	</select>
 
 	<!-- 게시글 작성 -->
@@ -56,34 +59,51 @@
 		VALUES (MEDICAL_INFO_SEQ.NEXTVAL,
 		#{medicalInfoTitle}, #{medicalInfoText}, SYSDATE , #{memberNumber})
 	</insert>
-	
-	
-	<!-- 게시글 삭제 -->
-	<delete id="delete" parameterType="int">
-		DELETE FROM DT_DOCTOR_COMMENT
-		WHERE MEDICAL_INFO_NUMBER = #{medicalInfoNumber}
 
+
+	<!-- 첫 번째 DELETE -->
+	<delete id="deleteDoctorComment" parameterType="int">
+		DELETE FROM
+		DT_DOCTOR_COMMENT
+		WHERE MEDICAL_INFO_NUMBER = #{medicalInfoNumber}
+	</delete>
+
+	<!-- 두 번째 DELETE -->
+	<delete id="deleteMedicalInfo" parameterType="int">
 		DELETE FROM
 		DT_MEDICAL_INFO
 		WHERE MEDICAL_INFO_NUMBER = #{medicalInfoNumber}
+	</delete>
 
-		DELETE
-		FROM DT_MEMBER
+	<!-- 세 번째 DELETE -->
+	<delete id="deleteMember" parameterType="int">
+		DELETE FROM DT_MEMBER
 		WHERE MEMBER_NUMBER IN (
-		SELECT MEMBER_NUMBER FROM
-		DT_MEDICAL_INFO WHERE MEDICAL_INFO_NUMBER =
-		#{medicalInfoNumber}
-		)
-
-		DELETE FROM DT_DOCTOR
-		WHERE DOCTOR_NUMBER IN (
-		SELECT DOCTOR_NUMBER FROM
-		DT_DOCTOR_COMMENT WHERE MEDICAL_INFO_NUMBER =
+		SELECT MEMBER_NUMBER FROM DT_MEDICAL_INFO
+		WHERE MEDICAL_INFO_NUMBER =
 		#{medicalInfoNumber}
 		)
 	</delete>
 
+	<!-- 네 번째 DELETE -->
+	<delete id="deleteDoctor" parameterType="int">
+		DELETE FROM DT_DOCTOR
+		WHERE DOCTOR_NUMBER IN (
+		SELECT DOCTOR_NUMBER FROM DT_DOCTOR_COMMENT
+		WHERE MEDICAL_INFO_NUMBER =
+		#{medicalInfoNumber}
+		)
+	</delete>
+
+
 	<!-- 게시글 수정 -->
+	<update id="update" parameterType="MemberBoardDTO">
+		UPDATE dt_medical_info
+		SET
+		medical_info_title = #{medicalInfoTitle},
+		medical_info_text = #{medicalInfoText}
+		WHERE medical_info_number = #{medicalInfoNumber}
+	</update>
 
 
 
