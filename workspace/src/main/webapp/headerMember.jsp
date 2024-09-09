@@ -28,7 +28,7 @@
                         </a>
                         <a href="${request.contextPath}/member/memberLogout.me">
                             <div class="header-quickBtn">
-                            <c:if test="${sessionScope.memberNumber != null}">
+                                <c:if test="${sessionScope.memberNumber != null}">
                                 <img src="${pageContext.request.contextPath}/static/image/login.png">
                                 <div>로그아웃</div>
                                 </c:if>
