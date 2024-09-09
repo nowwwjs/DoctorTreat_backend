@@ -25,14 +25,12 @@
                     <div class="boardDetail-date">${memberBoardshowDetail.medicalInfoDate}</div>
                 </div>
                 <form
-                    action="${pageContext.request.contextPath}/updateBoard.membo"
+                    action="${pageContext.request.contextPath}/memberBoard/updateBoard.membo"
                     method="post">
                     <button type="submit" class="boardDetail-modifyBtn">글 수정</button>
-                 </form>
-                 <form
-                 	 action="${pageContext.request.contextPath}/deleteBoard.membo"
-                     method="post">
-                    <button type="submit" class="boardDetail-deleteBtn">삭제</button>
+                    <button type="submit"
+                        formaction="${pageContext.request.contextPath}/memberBoard/deleteBoard.membo"
+                        class="boardDetail-deleteBtn">삭제</button>
                 </form>
             </div>
             <div class="boardDetail-boardText">${memberBoardshowDetail.medicalInfoText}</div>

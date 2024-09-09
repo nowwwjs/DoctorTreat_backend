@@ -46,3 +46,4 @@ public class DoctorJoinOkController implements Execute {
 		return result;
 	}
 }
+
