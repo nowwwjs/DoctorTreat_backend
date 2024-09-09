@@ -9,7 +9,7 @@
 <title>의료 지식인</title>
 <link rel="stylesheet"
 	href="${pageContext.request.contextPath}/static/css/board/medicalKnowledgeList.css">
-<jsp:include page="/header.jsp" />
+<jsp:include page="/headerMember.jsp" />
 </head>
 <body>
 	<main>

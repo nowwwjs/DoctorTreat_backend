@@ -1,15 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="member">
+
+
 	<!-- 회원 삽입 -->
 	<insert id="memberJoin" parameterType="MemberDTO">
 		INSERT INTO DT_MEMBER
 		(MEMBER_NUMBER, MEMBER_ID, MEMBER_PW, MEMBER_NAME,
 		MEMBER_BIRTH,
 		MEMBER_PHONE, ADDRESS_NUMBER)
-		VALUES (MEMBER_SEQ.NEXTVAL, #{memberId}, #{memberPw},
+		VALUES (MEMBER_SEQ.NEXTVAL, #{memberId},
+		#{memberPw},
 		#{memberName},
-		TO_DATE(#{memberBirth}, 'YYYY-MM-DD'), #{memberPhone}, #{addressNumber})
+		TO_DATE(#{memberBirth}, 'YYYY-MM-DD'),
+		#{memberPhone}, #{addressNumber})
 	</insert>
 
 	<!-- 주소테이블에 마지막으로 생성된 PK조회. 다음테이블에 참조값으로 쓰기위해 사용 -->
@@ -35,18 +39,20 @@
 
 	<select id="memberLogin" parameterType="MemberDTO"
 		resultType="memberDTO">
-		SELECT d.member_number,
-		d.doctor_id,
-		d.doctor_pw,
-		d.doctor_name,
-		d.doctor_phone,
-		a.address_number,
-		a.address_postal,
-		a.address_address,
-		a.address_detail
-		from dt_doctor d
-		where d.member_id = #{memberId} and
-		d.member_pw = #{memberPw}
+		SELECT m.member_number,
+		m.member_id,
+		m.member_pw,
+		m.member_name,
+		m.member_phone,
+		m.member_birth,
+		ad.address_number,
+		ad.address_postal,
+		ad.address_address,
+		ad.address_detail
+		from dt_member m
+		left join dt_address ad on m.address_number = ad.address_number
+		where m.member_id = #{memberId} and
+		m.member_pw = #{memberPw}
 	</select>
 
 	<!-- 회원탈퇴 -->
@@ -57,3 +63,4 @@
 	</delete>
 
 </mapper>
+

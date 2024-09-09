@@ -73,7 +73,7 @@ public class MemberFrontController extends HttpServlet {
       case "/member/memberLogout.me":
          System.out.println("회원 로그아웃");
          result = new MemberLogoutOkController().execute(request, response);
-         request.getRequestDispatcher(result.getPath()).forward(request, response);
+         request.getRequestDispatcher("/index.jsp").forward(request, response);
          break;
 
       }
