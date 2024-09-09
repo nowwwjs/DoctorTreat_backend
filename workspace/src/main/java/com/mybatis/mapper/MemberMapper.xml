@@ -58,4 +58,8 @@
       member_number = #{memberNumber}
    </delete>
 
+<<<<<<< HEAD
 </mapper>
+=======
+</mapper>
+>>>>>>> 49a9277cbe7cd402d5e6d0931942a06ccecb8c51
