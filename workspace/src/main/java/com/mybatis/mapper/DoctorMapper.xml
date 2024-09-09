@@ -81,6 +81,14 @@
 		doctor_number = #{doctorNumber}
 	</delete>
 
+	<!--의료 회원가입 아이디 중복확인-->
+	<select id="checkId" parameterType="string" resultType="int">
+		select
+		count(doctor_number)
+		from dt_doctor
+		where doctor_id = #{doctorId}
+	</select>
+
 
 	<!-- 의사 비밀번호 찾기 -->
 	<select id="findPassword" parameterType="DoctorDTO" resultType="String">

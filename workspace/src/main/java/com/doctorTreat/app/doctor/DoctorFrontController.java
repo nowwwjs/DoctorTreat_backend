@@ -78,16 +78,10 @@ public class DoctorFrontController extends HttpServlet {
 			result = new DoctorLogoutOkController().execute(request, response);
 			request.getRequestDispatcher("/index.jsp").forward(request, response);
 			break;
-		 case "/doctor/doctorInfo.do":
-	            // doctorInfo.do로 요청이 들어오면 세션에 저장된 로그인된 의사 정보를 JSP로 전달
-	            DoctorDTO doctorInfo = (DoctorDTO) request.getSession().getAttribute("loggedDoctor");
-	            if (doctorInfo != null) {
-	                request.setAttribute("doctorInfo", doctorInfo);
-	                request.getRequestDispatcher("/app/myPage/doctorInfo.jsp").forward(request, response);
-	            } else {
-	                response.sendRedirect("/doctor/doctorLogin.do");
-	            }
-	            break;
+		case "/member/checkIdOk.me":
+			System.out.println("아이디 체크!!");
+			new DoctorCheckIdOkController().execute(request, response);
+			break;
 
 		}
 	}
