@@ -6,17 +6,10 @@
 		INSERT INTO DT_MEMBER
 		(MEMBER_NUMBER, MEMBER_ID, MEMBER_PW, MEMBER_NAME,
 		MEMBER_BIRTH,
-<<<<<<< HEAD
 		MEMBER_PHONE, ADDRESS_NUMBER)
 		VALUES (MEMBER_SEQ.NEXTVAL, #{memberId}, #{memberPw},
 		#{memberName},
 		TO_DATE(#{memberBirth}, 'YYYY-MM-DD'), #{memberPhone}, #{addressNumber})
-=======
-		MEMBER_PHONE)
-		VALUES (MEMBER_SEQ.NEXTVAL, #{memberId}, #{memberPw},
-		#{memberName},
-		TO_DATE(#{memberBirth}, 'YYYY-MM-DD'), #{memberPhone})
->>>>>>> main
 	</insert>
 
 	<!-- 주소테이블에 마지막으로 생성된 PK조회. 다음테이블에 참조값으로 쓰기위해 사용 -->
