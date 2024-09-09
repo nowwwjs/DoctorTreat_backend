@@ -20,12 +20,12 @@
       <form action="${pageContext.request.contextPath}/member/memberLoginOk.me" method="POST">
         <div class="member-input-group">
           <label for="username">아이디</label>
-          <input type="text" id="username" name="username" required>
+          <input type="text" id="username" name="memberId" required>
           <div class="memberjoin-Null"></div> <!-- 메시지 표시 공간 -->
         </div>
         <div class="member-input-group">
           <label for="password">비밀번호</label>
-          <input type="password" id="password" name="password" required>
+          <input type="password" id="password" name="memberPw" required>
           <div class="memberjoin-Null"></div> <!-- 메시지 표시 공간 -->
         </div>
         <div class="member-input-group">

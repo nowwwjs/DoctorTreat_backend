@@ -35,18 +35,20 @@
 
    <select id="memberLogin" parameterType="MemberDTO"
       resultType="memberDTO">
-      SELECT d.member_number,
-      d.doctor_id,
-      d.doctor_pw,
-      d.doctor_name,
-      d.doctor_phone,
-      a.address_number,
-      a.address_postal,
-      a.address_address,
-      a.address_detail
-      from dt_doctor d
-      where d.member_id = #{memberId} and
-      d.member_pw = #{memberPw}
+      SELECT m.member_number,
+      m.member_id,
+      m.member_pw,
+      m.member_name,
+      m.member_phone,
+      m.member_birth,
+      ad.address_number,
+      ad.address_postal,
+      ad.address_address,
+      ad.address_detail
+      from dt_member m 
+      left join dt_address ad on m.address_number = ad.address_number
+      where m.member_id = #{memberId} and
+      m.member_pw = #{memberPw}
    </select>
 
    <!-- 회원탈퇴 -->

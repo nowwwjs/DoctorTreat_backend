@@ -10,7 +10,7 @@
 	href="${pageContext.request.contextPath}/static/css/main.css" />
 <link rel="stylesheet"
 	href="https://unpkg.com/swiper/swiper-bundle.min.css" />
-<jsp:include page="${pageContext.request.contextPath}/headerMember.jsp" />
+<jsp:include page="${pageContext.request.contextPath}/header.jsp" />
 </head>
 
 <body>
