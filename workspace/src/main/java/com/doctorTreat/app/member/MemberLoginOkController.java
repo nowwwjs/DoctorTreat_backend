@@ -28,6 +28,7 @@ public class MemberLoginOkController implements Execute {
 		MemberDTO member = memberDAO.memberLogin(memberDTO);
 		Result result = new Result();
 
+		System.out.println("----------------");
 		if ( member == null) {
 			result.setPath("/user/memberLogin.jsp");
 			result.setRedirect(false);
