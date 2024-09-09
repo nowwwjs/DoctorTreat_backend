@@ -63,8 +63,13 @@
 						placeholder="주소">
 				</div>
 				<div class="input-group1">
+<<<<<<< HEAD
+					<input type="text" id="detailAddress" name="adressDetail"
+						placeholder="상세 주소">	
+=======
 					<input type="text" id="detailAddress" name="addressDetail"
 						placeholder="상세 주소">
+>>>>>>> main
 				</div>
 
 				<label for="birth">생년월일</label>
