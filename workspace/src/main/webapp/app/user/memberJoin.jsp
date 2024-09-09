@@ -74,7 +74,7 @@
 
 				<label for="birth">생년월일</label>
 				<div class="member-input-group">
-					<input type="text" id="birth" name="memberBirth"
+					<input type="date" id="birth" name="memberBirth"
 						required>
 					<p class="memberjoin-Null"></p>
 				</div>
