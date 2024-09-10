@@ -44,13 +44,25 @@
           <label class="memberupdateMember-input" for="">
               <span>휴대폰 번호</span>
               <button><a href="${pageContext.request.contextPath}/app/myPage/memberphonechange.jsp">휴대폰 번호 변경</a></button>
-            </label>
-            <br>
-            <label class="memberupdateMember-input" for="">
-              <span>주소</span>
-              <input type="text" value="">
           </label>
-          <br>
+            <br>
+            
+          <label class="memberupdateMember-input" for=""> <span>주소</span> 
+          <input type="text" id="postcode" placeholder="우편번호">
+		  </label> 
+		  <br> 
+		  <label class="memberupdateMember-input" for="">
+		  		<button class="postcode-search" onclick="execDaumPostcode()">주소찾기</button>
+		  </label> 
+		  <br> 
+		  <label class="memberupdateMember-input" for=""> <span></span>
+				<input type="text" id="address" placeholder="주소">
+		  </label> 
+		  <br> 
+		  <label class="memberupdateMember-input" for=""> <span></span>
+			<input type="text" id="detailAddress" placeholder="상세 주소">
+		  </label>
+		<br>
       </form>
   </div>
   <div class="memberupdateMember-botton">          
