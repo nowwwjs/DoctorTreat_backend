@@ -76,8 +76,6 @@ focusBtn.forEach((inputGroup, index) => {
   }
 });
 
-
-
 //    8) 비밀번호칸 토글 버튼
 const viewicon1 = document.querySelector(".Doctor-view-first");
 const viewicon2 = document.querySelector(".Doctor-view-second");
@@ -136,11 +134,20 @@ agreeCheckboxes.forEach(checkbox => {
 });
 
 // 가입 버튼 클릭 이벤트
-document.querySelector(".signup-btn").addEventListener("click", function (event) {
+document.querySelector(".Doctor-signup-btn").addEventListener("click", function (event) {
   event.preventDefault();
   const inputs = document.querySelectorAll("input[required]");
   const checkboxes = document.querySelectorAll(".agree-checkbox");
   let allFilled = true;
+  
+  
+  window.onload = function(){
+    var hw = document.getElementById('hw');
+    hw.addEventListener('click', function(){
+        alert('Hello world');
+    })
+}
+ 
 
   // 입력란 확인
   inputs.forEach((input) => {
@@ -155,7 +162,7 @@ document.querySelector(".signup-btn").addEventListener("click", function (event)
   if (!allFilled || !allCheckboxesChecked) {
     alert("입력란과 체크박스를 확인하세요."); // alert 창 표시
   } else {
-    window.location.href = "memberJoinfinish.html"; // 이동
+    window.location.href = "<%= request.getContextPath() %>/app/user/doctorJoinFinish.jsp"; // 이동
   }
 });
 
@@ -186,9 +193,55 @@ function execDaumPostcode() {
 
               addr += extraAddr;
           }
-          document.getElementById('postcode').value = data.zonecode;
-          document.getElementById("address").value = addr;
-          document.getElementById("detailAddress").focus();
+          document.getElementById('doctorPostcode').value = data.zonecode;
+          document.getElementById("doctorAddress").value = addr;
+          document.getElementById("doctorDetailAddress").focus();
       }
   }).open();
 }
+
+
+//약관동의 전체 체크박스 변화
+document.addEventListener("DOMContentLoaded", () => {
+   const agreeAllCheckbox = document.getElementById("agree-all-checkbox");
+   const individualCheckboxes = document.querySelectorAll(".agree-checkbox");
+
+   // 개별 체크박스의 변화에 따라 전체 체크박스의 상태를 업데이트
+   individualCheckboxes.forEach((checkbox) => {
+      checkbox.addEventListener("change", () => {
+         // 모든 개별 체크박스가 체크되어 있는지 확인
+         const allChecked = Array.from(individualCheckboxes).every((cb) => cb.checked);
+         agreeAllCheckbox.checked = allChecked;
+      });
+   });
+
+   // 전체 체크박스의 변화에 따라 개별 체크박스의 상태를 업데이트
+   agreeAllCheckbox.addEventListener("change", () => {
+      individualCheckboxes.forEach((checkbox) => {
+         checkbox.checked = agreeAllCheckbox.checked;
+      });
+   });
+});
+
+
+$(document).ready(function() {
+   $("#Doctor-join-checkIdBtn").on('click', function() {
+      console.log("클릭");
+      let doctorId = $('#doctorId').val();
+
+      $.ajax({
+         url: "/doctor/doctorCheckIdOk.do",
+         type: "get",
+         data: { "doctorId": doctorId },
+         success: function(result) {
+            $('#checkIdResult').text(result);
+         },
+         error : function(){
+            $('#checkIdResult').text('오류가 발생했습니다. 다시 시도해주세요');
+         }
+      });
+   });
+});
+
+
+

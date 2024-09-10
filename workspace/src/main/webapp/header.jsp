@@ -39,7 +39,7 @@
 									src="${pageContext.request.contextPath}/static/image/memberJoin.png">
 								<div>회원가입</div>
 							</div>
-						</a> <a href="./../../html/myPage/member/memberInfo.html">
+						</a> <a href="${pageContext.request.contextPath}/doctor/doctorInfo.dm">
 							<div class="header-quickBtn">
 								<img
 									src="${pageContext.request.contextPath}/static/image/myPage.png">
