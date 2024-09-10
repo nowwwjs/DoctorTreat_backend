@@ -20,7 +20,7 @@
                         </a>
                     </div>
                     <div class="header-btnContainer">
-                        <a href="./../../html/clinicMember/choice.html">
+                        <a href="${request.contextPath}/member/memberLogout.me">
                             <div class="header-quickBtn">
                                 <img src="${pageContext.request.contextPath}/static/image/chatBtn.png">
                                 <div>닥터트리톡</div>

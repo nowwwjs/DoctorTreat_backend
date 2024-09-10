@@ -1,5 +1,4 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-	pageEncoding="UTF-8"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 
 <!DOCTYPE html>
@@ -7,9 +6,8 @@
 <head>
 <meta charset="UTF-8">
 <title>의료 지식인</title>
-<link rel="stylesheet"
-	href="${pageContext.request.contextPath}/static/css/board/medicalKnowledgeList.css">
-<jsp:include page="/header.jsp" />
+<link rel="stylesheet" href="${pageContext.request.contextPath}/static/css/board/medicalKnowledgeList.css?v=1.0" />
+<jsp:include page="/headerDoctor.jsp" />
 </head>
 <body>
 	<main>
@@ -18,21 +16,20 @@
 			<div id="medicalKnowledgeList-all">전체</div>
 		</div>
 
-
 		<ul class="medicalKnowledgeList-board">
 			<c:forEach var="board" items="${doctorBoardshowlist}">
 				<li>
-					<hr> <a
-					href="${pageContext.request.contextPath}/html/board/member/boardDetail.html">
+					<hr>
+					<a href="${pageContext.request.contextPath}/BoardListDetail.docbo?infoNumber=${board.medicalInfoNumber}">
 						<div class="medicalKnowledgeList-boardList">${board.medicalInfoTitle}</div>
 						<div class="medicalKnowledgeList-text">
-							${board.medicalInfoText}...</div>
+							${board.medicalInfoText}...
+						</div>
 						<div class="medicalKnowledgeList-writer">
-							<img
-								src="${pageContext.request.contextPath}/static/image/QnA.png">
+							<img src="${pageContext.request.contextPath}/static/image/QnA.png">
 							${board.memberName}
 						</div>
-				</a>
+					</a>
 				</li>
 			</c:forEach>
 		</ul>
@@ -40,12 +37,12 @@
 		<!-- 페이지 -->
 		<div class="medicalKnowledgeList-page">
 			<ul class="medicalKnowledgeList-pagenation">
-				<li><a href="">1</a></li>
-				<li><a href="">2</a></li>
-				<li><a href="">3</a></li>
-				<li><a href="">4</a></li>
-				<li><a href="">5</a></li>
-				<li><a href="">&gt;</a></li>
+				<li><a href="#">1</a></li>
+				<li><a href="#">2</a></li>
+				<li><a href="#">3</a></li>
+				<li><a href="#">4</a></li>
+				<li><a href="#">5</a></li>
+				<li><a href="#">&gt;</a></li>
 			</ul>
 		</div>
 	</main>
