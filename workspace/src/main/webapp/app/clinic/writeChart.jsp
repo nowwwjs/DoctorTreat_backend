@@ -12,7 +12,7 @@
 	src="${pageContext.request.contextPath}/static/js/clinic/chart.js"></script>
 </head>
 <body>
-	<jsp:include page="${pageContext.request.contextPath}/header.jsp" />
+	<jsp:include page="${pageContext.request.contextPath}/headerDoctor.jsp" />
 	<main>
 		<!-- 처방전 작성 -->
 		<div id="writeChart-title">처방전 작성</div>
