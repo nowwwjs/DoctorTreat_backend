@@ -14,7 +14,7 @@
 	src="//dapi.kakao.com/v2/maps/sdk.js?appkey=2f5631b219152660381440f62ca9ef14"></script>
 </head>
 <body>
-	<jsp:include page="${pageContext.request.contextPath}/header.jsp" />
+	<jsp:include page="${pageContext.request.contextPath}/headerMember.jsp" />
 	<main>
 		<div class="doctorDetail-skinny">의사 상세정보</div>
 		<div class="doctorDetail-container">
@@ -74,7 +74,7 @@
 				</div>
 				<!--  -->
 			</div>
-			<form action="${pageContext.request.contextPath}/chatListMember.memcl" method="post" class="hospital-goWrite">
+			<form action="${pageContext.request.contextPath}/ClinicApplicationOk.memcl?hospitalCall=${doctorDetail[0].hospitalCall}" method="post" class="hospital-goWrite">
 				<button>비대면 진료 신청</button>
 			</form>
 		</div>

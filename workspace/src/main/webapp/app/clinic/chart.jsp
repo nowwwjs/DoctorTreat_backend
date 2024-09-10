@@ -9,7 +9,7 @@
 	href="${pageContext.request.contextPath}/static/css/clinic/chart.css">
 </head>
 <body>
-	<jsp:include page="${pageContext.request.contextPath}/header.jsp" />
+	<jsp:include page="${pageContext.request.contextPath}/headerMember.jsp" />
 	<main>
 		<!-- 처방전 작성 -->
 		<div id="writeChart-title">처방전 확인</div>

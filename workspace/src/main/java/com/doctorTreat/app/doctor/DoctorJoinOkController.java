@@ -22,7 +22,7 @@ public class DoctorJoinOkController implements Execute {
 		Result result = new Result();
 
 		doctorDTO.setDoctorId(request.getParameter("doctorId"));
-		doctorDTO.setDoctorPw(request.getParameter("doctorPassword"));
+		doctorDTO.setDoctorPw(request.getParameter("doctorPw"));
 		doctorDTO.setDoctorName(request.getParameter("doctorName"));
 		doctorDTO.setDoctorPhone(request.getParameter("doctorPhoneNumber"));
 		doctorDTO.setDoctorLicense(request.getParameter("doctorLicense"));

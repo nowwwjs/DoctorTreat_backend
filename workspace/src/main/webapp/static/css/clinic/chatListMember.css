@@ -45,20 +45,20 @@ main {
   margin-right: 80px;
 }
 
+/* 변경된 CSS: wrap 통합 */
 .chatList-container{
   display: flex;
   justify-content: space-between;
 }
 
-.chatList-container-ear,
+.chatList-container-ear, 
 .chatList-container-medicine {
   position: relative;
 }
 
-.chatList-wrap-ear-top,
-.chatList-wrap-ear-bottom,
-.chatList-wrap-medicine-top,
-.chatList-wrap-medicine-bottom {
+/* 통합된 wrap 클래스 */
+.chatList-wrap-ear, 
+.chatList-wrap-medicine {
   border: 1px solid lightgray;
   display: flex;
   width: 435px;
@@ -67,7 +67,7 @@ main {
   border-radius: 7px;
   align-items: center;
   padding: 20px;
-  margin-top: 30px;
+  margin-bottom: 30px; /* margin-bottom을 주어 항목 간 여백을 유지 */
 }
 
 .chatList-name {
@@ -75,7 +75,7 @@ main {
   font-weight: bold;
 }
 
-.chatList-License-number {
+.chatList-hospitalName {
   font-size: 15px;
   color: gray;
   padding-top: 10px;
@@ -85,14 +85,15 @@ main {
   height: 50px;
 }
 
+/* 알림 메시지 */
 .chatListMember-notice {
-	font-size: 14px;
-	padding: 20px;
-	display: flex;
-	justify-content: center;
+  font-size: 14px;
+  padding: 20px;
+  display: flex;
+  justify-content: center;
 }
 
 .chatListMember-important {
-	color: red;
-	font-weight: bold;
+  color: red;
+  font-weight: bold;
 }
