@@ -8,7 +8,7 @@
 <meta charset="UTF-8">
 <title>게시글 상세보기</title>
 <link rel="stylesheet"
-    href="${pageContext.request.contextPath}/static/css/board/boardDetail.css">
+    href="${pageContext.request.contextPath}/static/css/board/boardDetail.css" />
 <jsp:include page="/headerMember.jsp" />
 </head>
 <body>

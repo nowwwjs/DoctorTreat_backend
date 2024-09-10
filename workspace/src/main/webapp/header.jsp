@@ -6,7 +6,7 @@
 <meta charset="UTF-8">
 <title>Insert title here</title>
 <link rel="stylesheet"
-	href="${pageContext.request.contextPath}/static/css/header.css" />
+	href="${pageContext.request.contextPath}/static/css/header.css?v=1.0" />
 </head>
 <body>
 	<header>
@@ -29,7 +29,7 @@
 						</a> <a href="${request.contextPath}/app/user/loginType.jsp">
 							<div class="header-quickBtn">
 								<img
-									src="${pageContext.request.contextPath}/static/image/loginTt.png">
+									src="${pageContext.request.contextPath}/static/image/login.png">
 								<div>로그인</div>
 							</div>
 						</a> <a
