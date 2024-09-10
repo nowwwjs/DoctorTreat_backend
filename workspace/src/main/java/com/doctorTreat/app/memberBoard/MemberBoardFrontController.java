@@ -53,9 +53,9 @@ public class MemberBoardFrontController extends HttpServlet {
          result = new MemberBoardWriteController().execute(request, response);
          request.getRequestDispatcher("/index.jsp").forward(request, response);
          break;
+         
       case "/updateBoard.membo":
          System.out.println("글 수정!");
-         
          // medicalInfoNumber 값을 세션에 저장
          String medicalInfoNumber = request.getParameter("infoNumber3");
          request.getSession().setAttribute("medicalInfoNumber", medicalInfoNumber);
@@ -63,7 +63,7 @@ public class MemberBoardFrontController extends HttpServlet {
          request.getRequestDispatcher("/app/board/updateBoard.jsp").forward(request, response);
          break;
       case "/updateBoardOk.membo":
-          System.out.println("글 수정이미!");
+          System.out.println("글 수정임!");
           result = new MemberBoardUpdateController().execute(request, response);
           request.getRequestDispatcher("/index.jsp").forward(request, response);
           break;
