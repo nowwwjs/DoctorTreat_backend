@@ -34,7 +34,7 @@
                                 </c:if>
                             </div>
                         </a>
-                        <a href="./../../html/myPage/member/memberInfo.html">
+                        <a href="${request.contextPath}/member/memberInfo.mm?memberNumber={sessionScope.memberNumber}">
                             <div class="header-quickBtn">
                                 <img src="${pageContext.request.contextPath}/static/image/myPage.png">
                                 <div>마이페이지</div>
