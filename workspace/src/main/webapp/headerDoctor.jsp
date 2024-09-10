@@ -33,7 +33,9 @@
 									src="${pageContext.request.contextPath}/static/image/login.png">
 								<div>로그아웃</div>
 							</div>
-						</a> <a href="./../../html/myPage/member/memberInfo.html">
+						</a> <a
+							href="${request.contextPath}/doctor/doctorInfo.dm?doctorNumber=${sessionScope.doctorNumber}">
+
 							<div class="header-quickBtn">
 								<img
 									src="${pageContext.request.contextPath}/static/image/myPage.png">
@@ -47,8 +49,7 @@
 
 			<!-- 네비바 -->
 			<div class="header-navContainer">
-				<a
-					href="${pageContext.request.contextPath}/clinicStartDoctor.doccl">
+				<a href="${pageContext.request.contextPath}/clinicStartDoctor.doccl">
 					<div class="header-menu">
 						비대면진료 <img
 							src="${pageContext.request.contextPath}/static/image/Clinic.png">
