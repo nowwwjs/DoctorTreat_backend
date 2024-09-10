@@ -70,6 +70,10 @@ public class MemberFrontController extends HttpServlet {
             request.getRequestDispatcher(result.getPath()).forward(request, response);
          }
          break;
+      case "/member/memberCheckIdOk.me" :
+    	  System.out.println("아이디 체크!!!!");
+    	  new MemberCheckIdOkController().execute(request, response);
+    	  break;   
       case "/member/memberLogout.me":
          System.out.println("회원 로그아웃");
          result = new MemberLogoutOkController().execute(request, response);
