@@ -11,7 +11,7 @@
 	href="${pageContext.request.contextPath}/static/css/myPage/doctorPwChange.css">
 <link rel="stylesheet"
 	href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-<jsp:include page="${pageContext.request.contextPath}/header.jsp" />
+<jsp:include page="${pageContext.request.contextPath}/headerDoctor.jsp" />
 <title>DoctorTreat - 비밀번호 변경</title>
 </head>
 <body>

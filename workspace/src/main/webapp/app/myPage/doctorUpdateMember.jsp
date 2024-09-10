@@ -11,7 +11,7 @@
 	href="${pageContext.request.contextPath}/static/css/myPage/doctorUpdateMember.css">
 <script
 	src="https://t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>
-<jsp:include page="${pageContext.request.contextPath}/header.jsp" />
+<jsp:include page="${pageContext.request.contextPath}/headerDoctor.jsp" />
 <title>DoctorTreat - 내 병원 정보 수정</title>
 </head>
 <body>

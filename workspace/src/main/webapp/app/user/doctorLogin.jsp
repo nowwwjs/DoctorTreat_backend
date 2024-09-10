@@ -57,8 +57,8 @@
 		</div>
 	</main>
 
+	<script
+		src="${pageContext.request.contextPath}/static/js/user/doctorLogin.js"></script>
 </body>
 <jsp:include page="${pageContext.request.contextPath}/footer.jsp" />
 </html>
-	<!--  <script
-		src="${pageContext.request.contextPath}/static/js/user/doctorLogin.js"></script>-->
