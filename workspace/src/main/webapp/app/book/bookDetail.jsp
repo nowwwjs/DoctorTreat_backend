@@ -1,6 +1,9 @@
+<%@page import="org.apache.ibatis.reflection.SystemMetaObject"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-	pageEncoding="UTF-8"%>
+   pageEncoding="UTF-8"%>
+<%@ page import="java.util.List"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -8,8 +11,24 @@
 <title>doctorTreat_질병상세</title>
 <link rel="stylesheet"
 	href="${pageContext.request.contextPath}/static/css/book/bookDetail.css">
-<jsp:include page="${pageContext.request.contextPath}/header.jsp" />
 </head>
+<c:choose>
+	<c:when test="${sessionScope.doctorNumber != null}">
+		<jsp:include
+			page="${pageContext.request.contextPath}/headerDoctor.jsp" />
+	</c:when>
+	<c:when test="${sessionScope.memberNumber != null}">
+		<jsp:include
+			page="${pageContext.request.contextPath}/headerMember.jsp" />
+	</c:when>
+	<c:otherwise>
+		<jsp:include page="${pageContext.request.contextPath}/header.jsp" />
+	</c:otherwise>
+</c:choose>
+
+
+
+
 <body>
 	<main>
 		<c:choose>
