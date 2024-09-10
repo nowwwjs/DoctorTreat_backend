@@ -22,14 +22,13 @@
 	
 	
 	<!-- 비밀번호 인증 쿼리 -->
-    <select id="checkPassword" parameterType="map" resultType="int">
+    <select id="doctorCheckPw" parameterType="map" resultType="int">
         SELECT COUNT(*) 
         FROM dt_doctor
         WHERE doctor_id = #{doctorId} AND doctor_pw = #{doctorPw}
     </select>
 	
 	
-
 
 
 
