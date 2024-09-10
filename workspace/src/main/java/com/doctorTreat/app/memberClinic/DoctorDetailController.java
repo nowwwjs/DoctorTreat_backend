@@ -12,26 +12,26 @@ import com.doctorTreat.app.Result;
 import com.doctorTreat.app.dto.DoctorDetailDTO;
 import com.doctorTreat.app.memberClinic.dao.MemberClinicDAO;
 
-public class DoctorDetailController implements Execute{
+public class DoctorDetailController implements Execute {
 	@Override
 	public Result execute(HttpServletRequest request, HttpServletResponse response)
 			throws IOException, ServletException {
-		
+
 		request.setCharacterEncoding("UTF-8");
 		String hospitalCall = request.getParameter("hospitalCall");
 		System.out.println(hospitalCall);
-		
+
 		MemberClinicDAO memberClinicDAO = new MemberClinicDAO();
 		List<DoctorDetailDTO> doctorDetail = memberClinicDAO.getDoctorDetail(hospitalCall);
 		System.out.println(doctorDetail);
-		
-		  // JSP로 데이터를 전달
-        request.setAttribute("doctorDetail", doctorDetail);
+
+		// JSP로 데이터를 전달
+		request.setAttribute("doctorDetail", doctorDetail);
 
 //		결과처리
-        Result result = new Result();
-        result.setRedirect(true);
-        result.setPath("/app/clinic/doctorDetail.jsp");
-        return result;
+		Result result = new Result();
+		result.setRedirect(true);
+		result.setPath("/app/clinic/doctorDetail.jsp");
+		return result;
 	}
 }

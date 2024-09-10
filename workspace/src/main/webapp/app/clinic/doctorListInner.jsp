@@ -10,7 +10,7 @@
 	href="${pageContext.request.contextPath}/static/css/clinic/doctorList.css?v=1.0">
 </head>
 <body>
-	<jsp:include page="${pageContext.request.contextPath}/header.jsp" />
+	<jsp:include page="${pageContext.request.contextPath}/headerMember.jsp" />
 	<main>
 		<div class="doctorList-ears">내과 의사 목록</div>
 		<div id="doctorList">

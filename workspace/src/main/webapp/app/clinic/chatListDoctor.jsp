@@ -9,7 +9,7 @@
 	href="${pageContext.request.contextPath}/static/css/clinic/patientList.css">
 </head>
 <body>
-	<jsp:include page="${pageContext.request.contextPath}/header.jsp" />
+	<jsp:include page="${pageContext.request.contextPath}/headerDoctor.jsp" />
 	<main>
 		<!-- 환자목록 -->
 		<div class="memberList-topContainer">

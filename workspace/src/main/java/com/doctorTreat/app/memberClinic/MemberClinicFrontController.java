@@ -72,12 +72,15 @@ public class MemberClinicFrontController extends HttpServlet {
 			request.getRequestDispatcher(result.getPath()).forward(request, response);
 			break;
 
-//		의사 상세정보에서 진료신청 제출시 해당의사와의 채팅 연결 후 채팅리스트 페이지
+//		의사 상세정보에서 진료신청 제출시 해당의사와의 채팅방 연결 후 채팅리스트 페이지
+		case "/ClinicApplicationOk.memcl":
+			result = new ClinicApplicationOk().execute(request, response);
+			request.getRequestDispatcher(result.getPath()).forward(request, response);
+			break;
 		case "/chatListMember.memcl":
 			result = new ChatListMemberController().execute(request, response);
 			request.getRequestDispatcher(result.getPath()).forward(request, response);
 			break;
-
 		case "/app/clinic/chatRoomMember.memcl":
 			request.getRequestDispatcher("/app/clinic/chatRoomMember.jsp").forward(request, response);
 			break;

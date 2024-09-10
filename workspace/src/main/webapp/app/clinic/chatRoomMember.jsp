@@ -9,7 +9,7 @@
 	href="${pageContext.request.contextPath}/static/css/clinic/chatRoom.css">
 </head>
 <body>
-	<jsp:include page="${pageContext.request.contextPath}/header.jsp" />
+	<jsp:include page="${pageContext.request.contextPath}/headerMember.jsp" />
 	<!-- 채팅창 -->
 	<main>
 		<!-- 의사 -->

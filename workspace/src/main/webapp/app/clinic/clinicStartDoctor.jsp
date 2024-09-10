@@ -9,7 +9,7 @@
 	href="${pageContext.request.contextPath}/static/css/clinic/choice.css">
 </head>
 <body>
-	<jsp:include page="${pageContext.request.contextPath}/header.jsp" />
+	<jsp:include page="${pageContext.request.contextPath}/headerDoctor.jsp" />
 	<main>
 		<%-- 의사회원일 경우 --%>
 		<div class="startClinic-title">비대면진료</div>
