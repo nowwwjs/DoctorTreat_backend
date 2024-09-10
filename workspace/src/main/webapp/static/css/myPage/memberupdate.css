@@ -1,10 +1,11 @@
 @charset "UTF-8";
+
 .memberupdateMember-main-container {
   width: 980px;
   margin: 0 auto;
   margin-top: 10px;
   margin-bottom: 70px;
-  height: 800px;
+  height: 1000px;
 }
 
 .memberupdateMember-title {

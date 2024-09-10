@@ -29,7 +29,7 @@
 						</a> <a href="${request.contextPath}/app/user/loginType.jsp">
 							<div class="header-quickBtn">
 								<img
-									src="${pageContext.request.contextPath}/static/image/loginTt.png">
+									src="${pageContext.request.contextPath}/static/image/login.png">
 								<div>로그인</div>
 							</div>
 						</a> <a
