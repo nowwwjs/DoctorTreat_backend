@@ -59,7 +59,7 @@ public class MemberBoardFrontController extends HttpServlet {
          // medicalInfoNumber 값을 세션에 저장
          String medicalInfoNumber = request.getParameter("infoNumber3");
          request.getSession().setAttribute("medicalInfoNumber", medicalInfoNumber);
-         
+         result = new MemberBoardShowController().execute(request, response);
          request.getRequestDispatcher("/app/board/updateBoard.jsp").forward(request, response);
          break;
       case "/updateBoardOk.membo":
