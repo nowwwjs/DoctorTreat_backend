@@ -9,7 +9,7 @@
 	href="${pageContext.request.contextPath}/static/css/clinic/choice.css">
 </head>
 <body>
-	<jsp:include page="${pageContext.request.contextPath}/header.jsp" />
+	<jsp:include page="${pageContext.request.contextPath}/headerMember.jsp" />
 	<main>
 		<div class="clinicMember-choice">과 선택</div>
 		<div class="clinicMember-department">
