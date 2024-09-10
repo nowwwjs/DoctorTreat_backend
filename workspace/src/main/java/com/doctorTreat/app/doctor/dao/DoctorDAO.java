@@ -2,14 +2,13 @@ package com.doctorTreat.app.doctor.dao;
 
 import org.apache.ibatis.session.SqlSession;
 
-import com.doctorTreat.app.Result;
 import com.doctorTreat.app.dto.DoctorDTO;
 import com.mybatis.config.MyBatisConfig;
 
 public class DoctorDAO {
 
 	private SqlSession sqlSession;
-	private Object doctorId;
+	
 
 	public DoctorDAO() {
 		sqlSession = MyBatisConfig.getSqlSessionFactory().openSession(true);
@@ -80,5 +79,18 @@ public class DoctorDAO {
 	public DoctorDTO showInfo(int doctorNumber) {
 		return sqlSession.selectOne("doctorMypage.showInfo", doctorNumber);
 	}
+	
+	
+	//의료회원 비밀번호 인증
+	public boolean checkPw(String doctorname,String doctorpassword){
+		DoctorDTO doctorDTO = new DoctorDTO();
+		doctorDTO.setDoctorName(doctorname);
+		doctorDTO.setDoctorPw(doctorpassword);
+		System.out.println("비번인증 도착했음");
+		return (Integer) sqlSession.selectOne("doctorMypage.checkPw",doctorDTO) <= 0;
+		 
+	}
+	
+	
 
 }

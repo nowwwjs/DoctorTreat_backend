@@ -60,16 +60,26 @@ public class DoctorMypageFrontController extends HttpServlet {
 			
 			result = new DoctorInfoController().execute(request, response);
 			request.getRequestDispatcher("/app/myPage/doctorInfo.jsp").forward(request, response);
+			break;
+			
+		case "/doctor/doctorPw.dm":
+			System.out.println("안뇽하세요");
+			request.getRequestDispatcher("/app/myPage/doctorPwOk.jsp").forward(request, response);
 			
 		case "/doctor/doctorPwOk.dm":
-			System.out.println("나 여기 또 왔어요");
-			
-			///medicalInfoNumber 값을 세션에 저장
-			String doctorPwNumber = request.getParameter("doctorNumber");
-			request.getSession().setAttribute("doctorPwNumber", doctorPwNumber);
-			
-			result = new DoctorPwOkController().execute(request, response);
-			request.getRequestDispatcher("/app/myPage/doctorPwOk.jsp").forward(request, response);
+		    System.out.println("나 여기 또 왔어요");
+
+		    // medicalInfoNumber 값을 세션에 저장
+		    String doctorPwNumber = request.getParameter("doctorNumber");
+		    request.getSession().setAttribute("doctorPwNumber", doctorPwNumber);
+		    
+		    result = new DoctorPwOkController().execute(request, response);
+		    
+		   
+		    
+		    
+		    break;
+
 			
 			
 			

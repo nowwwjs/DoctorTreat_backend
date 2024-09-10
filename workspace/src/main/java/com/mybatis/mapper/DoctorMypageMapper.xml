@@ -20,7 +20,12 @@
 	</select>
 	
 	
-	
+	<!-- 의료회원 비밀번호 인증 -->
+    <select id="checkPw" parameterType="String" resultType="int">
+        SELECT COUNT(*) 
+        FROM dt_doctor
+        WHERE doctor_id=#{doctorId} and doctor_pw = #{doctorPw}
+    </select>
 	
 	
 	
