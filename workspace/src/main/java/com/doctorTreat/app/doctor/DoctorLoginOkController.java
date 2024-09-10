@@ -5,6 +5,7 @@ import java.io.IOException;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 import com.doctorTreat.app.Execute;
 import com.doctorTreat.app.Result;
@@ -30,23 +31,21 @@ public class DoctorLoginOkController implements Execute {
       DoctorDTO doctor = doctorDAO.doctorLogin(doctorDTO);
       System.out.println(doctor);
       System.out.println(doctor.getDoctorNumber());
-      
-      DoctorDTO loggedDoctor = doctorDAO.doctorLogin(doctorDTO);
 
       Result result = new Result();
 
-      if (loggedDoctor != null) {
-          // 로그인 성공
-          request.setAttribute("doctor", loggedDoctor);  // request에 로그인된 정보 설정
-          result.setPath("/doctor/doctorInfo.do");  // 로그인 후 병원 정보 페이지로 이동
+      if (doctor == null) {
+         result.setPath("/user/doctorLogin.jsp");
+         result.setRedirect(false);
       } else {
-          // 로그인 실패
-          result.setPath("/app/user/doctorLogin.jsp");
+          HttpSession session = request.getSession();
+          session.setAttribute("userType", "doctor");
+          session.setAttribute("doctorNumber", doctor.getDoctorNumber());
+
+         result.setPath(request.getContextPath() + "/index.jsp");
+         result.setRedirect(true);
       }
-
-      return result;
-  }
-
+       return result;
 
    }
-
+}

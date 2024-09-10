@@ -19,7 +19,7 @@
 
 <body>
 
-   <main class="member-background">
+   <main class="doctor-background">
       <div class="Doctor-signup-container">
          <form
             action="${pageContext.request.contextPath}/doctor/doctorJoinOk.do"
@@ -28,12 +28,18 @@
 
             <label for="doctorId">아이디</label>
             <div class="Doctor-input-group">
-               <input class="member-input-focus" type="text" id="doctorId"
+            
+            
+               
+               <input class="doctor-input-focus" type="text" id="doctorId"
                   name="doctorId" required>
-               <button class="Doctor-join-checkIdBtn">중복 확인</button>
+               <button id="Doctor-join-checkIdBtn" class="Doctor-join-checkIdBtn" >중복 확인</button>
+               
+               
                <p class="Doctorjoin-Null"></p>
             </div>
-
+            <div class="checkIdResult" id="checkIdResult"></div>
+			<br>
             <label for="doctorPw">비밀번호</label>
             <div class="Doctor-input-group">
                <input type="password" id="doctorPw" name="doctorPw"
@@ -149,8 +155,8 @@
 
    <script src="https://ssl.daumcdn.net/dmaps/map_js_init/postcode.v2.js"></script>
 
-</body>
-<jsp:include page="${pageContext.request.contextPath}/footer.jsp" />
 <script
 		src="${pageContext.request.contextPath}/static/js/user/doctorJoin.js"></script>
+</body>
+<jsp:include page="${pageContext.request.contextPath}/footer.jsp" />
 </html>

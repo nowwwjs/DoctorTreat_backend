@@ -55,6 +55,7 @@ public class DoctorFrontController extends HttpServlet {
 			break;
 
 		case "/doctor/doctorJoinOk.do":
+			System.out.println("배부르다");
 			result = new DoctorJoinOkController().execute(request, response);
 			request.getRequestDispatcher(result.getPath()).forward(request, response);
 			break;
@@ -78,7 +79,8 @@ public class DoctorFrontController extends HttpServlet {
 			result = new DoctorLogoutOkController().execute(request, response);
 			request.getRequestDispatcher("/index.jsp").forward(request, response);
 			break;
-		case "/member/checkIdOk.me":
+			
+		case "/doctor/doctorCheckIdOk.do":
 			System.out.println("아이디 체크!!");
 			new DoctorCheckIdOkController().execute(request, response);
 			break;

@@ -65,13 +65,20 @@ public class DoctorDAO {
 		sqlSession.delete("doctor.quit", doctorNumber);
 	}
 
+	// 아이디 중복확인
 	public boolean checkId(String doctorId) {
+		System.out.println("중복확인도착");
 		// selectOne() 반환타입은 Object 타입이라 비교를 위해 Integer로 형 변환
 		// DB에서 memberId가 존재하는지 확인하는 쿼리를 실행하고
 		// 존재하면 true, 존재하지 않으면 false로 반환하도록 한다
 		return (Integer) sqlSession.selectOne("doctor.checkId", doctorId) <= 0;
 		// 값이 0 이하면 아이디가 존재하지 않음 => true 반환
 		// 아이디가 존재하면 false 반환
+	}
+	
+	// 마이페이지 정보 조회
+	public DoctorDTO showInfo(int doctorNumber) {
+		return sqlSession.selectOne("doctorMypage.showInfo", doctorNumber);
 	}
 
 }

@@ -76,8 +76,6 @@ focusBtn.forEach((inputGroup, index) => {
   }
 });
 
-
-
 //    8) 비밀번호칸 토글 버튼
 const viewicon1 = document.querySelector(".Doctor-view-first");
 const viewicon2 = document.querySelector(".Doctor-view-second");
@@ -136,11 +134,20 @@ agreeCheckboxes.forEach(checkbox => {
 });
 
 // 가입 버튼 클릭 이벤트
-document.querySelector(".signup-btn").addEventListener("click", function (event) {
+document.querySelector(".Doctor-signup-btn").addEventListener("click", function (event) {
   event.preventDefault();
   const inputs = document.querySelectorAll("input[required]");
   const checkboxes = document.querySelectorAll(".agree-checkbox");
   let allFilled = true;
+  
+  
+  window.onload = function(){
+    var hw = document.getElementById('hw');
+    hw.addEventListener('click', function(){
+        alert('Hello world');
+    })
+}
+ 
 
   // 입력란 확인
   inputs.forEach((input) => {
@@ -217,7 +224,24 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 
 
+$(document).ready(function() {
+   $("#Doctor-join-checkIdBtn").on('click', function() {
+      console.log("클릭");
+      let doctorId = $('#doctorId').val();
 
+      $.ajax({
+         url: "/doctor/doctorCheckIdOk.do",
+         type: "get",
+         data: { "doctorId": doctorId },
+         success: function(result) {
+            $('#checkIdResult').text(result);
+         },
+         error : function(){
+            $('#checkIdResult').text('오류가 발생했습니다. 다시 시도해주세요');
+         }
+      });
+   });
+});
 
 
 

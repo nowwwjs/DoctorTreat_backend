@@ -7,10 +7,11 @@ import java.rmi.ServerException;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import com.doctorTreat.app.Execute;
 import com.doctorTreat.app.Result;
 import com.doctorTreat.app.doctor.dao.DoctorDAO;
 
-public class DoctorCheckIdOkController {
+public class DoctorCheckIdOkController implements Execute {
 
 	public Result execute(HttpServletRequest request, HttpServletResponse response)
 			throws IOException, ServerException {

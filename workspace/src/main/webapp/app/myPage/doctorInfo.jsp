@@ -1,7 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <!DOCTYPE html>
-<html lang="ko">
+<html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -11,10 +11,11 @@
 	href="https://unpkg.com/swiper/swiper-bundle.min.css" />
 <link rel="stylesheet" type="text/css"
 	href="${pageContext.request.contextPath}/static/css/myPage/doctorInfo.css">
-<jsp:include page="${pageContext.request.contextPath}/headerDoctor.jsp" />
+<jsp:include page="${pageContext.request.contextPath}/header.jsp" />
 <title>DoctorTreat - 병원 정보</title>
 </head>
 <body>
+
 
 	<div class="DoctorInfo-main-container">
 		<div class="DoctorInfo-titlebox">
@@ -23,38 +24,35 @@
 		</div>
 
 		<div class="DoctorInfo-inputbox">
-			<form
-				action="${pageContext.request.contextPath}/app/myPage/doctorInfo.do">
-				<!-- JSP에서 세션 정보를 사용해 로그인된 의사 정보 출력 -->
-				<%
-				DoctorDTO doctorInfo = (DoctorDTO) request.getAttribute("doctorInfo");
-				%>
+			<form action="${pageContext.request.contextPath}/app/myPage/doctorPwOk.dm?doctorNumber=${sessionScope.doctorNumber}"" method ="post">
 
-				<label class="DoctorInfo-input" for=""> <span>아이디</span> <input
-					type="text" value="<%=doctorInfo.getDoctorId()%>" readonly>
-				</label> <br> <label class="DoctorInfo-input" for=""> <span>이름</span>
-					<input type="text" value="<%=doctorInfo.getDoctorName()%>" readonly>
-				</label> <br> <label class="DoctorInfo-input" for=""> <span>병원
-						이름</span> <input type="text" value="<%=doctorInfo.getHospitalName()%>"
-					readonly>
-				</label> <br> <label class="DoctorInfo-input" for=""> <span>휴대폰
-						번호</span> <input type="text" value="<%=doctorInfo.getDoctorPhone()%>"
-					readonly>
-				</label> <br> <label class="DoctorInfo-input" for=""> <span>병원
-						번호</span> <input type="text" value="<%=doctorInfo.getHospitalNumber()%>"
-					readonly>
-				</label> <br> <label class="DoctorInfo-input" for=""> <span>병원
-						주소</span> <input type="text" value="<%=doctorInfo.getAddressAddress()%>"
-					readonly>
-				</label> <br>
+				<label class="DoctorInfo-input">이름 :  <input type="text"
+					value="${doctorShowInfo.doctorName}" readonly >
+				</label> <br> <label class="DoctorInfo-input">병원이름 :  <input
+					type="text" value="${doctorShowInfo.hospitalName}" readonly>
+				</label> <br> <label class="DoctorInfo-input">의사번호 : <input
+					type="text" value="${doctorShowInfo.doctorPhone}" readonly>
+				</label> <br> <label class="DoctorInfo-input">병원번호 :<input
+					type="text" value="${doctorShowInfo.hospitalCall}" readonly>
+				</label> <br> <label class="DoctorInfo-input">주소 :  <input
+					type="text" value="${doctorShowInfo. addressPostal} ${doctorShowInfo. addressAddress} ${doctorShowInfo. addressDetail}" readonly>
+				</label>
+
+				<button class="DoctorInfo-btn">
+					<a href="">병원정보수정</a>
+				</button>
+
 			</form>
 		</div>
-
-		<button class="DoctorInfo-btn">
-			<a href="DoctorpwOk.html">병원정보수정</a>
-		</button>
 	</div>
 
+
+
+
 	<jsp:include page="${pageContext.request.contextPath}/footer.jsp" />
+
+
+
+
 </body>
 </html>
