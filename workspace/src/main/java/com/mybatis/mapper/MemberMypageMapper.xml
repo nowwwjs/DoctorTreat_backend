@@ -15,9 +15,5 @@
 		where m.member_number = #{memberNumber}
 </select>
 
-<select id="memberPwOk" parameterType="" resultType="MemberDTO">
-
-
-</select>
  
 </mapper>

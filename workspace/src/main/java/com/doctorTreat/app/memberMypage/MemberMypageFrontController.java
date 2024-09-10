@@ -47,7 +47,7 @@ public class MemberMypageFrontController extends HttpServlet {
 	    	 String memberNumber = request.getParameter("memberNumber");
 	         request.getSession().setAttribute("memberNumber", memberNumber);
 	         result = new MemberInfoController().execute(request, response);
-	         request.getRequestDispatcher("app/myPage/memberInfo.jsp").forward(request, response);
+	         request.getRequestDispatcher("/app/myPage/memberInfo.jsp").forward(request, response);
 	        
 	    case "/memberMypage/memberPwOk.mm":
 	    	String memberPwOkNumber = request.getParameter("memberNumber");

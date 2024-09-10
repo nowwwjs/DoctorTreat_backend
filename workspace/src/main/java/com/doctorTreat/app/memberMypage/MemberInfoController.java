@@ -30,7 +30,7 @@ public class MemberInfoController implements Execute{
 	       
 	      memberDTO = membermypageDAO.showInfo(memNumber);
 	      
-	      request.setAttribute("doctorShowInfo", memberDTO);
+	      request.setAttribute("memberShowInfo", memberDTO);
 
 	      result.setRedirect(true);
 

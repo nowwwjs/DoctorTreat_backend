@@ -14,6 +14,7 @@ public class MemberPwOkController implements Execute{
 	@Override
 	public Result execute(HttpServletRequest request, HttpServletResponse response)
 			throws IOException, ServletException {
+		
 		return null;
 	}
 
