@@ -67,5 +67,10 @@ public class MemberBoardDAO {
 	 public void update(MemberBoardDTO memberBoardDTO) {
 		 sqlSession.update("memberBoard.update" , memberBoardDTO);
 	 }
+	 
+	 // 게시글 수정때 보여주기
+	 public MemberBoardDTO show (int medicalInfoNumber) {
+		 return sqlSession.selectOne("memberBoard.content" , medicalInfoNumber);
+	 }
 
 }
