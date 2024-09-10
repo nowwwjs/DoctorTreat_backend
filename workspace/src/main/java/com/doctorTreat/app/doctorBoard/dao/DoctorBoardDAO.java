@@ -5,6 +5,7 @@ import java.util.List;
 import org.apache.ibatis.session.SqlSession;
 
 import com.doctorTreat.app.dto.DoctorBoardDTO;
+import com.doctorTreat.app.dto.DoctorCommentDTO;
 import com.mybatis.config.MyBatisConfig;
 
 public class DoctorBoardDAO {
@@ -19,8 +20,20 @@ public class DoctorBoardDAO {
         return sqlSession.selectList("DoctorBoard.showlist");
     }
 
-    // 회원 번호로 게시글 상세 조회
-    public List<DoctorBoardDTO> showDetail(int memberNumber) {
-        return sqlSession.selectList("DoctorBoard.showListDetail",memberNumber);
+    
+    // 게시글 상세페이지 검색
+    public DoctorBoardDTO searchByText(int medicalInfoNumber) {
+        return sqlSession.selectOne("DoctorBoard.showListDetail", medicalInfoNumber);
     }
+    
+    // 댓글 삽입
+    public void insertComment(DoctorCommentDTO doctorCommentDTO) {
+        sqlSession.insert("doctorComment.insertComment", doctorCommentDTO);
+    }
+    
+    
+//    // 댓글 조회
+//    public DoctorCommentDTO showComment(String docComment) {
+//    	return sqlSession.selectOne("doctorComment.showComment", docComment);
+//    }
 }

@@ -53,12 +53,16 @@ public class DoctorBoardFrontController extends HttpServlet {
 			System.out.println("의료 게시판 보이기");
 			System.out.println("안녕");
 			break;
-	
 		case "/BoardListDetail.docbo":
 			result = new DoctorBoardDetailController().execute(request, response);
 			request.getRequestDispatcher(result.getPath()).forward(request, response);
 			System.out.println("의료 게시판 상세페이지");
-			break;	
+			request.getRequestDispatcher("/app/board/boardDetailDoctor.jsp").forward(request, response);
+			break;
+		case "/BoardComment.docbo":
+			result = new DoctorBoardCommentController().execute(request, response);
+			request.getRequestDispatcher("/app/board/boardDetailDoctorAuth.jsp").forward(request, response);
+			System.out.println("댓글 작성 될까?");
 		}
 	}
 }
