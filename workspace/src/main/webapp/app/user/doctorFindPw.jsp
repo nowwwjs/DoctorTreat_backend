@@ -32,6 +32,7 @@
 			</div>
 			<br>
 			<br>
+			<form action="<%=request.getContextPath()%>/doctor/doctorFindPw.do" method="post">
 			<section class="Doctor-findPw-form-one">
 				<form>
 					이름 &nbsp;&nbsp; <input type="text" class="Doctor-findPw-input"
@@ -44,6 +45,7 @@
 					아이디 <input type="text" class="Doctor-findPw-input"
 						placeholder="아이디를 입력하세요">
 				</form>
+			</form>
 			</section>
 			<br>
 			<br>

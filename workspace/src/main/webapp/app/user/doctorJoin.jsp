@@ -13,12 +13,13 @@
 <link rel="stylesheet"
    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 <jsp:include page="${pageContext.request.contextPath}/header.jsp" />
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 <title>의사 회원가입</title>
 </head>
 
 <body>
 
-   <main class="member-background">
+   <main class="doctor-background">
       <div class="Doctor-signup-container">
          <form
             action="${pageContext.request.contextPath}/doctor/doctorJoinOk.do"
@@ -27,18 +28,24 @@
 
             <label for="doctorId">아이디</label>
             <div class="Doctor-input-group">
-               <input class="member-input-focus" type="text" id="doctorId"
+            
+            
+               
+               <input class="doctor-input-focus" type="text" id="doctorId"
                   name="doctorId" required>
-               <button class="Doctor-join-checkIdBtn">중복 확인</button>
+               <button id="Doctor-join-checkIdBtn" class="Doctor-join-checkIdBtn" >중복 확인</button>
+               
+               
                <p class="Doctorjoin-Null"></p>
             </div>
-
+            <div class="checkIdResult" id="checkIdResult"></div>
+			<br>
             <label for="doctorPw">비밀번호</label>
             <div class="Doctor-input-group">
                <input type="password" id="doctorPw" name="doctorPw"
                   required> <img class="Doctor-view-first"
-                  src="./../../../image/view.png"> <img
-                  class="Doctor-noview-first" src="./../../../image/noview.png">
+                  src="${pageContext.request.contextPath}/static/image/view.png"> <img
+                  class="Doctor-noview-first" src="${pageContext.request.contextPath}/static/image/noview.png">
                <p class="Doctorjoin-Null"></p>
             </div>
 
@@ -148,6 +155,8 @@
 
    <script src="https://ssl.daumcdn.net/dmaps/map_js_init/postcode.v2.js"></script>
 
+<script
+		src="${pageContext.request.contextPath}/static/js/user/doctorJoin.js"></script>
 </body>
 <jsp:include page="${pageContext.request.contextPath}/footer.jsp" />
 </html>

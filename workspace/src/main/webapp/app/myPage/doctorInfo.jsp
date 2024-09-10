@@ -24,31 +24,26 @@
 		</div>
 
 		<div class="DoctorInfo-inputbox">
-			<form action="">
+			<form action="${pageContext.request.contextPath}/app/myPage/doctorPwOk.dm?doctorNumber=${sessionScope.doctorNumber}"" method ="post">
 
-				<label class="DoctorInfo-input" for=""> <span>아이디</span> <input
-					type="text" value="">
-				</label> <br> <label class="DoctorInfo-input" for=""> <span>이름</span>
-					<input type="text" value="">
-				</label> <br> <label class="DoctorInfo-input" for=""> <span>병원
-						이름</span> <input type="text" value="">
-				</label> <br> <label class="DoctorInfo-input" for=""> <span>휴대폰
-						번호</span> <input type="text" value="">
-				</label> <br> <label class="DoctorInfo-input" for=""> <span>병원번호</span>
-					<input type="text" value="">
-				</label> <br> <label class="DoctorInfo-input" for=""> <span>병원
-						주소</span> <input type="text" value="">
-				</label> <br>
+				<label class="DoctorInfo-input">이름 :  <input type="text"
+					value="${doctorShowInfo.doctorName}" readonly >
+				</label> <br> <label class="DoctorInfo-input">병원이름 :  <input
+					type="text" value="${doctorShowInfo.hospitalName}" readonly>
+				</label> <br> <label class="DoctorInfo-input">의사번호 : <input
+					type="text" value="${doctorShowInfo.doctorPhone}" readonly>
+				</label> <br> <label class="DoctorInfo-input">병원번호 :<input
+					type="text" value="${doctorShowInfo.hospitalCall}" readonly>
+				</label> <br> <label class="DoctorInfo-input">주소 :  <input
+					type="text" value="${doctorShowInfo. addressPostal} ${doctorShowInfo. addressAddress} ${doctorShowInfo. addressDetail}" readonly>
+				</label>
+
+				<button class="DoctorInfo-btn">
+					<a href="">병원정보수정</a>
+				</button>
+
 			</form>
 		</div>
-
-
-
-
-		<button class="DoctorInfo-btn">
-			<a href="DoctorpwOk.html">병원정보수정</a>
-		</button>
-
 	</div>
 
 
