@@ -26,17 +26,75 @@
 	</select>
 
 	<!-- 의사상세정보 페이지 조회 -->
-	<select id="getDoctorDetail" parameterType="String" resultType="DoctorDetailDTO">
+	<select id="getDoctorDetail" parameterType="String"
+		resultType="DoctorDetailDTO">
 		SELECT DH.HOSPITAL_NAME ,
 		DD.DOCTOR_NAME ,
 		DD.DOCTOR_MAJOR ,
 		DH.HOSPITAL_CALL
 		FROM DT_DOCTOR DD JOIN DT_HOSPITAL DH
-		ON DD.HOSPITAL_NUMBER = DH.HOSPITAL_NUMBER
-		WHERE DH.HOSPITAL_CALL = #{hospitalCall}
+		ON
+		DD.HOSPITAL_NUMBER = DH.HOSPITAL_NUMBER
+		WHERE DH.HOSPITAL_CALL =
+		#{hospitalCall}
 	</select>
-	
-	<!-- -->
-	
-	
+
+	<!-- 채팅방 생성 전 선택한 의사번호PK 조회 -->
+	<select id="getDoctorNumber" parameterType="Map"
+		resultType="Integer">
+		SELECT DD.DOCTOR_NUMBER
+		FROM DT_DOCTOR DD JOIN DT_HOSPITAL
+		DH
+		ON DD.HOSPITAL_NUMBER = DH.HOSPITAL_NUMBER
+		WHERE DH.HOSPITAL_CALL =
+		#{hospitalCall}
+	</select>
+
+	<insert id="createChatRoom" parameterType="ChatSessionDTO">
+		INSERT INTO
+		DT_CHAT_SESSION (SESSION_NUMBER , MEMBER_NUMBER, DOCTOR_NUMBER)
+		VALUES
+		(CHAT_SESSION_SEQ.NEXTVAL, #{memberNumber}, #{doctorNumber})
+	</insert>
+
+	<!-- 이비인후과 채팅목록 조회시 필요 -->
+	<select id="getEarDocChat" parameterType="int"
+		resultType="DoctorDTO">
+		SELECT DOCTOR_NUMBER ,DOCTOR_NAME ,HOSPITAL_NAME
+		,DOCTOR_MAJOR
+		FROM(
+		SELECT D.DOCTOR_NUMBER ,D.DOCTOR_NAME
+		,H.HOSPITAL_NAME ,D.DOCTOR_MAJOR
+		FROM DT_CHAT_SESSION CS JOIN DT_DOCTOR
+		D ON CS.DOCTOR_NUMBER =
+		D.DOCTOR_NUMBER
+		JOIN DT_HOSPITAL H ON
+		D.HOSPITAL_NUMBER = H.HOSPITAL_NUMBER
+		WHERE CS.MEMBER_NUMBER = #{memberNumber} AND
+		D.DOCTOR_MAJOR = '이비인후과'
+		ORDER BY CS.SESSION_NUMBER DESC)
+		WHERE ROWNUM
+		&lt; 3
+	</select>
+
+	<!-- 내과 채팅목록 조회시 필요 -->
+	<select id="getInnerDocChat" parameterType="int"
+		resultType="DoctorDTO">
+		SELECT DOCTOR_NUMBER ,DOCTOR_NAME , HOSPITAL_NAME
+		,DOCTOR_MAJOR
+		FROM(
+		SELECT D.DOCTOR_NUMBER ,D.DOCTOR_NAME
+		,H.HOSPITAL_NAME ,D.DOCTOR_MAJOR
+		FROM DT_CHAT_SESSION CS JOIN DT_DOCTOR
+		D ON CS.DOCTOR_NUMBER =
+		D.DOCTOR_NUMBER
+		JOIN DT_HOSPITAL H ON
+		D.HOSPITAL_NUMBER = H.HOSPITAL_NUMBER
+		WHERE CS.MEMBER_NUMBER = #{memberNumber} AND
+		D.DOCTOR_MAJOR = '내과'
+		ORDER BY CS.SESSION_NUMBER DESC)
+		WHERE ROWNUM &lt;
+		3
+	</select>
+
 </mapper>

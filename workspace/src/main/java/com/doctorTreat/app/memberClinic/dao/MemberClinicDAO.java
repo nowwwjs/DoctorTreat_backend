@@ -6,7 +6,9 @@ import java.util.Map;
 
 import org.apache.ibatis.session.SqlSession;
 
+import com.doctorTreat.app.dto.ChatSessionDTO;
 import com.doctorTreat.app.dto.ClinicDoctorListDTO;
+import com.doctorTreat.app.dto.DoctorDTO;
 import com.doctorTreat.app.dto.DoctorDetailDTO;
 import com.mybatis.config.MyBatisConfig;
 
@@ -30,6 +32,23 @@ public class MemberClinicDAO {
 	// 의사 상세정보 조회
 	public List<DoctorDetailDTO> getDoctorDetail(String hospitalCall) {
 		return sqlSession.selectList("memberClinic.getDoctorDetail", hospitalCall);
+	}
+	
+	public Integer getDoctorNumber(String hospitalCall) {
+		return sqlSession.selectOne("memberClinic.getDoctorNumber", hospitalCall);
+	}
+	
+	public void inputChatSession(ChatSessionDTO chatSessionDTO){
+		sqlSession.insert("memberClinic.createChatRoom", chatSessionDTO);
+		System.out.println("채팅세션(채팅방) 생성 완료");
+	}
+	
+	public List<DoctorDTO> getChatListEar(int memberNumber){
+		return sqlSession.selectList("memberClinic.getEarDocChat", memberNumber);
+	}
+	
+	public List<DoctorDTO> getChatListInner(int memberNumber){
+		return sqlSession.selectList("memberClinic.getInnerDocChat", memberNumber);
 	}
 
 }
