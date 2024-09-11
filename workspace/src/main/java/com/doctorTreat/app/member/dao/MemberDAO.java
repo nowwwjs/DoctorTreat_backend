@@ -2,6 +2,7 @@ package com.doctorTreat.app.member.dao;
 
 import org.apache.ibatis.session.SqlSession;
 
+import com.doctorTreat.app.dto.DoctorDTO;
 import com.doctorTreat.app.dto.MemberDTO;
 import com.mybatis.config.MyBatisConfig;
 
@@ -12,22 +13,28 @@ public class MemberDAO {
       sqlSession = MyBatisConfig.getSqlSessionFactory().openSession(true);
    }
 
-   public void inputAddress(MemberDTO memberDTO) {
+   // 주소 삽입
+   public Integer inputAddress(MemberDTO memberDTO) {
+      // 주소 삽입
       sqlSession.insert("member.memberAddress", memberDTO);
       System.out.println("주소 삽입 성공");
-   }
 
-   public void inputMember(MemberDTO memberDTO) {
-      // 주소 삽입시 생성된 주소번호PK 시퀀스를 조회하여 AddressNumber의 값으로 담기
-      Integer addressNumber = sqlSession.selectOne("member.getAddressFK"); // 시퀀스 조회
-      memberDTO.setAddressNumber(addressNumber); // DTO에 시퀀스 값 설정
+      // 삽입된 주소의 PK 가져오기
+      Integer addressNumber = sqlSession.selectOne("member.getAddressNum");
+      memberDTO.setAddressNumber(addressNumber);
       System.out.println("생성된 주소번호: " + addressNumber);
 
-      // 주소 삽입 후 ADDRESS_NUMBER가 doctorDTO에 설정되어 있어야 함
-      // 병원 삽입
+      return addressNumber;
+   }
+
+   // 회원 정보 삽입
+   public void inputMember(MemberDTO memberDTO) {
+      // 주소 번호는 이미 memberDTO에 설정되어 있어야 함
       sqlSession.insert("member.memberJoin", memberDTO);
       System.out.println("회원 정보 삽입 성공");
 
+      // 트랜잭션 커밋
+      sqlSession.commit();
    }
 
    // 회원 로그인
@@ -46,14 +53,15 @@ public class MemberDAO {
    }
 
    // 회원가입 시 아이디 중복 확인
-   public boolean memberCheckId(String memberId) {
-      Integer count = sqlSession.selectOne("member.memberCheckId", memberId);
+   public boolean checkId(String memberId) {
+      Integer count = sqlSession.selectOne("member.checkId", memberId);
       System.out.println("중복 확인된 아이디 개수: " + count);
-      return count == 0;
+      return (Integer) sqlSession.selectOne("member.checkId", memberId) <= 0;
    }
 
    // 회원 탈퇴
    public void quit(int memberNumber) {
       sqlSession.delete("member.quit", memberNumber);
    }
+
 }

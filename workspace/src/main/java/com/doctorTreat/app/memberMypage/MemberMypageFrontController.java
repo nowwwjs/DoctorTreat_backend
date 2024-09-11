@@ -27,15 +27,14 @@ public class MemberMypageFrontController extends HttpServlet {
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		doPost(request, response);
+		doProcess(request, response);
 	}
 
 	/**
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// TODO Auto-generated method stub
-		doGet(request, response);
+		doProcess(request, response);
 	}
 	
 	protected void doProcess(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
@@ -47,17 +46,28 @@ public class MemberMypageFrontController extends HttpServlet {
 	    	 String memberNumber = request.getParameter("memberNumber");
 	         request.getSession().setAttribute("memberNumber", memberNumber);
 	         result = new MemberInfoController().execute(request, response);
-	         request.getRequestDispatcher("app/myPage/memberInfo.jsp").forward(request, response);
-	        
+	         request.getRequestDispatcher("/app/myPage/memberInfo.jsp").forward(request, response);
+	         break;
+	         
+	    case "/memberMypage/memberPw.mm":
+	         System.out.println("확인1");
+	         request.getRequestDispatcher("/app/myPage/memberPwOk.jsp").forward(request, response);
+	         break;
+	         
 	    case "/memberMypage/memberPwOk.mm":
-	    	String memberPwOkNumber = request.getParameter("memberNumber");
-	    	request.getSession().setAttribute("memberPwOkNumber", memberPwOkNumber);
-	    	result = new MemberPwOkController().execute(request, response);
-	        request.getRequestDispatcher("app/myPage/memberPwOk.jsp").forward(request, response);
-	    }
-	    
+	    	  System.out.println("확인2");
+	          String memberPwNumber = request.getParameter("memberNumber");
+	          request.getSession().setAttribute("memberPwNumber", memberPwNumber);
+	          result = new MemberPwOkController().execute(request, response);
+	          break;
+	          
+	    case "/memberMypage/memberOut.mm":
+	    	System.out.println("확인3");
+	    	request.getRequestDispatcher("/app/myPage/memberOut.jsp").forward(request, response);
 	    	
-	    
+	    case "/memberMypage/memberOutOk.mm":
+	    		
+	    	
+	    }
 	}
-
 }
