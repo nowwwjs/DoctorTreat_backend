@@ -24,23 +24,23 @@
 			<div class="writeChart-pullInfo">
 				<div class="writeChart-memberName">
 					<span class="writeChart-pullPushInfo">환자명</span><span
-						class="writeChart-pullInner">차은우</span>
+						class="writeChart-pullInner">${chart[0].memberName}</span>
 				</div>
 				<div class="writeChart-memberBirth">
 					<span class="writeChart-pullPushInfo">환자 생년월일</span><span
-						class="writeChart-pullInner">1994.10.21</span>
+						class="writeChart-pullInner">${chart[0].memberBirth}</span>
 				</div>
 				<div class="writeChart-clinicDate">
 					<span class="writeChart-pullPushInfo">진료 날짜</span><span
-						class="writeChart-pullInner">2024.08.31</span>
+						class="writeChart-pullInner">${chart[0].chartWriteDate}</span>
 				</div>
 				<div class="writeChart-hospital">
 					<span class="writeChart-pullPushInfo">병원명</span><span
-						class="writeChart-pullInner">아주대병원</span>
+						class="writeChart-pullInner">${chart[0].hospitalName}</span>
 				</div>
 				<div class="writeChart-doctor">
 					<span class="writeChart-pullPushInfo">처방 의사</span><span
-						class="writeChart-pullInner">이국종</span>
+						class="writeChart-pullInner">${chart[0].doctorName}</span>
 				</div>
 			</div>
 
@@ -48,23 +48,23 @@
 			<div class="writeChart-pushInfo">
 				<div class="writeChart-chartName">
 					<span class="writeChart-pullPushInfo">진단명</span><span
-						class="writeChart-pushInner">코로나</span>
+						class="writeChart-pushInner">${chart[0].chartName}</span>
 				</div>
 				<div class="writeChart-chartMedicine">
 					<span class="writeChart-pullPushInfo">처방약</span><span
-						class="writeChart-pushInner">프로페시아</span>
+						class="writeChart-pushInner">${chart[0].chartMedicine}</span>
 				</div>
 				<div class="writeChart-way">
 					<span class="writeChart-pullPushInfo">용량</span><span
-						class="writeChart-pushInner">5일분</span>
+						class="writeChart-pushInner">${chart[0].chartPeriod}</span>
 				</div>
 				<div class="writeChart-way">
 					<span class="writeChart-pullPushInfo">복용횟수</span><span
-						class="writeChart-pushInner">1일3회</span>
+						class="writeChart-pushInner">${chart[0].chartDay}</span>
 				</div>
 				<div class="writeChart-way">
 					<span class="writeChart-pullPushInfo">용법</span><span
-						class="writeChart-pushInner">식후</span>
+						class="writeChart-pushInner">${chart[0].chartTime}</span>
 				</div>
 			</div>
 		</div>

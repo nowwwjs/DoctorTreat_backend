@@ -35,7 +35,7 @@ public class ClinicApplicationOk implements Execute {
 
 		System.out.println("현재회원 회원번호 : " + session.getAttribute("memberNumber"));
 		// 세션에 있는 회원번호 형변환 하여 저장.
-		int memberNumber = (int)session.getAttribute("memberNumber");
+		Integer memberNumber = (Integer)session.getAttribute("memberNumber");
 		System.out.println("형변환 회원번호 : " + memberNumber);
 
 		// 맵퍼에서 파라미터 타입으로 받기위한 맵 생성하여 선택한 병원, 로그인중인 유저 저장
