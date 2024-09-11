@@ -15,6 +15,12 @@
 <jsp:include page="${pageContext.request.contextPath}/header.jsp" />
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 <title>의사 회원가입</title>
+<script>
+    let contextPath = "${pageContext.request.contextPath}";
+    if (contextPath === "/") {
+        contextPath = "";
+    }
+</script>
 </head>
 
 <body>
@@ -24,36 +30,37 @@
          <form
             action="${pageContext.request.contextPath}/doctor/doctorJoinOk.do"
             method="post">
+
             <h2>회원가입</h2>
 
             <label for="doctorId">아이디</label>
             <div class="Doctor-input-group">
-            
-            
-               
+
+
+
                <input class="doctor-input-focus" type="text" id="doctorId"
                   name="doctorId" required>
-               <button id="Doctor-join-checkIdBtn" class="Doctor-join-checkIdBtn" >중복 확인</button>
-               
-               
+               <button id="Doctor-join-checkIdBtn" class="Doctor-join-checkIdBtn">중복
+                  확인</button>
+
+
                <p class="Doctorjoin-Null"></p>
             </div>
             <div class="checkIdResult" id="checkIdResult"></div>
-			<br>
-            <label for="doctorPw">비밀번호</label>
+            <br> <label for="doctorPw">비밀번호</label>
             <div class="Doctor-input-group">
-               <input type="password" id="doctorPw" name="doctorPw"
-                  required> <img class="Doctor-view-first"
-                  src="${pageContext.request.contextPath}/static/image/view.png"> <img
-                  class="Doctor-noview-first" src="${pageContext.request.contextPath}/static/image/noview.png">
+               <input type="password" id="doctorPw" name="doctorPw" required>
+               <img class="Doctor-view-first"
+                  src="${pageContext.request.contextPath}/static/image/view.png">
+               <img class="Doctor-noview-first"
+                  src="${pageContext.request.contextPath}/static/image/noview.png">
                <p class="Doctorjoin-Null"></p>
             </div>
 
             <label for="doctorConfirmPw">비밀번호 확인</label>
             <div class="Doctor-input-group">
-               <input type="password" id="doctorConfirmPw"
-                  name="doctorConfirmPw" required> <img
-                  class="Doctor-view-second"
+               <input type="password" id="doctorConfirmPw" name="doctorConfirmPw"
+                  required> <img class="Doctor-view-second"
                   src="${pageContext.request.contextPath}/static/image/view.png">
                <img class="Doctor-noview-second"
                   src="${pageContext.request.contextPath}/static/image/noview.png">
@@ -106,11 +113,11 @@
                   name="doctorHospitalCall" required>
                <p class="Doctorjoin-Null"></p>
             </div>
-          <br> <label for="doctorLicense">면허번호</label>
+            <br> <label for="doctorLicense">면허번호</label>
             <div class="Doctor-input-group">
                <input type="text" id="doctorLicense" name="doctorLicense" required>
                <p class="Doctorjoin-Null"></p>
-            </div> 
+            </div>
             <br> <label for="doctorMedicalSubject">진료과목</label>
             <div class="Doctor-input-group">
                <input type="text" id="doctorMedicalSubject"
@@ -155,8 +162,8 @@
 
    <script src="https://ssl.daumcdn.net/dmaps/map_js_init/postcode.v2.js"></script>
 
-<script
-		src="${pageContext.request.contextPath}/static/js/user/doctorJoin.js"></script>
+   <script
+      src="${pageContext.request.contextPath}/static/js/user/doctorJoin.js"></script>
 </body>
 <jsp:include page="${pageContext.request.contextPath}/footer.jsp" />
 </html>
