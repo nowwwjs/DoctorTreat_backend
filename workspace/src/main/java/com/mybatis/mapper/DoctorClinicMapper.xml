@@ -1,4 +1,64 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="doctorClinicMapper">
+<mapper namespace="doctorClinic">
+
+	<!-- 의사회원이 소유한 환자와의 채팅목록조회 -->
+	<select id="getChatList" parameterType="int"
+		resultType="MemberDTO">
+		SELECT M.MEMBER_NUMBER ,M.MEMBER_NAME
+		,TO_CHAR(M.MEMBER_BIRTH, 'YYYY-MM-DD')
+		AS MEMBER_BIRTH
+		FROM
+		DT_CHAT_SESSION CS JOIN DT_MEMBER M ON CS.MEMBER_NUMBER =
+		M.MEMBER_NUMBER
+		WHERE CS.DOCTOR_NUMBER = #{doctorNumber}
+	</select>
+
+	<!-- 처방전 작성시 자동 작성항목 조회 -->
+	<select id="getChartInfo" parameterType="Map"
+		resultType="ChartDTO">
+		SELECT
+		M.MEMBER_NAME ,
+		TO_CHAR(M.MEMBER_BIRTH, 'YYYY-MM-DD')
+		AS MEMBER_BIRTH ,
+		H.HOSPITAL_NAME ,
+		D.DOCTOR_NAME
+		FROM
+		DT_CHART C
+		JOIN
+		DT_MEMBER M ON
+		C.MEMBER_NUMBER = M.MEMBER_NUMBER
+		JOIN DT_DOCTOR D ON
+		C.DOCTOR_NUMBER = D.DOCTOR_NUMBER
+		JOIN DT_HOSPITAL H ON
+		D.HOSPITAL_NUMBER = H.HOSPITAL_NUMBER
+		WHERE M.MEMBER_NUMBER =
+		#{memberNumber} AND D.DOCTOR_NUMBER = #{doctorNumber}
+	</select>
+
+	<!-- 처방전에서 받은 값 차트 테이블에 저장 -->
+	<insert id="inputChart" parameterType="ChartDTO">
+		INSERT
+		INTO
+		DT_CHART
+		(CHART_NUMBER,
+		CHART_NAME,
+		CHART_MEDICINE,
+		CHART_DAY,
+		CHART_TIME,
+		CHART_PERIOD,
+		MEMBER_NUMBER,
+		DOCTOR_NUMBER,
+		CHART_WRITE_DATE)
+		VALUES
+		(CHART_SEQ.NEXTVAL,
+		#{chartName},
+		#{chartMedicine},
+		#{chartDay},
+		#{chartTime},
+		#{chartPeriod},
+		#{memberNumber},
+		#{doctorNumber},
+		SYSDATE);
+	</insert>
 </mapper>
