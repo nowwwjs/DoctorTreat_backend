@@ -71,6 +71,17 @@ public class DoctorDAO {
 		System.out.println(count);
 		return count != null && count > 0;
 	}
+	
+	//마이페이지 내 병원 수정 페이지 정보 조회
+	public DoctorDTO showUpdateInfo(int doctorNumber) {
+		return sqlSession.selectOne("doctorMypage.showUpdateInfo",doctorNumber);
+	}
+	
+	
+	
+	
+	
+	
 
 	// 아이디 중복확인
 	public boolean checkId(String doctorId) {

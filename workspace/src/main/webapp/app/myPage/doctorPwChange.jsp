@@ -25,12 +25,12 @@
 
 		<div class="DoctorpwChange-inputbox">
 			<form action="">
-				<p class="DoctorpwChange-text">새로운 비밀번호</p>
+				<p class="DoctorpwChange-text">새로운 비밀번호 입력</p>
 				<input type="text" class="DoctorpwChange-input-field">
 				<p class="DoctorpwChange-textbox">암호는 8자 이상(영어 소문자, 특수문자, 숫자 각
 					1개 이상 필수)을 충족해야합니다.</p>
 
-				<p class="DoctorpwChange-text">새로운 비밀번호 입력</p>
+				<p class="DoctorpwChange-text">새로운 비밀번호 확인</p>
 				<input type="text" class="DoctorpwChange-input-field">
 			</form>
 		</div>

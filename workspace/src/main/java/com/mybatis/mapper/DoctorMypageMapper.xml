@@ -2,7 +2,7 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="doctorMypage">
 
-	<!--마이페이지 정보 보여주기-->
+	<!--마이페이지 정보 보여주기 -->
 	<select id="showInfo" parameterType="int" resultType="DoctorDTO">
 		SELECT
 		d.doctor_id ,
@@ -14,25 +14,52 @@
 		a.address_address ,
 		a.address_detail
 		FROM dt_doctor d
-		LEFT JOIN dt_hospital h ON d.hospital_number = h.hospital_number
-		LEFT JOIN dt_address a ON h.address_number = a.address_number
-		WHERE d.doctor_number = #{doctorNumber}
+		LEFT JOIN dt_hospital h ON
+		d.hospital_number = h.hospital_number
+		LEFT JOIN dt_address a ON
+		h.address_number = a.address_number
+		WHERE d.doctor_number =
+		#{doctorNumber}
 	</select>
 
 
+	<!-- 마이페이지 수정 정보 보여주기 -->
+	<select id="showUpdateInfo" parameterType="int"
+		resultType="DoctorDTO">
+		select d.doctor_id , d.doctor_name, d.doctor_pw,
+		h.hospital_name,
+		h.hospital_call, h.hospital, a.address_postal,
+		a.address_address, a.
+		address_detail
+		from dt_doctor d
+		left join
+		dt_hospital h on
+		left join dt_address a on
+		h.address_number =
+		a.address_number
+		where d.doctor_number= #{doctorNumber}
+	</select>
+
+
+
+
 	<!-- 비밀번호 인증 쿼리 (doctorName과 doctorPw로 확인) -->
-	<select id="checkPassword" parameterType="DoctorDTO" resultType="int">
+	<select id="checkPassword" parameterType="DoctorDTO"
+		resultType="int">
 		SELECT count(*)
 		FROM dt_doctor
-		WHERE doctor_id = #{doctorId} AND doctor_pw = #{doctorPw}
+		WHERE doctor_id = #{doctorId}
+		AND doctor_pw = #{doctorPw}
 	</select>
 
 
 	<!-- 회원탈퇴 셀렉트 -->
-	<select id="doctorReceive" parameterType="doctorDTO" resultType="int">
+	<select id="doctorReceive" parameterType="doctorDTO"
+		resultType="int">
 		select doctor_number
 		from dt_doctor
-		where doctor_id=#{doctorId} and doctor_pw = #{doctorPw}
+		where
+		doctor_id=#{doctorId} and doctor_pw = #{doctorPw}
 	</select>
 
 	<!-- 회원탈퇴 -->
