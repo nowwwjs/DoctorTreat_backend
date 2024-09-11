@@ -16,7 +16,7 @@
 </head>
 
 <body>
-	
+
 
 
 	<div class="DoctorOut-main-container">
@@ -27,23 +27,19 @@
 
 
 		<div class="DoctorOut-inputbox">
-			<form action="">
+			<form action="${pageContext.request.contextPath}/doctor/doctorOutOk.dm" method="post">
+			
 				<p class="DoctorOut-idtext">아이디</p>
-				<input type="text" class="DoctorOut-input-field">
+				<input type="text" name="doctorId" class="DoctorOut-input-field">
 
 				<p class="DoctorOut-pwtext">비밀번호 입력</p>
-				<input type="password" class="DoctorOut-input-field">
-			</form>
+				<input type="password" name="doctorPw" class="DoctorOut-input-field">
 		</div>
-
-		<button class="DoctorOut-btn">
-			<a href="./../../../html/myPage/member/memberOut-caution.html">
-				<p>회원탈퇴</p>
-			</a>
-		</button>
+		<button class="DoctorOut-btn"><p>회원탈퇴</p></button>
+		</form>
 	</div>
 
-	
+
 
 
 

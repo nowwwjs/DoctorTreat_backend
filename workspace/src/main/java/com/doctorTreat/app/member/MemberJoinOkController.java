@@ -15,8 +15,8 @@ public class MemberJoinOkController implements Execute {
    @Override
    public Result execute(HttpServletRequest request, HttpServletResponse response) throws IOException, ServletException {
 
-	  request.setCharacterEncoding("UTF-8");
-	   
+     request.setCharacterEncoding("UTF-8");
+      
       MemberDTO memberDTO = new MemberDTO();
       MemberDAO memberDAO = new MemberDAO();
       Result result = new Result();
