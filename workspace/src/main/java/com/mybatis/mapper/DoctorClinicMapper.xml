@@ -14,26 +14,38 @@
 		WHERE CS.DOCTOR_NUMBER = #{doctorNumber}
 	</select>
 
-	<!-- 처방전 작성시 자동 작성항목 조회 -->
+	<!-- 처방전 작성시 자동 작성항목 조회(일반정보) -->
+	<select id="getChartMemberInfo" parameterType="int"
+		resultType="ChartDTO">
+		SELECT
+		MEMBER_NAME,
+		TO_CHAR(MEMBER_BIRTH, 'YYYY-MM-DD') AS
+		MEMBER_BIRTH
+		FROM
+		DT_MEMBER
+		WHERE
+		MEMBER_NUMBER = #{memberNumber}
+	</select>
+
+	<!-- 처방전 작성시 자동작성 항목 조회(의사정보) -->
 	<select id="getChartInfo" parameterType="Map"
 		resultType="ChartDTO">
 		SELECT
-		M.MEMBER_NAME ,
-		TO_CHAR(M.MEMBER_BIRTH, 'YYYY-MM-DD')
-		AS MEMBER_BIRTH ,
+		D.DOCTOR_NAME ,
 		H.HOSPITAL_NAME ,
-		D.DOCTOR_NAME
+		M.MEMBER_NAME ,
+		TO_CHAR(M.MEMBER_BIRTH, 'YYYY-MM-DD') AS MEMBER_BIRTH
 		FROM
-		DT_CHART C
-		JOIN
-		DT_MEMBER M ON
-		C.MEMBER_NUMBER = M.MEMBER_NUMBER
+		DT_CHAT_SESSION CS
 		JOIN DT_DOCTOR D ON
-		C.DOCTOR_NUMBER = D.DOCTOR_NUMBER
+		CS.DOCTOR_NUMBER = D.DOCTOR_NUMBER
+		JOIN DT_MEMBER M ON
+		CS.MEMBER_NUMBER = M.MEMBER_NUMBER
 		JOIN DT_HOSPITAL H ON
-		D.HOSPITAL_NUMBER = H.HOSPITAL_NUMBER
-		WHERE M.MEMBER_NUMBER =
-		#{memberNumber} AND D.DOCTOR_NUMBER = #{doctorNumber}
+		H.HOSPITAL_NUMBER = D.HOSPITAL_NUMBER
+		WHERE
+		M.MEMBER_NUMBER = #{memberNumber}
+		AND D.DOCTOR_NUMBER = #{doctorNumber}
 	</select>
 
 	<!-- 처방전에서 받은 값 차트 테이블에 저장 -->

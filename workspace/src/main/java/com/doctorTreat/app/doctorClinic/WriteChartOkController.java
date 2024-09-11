@@ -37,7 +37,9 @@ public class WriteChartOkController implements Execute {
 		int memberNumber = Integer.valueOf(request.getParameter("memberNumber"));
 		System.out.println("환자 번호 : " + memberNumber);
 		
-//		ChartDTO.set(request.getParameter("memberId"));
+		// 쿼리에 전달할 값 DTO에 저장
+		ChartDTO chartDTO = new ChartDTO();
+		chartDTO.setChartName(request.getParameter(""));
 		
 		// 결과처리
 		Result result = new Result();

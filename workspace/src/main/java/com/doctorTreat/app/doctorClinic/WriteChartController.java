@@ -1,6 +1,7 @@
 package com.doctorTreat.app.doctorClinic;
 
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -19,9 +20,9 @@ public class WriteChartController implements Execute {
 	@Override
 	public Result execute(HttpServletRequest request, HttpServletResponse response)
 			throws IOException, ServletException {
-		
+
 		request.setCharacterEncoding("UTF-8");
-		
+
 		System.out.println("세션 가져오는중");
 		// false를 넣으면 값을 세션이 없을때 null을 반환
 		// 매개변수를 넣지 않으면 세션이 없을때 세션을 만들어서 반환
@@ -31,24 +32,23 @@ public class WriteChartController implements Execute {
 		// 세션에 있는 회원번호 형변환 하여 저장.
 		int doctorNumber = (int) session.getAttribute("doctorNumber");
 		System.out.println("의사번호 : " + doctorNumber);
-		
-		//선택한 환자정보
+
+		// 선택한 환자정보
 		int memberNumber = Integer.valueOf(request.getParameter("memberNumber"));
 		System.out.println("환자 번호 : " + memberNumber);
-		
-		//쿼리에 보낼 매개변수
+
+		// 쿼리로 DTO에 JSP로 보낼 값 저장
+		DoctorClinicDAO doctorClinicDAO = new DoctorClinicDAO();
 		Map<String, Object> queryMap = new HashMap<>();
 		queryMap.put("doctorNumber", doctorNumber);
 		queryMap.put("memberNumber", memberNumber);
-		
-		DoctorClinicDAO doctorClinicDAO = new DoctorClinicDAO();
 		List<ChartDTO> chart = doctorClinicDAO.getChartInfo(queryMap);
 		System.out.println(chart);
-		
-		//JSP로 보내기
+
+		// JSP 로 셋팅
 		request.setAttribute("chart", chart);
 
-		//결과처리
+		// 결과처리
 		Result result = new Result();
 		result.setRedirect(true);
 		result.setPath("/app/clinic/writeChart.jsp");
