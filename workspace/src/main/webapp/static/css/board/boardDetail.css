@@ -136,13 +136,13 @@ main {
 }
 
 .boardDetail-comentModify {
-    left: 750px;
-    bottom: 30px;
+    left: 675px;
+    bottom: -93px;
 }
 
 .boardDetail-comentDelete {
-    left: 820px;
-    bottom: 60px;
+    left: 742px;
+    bottom: -62px;
 }
 
 .boardDetail-modifyBtn:hover,
@@ -152,3 +152,36 @@ main {
 .boardDetail-comentDelete:hover{
     background-color: #2e9278
   }
+  
+.boardDetail-commentContainer textarea {
+    width: 100%;
+    height: 100px;
+    padding: 10px;
+    border: 1px solid #dcdcdc;
+    border-radius: 5px;
+    resize: vertical;
+    box-sizing: border-box;
+    margin-bottom: 10px;
+    font-size: 14px;
+    font-family: 'Noto Sans KR', sans-serif;
+    resize: none;
+}
+
+.boardDetail-commentContainer button {
+	width: 60px;
+    height: 40px;
+    border: none;
+    border-radius: 5px;
+    background-color: #37aa8b;
+    color: white;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+   	margin-left: 920px;
+   	margin-bottom: 20px;
+}
+
+.boardDetail-commentContainer button:hover {
+    background-color: #2e9278;
+}
