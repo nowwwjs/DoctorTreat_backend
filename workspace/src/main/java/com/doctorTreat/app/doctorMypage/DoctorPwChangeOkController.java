@@ -1,5 +1,5 @@
 package com.doctorTreat.app.doctorMypage;
 
-public class DoctorPwChangeController {
+public class DoctorPwChangeOkController {
 
 }
