@@ -36,7 +36,7 @@ public class DoctorOutOkController implements Execute {
         
         int docNum = doctorDAO.showDoctor(doctorDTO);
         
-        System.out.println(docNum);
+        System.out.println("뭐야" + docNum);
         
         if(docNum != 0) {
         doctorDAO.quit1(docNum);
