@@ -31,6 +31,7 @@
 	<select id="getChartInfo" parameterType="Map"
 		resultType="ChartDTO">
 		SELECT
+		M.MEMBER_NUMBER ,
 		D.DOCTOR_NAME ,
 		H.HOSPITAL_NAME ,
 		M.MEMBER_NAME ,
@@ -71,6 +72,6 @@
 		#{chartPeriod},
 		#{memberNumber},
 		#{doctorNumber},
-		SYSDATE);
+		SYSDATE)
 	</insert>
 </mapper>

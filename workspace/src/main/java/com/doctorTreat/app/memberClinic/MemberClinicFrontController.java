@@ -90,8 +90,10 @@ public class MemberClinicFrontController extends HttpServlet {
 			request.getRequestDispatcher(result.getPath()).forward(request, response);
 			break;
 			
+//		로그인 상태긔 일반회원이 채팅리스트에서 채팅방으로 접근
 		case "/app/clinic/chatRoomMember.memcl":
-			request.getRequestDispatcher("/app/clinic/chatRoomMember.jsp").forward(request, response);
+			result = new ChatRoomMemberController().execute(request, response);
+			request.getRequestDispatcher(result.getPath()).forward(request, response);
 			break;
 		}
 

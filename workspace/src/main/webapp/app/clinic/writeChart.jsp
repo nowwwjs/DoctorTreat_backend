@@ -27,6 +27,10 @@
 					<span class="writeChart-pullPushInfo">환자명</span><span
 						class="writeChart-pullInner">${chart[0].memberName}</span>
 				</div>
+				<div class="writeChart-memberNumber">
+					<span class="writeChart-pullPushInfo">환자번호</span><span
+						class="writeChart-pullInner">${chart[0].memberNumber}</span>
+				</div>
 				<div class="writeChart-memberBirth">
 					<span class="writeChart-pullPushInfo">환자 생년월일</span><span
 						class="writeChart-pullInner">${chart[0].memberBirth}</span>
@@ -46,7 +50,7 @@
 			</div>
 
 			<!-- 의사입력 정보 -->
-			<form action="${pageContext.request.contextPath}/writeChartOk.doccl" method="post">
+			<form action="${pageContext.request.contextPath}/writeChartOk.doccl?memberNumber=${chart[0].memberNumber}" method="post">
 				<div class="writeChart-pushInfo">
 					<div class="writeChart-chartName">
 						<span class="writeChart-pullPushInfo">진단명</span><input
@@ -67,9 +71,9 @@
 					<div class="writeChart-way">
 						<span class="writeChart-pullPushInfo">용법 </span>식전 <label
 							for="before-meal"><input type="radio" id="after-meal"
-							name="chartTime"></label> </span> <span>식후 <label
+							name="chartTime" value="식전"></label> </span> <span>식후 <label
 							for="after-meal"><input type="radio" id="after-meal"
-								name="chartTime" checked></label>
+								name="chartTime" value="식후" checked></label>
 						</span>
 						<button id="writeChart-submit">처방전 등록</button>
 					</div>

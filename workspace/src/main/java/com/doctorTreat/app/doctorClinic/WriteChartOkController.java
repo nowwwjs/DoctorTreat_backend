@@ -41,9 +41,13 @@ public class WriteChartOkController implements Execute {
 		ChartDTO chartDTO = new ChartDTO();
 		chartDTO.setChartName(request.getParameter("chartName"));
 		chartDTO.setChartMedicine(request.getParameter("chartMedicine"));
-		chartDTO.setChartMedicine(request.getParameter("chartPeriod"));
-		chartDTO.setChartMedicine(request.getParameter("chartDay"));
-		chartDTO.setChartMedicine(request.getParameter("chartTime"));
+		chartDTO.setChartPeriod(request.getParameter("chartPeriod"));
+		chartDTO.setChartDay(request.getParameter("chartDay"));
+		chartDTO.setChartTime(request.getParameter("chartTime"));
+		chartDTO.setMemberNumber(Integer.valueOf(memberNumber));
+		chartDTO.setDoctorNumber(doctorNumber);
+		
+		System.out.println(chartDTO);
 
 		// 쿼리 실행
 		DoctorClinicDAO doctorClinicDAO = new DoctorClinicDAO();
@@ -51,7 +55,7 @@ public class WriteChartOkController implements Execute {
 
 		// 결과처리
 		Result result = new Result();
-		result.setRedirect(false);
+		result.setRedirect(true);
 		result.setPath("/chatListDoctor.doccl");
 		return result;
 	}

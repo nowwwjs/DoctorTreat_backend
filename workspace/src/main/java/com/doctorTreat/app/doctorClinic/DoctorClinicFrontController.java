@@ -72,8 +72,8 @@ public class DoctorClinicFrontController extends HttpServlet {
 			result = new WriteChartController().execute(request, response);
 			request.getRequestDispatcher(result.getPath()).forward(request, response);
 			break;
-			
-			// 채팅방에서 처방전 작성 클릭시 작성페이지 이동
+		
+		// 처방전 등록 클릭시 등록
 		case "/writeChartOk.doccl":
 			result = new WriteChartOkController().execute(request, response);
 			request.getRequestDispatcher(result.getPath()).forward(request, response);
