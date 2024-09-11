@@ -4,16 +4,19 @@
 
 	<!-- 게시글 리스트 보여주기 -->
 	<select id="showlist" parameterType="DoctorBoardDTO" resultType="DoctorBoardDTO">
-	SELECT dmi.MEDICAL_INFO_TITLE , dmi.MEDICAL_INFO_TEXT, dm.MEMBER_NAME
+	SELECT dmi.MEDICAL_INFO_NUMBER , dmi.MEDICAL_INFO_TITLE , dmi.MEDICAL_INFO_TEXT, dm.MEMBER_NAME
 	FROM DT_MEDICAL_INFO dmi JOIN DT_MEMBER dm ON dmi.MEMBER_NUMBER = dm.MEMBER_NUMBER
 	</select>
 	
 	<!--  게시글 상세페이지 보여주기 -->
 	<select id="showListDetail" parameterType="int" resultType="DoctorBoardDTO">
-	SELECT MI.MEDICAL_INFO_TITLE, M.MEMBER_NAME, MI.MEDICAL_INFO_DATE, MI.MEDICAL_INFO_TEXT
-    FROM DT_MEDICAL_INFO MIJOIN DT_MEMBER M ON MI.MEMBER_NUMBER = M.MEMBER_NUMBER
-    WHERE MI.MEMBER_NUMBER = #{memberNumber}
+	SELECT dmi.MEDICAL_INFO_TITLE, dm.MEMBER_NAME, dmi.MEDICAL_INFO_DATE, dmi.MEDICAL_INFO_TEXT
+    FROM DT_MEDICAL_INFO dmi
+    JOIN DT_MEMBER dm ON dmi.MEMBER_NUMBER = dm.MEMBER_NUMBER
+    WHERE dmi.MEDICAL_INFO_NUMBER = #{medicalInfoNumber}
 	</select>
+	
+	
 	
 
 	
