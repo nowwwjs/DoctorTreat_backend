@@ -9,10 +9,18 @@ import javax.servlet.http.HttpServletResponse;
 import com.doctorTreat.app.Execute;
 import com.doctorTreat.app.Result;
 import com.doctorTreat.app.doctor.dao.DoctorDAO;
+<<<<<<< HEAD
 
 public class DoctorOutOkController implements Execute {
 
     @Override
+=======
+import com.doctorTreat.app.dto.DoctorDTO;
+
+public class DoctorOutOkController implements Execute {
+
+	@Override
+>>>>>>> 944d97b840fd54622e002dcf21815fcdfc7e9aed
     public Result execute(HttpServletRequest request, HttpServletResponse response)
             throws IOException, ServletException {
         
@@ -20,6 +28,7 @@ public class DoctorOutOkController implements Execute {
         Result result = new Result();
 
         DoctorDAO doctorDAO = new DoctorDAO();
+<<<<<<< HEAD
 
         // 세션에서 doctorNumber를 가져와 사용자가 맞는지 확인
         String sessionNumber = (String) request.getSession().getAttribute("doctorNumber");
@@ -44,6 +53,39 @@ public class DoctorOutOkController implements Execute {
             result.setPath("/doctor/login.dm");
         }
         
+=======
+        DoctorDTO doctorDTO = new DoctorDTO();
+
+        System.out.println("꼬르륵");
+        
+        String doctorId = request.getParameter("doctorId");
+        String doctorPw = request.getParameter("doctorPw");
+        
+        
+        doctorDTO.setDoctorId(doctorId);
+        doctorDTO.setDoctorPw(doctorPw);
+        
+        System.out.println(doctorDTO);
+        
+        int docNum = doctorDAO.showDoctor(doctorDTO);
+        
+        System.out.println("뭐야" + docNum);
+        
+        if(docNum != 0) {
+        doctorDAO.quit1(docNum);
+        doctorDAO.quit2(docNum);
+        doctorDAO.quit3(docNum);
+        
+        result.setRedirect(true);
+        result.setPath("/app/myPage/doctorOut-Caution.jsp");
+        }
+        
+        else {
+        	  result.setRedirect(false);
+        	  result.setPath("/app/myPage/doctorInfo.jsp");
+        }
+ 
+>>>>>>> 944d97b840fd54622e002dcf21815fcdfc7e9aed
         return result;
     }
 }

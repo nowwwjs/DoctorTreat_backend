@@ -56,7 +56,7 @@ public class MemberBoardFrontController extends HttpServlet {
          
       case "/updateBoard.membo":
          System.out.println("글 수정!");
-         // medicalInfoNumber 값을 세션에 저장
+       
          String medicalInfoNumber = request.getParameter("infoNumber3");
          request.getSession().setAttribute("medicalInfoNumber", medicalInfoNumber);
          result = new MemberBoardShowController().execute(request, response);
