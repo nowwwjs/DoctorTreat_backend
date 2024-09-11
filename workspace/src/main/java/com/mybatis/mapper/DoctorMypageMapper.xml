@@ -39,19 +39,27 @@
    
    <!-- 회원탈퇴 -->
    <delete id="doctorQuit1" parameterType="int">
-      delete from dt_address
-      where doctor_number = #{doctorNumber}
-   </delete>
-   
-   <delete id="doctorQuit2" parameterType="int">
-      delete from dt_hospital
-      where doctor_number=#{doctorNumber} 
-   </delete>
-   
-   <delete id="doctorQuit3" parameterType="int">
       delete from dt_doctor
       where doctor_number=#{doctorNumber}
    </delete>    
+
+   <delete id="doctorQuit2" parameterType="int">
+      delete from dt_address
+      where doctor_number IN (
+      SELECT DOC_NUMBER FROM DT_DOCTOR 
+      WHERE DOC_NUMBER =  #{doctorNumber}
+      )
+   </delete>
+   
+   <delete id="doctorQuit3" parameterType="int">
+      delete from dt_hospital
+      where doctor_number IN (
+      SELECT DOC_NUMBER FROM DT_DOCTOR 
+      WHERE DOC_NUMBER =  #{doctorNumber}
+      )
+   </delete>
+   
+   
 	
 	
 
