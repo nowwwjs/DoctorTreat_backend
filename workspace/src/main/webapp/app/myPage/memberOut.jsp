@@ -13,8 +13,7 @@
 
 <jsp:include page="${pageContext.request.contextPath}/headerMember.jsp" />
 </head>
-<body>
-	<form action="${pageContext.request.contextPath/myPage/memberMypage/memberOut.mm" method="post">
+<body>	
 		<div class="memberOut-main-container">
 	        <div class="memberOut-titlebox">
 	            <p class="memberOut-title">회원탈퇴</p>
@@ -22,6 +21,7 @@
 	        </div>
 	
 	        <div class="memberOut-inputbox">
+	        <form action="${pageContext.request.contextPath}/memberMypage/memberOutOk.mm" method="post">
 	                <p class="memberOut-idtext">아이디</p>
 	                <input type="text" class="memberOut-input-field">
 	
@@ -33,8 +33,8 @@
 	            <a href="${pageContext.request.contextPath}/app/myPage/memberout-caution.jsp">
 	          <p>회원탈퇴</p></a>
 	        </button>
+	        </form>
 	    </div>
-    </form>
     <script src="${pageContext.request.contextPath}/static/js/myPage/memberout.js"></script>
 </body>
 <jsp:include page="${pageContext.request.contextPath}/footer.jsp" />

@@ -3,6 +3,7 @@ package com.doctorTreat.app.memberMypage.dao;
 
 import org.apache.ibatis.session.SqlSession;
 
+import com.doctorTreat.app.dto.DoctorDTO;
 import com.doctorTreat.app.dto.MemberDTO;
 import com.mybatis.config.MyBatisConfig;
 
@@ -26,7 +27,11 @@ public class MemberMypageDAO {
 	       
 	   }
 	
-	
+	public int showMember(MemberDTO memberDTO) {
+		System.out.println("하이루");
+		return sqlSession.selectOne("memberMypage.doctorReceive" , memberDTO);
+		
+	}
 	public void Quit1(int memberNumber) {
 		sqlSession.delete("memberMypage.memberQuit1",memberNumber);
 		System.out.println("주소삭제완료");

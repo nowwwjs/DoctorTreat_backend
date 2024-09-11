@@ -21,8 +21,8 @@
 	where m.meber_pw = #{memberPw} and m.member_id = #{memberId}
 </select>
 
-<select id="memberRecive" parameterType="MemberDTO">
-	select count(*)
+<select id="memberRecive" parameterType="memberDTO" resultType="int">
+	select member_number
 	from dt_member
 	where member_id = #{memberId} and member_pw = #{memberPw}
 </select>

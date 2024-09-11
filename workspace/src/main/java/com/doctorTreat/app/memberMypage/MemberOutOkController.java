@@ -27,15 +27,31 @@ public class MemberOutOkController implements Execute{
         String memberId = request.getParameter("memberId");
         String memberPw = request.getParameter("memberPw");
 
+        memberDTO.setMemberId(memberId);
+        memberDTO.setMemberPw(memberPw);
+		
+        System.out.println(memberDTO);
+		
+        int memNum = membermypageDAO.showMember(memberDTO);
         
+        System.out.println("뭐야" + memNum);
+        
+        if(memNum != 0) {
+        membermypageDAO.Quit1(memNum);
+        membermypageDAO.Quit1(memNum);
+        
+        result.setRedirect(true);
+        result.setPath("/app/myPage/memberOut-Caution.jsp");
+        }
+        
+        else {
+        	  result.setRedirect(false);
+        	  result.setPath("/app/myPage/memberInfo.jsp");
+        }
 		
 		
 		
-		
-		
-		
-		
-		return null;
+		return result;
 		
 	}
 

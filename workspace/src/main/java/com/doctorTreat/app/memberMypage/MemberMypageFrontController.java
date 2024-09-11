@@ -8,6 +8,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import com.doctorTreat.app.Result;
+import com.doctorTreat.app.doctorMypage.DoctorOutOkController;
 
 /**
  * Servlet implementation class MemberMypageFrontController
@@ -59,14 +60,17 @@ public class MemberMypageFrontController extends HttpServlet {
 	          String memberPwNumber = request.getParameter("memberNumber");
 	          request.getSession().setAttribute("memberPwNumber", memberPwNumber);
 	          result = new MemberPwOkController().execute(request, response);
-	          break;
-	          
+	          break;      
 	    case "/memberMypage/memberOut.mm":
 	    	System.out.println("확인3");
 	    	request.getRequestDispatcher("/app/myPage/memberOut.jsp").forward(request, response);
+	    	break;
 	    	
 	    case "/memberMypage/memberOutOk.mm":
-	    		
+	    	System.out.println("회원탈퇴처리중...");
+	    	result = new MemberOutOkController().execute(request, response);
+            request.getRequestDispatcher(result.getPath()).forward(request, response);
+            break;
 	    	
 	    }
 	}
