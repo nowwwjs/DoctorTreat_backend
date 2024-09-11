@@ -50,5 +50,6 @@
       <mapper resource="com/mybatis/mapper/MemberMapper.xml" />
       <mapper resource="com/mybatis/mapper/MemberMypageMapper.xml" />
       <mapper resource="com/mybatis/mapper/DoctorBoardMapper.xml" />
+      <mapper resource="com/mybatis/mapper/DoctorCommentMapper.xml" />
    </mappers>
 </configuration>

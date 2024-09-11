@@ -36,6 +36,7 @@ public class DoctorBoardDetailController implements Execute {
 		DoctorBoardDTO doctorBoardDetail = doctorBoardDAO.searchByText(infoNumber);
 
 		request.setAttribute("doctorBoardshowDetail", doctorBoardDetail);
+		request.setAttribute("infoNumber", infoNumber);
 
 		// 포워딩 경로 설정
 		result.setRedirect(true); // 리다이렉트가 아닌 포워딩을 사용
