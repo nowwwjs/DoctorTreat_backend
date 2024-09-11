@@ -21,37 +21,37 @@
   </div>
 
   <div class="memberInfo-inputbox">
-    <form action="${pageContext.request.contextPath}/memberMypage/memberInfo.mm?memberNumber={sessionScope.memberNumber}" method="post">
+    <form action="${pageContext.request.contextPath}/myPage/memberPwOk.mm" method="post">
 
       <label class="memberInfo-input" for="">
         <span>아이디</span>
-        <input type="text" value="" name="memberId">
+        <input type="text" value="${memberShowInfo.memberId}" name="memberId" readonly >
       </label>
       <br>
       <label class="memberInfo-input" for="">
         <span>이름</span>
-        <input type="text" value="" name="memberName">
+        <input type="text" value="${memberShowInfo.memberName}" name="memberName" readonly >
       </label>
       <br>
       <label class="memberInfo-input" for="">
         <span>생년월일</span>
-        <input type="text" value="" name="memberBirth">
+        <input type="text" value="${memberShowInfo.memberBirth}" name="memberBirth" readonly >
       </label>
       <br>
       <label class="memberInfo-input" for="">
         <span>휴대폰번호</span>
-        <input type="text" value="" name="memberPhone">
+        <input type="text" value="${memberShowInfo.memberPhone}" name="memberPhone" readonly >
       </label>
       <br>
       <label class="memberInfo-input" for="">
         <span>주소</span>
-        <input type="text" value="" name="memberAddress">
+        <input type="text" value="${memberShowInfo.addressPostal} ${memberShowInfo.addressAddress} ${memberShowInfo.addressDetail}" name="memberAddress" readonly >
       </label>
       <br>
     </form>
   </div>
 
-  <button class="memberInfo-btn"><a href="${pageContext.request.contextPath}/app/myPage/memberPwOk.jsp">내 정보 수정</a></button>
+  <button class="memberInfo-btn"><a href="">내 정보 수정</a></button>
 </div>
 </body>
 <jsp:include page="${pageContext.request.contextPath}/footer.jsp" />
