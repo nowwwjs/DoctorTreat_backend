@@ -6,7 +6,7 @@
 <meta charset="UTF-8">
 <title>DoctorTreat</title>
 <link rel="stylesheet"
-	href="${pageContext.request.contextPath}/static/css/clinic/choice.css">
+	href="${pageContext.request.contextPath}/static/css/clinic/startClinic.css?v=1.0">
 </head>
 <body>
 	<jsp:include page="${pageContext.request.contextPath}/headerDoctor.jsp" />
