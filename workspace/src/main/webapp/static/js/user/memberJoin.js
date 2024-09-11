@@ -1,8 +1,4 @@
-<<<<<<< HEAD
-let isIdChecked = false; // 아이디 중복 확인
-=======
 let isIdChecked = false; // 아이디 중복 확인 상태
->>>>>>> 3552d9d41f9e8e7f8e9cda56b2cca19439343815
 
 // 입력 필드의 유효성 검사
 const focusBtn = document.querySelectorAll(".member-input-group");
@@ -35,12 +31,8 @@ focusBtn.forEach((inputGroup, index) => {
                 message.textContent = "";
                 message.style.color = "";
 
-<<<<<<< HEAD
-                if (index === 0) { // 아이디 유효성 검사
-=======
                 // 아이디 유효성 검사
                 if (index === 0) {
->>>>>>> 3552d9d41f9e8e7f8e9cda56b2cca19439343815
                     const usernamePattern = /^[a-z0-9!@#$%^&*()_+={}\[\]:;"'<>,.?/~`-]{5,20}$/;
                     if (!usernamePattern.test(input.value)) {
                         input.style.border = "2px solid red";
@@ -49,12 +41,8 @@ focusBtn.forEach((inputGroup, index) => {
                     }
                 }
 
-<<<<<<< HEAD
-                if (index === 1) { // 비밀번호 유효성 검사
-=======
                 // 비밀번호 유효성 검사
                 if (index === 1) {
->>>>>>> 3552d9d41f9e8e7f8e9cda56b2cca19439343815
                     const passwordPattern = /^(?=.*[a-zA-Z])(?=.*\d)(?=.*[\W_]).{8,16}$/;
                     if (!passwordPattern.test(input.value)) {
                         input.style.border = "2px solid red";
@@ -63,12 +51,8 @@ focusBtn.forEach((inputGroup, index) => {
                     }
                 }
 
-<<<<<<< HEAD
-                if (index === 2) { // 비밀번호 확인 검사
-=======
                 // 비밀번호 확인 검사
                 if (index === 2) {
->>>>>>> 3552d9d41f9e8e7f8e9cda56b2cca19439343815
                     const passwordInput = document.querySelector("#memberPw");
                     if (input.value !== passwordInput.value) {
                         input.style.border = "2px solid red";
@@ -124,14 +108,6 @@ if (viewicon2 && noviewicon2) {
 document.querySelector("#member-join-CheckId-Btn").addEventListener("click", function() {
     let memberId = document.querySelector("#memberId").value;
 
-<<<<<<< HEAD
-    $.ajax({
-        url: `${contextPath}/member/memberCheckIdOk.me`,  // 경로 확인 필수
-        type: "GET",
-        data: { memberId: memberId },
-        success: function(result) {
-            if (result === "사용가능") {
-=======
     if (!memberId) {
         alert("아이디를 입력해주세요.");
         return;
@@ -144,7 +120,6 @@ document.querySelector("#member-join-CheckId-Btn").addEventListener("click", fun
         success: function(result) {
             console.log(result.trim());
             if (result.trim() === "사용가능") {  // 공백 제거 후 비교
->>>>>>> 3552d9d41f9e8e7f8e9cda56b2cca19439343815
                 document.querySelector("#checkIdResult").textContent = "사용 가능한 아이디입니다.";
                 isIdChecked = true;
             } else {
@@ -159,12 +134,7 @@ document.querySelector("#member-join-CheckId-Btn").addEventListener("click", fun
     });
 });
 
-<<<<<<< HEAD
-
-// 4) 전체 약관동의 체크박스 기능
-=======
 // 전체 약관동의 체크박스 기능
->>>>>>> 3552d9d41f9e8e7f8e9cda56b2cca19439343815
 const agreeAllCheckbox = document.getElementById('agree-all-checkbox');
 const agreeCheckboxes = document.querySelectorAll('.agree-checkbox');
 
@@ -182,11 +152,7 @@ agreeCheckboxes.forEach((checkbox) => {
    });
 });
 
-<<<<<<< HEAD
-// 5) 가입 버튼 클릭 시 폼 제출
-=======
 // 가입 버튼 클릭 시 폼 제출
->>>>>>> 3552d9d41f9e8e7f8e9cda56b2cca19439343815
 document.querySelector(".member-signup-btn").addEventListener("click", function(event) {
    const inputs = document.querySelectorAll("input[required]");
    let allFilled = true;
@@ -213,34 +179,6 @@ document.querySelector(".member-signup-btn").addEventListener("click", function(
    }
 });
 
-<<<<<<< HEAD
-// 6) 우편번호 API 사용
-function execDaumPostcode() {
-   new daum.Postcode({
-      oncomplete: function(data) {
-         var extraAddr = '';
-         let addr = '';
-
-         if (data.userSelectedType === 'R') {
-            addr = data.roadAddress;
-         } else {
-            addr = data.jibunAddress;
-         }
-
-         if (data.userSelectedType === 'R') {
-            if (data.bname !== '' && /[동|로|가]$/g.test(data.bname)) {
-               extraAddr += data.bname;
-            }
-            if (data.buildingName !== '' && data.apartment === 'Y') {
-               extraAddr += (extraAddr !== '' ? ', ' + data.buildingName : data.buildingName);
-            }
-            if (extraAddr !== '') {
-               extraAddr = ' (' + extraAddr + ')';
-            }
-            addr += extraAddr;
-         }
-
-=======
 // 우편번호 API 사용
 function execDaumPostcode() {
    new daum.Postcode({
@@ -258,14 +196,9 @@ function execDaumPostcode() {
             addr += ' (' + extraAddr + ')';
          }
 
->>>>>>> 3552d9d41f9e8e7f8e9cda56b2cca19439343815
          document.getElementById('memberPostcode').value = data.zonecode;
          document.getElementById("memberAddress").value = addr;
          document.getElementById("memberDetailAddress").focus();
       }
    }).open();
-<<<<<<< HEAD
 }
-=======
-}
->>>>>>> 3552d9d41f9e8e7f8e9cda56b2cca19439343815
