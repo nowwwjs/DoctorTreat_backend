@@ -22,9 +22,11 @@ public class DoctorBoardCommentDeleteController implements Execute {
         Result result = new Result();
         
         // 댓글 번호와 게시글 번호 파라미터 가져오기
-        int doctorCommentNumber = Integer.valueOf(request.getParameter("doctorCommentNumber"));
+        int doctorCommentNumber = Integer.parseInt((String)request.getAttribute("doctorCommentNumber"));
         int medicalInfoNumber = Integer.valueOf(request.getParameter("infoNumber"));
         
+        System.out.println(doctorCommentNumber);
+        System.out.println(medicalInfoNumber);
     	DoctorBoardDAO doctorBoardDAO = new DoctorBoardDAO();
     	
         // 댓글 삭제 메서드 호출

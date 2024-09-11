@@ -5,7 +5,7 @@
 <head>
 <meta charset="UTF-8">
 <title>의료지식인 게시글 상세페이지</title>
-<link rel="stylesheet" href="${pageContext.request.contextPath}/static/css/board/boardDetail.css" />
+<link rel="stylesheet" href="${pageContext.request.contextPath}/static/css/board/boardDetail.css?v=1.0" />
 <jsp:include page="/headerDoctor.jsp" />
 </head>
 <body>

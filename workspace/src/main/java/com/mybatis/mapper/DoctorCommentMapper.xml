@@ -15,6 +15,7 @@
 	<!-- 댓글 목록 가지고오기 -->
 	<select id="showComment" resultType="DoctorCommentDTO">
 		SELECT
+		c.DOCTOR_COMMENT_NUMBER,
 		d.DOCTOR_NAME,
 		c.DOCTOR_COMMENT_TEXT,
 		c.MEDICAL_INFO_NUMBER

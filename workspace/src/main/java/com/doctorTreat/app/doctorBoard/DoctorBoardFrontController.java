@@ -56,6 +56,7 @@ public class DoctorBoardFrontController extends HttpServlet {
 		case "/BoardListDetail.docbo":
 			result = new DoctorBoardDetailController().execute(request, response);
 			request.getRequestDispatcher(result.getPath()).forward(request, response);
+			request.setAttribute("infoNumber", request.getParameter("infoNumber"));
 			System.out.println("의료 게시판 상세페이지");
 			request.getRequestDispatcher("/app/board/boardDetailDoctor.jsp").forward(request, response);
 			break;
@@ -65,6 +66,8 @@ public class DoctorBoardFrontController extends HttpServlet {
 			System.out.println("댓글 작성 될까?");	
 			break;
 		case "/BoardCommentDelete.docbo":
+			System.out.println(request.getParameter("doctorCommentNumber"));
+			request.setAttribute("doctorCommentNumber", request.getParameter("doctorCommentNumber"));
 			result = new DoctorBoardCommentDeleteController().execute(request, response);
 			request.getRequestDispatcher("/index.jsp").forward(request, response);
 			System.out.println("댓글 삭제 안되면 안돼^^");
