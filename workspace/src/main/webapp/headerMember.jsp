@@ -20,7 +20,7 @@
                         </a>
                     </div>
                     <div class="header-btnContainer">
-                        <a href="${request.contextPath}/member/memberLogout.me">
+                        <a href="${request.contextPath}/chatListMember.memcl">
                             <div class="header-quickBtn">
                                 <img src="${pageContext.request.contextPath}/static/image/chatBtn.png">
                                 <div>닥터트리톡</div>
@@ -40,7 +40,7 @@
                                 <div>마이페이지</div>
                             </div>
                         </a>
-                         <a href="">
+                         <a href="${request.contextPath}/chart.memcl">
                             <div class="header-quickBtn">
                                 <img class="prescription-img" src="${pageContext.request.contextPath}/static/image/prescription4.png">
                                 <div>처방전</div>

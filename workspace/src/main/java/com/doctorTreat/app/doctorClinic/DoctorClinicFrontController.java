@@ -50,14 +50,37 @@ public class DoctorClinicFrontController extends HttpServlet {
 		Result result = new Result();
 
 		switch (target) {
+		// 비대면진료 클릭시 진료시작하기 페이지로
+		case "/clinicStartDoctor.doccl":
+			request.getRequestDispatcher("/app/clinic/clinicStartDoctor.jsp").forward(request, response);
+			break;
+
+		// 진료 시작클릭시 의사가 소유한 채팅 리스트 페이지
 		case "/chatListDoctor.doccl":
 			result = new ChatListDoctorController().execute(request, response);
 			request.getRequestDispatcher(result.getPath()).forward(request, response);
 			break;
-		case "/clinicStartDoctor.doccl":
-			request.getRequestDispatcher("/app/clinic/clinicStartDoctor.jsp").forward(request, response);
+
+		// 목록에서 채팅 선택시 해당 채팅방 페이지 이동
+		case "/app/clinic/chatRoomDoctor.doccl":
+			result = new ChatRoomDoctorController().execute(request, response);
+			request.getRequestDispatcher(result.getPath()).forward(request, response);
+			break;
+
+		// 채팅방에서 처방전 작성 클릭시 작성페이지 이동
+		case "/writeChart.doccl":
+			result = new WriteChartController().execute(request, response);
+			request.getRequestDispatcher(result.getPath()).forward(request, response);
+			break;
+			
+			// 채팅방에서 처방전 작성 클릭시 작성페이지 이동
+		case "/writeChartOk.doccl":
+			result = new WriteChartOkController().execute(request, response);
+			request.getRequestDispatcher(result.getPath()).forward(request, response);
 			break;
 		}
+
+	}
 
 //	      if (result != null) {
 //	         if (result.isRedirect()) {
@@ -66,6 +89,4 @@ public class DoctorClinicFrontController extends HttpServlet {
 //	            request.getRequestDispatcher(result.getPath()).forward(request, response);
 //	         }
 //	      }
-	}
-
 }

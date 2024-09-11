@@ -4,12 +4,17 @@ public class ChartDTO {
 
 	private int chartNumber;
 	private String chartName;
-	private String medicine;
-	private String day;
-	private String time;
-	private String period;
+	private String chartMedicine;
+	private String chartDay;
+	private String chartTime;
+	private String chartPeriod;
 	private int memberNumber;
 	private int doctorNumber;
+	private String chartWriteDate;
+	private String memberName;
+	private String memberBirth;
+	private String hospitalName;
+	private String doctorName;
 
 	public int getChartNumber() {
 		return chartNumber;
@@ -27,36 +32,36 @@ public class ChartDTO {
 		this.chartName = chartName;
 	}
 
-	public String getMedicine() {
-		return medicine;
+	public String getChartMedicine() {
+		return chartMedicine;
 	}
 
-	public void setMedicine(String medicine) {
-		this.medicine = medicine;
+	public void setChartMedicine(String chartMedicine) {
+		this.chartMedicine = chartMedicine;
 	}
 
-	public String getDay() {
-		return day;
+	public String getChartDay() {
+		return chartDay;
 	}
 
-	public void setDay(String day) {
-		this.day = day;
+	public void setChartDay(String chartDay) {
+		this.chartDay = chartDay;
 	}
 
-	public String getTime() {
-		return time;
+	public String getChartTime() {
+		return chartTime;
 	}
 
-	public void setTime(String time) {
-		this.time = time;
+	public void setChartTime(String chartTime) {
+		this.chartTime = chartTime;
 	}
 
-	public String getPeriod() {
-		return period;
+	public String getChartPeriod() {
+		return chartPeriod;
 	}
 
-	public void setPeriod(String period) {
-		this.period = period;
+	public void setChartPeriod(String chartPeriod) {
+		this.chartPeriod = chartPeriod;
 	}
 
 	public int getMemberNumber() {
@@ -75,11 +80,53 @@ public class ChartDTO {
 		this.doctorNumber = doctorNumber;
 	}
 
+	public String getChartWriteDate() {
+		return chartWriteDate;
+	}
+
+	public void setChartWriteDate(String chartWriteDate) {
+		this.chartWriteDate = chartWriteDate;
+	}
+
+	public String getMemberName() {
+		return memberName;
+	}
+
+	public void setMemberName(String memberName) {
+		this.memberName = memberName;
+	}
+
+	public String getMemberBirth() {
+		return memberBirth;
+	}
+
+	public void setMemberBirth(String memberBirth) {
+		this.memberBirth = memberBirth;
+	}
+
+	public String getHospitalName() {
+		return hospitalName;
+	}
+
+	public void setHospitalName(String hospitalName) {
+		this.hospitalName = hospitalName;
+	}
+
+	public String getDoctorName() {
+		return doctorName;
+	}
+
+	public void setDoctorName(String doctorName) {
+		this.doctorName = doctorName;
+	}
+
 	@Override
 	public String toString() {
-		return "ChartDTO [chartNumber=" + chartNumber + ", chartName=" + chartName + ", medicine=" + medicine + ", day="
-				+ day + ", time=" + time + ", period=" + period + ", memberNumber=" + memberNumber + ", doctorNumber="
-				+ doctorNumber + "]";
+		return "ChartDTO [chartNumber=" + chartNumber + ", chartName=" + chartName + ", chartMedicine=" + chartMedicine
+				+ ", chartDay=" + chartDay + ", chartTime=" + chartTime + ", chartPeriod=" + chartPeriod
+				+ ", memberNumber=" + memberNumber + ", doctorNumber=" + doctorNumber + ", chartWriteDate="
+				+ chartWriteDate + ", memberName=" + memberName + ", memberBirth=" + memberBirth + ", hospitalName="
+				+ hospitalName + ", doctorName=" + doctorName + "]";
 	}
 
 }
