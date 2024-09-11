@@ -15,5 +15,30 @@
       where m.member_number = #{memberNumber}
 </select>
 
+<select id="memberPwOk" parameterType="String" resultType="MemberDTO">
+	select count(member_name)
+	from dt_member m
+	where m.meber_pw = #{memberPw} and m.member_id = #{memberId}
+</select>
+
+<select id="memberRecive" parameterType="MemberDTO">
+	select count(*)
+	from dt_member
+	where member_id = #{memberId} and member_pw = #{memberPw}
+</select>
+
+<delete id="memberQuit1" parameterType="int">
+    DELETE FROM dt_address
+    where m.member_number = #{memberNumber}
+</delete>
+
+<delete id="memberQuit2" parameterType="int">
+    DELETE FROM dt_member
+    where m.member_number = #{memberNumber}
+</delete>
+
+
+   
+   
  
 </mapper>

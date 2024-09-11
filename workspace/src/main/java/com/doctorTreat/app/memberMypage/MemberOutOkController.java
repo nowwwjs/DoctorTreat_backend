@@ -11,7 +11,7 @@ import com.doctorTreat.app.Result;
 import com.doctorTreat.app.dto.MemberDTO;
 import com.doctorTreat.app.memberMypage.dao.MemberMypageDAO;
 
-public class MemberInfoController implements Execute{
+public class MemberOutOkController implements Execute{
 
 	@Override
 	public Result execute(HttpServletRequest request, HttpServletResponse response)
@@ -22,23 +22,21 @@ public class MemberInfoController implements Execute{
 		MemberDTO memberDTO = new MemberDTO();
 		MemberMypageDAO membermypageDAO = new MemberMypageDAO();
 		Result result = new Result();
-		String sessionNumber = (String) request.getSession().getAttribute("memberNumber");
-	      
+		
+		 // 파라미터로부터 아이디와 비밀번호 가져오기
+        String memberId = request.getParameter("memberId");
+        String memberPw = request.getParameter("memberPw");
 
-	      
-	      int memNumber = Integer.valueOf(sessionNumber); 
-	       
-	      memberDTO = membermypageDAO.showInfo(memNumber);
-	      
-	      System.out.println("안녕!!!");
-	      
-	      
-	      request.setAttribute("memberShowInfo", memberDTO);
-
-	      result.setRedirect(true);
-
-	      return result;
-
+        
+		
+		
+		
+		
+		
+		
+		
+		return null;
+		
 	}
-	
+
 }
