@@ -36,11 +36,19 @@ public class WriteChartOkController implements Execute {
 		// 선택한 환자정보
 		int memberNumber = Integer.valueOf(request.getParameter("memberNumber"));
 		System.out.println("환자 번호 : " + memberNumber);
-		
+
 		// 쿼리에 전달할 값 DTO에 저장
 		ChartDTO chartDTO = new ChartDTO();
-		chartDTO.setChartName(request.getParameter(""));
-		
+		chartDTO.setChartName(request.getParameter("chartName"));
+		chartDTO.setChartMedicine(request.getParameter("chartMedicine"));
+		chartDTO.setChartMedicine(request.getParameter("chartPeriod"));
+		chartDTO.setChartMedicine(request.getParameter("chartDay"));
+		chartDTO.setChartMedicine(request.getParameter("chartTime"));
+
+		// 쿼리 실행
+		DoctorClinicDAO doctorClinicDAO = new DoctorClinicDAO();
+		doctorClinicDAO.inputChart(chartDTO);
+
 		// 결과처리
 		Result result = new Result();
 		result.setRedirect(false);

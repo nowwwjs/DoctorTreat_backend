@@ -50,26 +50,26 @@
 				<div class="writeChart-pushInfo">
 					<div class="writeChart-chartName">
 						<span class="writeChart-pullPushInfo">진단명</span><input
-							class="writeChart-pushInner" placeholder=" ex) 감기"></input>
+							class="writeChart-pushInner" name="chartName" placeholder=" ex) 감기"></input>
 					</div>
 					<div class="writeChart-chartMedicine">
 						<span class="writeChart-pullPushInfo">처방약</span><input
-							class="writeChart-pushInner" placeholder=" ex) 타이레놀"></input>
+							class="writeChart-pushInner" name="chartMedicine" placeholder=" ex) 타이레놀"></input>
 					</div>
 					<div class="writeChart-way">
 						<span class="writeChart-pullPushInfo">용량</span><input
-							class="writeChart-pushInner" placeholder=" ex) 5일분"></input>
+							class="writeChart-pushInner" name="chartPeriod" placeholder=" ex) 5일분"></input>
 					</div>
 					<div class="writeChart-way">
 						<span class="writeChart-pullPushInfo">복용횟수</span><input
-							class="writeChart-pushInner" placeholder=" ex) 1일 3회"></input>
+							class="writeChart-pushInner" name="chartDay" placeholder=" ex) 1일 3회"></input>
 					</div>
 					<div class="writeChart-way">
 						<span class="writeChart-pullPushInfo">용법 </span>식전 <label
 							for="before-meal"><input type="radio" id="after-meal"
-							name="meal-time"></label> </span> <span>식후 <label
+							name="chartTime"></label> </span> <span>식후 <label
 							for="after-meal"><input type="radio" id="after-meal"
-								name="meal-time" checked></label>
+								name="chartTime" checked></label>
 						</span>
 						<button id="writeChart-submit">처방전 등록</button>
 					</div>
