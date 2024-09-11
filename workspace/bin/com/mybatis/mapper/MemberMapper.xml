@@ -7,12 +7,14 @@
       (MEMBER_NUMBER, MEMBER_ID, MEMBER_PW, MEMBER_NAME,
       MEMBER_BIRTH,
       MEMBER_PHONE, ADDRESS_NUMBER)
-      VALUES (MEMBER_SEQ.NEXTVAL, #{memberId}, #{memberPw},
+      VALUES (MEMBER_SEQ.NEXTVAL, #{memberId},
+      #{memberPw},
       #{memberName},
-      TO_DATE(#{memberBirth}, 'YYYY-MM-DD'), #{memberPhone}, #{addressNumber})
+      TO_DATE(#{memberBirth}, 'YYYY-MM-DD'),
+      #{memberPhone}, #{addressNumber})
    </insert>
 
-   <!-- 주소테이블에 마지막으로 생성된 PK조회. 다음테이블에 참조값으로 쓰기위해 사용 -->
+   <!-- 주소테이블에 마지막으로 생성된 PK조회 후 다음테이블에 참조값으로 쓰기위해 사용 -->
    <select id="getAddressFK" resultType="Integer">
       SELECT ADDRESS_NUMBER
       FROM (
@@ -21,6 +23,12 @@
       ORDER BY ADDRESS_NUMBER DESC
       )
       WHERE ROWNUM = 1
+   </select>
+
+   <select id="getAddressNum" resultType="Integer">
+      SELECT ADDRESS_NUMBER
+      FROM DT_ADDRESS
+      WHERE ADDRESS_NUMBER = (SELECT MAX(ADDRESS_NUMBER) FROM DT_ADDRESS)
    </select>
 
    <!-- 주소 삽입 -->
@@ -33,8 +41,9 @@
    </insert>
 
 
+   <!-- 회원 로그인 -->
    <select id="memberLogin" parameterType="MemberDTO"
-      resultType="memberDTO">
+      resultType="MemberDTO">
       SELECT m.member_number,
       m.member_id,
       m.member_pw,
@@ -45,15 +54,24 @@
       ad.address_postal,
       ad.address_address,
       ad.address_detail
-      from dt_member m 
-      left join dt_address ad on m.address_number = ad.address_number
-      where m.member_id = #{memberId} and
-      m.member_pw = #{memberPw}
+      FROM dt_member m
+      LEFT JOIN dt_address ad ON m.address_number = ad.address_number
+      WHERE
+      m.member_id = #{memberId}
+      AND m.member_pw = #{memberPw}
+   </select>
+
+   <!-- 아이디 중복 체크 -->
+   <select id="checkId" parameterType="String"
+      resultType="Integer">
+      SELECT COUNT(*)
+      FROM DT_MEMBER
+      WHERE MEMBER_ID = #{memberId}
    </select>
 
    <!-- 회원탈퇴 -->
    <delete id="quit" parameterType="Integer">
-      delete from dt_doctor
+      delete from dt_member
       where
       member_number = #{memberNumber}
    </delete>

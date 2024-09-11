@@ -60,6 +60,16 @@ public class DoctorDAO {
 		return doctor;
 	}
 
+	// 비밀번호 인증
+	public boolean checkPassword(String doctorName, String doctorPw) {
+		DoctorDTO doctorDTO = new DoctorDTO();
+		doctorDTO.setDoctorName(doctorName);
+		doctorDTO.setDoctorPw(doctorPw);
+
+		// 비밀번호가 일치하는지 확인 (카운트가 1 이상이면 비밀번호 일치)
+		Integer count = sqlSession.selectOne("doctorMypage.checkPassword", doctorDTO);
+		return count != null && count > 0;
+	}
 
 	// 아이디 중복확인
 	public boolean checkId(String doctorId) {
@@ -71,34 +81,33 @@ public class DoctorDAO {
 		// 값이 0 이하면 아이디가 존재하지 않음 => true 반환
 		// 아이디가 존재하면 false 반환
 	}
-	
+
 	// 마이페이지 정보 조회
 	public DoctorDTO showInfo(int doctorNumber) {
 		return sqlSession.selectOne("doctorMypage.showInfo", doctorNumber);
 	}
-	
-	
+
 	// 회원 탈퇴: 의사 번호로 해당 주소, 병원, 의사 정보를 삭제
-		
-		public int showDoctor(DoctorDTO doctorDTO) {
-			System.out.println("하이루");
-			return sqlSession.selectOne("doctorMypage.doctorReceive" , doctorDTO);
-			
-		}
-	
-	   public void quit1(int doctorNumber) {
-	      sqlSession.delete("doctorMypage.doctorQuit1", doctorNumber); // 주소 삭제
-	      System.out.println("주소 삭제 완료");
-	   }
 
-	   public void quit2(int doctorNumber) {
-	      sqlSession.delete("doctorMypage.doctorQuit2", doctorNumber); // 병원 삭제
-	      System.out.println("병원 삭제 완료");
-	   }
+	public int showDoctor(DoctorDTO doctorDTO) {
+		System.out.println("하이루");
+		return sqlSession.selectOne("doctorMypage.doctorReceive", doctorDTO);
 
-	   public void quit3(int doctorNumber) {
-	      sqlSession.delete("doctorMypage.doctorQuit3", doctorNumber); // 의사 정보 삭제
-	      System.out.println("의사 정보 삭제 완료");
-	   }
+	}
+
+	public void quit1(int doctorNumber) {
+		sqlSession.delete("doctorMypage.doctorQuit1", doctorNumber); // 주소 삭제
+		System.out.println("주소 삭제 완료");
+	}
+
+	public void quit2(int doctorNumber) {
+		sqlSession.delete("doctorMypage.doctorQuit2", doctorNumber); // 병원 삭제
+		System.out.println("병원 삭제 완료");
+	}
+
+	public void quit3(int doctorNumber) {
+		sqlSession.delete("doctorMypage.doctorQuit3", doctorNumber); // 의사 정보 삭제
+		System.out.println("의사 정보 삭제 완료");
+	}
 
 }

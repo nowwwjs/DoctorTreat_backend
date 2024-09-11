@@ -74,12 +74,7 @@
 		WHERE d.doctor_id = #{doctorId} AND d.doctor_pw = #{doctorPw}
 	</select>
 
-	<!-- 회원탈퇴 -->
-	<delete id="quit" parameterType="Integer">
-		delete from dt_doctor
-		where
-		doctor_number = #{doctorNumber}
-	</delete>
+	
 
 	<!--의료 회원가입 아이디 중복확인-->
 	<select id="checkId" parameterType="string" resultType="int">

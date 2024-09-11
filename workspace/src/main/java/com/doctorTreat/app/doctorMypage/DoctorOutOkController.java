@@ -13,7 +13,7 @@ import com.doctorTreat.app.dto.DoctorDTO;
 
 public class DoctorOutOkController implements Execute {
 
-	@Override
+   @Override
     public Result execute(HttpServletRequest request, HttpServletResponse response)
             throws IOException, ServletException {
         
@@ -48,8 +48,8 @@ public class DoctorOutOkController implements Execute {
         }
         
         else {
-        	  result.setRedirect(false);
-        	  result.setPath("/app/myPage/doctorInfo.jsp");
+             result.setRedirect(false);
+             result.setPath("/app/myPage/doctorInfo.jsp");
         }
  
         return result;

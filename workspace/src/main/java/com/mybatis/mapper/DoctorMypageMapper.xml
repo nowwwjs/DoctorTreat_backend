@@ -4,64 +4,52 @@
 
 	<!--마이페이지 정보 보여주기-->
 	<select id="showInfo" parameterType="int" resultType="DoctorDTO">
-	  SELECT 
-      d.doctor_id ,
-      d.doctor_name ,
-      d.doctor_phone ,
-      h.hospital_name ,
-      h.hospital_call ,
-      a.address_postal ,
-      a.address_address ,
-      a.address_detail 
-      FROM dt_doctor d
-      LEFT JOIN dt_hospital h ON d.hospital_number = h.hospital_number
-      LEFT JOIN dt_address a ON h.address_number = a.address_number
-      WHERE d.doctor_number = #{doctorNumber}
+		SELECT
+		d.doctor_id ,
+		d.doctor_name ,
+		d.doctor_phone ,
+		h.hospital_name ,
+		h.hospital_call ,
+		a.address_postal ,
+		a.address_address ,
+		a.address_detail
+		FROM dt_doctor d
+		LEFT JOIN dt_hospital h ON d.hospital_number = h.hospital_number
+		LEFT JOIN dt_address a ON h.address_number = a.address_number
+		WHERE d.doctor_number = #{doctorNumber}
 	</select>
-	
-	
-	
-	<!-- 비밀번호 인증 쿼리 -->
-    <select id="checkPassword" parameterType="map" resultType="int">
-        SELECT COUNT(*) 
-        FROM dt_doctor
-        WHERE doctor_id = #{doctorId} AND doctor_pw = #{doctorPw}
-    </select>
-    
-    
-    
+
+
+	<!-- 비밀번호 인증 쿼리 (doctorName과 doctorPw로 확인) -->
+	<select id="checkPassword" parameterType="DoctorDTO" resultType="int">
+		SELECT COUNT(*)
+		FROM dt_doctor
+		WHERE doctor_name = #{doctorName} AND doctor_pw = #{doctorPw}
+	</select>
+
+
 	<!-- 회원탈퇴 셀렉트 -->
-   <select id="doctorReceive" parameterType="doctorDTO" resultType="int">
-      select doctor_number
-      from dt_doctor
-      where doctor_id=#{doctorId} and doctor_pw = #{doctorPw}
-   </select>
-   
-   <!-- 회원탈퇴 -->
-   <delete id="doctorQuit1" parameterType="int">
-      delete from dt_address
-      where doctor_number = #{doctorNumber}
-   </delete>
-   
-   <delete id="doctorQuit2" parameterType="int">
-      delete from dt_hospital
-      where doctor_number=#{doctorNumber} 
-   </delete>
-   
-   <delete id="doctorQuit3" parameterType="int">
-      delete from dt_doctor
-      where doctor_number=#{doctorNumber}
-   </delete>    
-	
-	
+	<select id="doctorReceive" parameterType="doctorDTO" resultType="int">
+		select doctor_number
+		from dt_doctor
+		where doctor_id=#{doctorId} and doctor_pw = #{doctorPw}
+	</select>
 
+	<!-- 회원탈퇴 -->
+	<delete id="doctorQuit1" parameterType="int">
+		delete from dt_address
+		where doctor_number = #{doctorNumber}
+	</delete>
 
+	<delete id="doctorQuit2" parameterType="int">
+		delete from dt_hospital
+		where doctor_number=#{doctorNumber}
+	</delete>
 
-
-
-
-
-
+	<delete id="doctorQuit3" parameterType="int">
+		delete from dt_doctor
+		where doctor_number=#{doctorNumber}
+	</delete>
 
 
 </mapper>
