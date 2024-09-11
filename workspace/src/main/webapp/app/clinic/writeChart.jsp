@@ -6,10 +6,10 @@
 <meta charset="UTF-8">
 <title>DoctorTreat</title>
 <link rel="stylesheet"
-	href="${pageContext.request.contextPath}/static/css/clinic/chart.css">
+	href="${pageContext.request.contextPath}/static/css/clinic/chart.css?v=1.0">
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 <script defer
-	src="${pageContext.request.contextPath}/static/js/clinic/chart.js"></script>
+	src="${pageContext.request.contextPath}/static/js/clinic/chart.js?v=1.0"></script>
 </head>
 <body>
 	<jsp:include page="${pageContext.request.contextPath}/headerDoctor.jsp" />
@@ -25,28 +25,28 @@
 			<div class="writeChart-pullInfo">
 				<div class="writeChart-memberName">
 					<span class="writeChart-pullPushInfo">환자명</span><span
-						class="writeChart-pullInner">차은우</span>
+						class="writeChart-pullInner">${chart[0].memberName}</span>
 				</div>
 				<div class="writeChart-memberBirth">
 					<span class="writeChart-pullPushInfo">환자 생년월일</span><span
-						class="writeChart-pullInner">1994.10.21</span>
+						class="writeChart-pullInner">${chart[0].memberBirth}</span>
 				</div>
 				<div class="writeChart-clinicDate">
 					<span class="writeChart-pullPushInfo">진료 날짜</span><span
-						class="writeChart-pullInner">2024.08.31</span>
+						class="writeChart-pullInner"></span>
 				</div>
 				<div class="writeChart-hospital">
 					<span class="writeChart-pullPushInfo">병원명</span><span
-						class="writeChart-pullInner">아주대병원</span>
+						class="writeChart-pullInner">${chart[0].hospitalName}</span>
 				</div>
 				<div class="writeChart-doctor">
 					<span class="writeChart-pullPushInfo">처방 의사</span><span
-						class="writeChart-pullInner">이국종</span>
+						class="writeChart-pullInner">${chart[0].doctorName}</span>
 				</div>
 			</div>
 
 			<!-- 의사입력 정보 -->
-			<form action="./../../html/clinicDoctor/memberList.html" method="">
+			<form action="${pageContext.request.contextPath}/writeChartOk.doccl" method="post">
 				<div class="writeChart-pushInfo">
 					<div class="writeChart-chartName">
 						<span class="writeChart-pullPushInfo">진단명</span><input

@@ -21,3 +21,14 @@
       $input.css('border', ''); // 기본 스타일로 되돌림
     }
   });
+
+  
+	// 현재 날짜를 진료 날짜에 자동으로 입력하는 함수
+		const today = new Date();
+		const year = today.getFullYear();
+		const month = String(today.getMonth() + 1).padStart(2, '0'); // 월은 0부터 시작하므로 +1
+		const day = String(today.getDate()).padStart(2, '0');
+		const formattedDate = `${year}.${month}.${day}`;
+		
+		// 진료 날짜에 현재 날짜를 자동으로 삽입
+		$('.writeChart-clinicDate .writeChart-pullInner').text(formattedDate);
