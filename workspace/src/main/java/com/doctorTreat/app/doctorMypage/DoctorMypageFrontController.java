@@ -79,7 +79,7 @@ public class DoctorMypageFrontController extends HttpServlet {
 			
 		case "/doctor/doctorUpdateMember.dm":
 			System.out.println("비밀번호 변경 가보자 ~");
-			request.getRequestDispatcher("/app/myPage/doctorUpdateMember.jsp").forward(request, response);
+			request.getRequestDispatcher("/app/myPage/doctorPwOk.jsp").forward(request, response);
 			
 			
 
