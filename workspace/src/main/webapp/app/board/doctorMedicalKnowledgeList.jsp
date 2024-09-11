@@ -19,7 +19,7 @@
 		<ul class="medicalKnowledgeList-board">
 			<c:forEach var="board" items="${doctorBoardshowlist}">
 				<li>
-					<hr>
+					<hr>	
 					<a href="${pageContext.request.contextPath}/BoardListDetail.docbo?infoNumber=${board.medicalInfoNumber}">
 						<div class="medicalKnowledgeList-boardList">${board.medicalInfoTitle}</div>
 						<div class="medicalKnowledgeList-text">

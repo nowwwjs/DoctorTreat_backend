@@ -62,7 +62,12 @@ public class DoctorBoardFrontController extends HttpServlet {
 		case "/BoardComment.docbo":
 			result = new DoctorBoardCommentController().execute(request, response);
 			request.getRequestDispatcher("/app/board/boardDetailDoctorAuth.jsp").forward(request, response);
-			System.out.println("댓글 작성 될까?");
+			System.out.println("댓글 작성 될까?");	
+			break;
+		case "/BoardCommentDelete.docbo":
+			result = new DoctorBoardCommentDeleteController().execute(request, response);
+			request.getRequestDispatcher("/index.jsp").forward(request, response);
+			System.out.println("댓글 삭제 안되면 안돼^^");
 		}
 	}
 }
