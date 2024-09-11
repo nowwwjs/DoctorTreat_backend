@@ -11,7 +11,7 @@ import com.doctorTreat.app.Result;
 import com.doctorTreat.app.doctor.dao.DoctorDAO;
 import com.doctorTreat.app.dto.DoctorDTO;
 
-public class DoctorInfoController implements Execute {
+public class DoctorInfoOkController implements Execute {
 
 	@Override
 	public Result execute(HttpServletRequest request, HttpServletResponse response)
