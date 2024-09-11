@@ -32,15 +32,14 @@
             </div>
         </div>
         
-        <!-- 댓글 폼 -->
-        <form class="boardDetail-commentContainer" action="${pageContext.request.contextPath}/BoardComment.docbo" method="post">
-            <input type="hidden" name="medicalInfoNumber" value="${doctorBoardshowDetail.medicalInfoNumber}" />
-            <input type="hidden" name="doctorNumber" value="${sessionScope.doctorNumber}" /> <!-- 동적으로 doctorNumber 설정 -->
-            <textarea name="doctorCommentText" placeholder="댓글을 달아주세요" class="boardDetail-comment"></textarea>
-            <button type="submit">등록</button>
-        </form>
+    <!-- 댓글 폼 -->
+	<form class="boardDetail-commentContainer" action="${pageContext.request.contextPath}/BoardComment.docbo?infoNumber=${infoNumber}" method="post">
+    <input type="hidden" name="medicalInfoNumber" value="${doctorBoardshowDetail.medicalInfoNumber}" />
+    <input type="hidden" name="doctorNumber" value="${doctorNumber}" /> <!-- 동적으로 doctorNumber 설정 -->
+    <textarea name="doctorCommentText" placeholder="댓글을 달아주세요" class="boardDetail-comment"></textarea>
+    <button type="submit" class="doctorModify">등록</button>
+	</form>
     </main>
     <jsp:include page="/footer.jsp" />
 </body>
-</html>
 </html>
