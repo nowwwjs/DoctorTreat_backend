@@ -18,7 +18,7 @@
 
 <body>
 
-	<form action="${pageContext.request.contextPath}/doctor/doctorPwOk.dm">
+	<form action="${pageContext.request.contextPath}/doctor/doctorPwOk.dm" method ="post">
 		<div class="DoctorpwOk-main-container">
 			<div class="DoctorpwOk-titlebox">
 				<p class="DoctorpwOk-title">비밀번호 확인</p>

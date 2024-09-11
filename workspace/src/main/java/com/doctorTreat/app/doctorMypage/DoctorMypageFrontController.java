@@ -58,13 +58,14 @@ public class DoctorMypageFrontController extends HttpServlet {
 	         String doctorNumber = request.getParameter("doctorNumber");
 	         request.getSession().setAttribute("doctorNumber", doctorNumber);
 			
-			result = new DoctorInfoController().execute(request, response);
+			result = new DoctorInfoOkController().execute(request, response);
 			request.getRequestDispatcher("/app/myPage/doctorInfo.jsp").forward(request, response);
 			break;
 			
 		case "/doctor/doctorPw.dm":
 			System.out.println("안뇽하세요");
 			request.getRequestDispatcher("/app/myPage/doctorPwOk.jsp").forward(request, response);
+			break;
 			
 		case "/doctor/doctorPwOk.dm":
 		    System.out.println("나 여기 또 왔어요");
@@ -72,20 +73,20 @@ public class DoctorMypageFrontController extends HttpServlet {
 		    // medicalInfoNumber 값을 세션에 저장
 		    String doctorPwNumber = request.getParameter("doctorNumber");
 		    request.getSession().setAttribute("doctorPwNumber", doctorPwNumber);
-		    
-		    result = new DoctorPwOkController().execute(request, response);
-		    
-		   
-		    
-		    
+		    result = new DoctorPwOkController().execute(request, response);	    
 		    break;
+		    
+		case "/doctor/doctorOut.dm":
+            System.out.println("탈퇴 페이지로 이동");
+            request.getRequestDispatcher("/app/myPage/doctorOut.jsp").forward(request, response);
+            break;
 
-			
-			
-			
-			
-		}
-		
-	}
+        case "/doctor/doctorOutOk.dm":  // 회원 탈퇴 요청 처리
+            System.out.println("회원 탈퇴 처리 중...");
+            result = new DoctorOutOkController().execute(request, response);
+            request.getRequestDispatcher(result.getPath()).forward(request, response);
+            break;
+    }
+}
 
 }

@@ -24,7 +24,7 @@
 		</div>
 
 		<div class="DoctorInfo-inputbox">
-			<form action="${pageContext.request.contextPath}/myPage/doctorPw.dm" method ="post">
+			<form action="${pageContext.request.contextPath}/doctor/doctorPw.dm" method ="post">
 
 				<label class="DoctorInfo-input">이름 :  <input type="text"
 					value="${doctorShowInfo.doctorName}" readonly >

@@ -42,10 +42,10 @@ public class DoctorPwOkController implements Execute {
 
 		if (outCome == true) {
 			result.setRedirect(true);
-			result.setPath("/myPage/doctorUpdateMember.jsp");
+			result.setPath("/app/myPage/doctorUpdateMember.jsp");
 		} else {
 			result.setRedirect(false);
-			result.setPath("/myPage/doctorInfo.jsp");
+			result.setPath("/app/myPage/doctorInfo.jsp");
 		}
 
 		return result;

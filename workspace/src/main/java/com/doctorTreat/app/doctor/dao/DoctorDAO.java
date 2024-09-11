@@ -8,7 +8,6 @@ import com.mybatis.config.MyBatisConfig;
 public class DoctorDAO {
 
 	private SqlSession sqlSession;
-	
 
 	public DoctorDAO() {
 		sqlSession = MyBatisConfig.getSqlSessionFactory().openSession(true);
@@ -59,9 +58,20 @@ public class DoctorDAO {
 		return doctor;
 	}
 
-	// 회원탈퇴
-	public void quit(int doctorNumber) {
-		sqlSession.delete("doctor.quit", doctorNumber);
+	// 회원 탈퇴: 의사 번호로 해당 주소, 병원, 의사 정보를 삭제
+	public void quit1(int doctorNumber) {
+		sqlSession.delete("doctorMypage.doctorQuit1", doctorNumber); // 주소 삭제
+		System.out.println("주소 삭제 완료");
+	}
+
+	public void quit2(int doctorNumber) {
+		sqlSession.delete("doctorMypage.doctorQuit2", doctorNumber); // 병원 삭제
+		System.out.println("병원 삭제 완료");
+	}
+
+	public void quit3(int doctorNumber) {
+		sqlSession.delete("doctorMypage.doctorQuit3", doctorNumber); // 의사 정보 삭제
+		System.out.println("의사 정보 삭제 완료");
 	}
 
 	// 아이디 중복확인
@@ -74,23 +84,20 @@ public class DoctorDAO {
 		// 값이 0 이하면 아이디가 존재하지 않음 => true 반환
 		// 아이디가 존재하면 false 반환
 	}
-	
+
 	// 마이페이지 정보 조회
 	public DoctorDTO showInfo(int doctorNumber) {
 		return sqlSession.selectOne("doctorMypage.showInfo", doctorNumber);
 	}
-	
-	
-	//의료회원 비밀번호 인증
-	public boolean checkPw(String doctorname,String doctorpassword){
+
+	// 의료회원 비밀번호 인증
+	public boolean checkPw(String doctorname, String doctorpassword) {
 		DoctorDTO doctorDTO = new DoctorDTO();
 		doctorDTO.setDoctorName(doctorname);
 		doctorDTO.setDoctorPw(doctorpassword);
 		System.out.println("비번인증 도착했음");
-		return (Integer) sqlSession.selectOne("doctorMypage.checkPw",doctorDTO) <= 0;
-		 
+		return (Integer) sqlSession.selectOne("doctorMypage.checkPw", doctorDTO) <= 0;
+
 	}
-	
-	
 
 }
