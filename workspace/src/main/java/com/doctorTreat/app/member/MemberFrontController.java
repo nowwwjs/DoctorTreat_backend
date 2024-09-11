@@ -61,19 +61,21 @@ public class MemberFrontController extends HttpServlet {
          System.out.println("일반회원 로그인 중!!");
          request.getRequestDispatcher("/app/user/memberLogin.jsp").forward(request, response);
          break;
+      // 회원 로그인 처리
       case "/member/memberLoginOk.me":
-         System.out.println("일반회원 로그인 완료");
-         result = new MemberLoginOkController().execute(request, response);
-         if (result.isRedirect()) {
-            response.sendRedirect(result.getPath());
-         } else {
-            request.getRequestDispatcher(result.getPath()).forward(request, response);
-         }
-         break;
-      case "/member/memberCheckIdOk.me" :
-    	  System.out.println("아이디 체크!!!!");
-    	  new MemberCheckIdOkController().execute(request, response);
-    	  break;   
+          System.out.println("일반회원 로그인 완료");
+          result = new MemberLoginOkController().execute(request, response);
+          if (result.isRedirect()) {
+              response.sendRedirect(result.getPath());
+          } else {
+              request.getRequestDispatcher(result.getPath()).forward(request, response);
+          }
+          break;
+      // 아이디 중복 체크
+      case "/member/memberCheckIdOk.me":
+          System.out.println("아이디 중복 체크!!");
+          new MemberCheckIdOkController().execute(request, response);
+          break;
       case "/member/memberLogout.me":
          System.out.println("회원 로그아웃");
          result = new MemberLogoutOkController().execute(request, response);
