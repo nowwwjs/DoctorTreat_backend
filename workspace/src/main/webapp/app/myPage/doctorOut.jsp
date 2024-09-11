@@ -30,10 +30,17 @@
 			method="post">
 			<div class="DoctorOut-inputbox">
 
+<<<<<<< HEAD
+=======
+		<div class="DoctorOut-inputbox">
+			<form action="${pageContext.request.contextPath}/doctor/doctorOutOk.dm" method="post">
+			
+>>>>>>> 944d97b840fd54622e002dcf21815fcdfc7e9aed
 				<p class="DoctorOut-idtext">아이디</p>
-				<input type="text" class="DoctorOut-input-field">
+				<input type="text" name="doctorId" class="DoctorOut-input-field">
 
 				<p class="DoctorOut-pwtext">비밀번호 입력</p>
+<<<<<<< HEAD
 				<input type="password" class="DoctorOut-input-field">
 
 			</div>
@@ -43,10 +50,20 @@
 					<p>회원탈퇴</p>
 				</a>
 			</button>
+=======
+				<input type="password" name="doctorPw" class="DoctorOut-input-field">
+		</div>
+		<button class="DoctorOut-btn"><p>회원탈퇴</p></button>
+		</form>
+>>>>>>> 944d97b840fd54622e002dcf21815fcdfc7e9aed
 	</div>
 	</form>
 
 
+<<<<<<< HEAD
+=======
+
+>>>>>>> 944d97b840fd54622e002dcf21815fcdfc7e9aed
 
 
 
