@@ -3,21 +3,32 @@
 <mapper namespace="doctorComment">
 
 	<!-- 댓글 삽입하기 -->
-  	<insert id="insertComment" parameterType="DoctorCommentDTO">
-    INSERT INTO DT_DOCTOR_COMMENT (DOCTOR_COMMENT_NUMBER, DOCTOR_COMMENT_TEXT, MEDICAL_INFO_NUMBER, DOCTOR_NUMBER)
-    VALUES (DOCTOR_COMMENT_SEQ.NEXTVAL, #{doctorCommentText}, #{medicalInfoNumber}, #{doctorNumber})
+	<insert id="insertComment" parameterType="DoctorCommentDTO">
+		INSERT INTO
+		DT_DOCTOR_COMMENT (DOCTOR_COMMENT_NUMBER, DOCTOR_COMMENT_TEXT,
+		MEDICAL_INFO_NUMBER, DOCTOR_NUMBER)
+		VALUES (DOCTOR_COMMENT_SEQ.NEXTVAL,
+		#{doctorCommentText},
+		#{medicalInfoNumber}, #{doctorNumber})
 	</insert>
-    
-	<!-- 댓글 페이지 보여주기 
-	<select id="showComment" parameterType="String" resultType="DoctorCommentDTO">
-	SELECT
-	dmi.MEDICAL_INFO_TITLE, dm.MEMBER_NAME, dmi.MEDICAL_INFO_DATE, dmi.MEDICAL_INFO_TEXT,
-	dd.DOCTOR_MAJOR, dd.DOCTOR_NAME, dc.DOCTOR_COMMENT_TEXT
-	FROM DT_MEDICAL_INFO dmi
-	JOIN DT_MEMBER dm ON dmi.MEMBER_NUMBER = dm.MEMBER_NUMBER
-	LEFT JOIN DT_DOCTOR_COMMENT dc ON dmi.MEDICAL_INFO_NUMBER = dc.MEDICAL_INFO_NUMBER
-	LEFT JOIN DT_DOCTOR dd ON dc.DOCTOR_NUMBER = dd.DOCTOR_NUMBER
-	WHERE dmi.MEDICAL_INFO_TITLE = 
-	</select> -->
+
+	<!-- 댓글 목록 가지고오기 -->
+	<select id="showComment" resultType="DoctorCommentDTO">
+		SELECT
+		c.DOCTOR_COMMENT_NUMBER,
+		d.DOCTOR_NAME,
+		c.DOCTOR_COMMENT_TEXT,
+		c.MEDICAL_INFO_NUMBER
+		FROM DT_DOCTOR_COMMENT c
+		JOIN DT_DOCTOR d ON c.DOCTOR_NUMBER = d.DOCTOR_NUMBER
+		WHERE c.MEDICAL_INFO_NUMBER = #{medicalInfoNumber}
+	</select>
+
+	<!-- 댓글 삭제하기  -->
+	<delete id="deleteComment" parameterType="int">
+		DELETE FROM DT_DOCTOR_COMMENT
+    	WHERE DOCTOR_COMMENT_NUMBER = #{doctorCommentNumber}
+	</delete> 
+	
 </mapper>
 

@@ -22,9 +22,9 @@
 
 	<!-- 비밀번호 인증 쿼리 (doctorName과 doctorPw로 확인) -->
 	<select id="checkPassword" parameterType="DoctorDTO" resultType="int">
-		SELECT COUNT(*)
+		SELECT count(*)
 		FROM dt_doctor
-		WHERE doctor_name = #{doctorName} AND doctor_pw = #{doctorPw}
+		WHERE doctor_id = #{doctorId} AND doctor_pw = #{doctorPw}
 	</select>
 
 

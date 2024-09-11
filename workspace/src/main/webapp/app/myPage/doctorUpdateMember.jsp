@@ -23,13 +23,14 @@
 			<hr class="DoctorupdateMember-hr">
 		</div>
 		<div class="DoctorupdateMember-inputbox">
-			<form action="">
+			<form action="${pageContext.request.contextPath}/doctor/doctorPwChange.dm?doctorNumber=${sessionScope.doctorNumber}" method ="post">
 
 				<label class="DoctorupdateMember-input" for=""> <span>아이디</span>
 					<input type="text" value="">
 				</label> <br> <label class="DoctorupdateMember-input" for=""> <span>이름</span>
 					<input type="text" value="">
 				</label> <br> <label class="DoctorupdateMember-input" for=""> <span>비밀번호</span>
+
 					<button>
 						<a href="DoctorphoneOk.html">비밀번호 변경</a>
 					</button>
@@ -47,7 +48,6 @@
 				</label> <br> <label class="DoctorupdateMember-input" for=""> <span></span>
 					<input type="text" id="detailAddress" placeholder="상세 주소">
 				</label>
-			</form>
 		</div>
 		<div class="DoctorupdateMember-botton">
 			<button class="DoctorupdateMember-btn">
@@ -56,6 +56,7 @@
 			<button class="DoctorupdateMember-btn">
 				<a href="DoctorOut.html">회원탈퇴</a>
 			</button>
+			</form>
 		</div>
 	</div>
 

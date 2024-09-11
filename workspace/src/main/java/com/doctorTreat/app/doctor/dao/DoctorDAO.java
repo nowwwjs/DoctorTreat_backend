@@ -61,13 +61,14 @@ public class DoctorDAO {
 	}
 
 	// 비밀번호 인증
-	public boolean checkPassword(String doctorName, String doctorPw) {
+	public boolean checkPassword(String doctorId, String doctorPw) {
 		DoctorDTO doctorDTO = new DoctorDTO();
-		doctorDTO.setDoctorName(doctorName);
+		doctorDTO.setDoctorId(doctorId);
 		doctorDTO.setDoctorPw(doctorPw);
 
 		// 비밀번호가 일치하는지 확인 (카운트가 1 이상이면 비밀번호 일치)
 		Integer count = sqlSession.selectOne("doctorMypage.checkPassword", doctorDTO);
+		System.out.println(count);
 		return count != null && count > 0;
 	}
 

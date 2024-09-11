@@ -25,8 +25,8 @@
 				<hr class="DoctorpwOk-hr">
 			</div>
 			<div class="DoctorpwOk-inputbox">
-				<p class="DoctoridOk-text">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;이름</p>
-				<input type="text" name="doctorName" class="DoctoridOk-input-field">
+				<p class="DoctoridOk-text">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;아이디</p>
+				<input type="text" name="doctorId" class="DoctoridOk-input-field">
 			</div>
 			<div class="DoctorpwOk-inputbox">
 				<p class="DoctorpwOk-text">비밀번호 입력</p>

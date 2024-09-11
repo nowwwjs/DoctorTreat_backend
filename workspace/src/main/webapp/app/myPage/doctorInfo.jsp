@@ -24,7 +24,7 @@
       </div>
 
       <div class="DoctorInfo-inputbox">
-         <form action="${pageContext.request.contextPath}/doctor/doctorPw.dm?doctorNumber=${sessionScope.doctorNumber}" method ="post">
+         <form action="${pageContext.request.contextPath}/doctor/doctorUpdateMember.dm?doctorNumber=${sessionScope.doctorNumber}" method ="post">
 
             <label class="DoctorInfo-input">이름 :  <input type="text"
                value="${doctorShowInfo.doctorName}" readonly >
@@ -38,9 +38,7 @@
                type="text" value="${doctorShowInfo. addressPostal} ${doctorShowInfo. addressAddress} ${doctorShowInfo. addressDetail}" readonly>
             </label>
 
-            <button class="DoctorInfo-btn">
-               <a href="">병원정보수정</a>
-            </button>
+           <button type="submit" class="DoctorInfo-btn">병원정보수정</button>
 
          </form>
       </div>
