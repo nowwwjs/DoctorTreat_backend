@@ -21,7 +21,7 @@
   </div>
 
   <div class="memberInfo-inputbox">
-    <form action="${pageContext.request.contextPath}/myPage/memberPwOk.mm" method="post">
+    <form action="${pageContext.request.contextPath}/memberMypage/memberPw.mm" method="post">
 
       <label class="memberInfo-input" for="">
         <span>아이디</span>
@@ -51,7 +51,7 @@
     </form>
   </div>
 
-  <button class="memberInfo-btn"><a href="">내 정보 수정</a></button>
+  <button class="memberInfo-btn" type="submit">내 정보 수정</button>
 </div>
 </body>
 <jsp:include page="${pageContext.request.contextPath}/footer.jsp" />
