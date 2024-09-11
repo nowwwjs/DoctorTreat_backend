@@ -20,10 +20,6 @@ public class ChatListMemberController implements Execute {
 
 		request.setCharacterEncoding("UTF-8");
 		
-		//진료신청한 의사의 UK 전화번호(쿼리스트링 참조)
-		String hospitalCall = request.getParameter("hospitalCall");
-		System.out.println(hospitalCall);
-		
 //		로그인정보 담기
 		System.out.println("세션 가져오는중");
 		// false를 넣으면 값을 세션이 없을때 null을 반환
@@ -37,11 +33,15 @@ public class ChatListMemberController implements Execute {
 		System.out.println("형변환 회원번호 : " + memberNumber);
 		
 		//회원이 갖고있는 채팅목록 2건씩 생성
-//		List<DoctorDTO> doctorOfEar = MemberClinicDAO.getChatListEar(memberNumber);
-//		List<DoctorDTO> doctorOfInner = MemberClinicDAO.getChatListInner(memberNumber);
-//		System.out.println(doctorOfEar);
-//		System.out.println(doctorOfInner);
+		MemberClinicDAO memberClinicDAO = new MemberClinicDAO();
+		List<DoctorDTO> doctorOfEar = memberClinicDAO.getChatListEar(memberNumber);
+		List<DoctorDTO> doctorOfInner = memberClinicDAO.getChatListInner(memberNumber);
+		System.out.println(doctorOfEar);
+		System.out.println(doctorOfInner);
 		
+		//jsp에서 사용가능하게 처리
+		request.setAttribute("doctorOfEar", doctorOfEar);
+		request.setAttribute("doctorOfInner", doctorOfInner);
 		
 //		결과처리
 		Result result = new Result();
