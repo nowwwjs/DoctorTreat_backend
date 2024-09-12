@@ -40,6 +40,38 @@
 		where d.doctor_number= #{doctorNumber}
 	</select>
 
+	<!-- dt_doctor 테이블 업데이트 -->
+	<update id="updateDoctor" parameterType="DoctorDTO">
+		UPDATE dt_doctor
+		SET
+		doctor_name = #{doctorName}
+		WHERE doctor_number = #{doctorNumber}
+	</update>
+
+	<!-- dt_hospital 테이블 업데이트 -->
+	<update id="updateHospital" parameterType="DoctorDTO">
+		UPDATE dt_hospital
+		SET
+		hospital_name = #{hospitalName},
+		hospital_call = #{hospitalCall}
+		WHERE
+		hospital_number = (SELECT hospital_number FROM dt_doctor WHERE
+		doctor_number = #{doctorNumber})
+	</update>
+
+	<!-- dt_address 테이블 업데이트 -->
+	<update id="updateAddress" parameterType="DoctorDTO">
+		UPDATE dt_address
+		SET
+		address_postal = #{addressPostal},
+		address_address = #{addressAddress},
+		address_detail = #{addressDetail}
+		WHERE address_number = (SELECT
+		address_number FROM dt_hospital WHERE
+		hospital_number = (SELECT
+		hospital_number FROM dt_doctor WHERE
+		doctor_number = #{doctorNumber}))
+	</update>
 
 
 
@@ -53,6 +85,8 @@
 	</select>
 
 
+
+
 	<!-- 회원탈퇴 셀렉트 -->
 	<select id="doctorReceive" parameterType="doctorDTO"
 		resultType="int">
@@ -63,19 +97,34 @@
 	</select>
 
 	<!-- 회원탈퇴 -->
-	<delete id="doctorQuit1" parameterType="int">
-		delete from dt_address
-		where doctor_number = #{doctorNumber}
+	<!-- 주소 삭제 쿼리 -->
+	<delete id="doctorQuit3" parameterType="doctorDTO" >
+		DELETE FROM dt_address
+		WHERE address_number = (
+		SELECT address_number
+		FROM dt_hospital
+		WHERE hospital_number = (
+		SELECT hospital_number
+		FROM dt_doctor
+		WHERE doctor_id = #{doctorId} and doctor_pw = #{doctorPw}
+		)
+		)
 	</delete>
 
-	<delete id="doctorQuit2" parameterType="int">
-		delete from dt_hospital
-		where doctor_number=#{doctorNumber}
+	<!-- 병원 삭제 쿼리 -->
+	<delete id="doctorQuit2" parameterType="doctorDTO">
+		DELETE FROM dt_hospital
+		WHERE hospital_number = (
+		SELECT hospital_number
+		FROM dt_doctor
+		WHERE doctor_id = #{doctorId} and doctor_pw = #{doctorPw}
+		)
 	</delete>
 
-	<delete id="doctorQuit3" parameterType="int">
-		delete from dt_doctor
-		where doctor_number=#{doctorNumber}
+	<!-- 의사 정보 삭제 쿼리 -->
+	<delete id="doctorQuit1" parameterType="doctorDTO">
+		DELETE FROM dt_doctor
+		WHERE doctor_id = #{doctorId} and doctor_pw = #{doctorPw}
 	</delete>
 
 

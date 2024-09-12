@@ -48,7 +48,7 @@
 		</div>
 
 		<button class="DoctorphoneChange-btn">
-			<a href="DoctorInfo.html">변경완료</a>
+			<a href="${pageContext.request.contextPath}/app/myPage/doctorInfo.jsp">변경완료</a>
 		</button>
 	</div>
 

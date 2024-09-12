@@ -84,6 +84,17 @@ public class DoctorFrontController extends HttpServlet {
 			System.out.println("아이디 체크!!");
 			new DoctorCheckIdOkController().execute(request, response);
 			break;
+			
+		case "/doctor/doctorFindId.do":
+			System.out.println("의사아이디 찾기중");
+			request.getRequestDispatcher("/app/user/doctorFindId.jsp").forward(request, response);
+			break;
+			
+			
+		case "/doctor/doctorFindPw.do":
+			System.out.println("의사비번 찾기중");
+			request.getRequestDispatcher("/app/user/doctorFindPw.jsp").forward(request, response);
+			break;
 
 		}
 	}

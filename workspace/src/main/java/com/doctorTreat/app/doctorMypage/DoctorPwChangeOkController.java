@@ -29,7 +29,7 @@ public class DoctorPwChangeOkController implements Execute{
 		
 		int docInfo = Integer.valueOf(sessionNumber);
 		
-		doctorDTO = doctorDAO.showUpdateInfo(docInfo);
+		doctorDTO = doctorDAO.showInfo(docInfo);
 		
 		System.out.println("안녕!" + doctorDTO);
 		

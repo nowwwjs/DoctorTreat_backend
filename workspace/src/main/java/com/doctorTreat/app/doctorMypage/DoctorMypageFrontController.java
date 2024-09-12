@@ -6,36 +6,22 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 import com.doctorTreat.app.Result;
 
-/**
- * Servlet implementation class MemberFrontController
- */
 public class DoctorMypageFrontController extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
-	/**
-	 * @see HttpServlet#HttpServlet()
-	 */
 	public DoctorMypageFrontController() {
 		super();
-		// TODO Auto-generated constructor stub
 	}
 
-	/**
-	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse
-	 *      response)
-	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 		doProcess(request, response);
 	}
 
-	/**
-	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse
-	 *      response)
-	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 		doProcess(request, response);
@@ -43,59 +29,58 @@ public class DoctorMypageFrontController extends HttpServlet {
 
 	protected void doProcess(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
-		String target = request.getRequestURI().substring(request.getContextPath().length());
-		System.out.println(target);
-		Result result = null;
 
-		switch (target) {
-		case "/doctor/doctorInfo.dm":
-			System.out.println("나 여기까지 왔어요");
+        // 세션에서 로그인 여부 확인 (세션이 없거나 로그인 정보가 없으면 로그인 페이지로 리다이렉트)
+        HttpSession session = request.getSession(false);
+        if (session == null || session.getAttribute("doctorNumber") == null) {
+            System.out.println("로그인되지 않음. 로그인 페이지로 이동.");
+            response.sendRedirect(request.getContextPath() + "/app/user/doctorLogin.jsp");
+            return;
+        }
 
-			// medicalInfoNumber 값을 세션에 저장
-			String doctorNumber = request.getParameter("doctorNumber");
-			request.getSession().setAttribute("doctorNumber", doctorNumber);
+        // 로그인 되어 있을 때 요청 처리
+        String target = request.getRequestURI().substring(request.getContextPath().length());
+        System.out.println("요청 경로: " + target);
+        Result result = null;
 
-			result = new DoctorInfoOkController().execute(request, response);
-			request.getRequestDispatcher("/app/myPage/doctorInfo.jsp").forward(request, response);
-			break;
+        switch (target) {
+            case "/doctor/doctorInfo.dm":
+                System.out.println("doctorInfo 요청 처리 중...");
+                result = new DoctorInfoOkController().execute(request, response);
+                break;
 
-		case "/doctor/doctorPw.dm":
-			System.out.println("안뇽하세요");
-			request.getRequestDispatcher("/app/myPage/doctorPwOk.jsp").forward(request, response);
-			break;
+            case "/doctor/doctorPw.dm":
+                System.out.println("비밀번호 확인 페이지 요청 처리 중...");
+                result = new Result();
+                result.setPath("/app/myPage/doctorPwOk.jsp");
+                result.setRedirect(false);
+                break;
 
-		case "/doctor/doctorPwOk.dm":
-			System.out.println("나 여기 또 왔어요");
+            case "/doctor/doctorPwOk.dm":
+                System.out.println("비밀번호 확인 요청 처리 중...");
+                result = new DoctorPwOkController().execute(request, response);
+                request.getRequestDispatcher(result.getPath()).forward(request, response);
+                break;
 
-			// medicalInfoNumber 값을 세션에 저장
-			String doctorPwNumber = request.getParameter("doctorNumber");
-			System.out.println(doctorPwNumber + "확인===============");
-			request.getSession().setAttribute("doctorPwNumber", doctorPwNumber);
-			System.out.println(doctorPwNumber);
-			result = new DoctorPwOkController().execute(request, response);
-			System.out.println("doctorPwOk 이동?");
-			break;
-			
-			
-		case "/doctor/doctorUpdateMember.dm":
-			System.out.println("비밀번호 변경 가보자 ~");
-			request.getRequestDispatcher("/app/myPage/doctorPwOk.jsp").forward(request, response);
-			
-			
+            case "/doctor/doctorUpdateProcess.dm":
+                result = new DoctorUpdateProcessController().execute(request, response);
+                break;
 
-		case "/doctor/doctorOut.dm":
-			System.out.println("탈퇴 페이지로 이동");
-			request.getRequestDispatcher("/app/myPage/doctorOut.jsp").forward(request, response);
-			break;
+            case "/doctor/doctorOut.dm":
+            	System.out.println("나 회원탈퇴야 !!");
+                result = new DoctorOutOkController().execute(request, response);
+                break;
+                
+           
+        }
 
-		case "/doctor/doctorOutOk.dm": // 회원 탈퇴 요청 처리
-			System.out.println("회원 탈퇴 처리 중...");
-
-			result = new DoctorOutOkController().execute(request, response);
-			request.getRequestDispatcher(result.getPath()).forward(request, response);
-			break;
-		
-		}
-	}
-
+        // 리다이렉트 또는 forward 처리
+        if (result != null) {
+            if (result.isRedirect()) {
+                response.sendRedirect(result.getPath());
+            } else {
+                request.getRequestDispatcher(result.getPath()).forward(request, response);
+            }
+        }
+    }
 }

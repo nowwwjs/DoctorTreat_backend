@@ -24,10 +24,10 @@
 			<br>
 			<div class="Doctor-findPw-choicebox">
 				<div class="Doctor-findPw-choice">
-					<a href="./../../../html/user/doctor/DoctorfindId.html">아이디찾기</a>
+					<a href="${pageContext.request.contextPath}/app/user/doctorFindId.jsp">아이디찾기</a>
 				</div>
 				<div class="Doctor-findPw-choice">
-					<a href="./../../../html/user/doctor/DoctorfindPw.html">비밀번호찾기</a>
+					<a href="${pageContext.request.contextPath}/app/user/doctorFindPw.jsp">비밀번호찾기</a>
 				</div>
 			</div>
 			<br>
@@ -49,7 +49,7 @@
 			</section>
 			<br>
 			<br>
-			<br> <a href="./../../../html/myPage/doctor/DoctorphoneOk.html"><button
+			<br> <a href="${pageContext.request.contextPath}/app/myPage/doctorPhoneOk.jsp"><button
 					type="submit" class="Doctor-findPw-button">휴대폰 인증</button></a>
 		</div>
 	</main>

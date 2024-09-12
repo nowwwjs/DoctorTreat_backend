@@ -6,10 +6,14 @@
 
 	<!-- 주소 삽입 -->
 	<insert id="doctorJoinAddress" parameterType="DoctorDTO">
-		<!-- useGeneratedKeys="true" keyProperty="addressNumber"> --> INSERT INTO
-		DT_ADDRESS (ADDRESS_NUMBER, ADDRESS_POSTAL, ADDRESS_ADDRESS,
-		ADDRESS_DETAIL) VALUES (ADDRESS_SEQ.NEXTVAL, #{addressPostal},
-		#{addressAddress}, #{addressDetail}) </insert>
+		<!-- useGeneratedKeys="true" keyProperty="addressNumber"> -->
+		INSERT INTO
+		DT_ADDRESS (ADDRESS_NUMBER, ADDRESS_POSTAL,
+		ADDRESS_ADDRESS,
+		ADDRESS_DETAIL) VALUES (ADDRESS_SEQ.NEXTVAL,
+		#{addressPostal},
+		#{addressAddress}, #{addressDetail})
+	</insert>
 
 	<!-- 주소테이블에 마지막으로 생성된 PK조회. 다음테이블에 참조값으로 쓰기위해 사용 -->
 	<select id="getAddressNum" resultType="Integer">
@@ -25,10 +29,14 @@
 
 	<!-- 병원 삽입 -->
 	<insert id="doctorJoinHospital">
-		<!-- useGeneratedKeys="true" keyProperty="hospitalNumber"> --> INSERT INTO DT_HOSPITAL (HOSPITAL_NUMBER,
-		HOSPITAL_CALL, HOSPITAL_NAME, ADDRESS_NUMBER) VALUES
-		(HOSPITAL_SEQ.NEXTVAL, #{hospitalCall}, #{hospitalName},
-		#{addressNumber}) </insert>
+		<!-- useGeneratedKeys="true" keyProperty="hospitalNumber"> -->
+		INSERT INTO DT_HOSPITAL (HOSPITAL_NUMBER,
+		HOSPITAL_CALL, HOSPITAL_NAME,
+		ADDRESS_NUMBER) VALUES
+		(HOSPITAL_SEQ.NEXTVAL, #{hospitalCall},
+		#{hospitalName},
+		#{addressNumber})
+	</insert>
 
 	<!-- 병원테이블에 마지막으로 생성된 PK조회. 다음테이블에 참조값으로 쓰기위해 사용 -->
 	<select id="getHospitalNum" resultType="Integer">
@@ -44,18 +52,25 @@
 
 	<!-- 의사 삽입 -->
 	<insert id="doctorJoin" parameterType="DoctorDTO">
-		<!-- useGeneratedKeys="true" keyProperty="doctorNumber">  --> INSERT INTO DT_DOCTOR
-		(DOCTOR_NUMBER, DOCTOR_ID, DOCTOR_PW, DOCTOR_NAME, DOCTOR_PHONE,
-		DOCTOR_LICENSE, DOCTOR_MAJOR, HOSPITAL_NUMBER) VALUES
-		(DOCTOR_SEQ.NEXTVAL, #{doctorId}, #{doctorPw}, #{doctorName},
-		#{doctorPhone}, #{doctorLicense}, #{doctorMajor}, #{hospitalNumber}) </insert>
+		<!-- useGeneratedKeys="true" keyProperty="doctorNumber"> -->
+		INSERT INTO DT_DOCTOR
+		(DOCTOR_NUMBER, DOCTOR_ID, DOCTOR_PW,
+		DOCTOR_NAME, DOCTOR_PHONE,
+		DOCTOR_LICENSE, DOCTOR_MAJOR,
+		HOSPITAL_NUMBER) VALUES
+		(DOCTOR_SEQ.NEXTVAL, #{doctorId}, #{doctorPw},
+		#{doctorName},
+		#{doctorPhone}, #{doctorLicense}, #{doctorMajor},
+		#{hospitalNumber})
+	</insert>
 
 
 	<!-- 의사 로그인 -->
 	<select id="doctorLogin" parameterType="DoctorDTO"
 		resultType="DoctorDTO">
 		SELECT d.doctor_number AS doctorNumber,
-		d.doctor_id AS doctorId,
+		d.doctor_id AS
+		doctorId,
 		d.doctor_pw AS doctorPw,
 		d.doctor_name AS doctorName,
 		d.doctor_phone AS doctorPhone,
@@ -69,27 +84,58 @@
 		a.address_address AS addressAddress,
 		a.address_detail AS addressDetail
 		FROM dt_doctor d
-		LEFT JOIN dt_hospital h ON d.hospital_number = h.hospital_number
-		LEFT JOIN dt_address a ON h.address_number = a.address_number
-		WHERE d.doctor_id = #{doctorId} AND d.doctor_pw = #{doctorPw}
+		LEFT JOIN dt_hospital h ON d.hospital_number =
+		h.hospital_number
+		LEFT JOIN dt_address a ON h.address_number =
+		a.address_number
+		WHERE d.doctor_id = #{doctorId} AND d.doctor_pw =
+		#{doctorPw}
 	</select>
 
-	
 
-	<!--의료 회원가입 아이디 중복확인-->
+
+	<!--의료 회원가입 아이디 중복확인 -->
 	<select id="checkId" parameterType="string" resultType="int">
 		select
 		count(doctor_number)
 		from dt_doctor
 		where doctor_id = #{doctorId}
 	</select>
+	<!-- dt_doctor 테이블 업데이트 -->
+	<update id="updateDoctor" parameterType="DoctorDTO">
+		UPDATE dt_doctor
+		SET doctor_name = #{doctorName}
+		WHERE doctor_number = #{doctorNumber}
+	</update>
+
+	<!-- dt_hospital 테이블 업데이트 -->
+	<update id="updateHospital" parameterType="DoctorDTO">
+		UPDATE dt_hospital
+		SET hospital_name = #{hospitalName},
+		hospital_call = #{hospitalCall}
+		WHERE hospital_number = (SELECT hospital_number FROM dt_doctor WHERE
+		doctor_number = #{doctorNumber})
+	</update>
+
+	<!-- dt_address 테이블 업데이트 -->
+	<update id="updateAddress" parameterType="DoctorDTO">
+		UPDATE dt_address
+		SET address_postal = #{addressPostal},
+		address_address = #{addressAddress},
+		address_detail = #{addressDetail}
+		WHERE address_number = (SELECT address_number FROM dt_hospital WHERE
+		hospital_number = (SELECT hospital_number FROM dt_doctor WHERE
+		doctor_number = #{doctorNumber}))
+	</update>
 
 
 	<!-- 의사 비밀번호 찾기 -->
-	<select id="findPassword" parameterType="DoctorDTO" resultType="String">
+	<select id="findPassword" parameterType="DoctorDTO"
+		resultType="String">
 		SELECT DOCTOR_PW
 		FROM DT_DOCTOR
-		WHERE DOCTOR_ID = #{doctorId} AND DOCTOR_NAME = #{doctorName}
+		WHERE DOCTOR_ID = #{doctorId}
+		AND DOCTOR_NAME = #{doctorName}
 	</select>
 
 

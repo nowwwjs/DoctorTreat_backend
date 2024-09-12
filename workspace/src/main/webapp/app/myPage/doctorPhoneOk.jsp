@@ -42,7 +42,7 @@
 
 		<button class="DoctorPhoneOk-btn">
 			<p>
-				<a href="./../../myPage/doctor/DoctorpwChange.html">인증완료</a>
+				<a href="${pageContext.request.contextPath}/app/myPage/doctorPwChange.jsp">인증완료</a>
 			</p>
 		</button>
 	</div>
