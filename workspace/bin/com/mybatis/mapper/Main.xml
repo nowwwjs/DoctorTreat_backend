@@ -1,8 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="main">
-	<select id="getMedicalInfoTitles" resultType="String">
-    SELECT MEDICAL_INFO_TITLE FROM DT_MEDICAL_INFO
-</select>
+
+	<!-- 최신순으로 MEDICAL_INFO_TITLE 가져오기 -->
+	<select id="medicalInfoTitles" resultType="String">
+		SELECT MEDICAL_INFO_TITLE
+		FROM DT_MEDICAL_INFO
+		ORDER BY MEDICAL_INFO_DATE DESC
+	</select>
+	
 </mapper>
 
