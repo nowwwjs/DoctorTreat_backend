@@ -12,7 +12,9 @@ main {
 	margin: 0 auto;
 	position: relative;
 }
-
+#chatRoom-info,#chatRoom-hidden{
+	color: white;
+}
 .chatRoom-topContainer {
 	position: relative;
 }
@@ -116,12 +118,10 @@ main {
 	width: 810px;
 	height: 50px;
 	margin: 0 auto 50px auto;
-	resize: none;
 	padding: 20px;
 	border: none;
 	border-radius: 7px;
 	background-color: #ececec;
-	pointer-events: none;
 }
 
 #chatRoom-submit {
@@ -133,7 +133,8 @@ main {
 	border: none;
 	border-radius: 7px;
 	position: relative;
-	left: 855px;
+	left: 790px;
+	top: -40px;
 	cursor: pointer;
 }
 
