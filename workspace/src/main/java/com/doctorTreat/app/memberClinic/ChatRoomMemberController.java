@@ -20,6 +20,7 @@ public class ChatRoomMemberController implements Execute {
 	public Result execute(HttpServletRequest request, HttpServletResponse response)
 			throws IOException, ServletException {
 		
+		request.setCharacterEncoding("UTF-8");
 //		로그인정보 담기
 		System.out.println("세션 가져오는중");
 		// false를 넣으면 값을 세션이 없을때 null을 반환
@@ -46,6 +47,8 @@ public class ChatRoomMemberController implements Execute {
 		MemberClinicDAO memberClinicDAO = new MemberClinicDAO();
 		List<ChatSessionDTO> chatRoom = memberClinicDAO.getChatRoomNumber(queryMap);
 		System.out.println(chatRoom);
+		
+		request.setAttribute("chatRoom", chatRoom);
 		
 		// 결과 처리
 		Result result = new Result();

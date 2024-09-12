@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -9,7 +10,7 @@
 	href="${pageContext.request.contextPath}/static/css/clinic/chart.css?v=1.0">
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 <script defer
-	src="${pageContext.request.contextPath}/static/js/clinic/chart.js?v=1.0"></script>
+	src="${pageContext.request.contextPath}/static/js/clinic/chart.js"></script>
 </head>
 <body>
 	<jsp:include page="${pageContext.request.contextPath}/headerDoctor.jsp" />
@@ -17,7 +18,9 @@
 		<!-- 처방전 작성 -->
 		<div id="writeChart-title">처방전 작성</div>
 		<div class="chart-notice">
-			<span>※ 처방전은 등록 후 <span class="chart-important">수정이 불가</span>합니다 ※ </span>
+			<span>※ 처방전은 등록 후 <span class="chart-important">수정이 불가</span>합니다
+				※
+			</span>
 		</div>
 		<div class="writeChart-container">
 			<div class="writeChart-top">처방전</div>
@@ -50,23 +53,29 @@
 			</div>
 
 			<!-- 의사입력 정보 -->
-			<form action="${pageContext.request.contextPath}/writeChartOk.doccl?memberNumber=${chart[0].memberNumber}" method="post">
+			<form
+				action="${pageContext.request.contextPath}/writeChartOk.doccl?memberNumber=${chart[0].memberNumber}"
+				method="post">
 				<div class="writeChart-pushInfo">
 					<div class="writeChart-chartName">
 						<span class="writeChart-pullPushInfo">진단명</span><input
-							class="writeChart-pushInner" name="chartName" placeholder=" ex) 감기"></input>
+							class="writeChart-pushInner" name="chartName"
+							placeholder=" ex) 감기"></input>
 					</div>
 					<div class="writeChart-chartMedicine">
 						<span class="writeChart-pullPushInfo">처방약</span><input
-							class="writeChart-pushInner" name="chartMedicine" placeholder=" ex) 타이레놀"></input>
+							class="writeChart-pushInner" name="chartMedicine"
+							placeholder=" ex) 타이레놀"></input>
 					</div>
 					<div class="writeChart-way">
 						<span class="writeChart-pullPushInfo">용량</span><input
-							class="writeChart-pushInner" name="chartPeriod" placeholder=" ex) 5일분"></input>
+							class="writeChart-pushInner" name="chartPeriod"
+							placeholder=" ex) 5일분"></input>
 					</div>
 					<div class="writeChart-way">
 						<span class="writeChart-pullPushInfo">복용횟수</span><input
-							class="writeChart-pushInner" name="chartDay" placeholder=" ex) 1일 3회"></input>
+							class="writeChart-pushInner" name="chartDay"
+							placeholder=" ex) 1일 3회"></input>
 					</div>
 					<div class="writeChart-way">
 						<span class="writeChart-pullPushInfo">용법 </span>식전 <label

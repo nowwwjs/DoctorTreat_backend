@@ -9,6 +9,7 @@ import javax.servlet.http.HttpServletResponse;
 
 import com.doctorTreat.app.Result;
 import com.doctorTreat.app.memberClinic.EarDoctorListController;
+import com.doctorTreat.app.memberClinic.MemberSendOkController;
 
 /**
  * Servlet implementation class ClinicFrontController
@@ -77,11 +78,15 @@ public class DoctorClinicFrontController extends HttpServlet {
 			result = new WriteChartController().execute(request, response);
 			request.getRequestDispatcher(result.getPath()).forward(request, response);
 			break;
-		
+
 		// 처방전 등록 클릭시 등록
 		case "/writeChartOk.doccl":
 			result = new WriteChartOkController().execute(request, response);
 			request.getRequestDispatcher(result.getPath()).forward(request, response);
+			break;
+		//채팅방에서 채팅입력 db저장 (비동기)
+		case "/sendOkController.doccl":
+			result = new DoctorSendOkController().execute(request, response);
 			break;
 		}
 

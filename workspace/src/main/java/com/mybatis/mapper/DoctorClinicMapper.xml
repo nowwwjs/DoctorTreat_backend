@@ -39,7 +39,8 @@
 		FROM
 		DT_CHAT_SESSION CS
 		JOIN DT_DOCTOR D ON
-		CS.DOCTOR_NUMBER = D.DOCTOR_NUMBER
+		CS.DOCTOR_NUMBER =
+		D.DOCTOR_NUMBER
 		JOIN DT_MEMBER M ON
 		CS.MEMBER_NUMBER = M.MEMBER_NUMBER
 		JOIN DT_HOSPITAL H ON
@@ -74,4 +75,56 @@
 		#{doctorNumber},
 		SYSDATE)
 	</insert>
+
+	<!-- 의사이름, 병원이름 조회 -->
+	<select id="getDoctorInfo" parameterType="int"
+		resultType="DoctorDTO">
+		SELECT
+		H.HOSPITAL_NAME , D.DOCTOR_NAME FROM DT_HOSPITAL H JOIN DT_DOCTOR D ON
+		H.HOSPITAL_NUMBER=D.HOSPITAL_NUMBER WHERE
+		D.DOCTOR_NUMBER=#{doctorNumber}
+	</select>
+
+	<!-- 채팅방 조회 -->
+	<select id="getChatRoomNumber" parameterType="Map"
+		resultType="ChatSessionDTO">
+		SELECT
+		CS.SESSION_NUMBER,
+		CS.DOCTOR_NUMBER
+		FROM
+		DT_DOCTOR D
+		JOIN DT_HOSPITAL H ON
+		D.HOSPITAL_NUMBER = H.HOSPITAL_NUMBER
+		JOIN
+		DT_CHAT_SESSION CS ON
+		CS.DOCTOR_NUMBER = D.DOCTOR_NUMBER
+		JOIN DT_MEMBER
+		M ON
+		CS.MEMBER_NUMBER = M.MEMBER_NUMBER
+		WHERE
+		M.MEMBER_NUMBER =
+		#{memberNumber}
+		AND D.DOCTOR_NUMBER = (
+		SELECT
+		DD.DOCTOR_NUMBER
+		FROM
+		DT_DOCTOR DD
+		JOIN DT_HOSPITAL HH ON
+		DD.HOSPITAL_NUMBER =
+		HH.HOSPITAL_NUMBER
+		WHERE
+		DD.DOCTOR_NAME = #{doctorName}
+		AND
+		HH.HOSPITAL_NAME = #{hospitalName})
+	</select>
+
+	<!-- 채팅 저장 -->
+	<select id="inputDoctorChat" parameterType="ChatDTO">
+		INSERT INTO DT_CHAT
+		(CHAT_NUMBER, CHAT_TEXT, CHAT_MSG_DATE, SESSION_NUMBER,
+		DOCTOR_NUMBER)
+		VALUES
+		(CHAT_SEQ.NEXTVAL, #{chatText} , SYSDATE, #{sessionNumber},
+		#{doctorNumber})
+	</select>
 </mapper>

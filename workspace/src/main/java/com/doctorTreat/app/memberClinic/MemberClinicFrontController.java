@@ -77,25 +77,32 @@ public class MemberClinicFrontController extends HttpServlet {
 			result = new ClinicApplicationOk().execute(request, response);
 			request.getRequestDispatcher(result.getPath()).forward(request, response);
 			break;
-			
+
 //		로그인 상태의 일반회원이 헤더쪽 아이콘으로 채팅 리스트 접근
 		case "/chatListMember.memcl":
 			result = new ChatListMemberController().execute(request, response);
 			request.getRequestDispatcher(result.getPath()).forward(request, response);
 			break;
-		
+
 //		로그인 상태의 일반회원이 헤더쪽 아이콘으로 최근 처방전 접근
 		case "/chart.memcl":
 			result = new ChartController().execute(request, response);
 			request.getRequestDispatcher(result.getPath()).forward(request, response);
 			break;
-			
-//		로그인 상태긔 일반회원이 채팅리스트에서 채팅방으로 접근
+
+//		로그인 상태의 일반회원이 채팅리스트에서 채팅방으로 접근
 		case "/app/clinic/chatRoomMember.memcl":
 			result = new ChatRoomMemberController().execute(request, response);
 			request.getRequestDispatcher(result.getPath()).forward(request, response);
 			break;
+
+//		채팅방에서 채팅입력 db저장 (비동기)
+		case "/sendOkController.memcl":
+			result = new MemberSendOkController().execute(request, response);
+			break;
 		}
+
+	}
 
 //			if (result != null) {
 //				if (result.isRedirect()) {
@@ -112,5 +119,4 @@ public class MemberClinicFrontController extends HttpServlet {
 //	            request.getRequestDispatcher(result.getPath()).forward(request, response);
 //	         }
 //	      }
-	}
 }
