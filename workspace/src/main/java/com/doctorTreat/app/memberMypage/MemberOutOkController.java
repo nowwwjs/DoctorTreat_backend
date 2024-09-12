@@ -15,28 +15,25 @@ public class MemberOutOkController implements Execute{
 
 	@Override
 	public Result execute(HttpServletRequest request, HttpServletResponse response)
-			throws IOException, ServletException {
-		
-		request.setCharacterEncoding("UTF-8");
-		
-		MemberDTO memberDTO = new MemberDTO();
-		MemberMypageDAO membermypageDAO = new MemberMypageDAO();
-		Result result = new Result();
-		
-		 // 파라미터로부터 아이디와 비밀번호 가져오기
-        String memberId = request.getParameter("memberId");
-        String memberPw = request.getParameter("memberPw");
+	        throws IOException, ServletException {
+	    
+	    MemberDTO memberDTO = new MemberDTO();
+	    MemberMypageDAO membermypageDAO = new MemberMypageDAO();
+	    Result result = new Result();
 
-        
+	    // 파라미터로부터 아이디와 비밀번호 가져오기
+	    String memberId = request.getParameter("memberId");
+	    String memberPw = request.getParameter("memberPw");
+
+	    memberDTO.setMemberId(memberId);
+	    memberDTO.setMemberPw(memberPw);
 		
-		
-		
-		
-		
-		
-		
-		return null;
-		
+	    
+	    return result;
+	    
+
+	    
+	
+	
 	}
-
 }

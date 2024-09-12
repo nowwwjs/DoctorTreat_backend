@@ -16,7 +16,7 @@
 <body>
 	<main>
         <div class="memberOut-caution-title">회원탈퇴 시 주의사항</div>
-        <form action="" method="">
+        <form action="">
             <div class="memberOut-caution-wrap">
                 <div class="memberOut-caution-check">
                     회원 탈퇴를 신청하기 전, 다음 내용을 꼭 확인해주세요.
@@ -32,8 +32,8 @@
                 </div>
             </div>
             <div class="memberOut-caution-button">
-                <button type="button" id="memberOutButton" class="memberOut-caution-ok">회원 탈퇴</button>&nbsp;&nbsp;&nbsp;&nbsp;
-                <a href="./../../../html/myPage/member/memberupdateMember.html"><button class="memberOut-caution-cancell">취소</a></button>
+                <button type="button" id="memberOutButton" class="memberOut-caution-ok"><a href="${pageContext.request.contextPath}/app/myPage/memberOut-Complete.jsp">회원 탈퇴</a></button>&nbsp;&nbsp;&nbsp;&nbsp;
+                <button class="memberOut-caution-cancell"><a href="${pageContext.request.contextPath}/app/myPage/memberInfo.jsp">취소</a></button>
             </div>
         </form>
     </main>

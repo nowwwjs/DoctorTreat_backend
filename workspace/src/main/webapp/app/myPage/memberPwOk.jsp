@@ -14,7 +14,7 @@
 <jsp:include page="${pageContext.request.contextPath}/headerMember.jsp" />
 </head>
 <body>
-<form action="${pageContext.request.contextPath}/memberMypage/memberPwOk.mm">
+<form action="${pageContext.request.contextPath}/memberMypage/memberPwOk.mm" method="post">
 <div class="memberpwOk-main-container">
         <div class="memberpwOk-titlebox">
             <p class="memberpwOk-title">비밀번호 확인</p>
@@ -22,12 +22,12 @@
         </div>
         
         <div class="memberpwOk-inputbox">
-             <p class="memberpwOk-text">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;이름 입력</p>
-             <input type="text" name="memberName" class="memberpwOk-input-field">
+             <p class="memberpwOk-text">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;아이디 입력</p>
+             <input type="text" name="memberId" class="memberpwOk-input-field">
         </div>
         <div class="memberpwOk-inputbox">
                 <p class="memberpwOk-text">비밀번호 입력</p>
-                <input type="text" name="memberPw" class="memberpwOk-input-field">
+                <input type="password" name="memberPw" class="memberpwOk-input-field">
         </div>
         <div class="memberpwOk-textbox">
             <p>현재 비밀번호와 일치하지 않습니다.</p>

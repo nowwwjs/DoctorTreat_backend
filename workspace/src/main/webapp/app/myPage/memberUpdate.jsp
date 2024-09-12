@@ -14,7 +14,7 @@
 <jsp:include page="${pageContext.request.contextPath}/headerMember.jsp" />
 </head>
 <body>
-	<div class="memberupdateMember-main-container">
+   <div class="memberupdateMember-main-container">
   <div class="memberupdateMember-titlebox">
       <p class="memberupdateMember-title">내 정보 수정</p>
       <hr class="memberupdateMember-hr">
@@ -47,27 +47,17 @@
           </label>
             <br>
             
-          <label class="memberupdateMember-input" for=""> <span>주소</span> 
-          <input type="text" id="postcode" placeholder="우편번호">
-		  </label> 
-		  <br> 
-		  <label class="memberupdateMember-input" for="">
-		  		<button class="postcode-search" onclick="execDaumPostcode()">주소찾기</button>
-		  </label> 
-		  <br> 
-		  <label class="memberupdateMember-input" for=""> <span></span>
-				<input type="text" id="address" placeholder="주소">
-		  </label> 
-		  <br> 
-		  <label class="memberupdateMember-input" for=""> <span></span>
-			<input type="text" id="detailAddress" placeholder="상세 주소">
-		  </label>
-		<br>
+          <label class="memberupdateMember-input" for=""> 
+          	<span>주소</span> 
+          	<input type="text" id="Memberaddress" name = "Memberaddress">
+          </label> 
       </form>
   </div>
   <div class="memberupdateMember-botton">          
-      <button class="memberupdateMember-btn"><a href="${pageContext.request.contextPath}/app/myPage/memberinfo.jsp">수정완료</a></button>
-      <button class="memberupdateMember-btn"><a href="${pageContext.request.contextPath}/app/myPage/memberout.jsp">회원탈퇴</a></button>
+      <button class="memberupdateMember-btn"><a href="${pageContext.request.contextPath}/app/myPage/memberInfo.jsp">수정완료</a></button>
+      			<button class="memberupdateMember-btn" id="memberupdateMember-btn">
+				<a href="${pageContext.request.contextPath}/app/myPage/memberOut.jsp">회원탈퇴</a>
+			</button>
   </div>  
 </div>
 </body>
