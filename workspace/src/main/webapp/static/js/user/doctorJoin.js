@@ -218,13 +218,6 @@ function execDaumPostcode() {
    }).open();
 }
 
-<<<<<<< HEAD
-
-
-
-
-
-=======
 // 7. 문자 
 
 document.querySelector("#smsButton").addEventListener("click", function(event) {
@@ -233,8 +226,8 @@ document.querySelector("#smsButton").addEventListener("click", function(event) {
 
     // 인증번호 받기 버튼 클릭 이벤트
 
-		let phoneNumber = document.querySelector("#doctorPhoneNumber").value;
-		console.log(phoneNumber);
+      let phoneNumber = document.querySelector("#doctorPhoneNumber").value;
+      console.log(phoneNumber);
         if (phoneNumber) {
             $.ajax({
                 url: contextPath + "/doctor/joinSMS.do",
@@ -260,4 +253,3 @@ document.querySelector("#smsButton").addEventListener("click", function(event) {
         phoneCheckElement.textContent = "인증 완료";
         phoneCheckElement.style.color = "red"; // 텍스트 색상 빨간색으로 설정
     });
->>>>>>> main
