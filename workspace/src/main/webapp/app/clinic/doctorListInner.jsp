@@ -51,6 +51,6 @@
 			</ul>
 		</div>
 	</main>
-	<jsp:include page="${pageContext.request.contextPath}/footer.jsp" />
+	<jsp:include page="${pageContext.request.contextPath}/footer2.jsp" />
 </body>
 </html>
