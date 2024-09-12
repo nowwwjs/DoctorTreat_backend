@@ -34,25 +34,29 @@ public class MemberClinicDAO {
 	public List<DoctorDetailDTO> getDoctorDetail(String hospitalCall) {
 		return sqlSession.selectList("memberClinic.getDoctorDetail", hospitalCall);
 	}
-	
+
 	public Integer getDoctorNumber(String hospitalCall) {
 		return sqlSession.selectOne("memberClinic.getDoctorNumber", hospitalCall);
 	}
-	
-	public void inputChatSession(ChatSessionDTO chatSessionDTO){
+
+	public void inputChatSession(ChatSessionDTO chatSessionDTO) {
 		sqlSession.insert("memberClinic.createChatRoom", chatSessionDTO);
 	}
-	
-	public List<DoctorDTO> getChatListEar(int memberNumber){
+
+	public List<DoctorDTO> getChatListEar(int memberNumber) {
 		return sqlSession.selectList("memberClinic.getEarDocChat", memberNumber);
 	}
-	
-	public List<DoctorDTO> getChatListInner(int memberNumber){
+
+	public List<DoctorDTO> getChatListInner(int memberNumber) {
 		return sqlSession.selectList("memberClinic.getInnerDocChat", memberNumber);
 	}
-	
+
 	public List<ChartDTO> getChart(int memberNumber) {
 		return sqlSession.selectList("memberClinic.getChart", memberNumber);
+	}
+
+	public List<ChatSessionDTO> getChatRoomNumber(Map<String, Object> queryMap) {
+		return sqlSession.selectList("memberClinic.getChatRoomNumber", queryMap);
 	}
 
 }

@@ -1,6 +1,9 @@
 package com.doctorTreat.app.memberClinic;
 
 import java.io.IOException;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
 
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
@@ -9,6 +12,8 @@ import javax.servlet.http.HttpSession;
 
 import com.doctorTreat.app.Execute;
 import com.doctorTreat.app.Result;
+import com.doctorTreat.app.dto.ChatSessionDTO;
+import com.doctorTreat.app.memberClinic.dao.MemberClinicDAO;
 
 public class ChatRoomMemberController implements Execute {
 	@Override
@@ -27,6 +32,20 @@ public class ChatRoomMemberController implements Execute {
 		Integer memberNumber = (Integer) session.getAttribute("memberNumber");
 		System.out.println("형변환 회원번호 : " + memberNumber);
 		
+		//현재 채팅방을 알기 위해 쿼리스트링의 의사 정보받고 맵에 넣기
+		String doctorName = request.getParameter("doctor");
+		String hospitalName = request.getParameter("hospital");
+		System.out.println(doctorName + "\n" +hospitalName);
+		
+		Map<String, Object> queryMap = new HashMap<>();
+		queryMap.put("hospitalName", hospitalName);
+		queryMap.put("doctorName", doctorName);
+		queryMap.put("memberNumber", memberNumber);
+		
+		//현재 채팅방 번호
+		MemberClinicDAO memberClinicDAO = new MemberClinicDAO();
+		List<ChatSessionDTO> chatRoom = memberClinicDAO.getChatRoomNumber(queryMap);
+		System.out.println(chatRoom);
 		
 		// 결과 처리
 		Result result = new Result();

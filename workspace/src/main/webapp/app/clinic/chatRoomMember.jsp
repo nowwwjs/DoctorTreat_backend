@@ -38,7 +38,7 @@
 		</div>
 
 		<div class="chatRoom-areaContainer">
-			<textarea id="chatRoom-chatArea" placeholder="의사 입장시 채팅이 가능합니다"></textarea>
+			<textarea id="chatRoom-chatArea" placeholder="진료는 순차적으로 진행됩니다. 종료시 채팅이 사라질 수 있습니다."></textarea>
 		</div>
 
 		<form action="" method="">
