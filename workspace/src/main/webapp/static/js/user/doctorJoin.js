@@ -7,7 +7,10 @@ const messages = [
    "비밀번호 확인이 필요합니다",
    "이름이 필요합니다",
    "우편번호가 필요합니다",
+   "주소가 필요합니다", 
+   "상세주소가 필요합니다",
    "핸드폰 번호가 필요합니다",
+   "",
    "병원이름이 필요합니다",
    "병원번호가 필요합니다",
    "면허번호가 필요합니다",
@@ -214,3 +217,39 @@ function execDaumPostcode() {
       }
    }).open();
 }
+
+// 7. 문자 
+
+document.querySelector("#smsButton").addEventListener("click", function(event) {
+   event.preventDefault(); // 기본 폼 제출 방지
+ 
+
+    // 인증번호 받기 버튼 클릭 이벤트
+
+		let phoneNumber = document.querySelector("#doctorPhoneNumber").value;
+		console.log(phoneNumber);
+        if (phoneNumber) {
+            $.ajax({
+                url: contextPath + "/doctor/joinSMS.do",
+                type: "POST",
+                data: { phoneNumber: phoneNumber },
+                success: function(response) {
+                    alert(response);
+                    
+                },
+                error: function(xhr, status, error) {
+                    alert("오류 발생: " + xhr.responseText);
+                }
+            });
+        } else {
+            alert("휴대폰 번호를 입력해주세요.");
+        }
+});
+
+//8. 인증완료
+ document.querySelector("#phonecheck3").addEventListener("click", function() {
+        // p 태그에 "인증 완료" 텍스트 추가 및 색상 설정
+        var phoneCheckElement = document.getElementById("phoneCheck");
+        phoneCheckElement.textContent = "인증 완료";
+        phoneCheckElement.style.color = "red"; // 텍스트 색상 빨간색으로 설정
+    });

@@ -1,4 +1,4 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
+	<%@ page language="java" contentType="text/html; charset=UTF-8"
    pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
@@ -91,12 +91,24 @@
             </div>
 
             <label for="memberPhone">핸드폰 번호</label>
+            
             <div class="member-input-group">
-               <input type="text" id="memberPhone" name="memberPhone" required>
-               <button class="join-request">인증 요청</button>
+               <input type="text" id="memberPhone5" name="memberPhone" required>
+               <button type="button" id="memberPhonech" class="join-request">인증 요청</button>
                <p class="memberjoin-Null"></p>
             </div>
+            
+            <label for="memberPhone">인증 번호</label>
+            
+			 <div id="member-phone-check" class="member-input-group">
+               <input type="text" id="memberPhone2" name="memberPhone" required>
+               <button id="member-check-com"class="join-request">인증 완료</button>
+               <p id="memberphone"></p>
+            </div>
+			
+			
             <br>
+			            
 
             <div class="container">
                <!-- 전체 동의 체크박스 -->

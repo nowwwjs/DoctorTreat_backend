@@ -95,13 +95,27 @@
             </div>
 
             <label for="doctorPhoneNumber">핸드폰 번호</label>
+            
             <div class="Doctor-input-group">
-               <input type="text" id="doctorPhoneNumber" name="doctorPhoneNumber"
-                  required>
-               <button class="Doctor-join-request">인증 요청</button>
+               <input type="text" id="doctorPhoneNumber" name="doctorPhoneNumber" required>
+               <button type="button" id="smsButton" class="Doctor-join-request">인증 요청</button>
                <p class="Doctorjoin-Null"></p>
             </div>
+            
+            <label for="doctorPhoneNumber">인증 번호</label>
+            
+            <div class="Doctor-input-group">
+            <div id="doctorPhoneBox">
+            	<input type="text" id="doctorPhoneInput" name="doctorPhoneInput" >
+            	<button type="button" id="phonecheck3" class="Doctor-join-request">인증 완료</button>
+            	<p id="phoneCheck"></p>
+            </div>
+            </div>
+            
+            
+            
             <br> <label for="doctorHospitalName">병원이름</label>
+            
             <div class="Doctor-input-group">
                <input type="text" id="doctorHospitalName"
                   name="doctorHospitalName" required>
@@ -158,12 +172,13 @@
          </form>
       </div>
    </main>
-
-
+	
    <script src="https://ssl.daumcdn.net/dmaps/map_js_init/postcode.v2.js"></script>
 
    <script
       src="${pageContext.request.contextPath}/static/js/user/doctorJoin.js"></script>
+      
 </body>
 <jsp:include page="${pageContext.request.contextPath}/footer.jsp" />
+
 </html>

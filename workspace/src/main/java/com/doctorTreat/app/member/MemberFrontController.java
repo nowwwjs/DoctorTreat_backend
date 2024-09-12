@@ -8,6 +8,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import com.doctorTreat.app.Result;
+import com.doctorTreat.app.doctor.DoctorJoinSMSController;
 
 
 /**
@@ -81,7 +82,10 @@ public class MemberFrontController extends HttpServlet {
          result = new MemberLogoutOkController().execute(request, response);
          request.getRequestDispatcher("/index.jsp").forward(request, response);
          break;
-
+      case "/member/joinSMS.me":
+			System.out.println("sms!!");
+			new MemberJoinSMSController().execute(request, response);
+			break;
       }
    }
 
