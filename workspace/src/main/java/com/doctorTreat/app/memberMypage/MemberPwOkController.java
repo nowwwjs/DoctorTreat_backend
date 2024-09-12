@@ -19,37 +19,33 @@ public class MemberPwOkController implements Execute{
 		  // 인코딩 설정
 	      request.setCharacterEncoding("UTF-8");
 
-	      // DTO와 DAO 객체 생성
-	      MemberDTO memberDTO = new MemberDTO();
-	      MemberMypageDAO membermypageDAO = new MemberMypageDAO();
 	      Result result = new Result();
+	        MemberMypageDAO memberMypageDAO = new MemberMypageDAO();
+	        
+	        System.out.println("컨트롤러 통과");
 
-	      // 쿼리실행
-	      System.out.println("memberDTO" + memberDTO);
+	        // 폼에서 입력된 회원 아이디와 비밀번호를 가져옴
+	        String memberId = request.getParameter("memberId");
+	        String memberPw = request.getParameter("memberPw");
+	        
+	        System.out.println(memberId);
+	        System.out.println(memberPw);
+	        
+	        // DAO를 사용하여 비밀번호가 일치하는지 확인
+	        boolean isPwCorrect = memberMypageDAO.checkPw(memberId, memberPw);
 
-	      String memberName = request.getParameter("memberName");
-	      String memberPassword = request.getParameter("memberPw");
+	        if (isPwCorrect) {
+	            // 비밀번호가 맞으면 memberupdate.jsp로 이동
+	        	System.out.println("비밀번호 일치");
+	        	request.getRequestDispatcher("/app/myPage/memberUpdate.jsp").forward(request, response);
+	        } else {
+	            // 비밀번호가 틀리면 memberinfo.jsp로 이동
+	        	System.out.println("비밀번호 불일치");
+	        	request.getRequestDispatcher("/app/myPage/memberInfo.jsp").forward(request, response);
+	        }
 
-
-
-	      System.out.println("나닷!"+ memberDTO);
-	      boolean outCome = membermypageDAO.checkPw(memberName,memberPassword);
-	      
-	      
-	      
-	      System.out.println(outCome);
-
-	      if (outCome == true) {
-	         result.setRedirect(true);
-	         result.setPath("/myPage/memberUpdate.jsp");
-	      } else {
-	         result.setRedirect(false);
-	         result.setPath("/myPage/memberInfo.jsp");
-	      }
-
-        
-
-        return result;
+	        result.setRedirect(false); // forward 방식으로 페이지 이동
+	        return result;
 	}
 
 }

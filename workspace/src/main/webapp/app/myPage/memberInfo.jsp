@@ -14,14 +14,14 @@
 <jsp:include page="${pageContext.request.contextPath}/headerMember.jsp" />
 </head>
 <body>
-	<div class="memberInfo-main-container">
+   <div class="memberInfo-main-container">
   <div class="memberInfo-titlebox">
       <p class="memberInfo-title">내 정보 확인</p>
       <hr class="memberInfo-hr">
   </div>
 
   <div class="memberInfo-inputbox">
-    <form action="${pageContext.request.contextPath}/myPage/memberPwOk.mm" method="post">
+    <form action="${pageContext.request.contextPath}/memberMypage/memberPw.mm" method="post">
 
       <label class="memberInfo-input" for="">
         <span>아이디</span>
@@ -48,11 +48,13 @@
         <input type="text" value="${memberShowInfo.addressPostal} ${memberShowInfo.addressAddress} ${memberShowInfo.addressDetail}" name="memberAddress" readonly >
       </label>
       <br>
-    </form>
+    
   </div>
 
-  <button class="memberInfo-btn"><a href="">내 정보 수정</a></button>
+  <button class="memberInfo-btn">내 정보 수정</button>
+  </form>
 </div>
+
 </body>
 <jsp:include page="${pageContext.request.contextPath}/footer.jsp" />
 </html>
