@@ -24,7 +24,7 @@ main {
 
 .writeChart-container {
 	width: 75%;
-	height: 80%;
+	height: 85%;
 	margin: auto;
 	border: 1px solid lightgray;
 }
@@ -50,7 +50,8 @@ main {
 .writeChart-chartMedicine,
 .writeChart-way,
 .writeChart-hospital,
-.writeChart-doctor {
+.writeChart-doctor,
+.writeChart-memberNumber {
 	padding: 5px;
 }
 
