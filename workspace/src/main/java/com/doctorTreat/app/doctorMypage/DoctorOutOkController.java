@@ -3,8 +3,10 @@ package com.doctorTreat.app.doctorMypage;
 import java.io.IOException;
 
 import javax.servlet.ServletException;
+import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 import com.doctorTreat.app.Execute;
 import com.doctorTreat.app.Result;
@@ -16,6 +18,8 @@ public class DoctorOutOkController implements Execute {
    @Override
     public Result execute(HttpServletRequest request, HttpServletResponse response)
             throws IOException, ServletException {
+	   
+	   HttpSession session = request.getSession(false);
         
         request.setCharacterEncoding("UTF-8");
         Result result = new Result();
@@ -34,23 +38,27 @@ public class DoctorOutOkController implements Execute {
         
         System.out.println(doctorDTO);
         
-        int docNum = doctorDAO.showDoctor(doctorDTO);
+        boolean delete = doctorDAO.quitDoctor(doctorId, doctorPw);
         
-        System.out.println("뭐야" + docNum);
-        
-        if(docNum != 0) {
-        doctorDAO.quit1(docNum);
-        doctorDAO.quit2(docNum);
-        doctorDAO.quit3(docNum);
-        
-        result.setRedirect(true);
-        result.setPath("/app/myPage/doctorOut-Caution.jsp");
+        if(delete = true) {
+        	System.out.println("탈퇴성공이요");
+        	
+            session.invalidate(); // 세션 무효화
+            System.out.println("세션 무효화");
+        	
+            Cookie cookie = new Cookie("memberNumber", null);
+            cookie.setMaxAge(0);
+            response.addCookie(cookie);
+            System.out.println(cookie);
+            System.out.println("쿠키삭제");
+            
+            result.setRedirect(true);
+            result.setPath("/index.jsp");
+        }else {
+        	System.out.println("탈퇴실패");
+        	response.sendRedirect(request.getContextPath() + "/app/myPage/doctorOut.jsp");
         }
         
-        else {
-             result.setRedirect(false);
-             result.setPath("/app/myPage/doctorInfo.jsp");
-        }
  
         return result;
     }

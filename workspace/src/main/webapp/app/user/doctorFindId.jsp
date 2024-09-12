@@ -33,16 +33,16 @@
 			<br>
 			<div class="Doctor-findId-choicebox">
 				<div class="Doctor-findId-choice">
-					<a href="./../../../html/user/doctor/DoctorfindId.html">아이디찾기</a>
+					<a href="${pageContext.request.contextPath}/app/user/doctorFindId.jsp">아이디찾기</a>
 				</div>
 				<div class="Doctor-findId-choice">
-					<a href="./../../../html/user/doctor/DoctorfindPw.html">비밀번호찾기</a>
+					<a href="${pageContext.request.contextPath}/app/user/doctorFindPw.jsp">비밀번호찾기</a>
 				</div>
 			</div>
 			<section class="Doctor-findId-form">
 				<form>
 					<button type="submit">
-						<a href="./../../../html/myPage/doctor/DoctorphoneOk.html"
+						<a href="${pageContext.request.contextPath}/app/myPage/doctorPhoneOk.jsp"
 							class="Doctor-findId-phone-a">본인명의 휴대폰으로 인증 
 					</button>
 					</a> <br> <br>

@@ -30,3 +30,25 @@ function execDaumPostcode() {
         }
     }).open();
   }
+  
+  
+  
+  
+  $(document).ready(function() {
+   $(".DoctorupdateMember-input").on('click', function() {
+      console.log("클릭");
+      let memberId = $('#memberId').val();
+
+      $.ajax({
+         url: "/doctor/doctorUpdateMember.dm",
+         type: "get",
+         data: { "memberId": memberId },
+         success: function(result) {
+            $('#checkIdResult').text(result);
+         },
+         error : function(){
+            $('#checkIdResult').text('오류가 발생했습니다. 다시 시도해주세요');
+         }
+      });
+   });
+});

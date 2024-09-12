@@ -15,26 +15,28 @@
       where m.member_number = #{memberNumber}
 </select>
 
-<select id="memberPwOk" parameterType="String" resultType="MemberDTO">
-	select count(member_name)
-	from dt_member m
-	where m.meber_pw = #{memberPw} and m.member_id = #{memberId}
-</select>
-
-<select id="memberRecive" parameterType="MemberDTO">
+<select id="memberPwOk" parameterType="memberDTO" resultType="int">
 	select count(*)
-	from dt_member
-	where member_id = #{memberId} and member_pw = #{memberPw}
+	from dt_member m
+	where m.member_pw = #{memberPw} and m.member_id = #{memberId}
 </select>
 
-<delete id="memberQuit1" parameterType="int">
-    DELETE FROM dt_address
-    where m.member_number = #{memberNumber}
+
+<!-- 회원탈퇴 -->
+<select id="memberAddCheck" parameterType="memberDTO" resultType="int">
+	select m.address_number
+	from dt_member m
+	where m.member_pw = #{memberPw} and m.member_id = #{memberId}
+</select>
+
+<delete id="memberQuit1" parameterType="memberDTO">
+    DELETE FROM dt_member m
+	WHERE m.member_id = #{memberId} AND m.member_pw = #{memberPw}
 </delete>
 
-<delete id="memberQuit2" parameterType="int">
-    DELETE FROM dt_member
-    where m.member_number = #{memberNumber}
+<delete id="memberQuit2" parameterType="memberDTO">
+    DELETE FROM DT_ADDRESS
+   	WHERE address_number = #{addressNumber};
 </delete>
 
 

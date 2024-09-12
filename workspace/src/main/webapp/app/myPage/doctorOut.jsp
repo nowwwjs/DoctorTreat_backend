@@ -27,7 +27,7 @@
 
 
       <div class="DoctorOut-inputbox">
-         <form action="${pageContext.request.contextPath}/doctor/doctorOutOk.dm" method="post">
+         <form action="${pageContext.request.contextPath}/doctor/doctorOut.dm" method="post">
          
             <p class="DoctorOut-idtext">아이디</p>
             <input type="text" name="doctorId" class="DoctorOut-input-field">

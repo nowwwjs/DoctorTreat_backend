@@ -38,7 +38,7 @@
 				<button type="button" id="DoctorOutButton"
 					class="DoctorOut-caution-ok">회원 탈퇴</button>
 				&nbsp;&nbsp;&nbsp;&nbsp; <a
-					href="./../../../html/myPage/doctor/DoctorupdateMember.html"><button
+					href="${pageContext.request.contextPath}/app/myPage/doctorOut-Complete.jsp"><button
 						class="DoctorOut-caution-cancell">취소</a>
 				</button>
 			</div>
