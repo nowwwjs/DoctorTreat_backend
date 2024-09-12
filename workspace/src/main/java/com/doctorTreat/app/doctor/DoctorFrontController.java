@@ -85,6 +85,7 @@ public class DoctorFrontController extends HttpServlet {
 			new DoctorCheckIdOkController().execute(request, response);
 			break;
 			
+<<<<<<< HEAD
 		case "/doctor/doctorFindId.do":
 			System.out.println("의사아이디 찾기중");
 			request.getRequestDispatcher("/app/user/doctorFindId.jsp").forward(request, response);
@@ -94,6 +95,11 @@ public class DoctorFrontController extends HttpServlet {
 		case "/doctor/doctorFindPw.do":
 			System.out.println("의사비번 찾기중");
 			request.getRequestDispatcher("/app/user/doctorFindPw.jsp").forward(request, response);
+=======
+		case "/doctor/joinSMS.do":
+			System.out.println("sms!!");
+			new DoctorJoinSMSController().execute(request, response);
+>>>>>>> main
 			break;
 
 		}

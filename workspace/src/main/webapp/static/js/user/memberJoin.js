@@ -202,3 +202,39 @@ function execDaumPostcode() {
       }
    }).open();
 }
+
+// 7. 문자 
+
+document.querySelector("#memberPhonech").addEventListener("click", function(event) {
+   event.preventDefault(); 
+  
+
+    // 인증번호 받기 버튼 클릭 이벤트
+
+		let phoneNumber = document.querySelector("#memberPhone5").value;
+		console.log(phoneNumber);
+        if (phoneNumber) {
+            $.ajax({
+                url: contextPath + "/member/joinSMS.me",
+                type: "POST",
+                data: { phoneNumber: phoneNumber },
+                success: function(response) {
+                    alert(response);
+  
+                },
+                error: function(xhr, status, error) {
+                    alert("오류 발생: " + xhr.responseText);
+                }
+            });
+        } else {
+            alert("휴대폰 번호를 입력해주세요.");
+        }
+});
+
+//8. 인증완료
+ document.querySelector("#member-check-com").addEventListener("click", function() {
+        // p 태그에 "인증 완료" 텍스트 추가 및 색상 설정
+        var phoneCheckElement = document.getElementById("memberphone");
+        phoneCheckElement.textContent = "인증 완료";
+        phoneCheckElement.style.color = "red"; // 텍스트 색상 빨간색으로 설정
+    });
