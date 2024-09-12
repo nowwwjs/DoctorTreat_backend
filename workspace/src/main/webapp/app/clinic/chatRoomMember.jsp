@@ -6,7 +6,7 @@
 <meta charset="UTF-8">
 <title>DoctorTreat</title>
 <link rel="stylesheet"
-	href="${pageContext.request.contextPath}/static/css/clinic/chatRoom.css">
+	href="${pageContext.request.contextPath}/static/css/clinic/chatRoom.css?v=1.0">
 </head>
 <body>
 	<jsp:include page="${pageContext.request.contextPath}/headerMember.jsp" />
@@ -42,7 +42,7 @@
 		</div>
 
 		<form action="" method="">
-			<button id="chatRoom-submit">보내기</button>
+			<button type="button" id="chatRoom-submit">보내기</button>
 		</form>
 
 	</main>

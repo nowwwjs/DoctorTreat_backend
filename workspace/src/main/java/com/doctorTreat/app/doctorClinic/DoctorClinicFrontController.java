@@ -60,6 +60,11 @@ public class DoctorClinicFrontController extends HttpServlet {
 			result = new ChatListDoctorController().execute(request, response);
 			request.getRequestDispatcher(result.getPath()).forward(request, response);
 			break;
+		// 닥터트리톡 버튼으로 리스트 접근시 경로
+		case "/app/clinic/chatListDoctor.doccl":
+			result = new ChatListDoctorController().execute(request, response);
+			request.getRequestDispatcher(result.getPath()).forward(request, response);
+			break;
 
 		// 목록에서 채팅 선택시 해당 채팅방 페이지 이동
 		case "/app/clinic/chatRoomDoctor.doccl":
