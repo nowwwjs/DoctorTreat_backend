@@ -23,7 +23,7 @@
 					<a href="${pageContext.request.contextPath}/BoardListDetail.docbo?infoNumber=${board.medicalInfoNumber}">
 						<div class="medicalKnowledgeList-boardList">${board.medicalInfoTitle}</div>
 						<div class="medicalKnowledgeList-text">
-							${board.medicalInfoText}...
+							${board.medicalInfoText}
 						</div>
 						<div class="medicalKnowledgeList-writer">
 							<img src="${pageContext.request.contextPath}/static/image/QnA.png">

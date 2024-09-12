@@ -84,6 +84,11 @@ public class DoctorFrontController extends HttpServlet {
 			System.out.println("아이디 체크!!");
 			new DoctorCheckIdOkController().execute(request, response);
 			break;
+			
+		case "/doctor/joinSMS.do":
+			System.out.println("sms!!");
+			new DoctorJoinSMSController().execute(request, response);
+			break;
 
 		}
 	}
