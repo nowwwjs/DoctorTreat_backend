@@ -137,9 +137,11 @@ li {
 }
 
 .medicalKnowledgeList-text {
-    white-space: nowrap; /* 텍스트가 한 줄로 유지되도록 설정 */
-    overflow: hidden; /* 넘치는 내용을 숨김 */
-    text-overflow: ellipsis; /* 넘치는 내용에 ... 표시 */
+	display: block;
+    white-space: nowrap; 
+    overflow: hidden; 
+    text-overflow: ellipsis; 
+    height: 50px;
 }
 
 
