@@ -26,7 +26,7 @@
                 <c:forEach var="doctor" items="${doctorOfEar}">
                     <div class="chatList-wrap-ear">
                         <div class="chatList-ear">
-                            <a href="http://localhost:8888/app/clinic/chatRoomMember.memcl">
+                            <a href="${pageContext.request.contextPath}/app/clinic/chatRoomMember.memcl?doctor=${doctor.doctorName}&hospital=${doctor.hospitalName}">
                                 <div class="chatList-name">전문의 : ${doctor.doctorName}</div>
                                 <div class="chatList-hospitalName">${doctor.hospitalName}</div>
                             </a>
@@ -42,7 +42,7 @@
                 <c:forEach var="doctor" items="${doctorOfInner}">
                     <div class="chatList-wrap-medicine">
                         <div class="chatList-ear">
-                            <a href="http://localhost:8888/app/clinic/chatRoomMember.memcl">
+                            <a href="${pageContext.request.contextPath}/app/clinic/chatRoomMember.memcl?doctor=${doctor.doctorName}&hospital=${doctor.hospitalName}">
                                 <div class="chatList-name">전문의 : ${doctor.doctorName}</div>
                                 <div class="chatList-hospitalName">${doctor.hospitalName}</div>
                             </a>

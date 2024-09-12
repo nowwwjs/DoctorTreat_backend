@@ -22,6 +22,6 @@
 				<button class="clinicMember-medicine">내과</button>
 			</form>
 		</div>
-		<jsp:include page="${pageContext.request.contextPath}/footer.jsp" />
+		<jsp:include page="${pageContext.request.contextPath}/footer2.jsp" />
 </body>
 </html>

@@ -21,7 +21,7 @@
 						</a>
 					</div>
 					<div class="header-btnContainer">
-						<a href="./../../html/clinicMember/choice.html">
+						<a href="${pageContext.request.contextPath}/app/clinic/chatListDoctor.doccl">
 							<div class="header-quickBtn">
 								<img
 									src="${pageContext.request.contextPath}/static/image/chatBtn.png">

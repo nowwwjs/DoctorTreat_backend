@@ -9,6 +9,7 @@ import javax.servlet.http.HttpServletResponse;
 
 import com.doctorTreat.app.Result;
 import com.doctorTreat.app.memberClinic.EarDoctorListController;
+import com.doctorTreat.app.memberClinic.MemberSendOkController;
 
 /**
  * Servlet implementation class ClinicFrontController
@@ -60,6 +61,11 @@ public class DoctorClinicFrontController extends HttpServlet {
 			result = new ChatListDoctorController().execute(request, response);
 			request.getRequestDispatcher(result.getPath()).forward(request, response);
 			break;
+		// 닥터트리톡 버튼으로 리스트 접근시 경로
+		case "/app/clinic/chatListDoctor.doccl":
+			result = new ChatListDoctorController().execute(request, response);
+			request.getRequestDispatcher(result.getPath()).forward(request, response);
+			break;
 
 		// 목록에서 채팅 선택시 해당 채팅방 페이지 이동
 		case "/app/clinic/chatRoomDoctor.doccl":
@@ -72,11 +78,15 @@ public class DoctorClinicFrontController extends HttpServlet {
 			result = new WriteChartController().execute(request, response);
 			request.getRequestDispatcher(result.getPath()).forward(request, response);
 			break;
-			
-			// 채팅방에서 처방전 작성 클릭시 작성페이지 이동
+
+		// 처방전 등록 클릭시 등록
 		case "/writeChartOk.doccl":
 			result = new WriteChartOkController().execute(request, response);
 			request.getRequestDispatcher(result.getPath()).forward(request, response);
+			break;
+		//채팅방에서 채팅입력 db저장 (비동기)
+		case "/sendOkController.doccl":
+			result = new DoctorSendOkController().execute(request, response);
 			break;
 		}
 
