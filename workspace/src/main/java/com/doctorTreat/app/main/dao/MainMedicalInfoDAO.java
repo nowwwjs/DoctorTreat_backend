@@ -3,34 +3,22 @@ package com.doctorTreat.app.main.dao;
 import java.util.List;
 
 import org.apache.ibatis.session.SqlSession;
-import org.apache.ibatis.session.SqlSessionFactory;
 
-import com.doctorTreat.app.dto.MainMedicalInfoDTO;
+import com.doctorTreat.app.dto.DoctorBoardDTO;
+import com.doctorTreat.app.dto.DoctorCommentDTO;
+import com.doctorTreat.app.dto.MainDTO;
+import com.mybatis.config.MyBatisConfig;
 
 public class MainMedicalInfoDAO {
+	private SqlSession sqlSession;
+
+	public MainMedicalInfoDAO() {
+		sqlSession = MyBatisConfig.getSqlSessionFactory().openSession(true);
+	}
+
+	// 메인 페이지에서 의료지식인 페이지 최신순으로 보여주기
+	public List<MainDTO> mainShowList() {
+		return sqlSession.selectList("main.medicalInfoTitles");
+	}
     
-    private SqlSessionFactory sqlSessionFactory;
-
-    // 생성자를 통해 SqlSessionFactory 주입
-    public MainMedicalInfoDAO(SqlSessionFactory sqlSessionFactory) {
-        this.sqlSessionFactory = sqlSessionFactory;
-    }
-
-    // 의학 정보 제목만 가져오는 메서드
-    public List<String> getMedicalInfoTitles() {
-        SqlSession session = null;
-        List<String> medicalInfoTitles = null;
-
-        try {
-            session = sqlSessionFactory.openSession(); // 세션 열기
-            // MyBatis Mapper 파일에서 "MedicalInfo" 쿼리 실행
-            medicalInfoTitles = session.selectList("main.getMedicalInfoTitles");
-        } finally {
-            if (session != null) {
-                session.close(); // 세션 닫기
-            }
-        }
-
-        return medicalInfoTitles;
-    }
 }

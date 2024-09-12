@@ -17,25 +17,25 @@ public class DoctorBoardCommentDeleteController implements Execute {
 	@Override
 	public Result execute(HttpServletRequest request, HttpServletResponse response)
 			throws IOException, ServletException {
-		
+
 		request.setCharacterEncoding("UTF-8");
-        Result result = new Result();
-        
-        // 댓글 번호와 게시글 번호 파라미터 가져오기
-        int doctorCommentNumber = Integer.parseInt((String)request.getAttribute("doctorCommentNumber"));
-        int medicalInfoNumber = Integer.valueOf(request.getParameter("infoNumber"));
-        
-        System.out.println(doctorCommentNumber);
-        System.out.println(medicalInfoNumber);
-    	DoctorBoardDAO doctorBoardDAO = new DoctorBoardDAO();
-    	
-        // 댓글 삭제 메서드 호출
-        doctorBoardDAO.deleteComment(doctorCommentNumber);
-        
-        // 삭제 후 게시글 상세페이지로 리다이렉트
-        result.setRedirect(true);
-        result.setPath("/app/board/boardDetailDoctor?infoNumber=" + medicalInfoNumber);
-        
+		Result result = new Result();
+
+		// 댓글 번호와 게시글 번호 파라미터 가져오기
+		int doctorCommentNumber = Integer.parseInt((String) request.getAttribute("doctorCommentNumber"));
+		int medicalInfoNumber = Integer.valueOf(request.getParameter("infoNumber"));
+
+		System.out.println(doctorCommentNumber);
+		System.out.println(medicalInfoNumber);
+		DoctorBoardDAO doctorBoardDAO = new DoctorBoardDAO();
+
+		// 댓글 삭제 메서드 호출
+		doctorBoardDAO.deleteComment(doctorCommentNumber);
+
+		// 삭제 후 게시글 상세페이지로 리다이렉트
+		result.setRedirect(true);
+		result.setPath("/app/board/boardDetailDoctor?infoNumber=" + medicalInfoNumber);
+
 		return result;
 	}
 }

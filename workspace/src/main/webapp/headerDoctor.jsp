@@ -15,7 +15,7 @@
 			<div class="header-holder">
 				<div class="header-container">
 					<div class="header-logo">
-						<a href="${pageContext.request.contextPath}/index.jsp"> <img
+						<a href="${pageContext.request.contextPath}/index.main"> <img
 							src="${pageContext.request.contextPath}/static/image/logo.png">
 							<div>DOCTOR TREAT</div>
 						</a>

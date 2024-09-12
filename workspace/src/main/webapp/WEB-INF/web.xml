@@ -104,13 +104,12 @@
 		<url-pattern>*.mm</url-pattern>
 	</servlet-mapping>
 
-	<!-- 서블릿 정의 -->
+	<!-- 메인 컨트롤러 설정 -->
 	<servlet>
 		<servlet-name>Main</servlet-name>
-		<servlet-class>com.doctorTreat.app.main.dao.MainFrontController</servlet-class>
+		<servlet-class>com.doctorTreat.app.main.dao.MainMedicalInfoFrontController</servlet-class>
 	</servlet>
 
-	<!-- 서블릿 매핑 -->
 	<servlet-mapping>
 		<servlet-name>Main</servlet-name>
 		<url-pattern>*.main</url-pattern>
