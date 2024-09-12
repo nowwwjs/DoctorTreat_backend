@@ -226,8 +226,8 @@ document.querySelector("#smsButton").addEventListener("click", function(event) {
 
     // 인증번호 받기 버튼 클릭 이벤트
 
-		let phoneNumber = document.querySelector("#doctorPhoneNumber").value;
-		console.log(phoneNumber);
+      let phoneNumber = document.querySelector("#doctorPhoneNumber").value;
+      console.log(phoneNumber);
         if (phoneNumber) {
             $.ajax({
                 url: contextPath + "/doctor/joinSMS.do",
