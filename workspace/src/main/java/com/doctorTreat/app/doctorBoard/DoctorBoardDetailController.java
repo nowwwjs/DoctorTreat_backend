@@ -1,6 +1,7 @@
 package com.doctorTreat.app.doctorBoard;
 
 import java.io.IOException;
+import java.util.List;
 
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
@@ -10,6 +11,7 @@ import com.doctorTreat.app.Execute;
 import com.doctorTreat.app.Result;
 import com.doctorTreat.app.doctorBoard.dao.DoctorBoardDAO;
 import com.doctorTreat.app.dto.DoctorBoardDTO;
+import com.doctorTreat.app.dto.DoctorCommentDTO;
 
 public class DoctorBoardDetailController implements Execute {
 
@@ -32,11 +34,14 @@ public class DoctorBoardDetailController implements Execute {
 		}
 
 		System.out.println(infoNumber);
+		
+		List<DoctorCommentDTO> comments = doctorBoardDAO.showComment(infoNumber);
 
 		DoctorBoardDTO doctorBoardDetail = doctorBoardDAO.searchByText(infoNumber);
 
 		request.setAttribute("doctorBoardshowDetail", doctorBoardDetail);
 		request.setAttribute("infoNumber", infoNumber);
+		request.setAttribute("comments", comments);
 
 		// 포워딩 경로 설정
 		result.setRedirect(true); // 리다이렉트가 아닌 포워딩을 사용

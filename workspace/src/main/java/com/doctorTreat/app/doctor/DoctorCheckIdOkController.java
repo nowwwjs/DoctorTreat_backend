@@ -29,7 +29,7 @@ public class DoctorCheckIdOkController implements Execute {
 		if (isTrue) {
 			result = "사용가능";
 		} else {
-			result = "중복된 아이디";
+			result = "중복된 아이디";	
 		}
 
 		out.print(result);

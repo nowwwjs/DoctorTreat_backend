@@ -26,7 +26,7 @@ public class DoctorBoardCommentController implements Execute {
 
         // 게시글 번호 파라미터 가져오기
         int medicalInfoNumber1 = Integer.valueOf(request.getParameter("infoNumber"));
-
+        request.setAttribute("infoNumber", request.getParameter("infoNumber"));
         // 댓글 내용과 닥터 번호 가져오기
         String commentText = request.getParameter("doctorCommentText");
         Integer doctorNumber = (Integer) request.getSession().getAttribute("doctorNumber");
@@ -47,8 +47,8 @@ public class DoctorBoardCommentController implements Execute {
         request.setAttribute("comments", comments);
 
         // 댓글 삽입 후 게시글 상세페이지로 리다이렉트
-        result.setRedirect(true);
-        result.setPath("/app/board/boardDetailDoctor?infoNumber=" + medicalInfoNumber1);
+//        result.setRedirect(true);
+//        result.setPath("/app/board/boardDetailDoctor?infoNumber=" + medicalInfoNumber1);
 
         return result;
     }

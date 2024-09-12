@@ -39,4 +39,10 @@ public class DoctorBoardDAO {
     public void deleteComment(int doctorCommentNumber) {
         sqlSession.delete("doctorComment.deleteComment", doctorCommentNumber);
     }
+    
+    // 댓글 수정
+    public void updateComment(DoctorCommentDTO commentDTO) {
+        sqlSession.update("doctorComment.updateComment", commentDTO);
+    }
+    
 }
