@@ -18,29 +18,37 @@ public class MemberMypageDAO {
 		return sqlSession.selectOne("memberMypage.memberInfo", memberNumber);
 	}
 	
-	public boolean checkPw(String memberName,String memberPassword){
-	      MemberDTO memberDTO = new MemberDTO();
-	      memberDTO.setMemberName(memberName);
-	      memberDTO.setMemberPw(memberPassword);
-	      System.out.println("비번인증 도착했음");
-	      return (Integer) sqlSession.selectOne("memberMypage.checkPw",memberDTO) <= 0;
-	       
-	   }
+	public boolean checkPw(String memberId, String memberPw) {
+	    MemberDTO memberDTO = new MemberDTO();
+	    memberDTO.setMemberId(memberId);
+	    memberDTO.setMemberPw(memberPw);
+
+	    // MyBatis로 비밀번호 확인 (카운트가 1 이상이면 인증 성공)
+	    Integer count = sqlSession.selectOne("memberMypage.memberPwOk", memberDTO);
+	    return count != null && count > 0; // 비밀번호가 일치하면 true 반환
+	}
+	
 	
 	public int showMember(MemberDTO memberDTO) {
-		System.out.println("하이루");
-		return sqlSession.selectOne("memberMypage.doctorReceive" , memberDTO);
-		
-	}
-	public void Quit1(int memberNumber) {
-		sqlSession.delete("memberMypage.memberQuit1",memberNumber);
-		System.out.println("주소삭제완료");
+		return sqlSession.selectOne("memberMypage.memberReceive" , memberDTO);
 	}
 	
-	public void Quit2(int memberNumber) {
-		sqlSession.delete("memberMypage.memberQuit2",memberNumber);
-		System.out.println("회원삭제완료");
+	
+	//회원삭제
+	public int quitMember1(MemberDTO memberDTO) {
+		System.out.println("회원정보주소정보조회");
+	    return sqlSession.selectOne("memberMypage.memberAddCheck", memberDTO);   
 	}
+	public void quitMember2(MemberDTO memberDTO) {
+	    sqlSession.delete("memberMypage.memberQuit1", memberDTO);
+	    System.out.println("회원 삭제 완료");
+	}
+	public void quitMember3(MemberDTO memberDTO) {
+	    sqlSession.delete("memberMypage.memberQuit2", memberDTO);
+	    System.out.println("주소 삭제 완료");
+	}
+
+
 	
 
 	

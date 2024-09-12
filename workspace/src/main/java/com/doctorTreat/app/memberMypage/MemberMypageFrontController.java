@@ -51,26 +51,29 @@ public class MemberMypageFrontController extends HttpServlet {
 	         break;
 	         
 	    case "/memberMypage/memberPw.mm":
-	         System.out.println("확인1");
+	         System.out.println("비밀번호 확인중");
 	         request.getRequestDispatcher("/app/myPage/memberPwOk.jsp").forward(request, response);
 	         break;
 	         
 	    case "/memberMypage/memberPwOk.mm":
-	    	  System.out.println("확인2");
+	    	  System.out.println("비밀번호 확인 완료");
 	          String memberPwNumber = request.getParameter("memberNumber");
 	          request.getSession().setAttribute("memberPwNumber", memberPwNumber);
 	          result = new MemberPwOkController().execute(request, response);
-	          break;      
+	          break; 
+	          
 	    case "/memberMypage/memberOut.mm":
-	    	System.out.println("확인3");
-	    	request.getRequestDispatcher("/app/myPage/memberOut.jsp").forward(request, response);
-	    	break;
+	    	 System.out.println("회원탈퇴중....");
+	    	 request.getRequestDispatcher("/app/myPage/memberOut.jsp").forward(request, response);
+	    	 break;
 	    	
 	    case "/memberMypage/memberOutOk.mm":
-	    	System.out.println("회원탈퇴처리중...");
-	    	result = new MemberOutOkController().execute(request, response);
-            request.getRequestDispatcher(result.getPath()).forward(request, response);
-            break;
+	    	 result = new MemberOutOkController().execute(request, response);
+             request.getRequestDispatcher(result.getPath()).forward(request, response);
+             System.out.println("회원탈퇴완료...");
+             break;
+             
+             
 	    	
 	    }
 	}

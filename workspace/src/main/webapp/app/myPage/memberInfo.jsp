@@ -14,7 +14,7 @@
 <jsp:include page="${pageContext.request.contextPath}/headerMember.jsp" />
 </head>
 <body>
-	<div class="memberInfo-main-container">
+   <div class="memberInfo-main-container">
   <div class="memberInfo-titlebox">
       <p class="memberInfo-title">내 정보 확인</p>
       <hr class="memberInfo-hr">
@@ -48,11 +48,13 @@
         <input type="text" value="${memberShowInfo.addressPostal} ${memberShowInfo.addressAddress} ${memberShowInfo.addressDetail}" name="memberAddress" readonly >
       </label>
       <br>
-    </form>
+    
   </div>
 
-  <button class="memberInfo-btn" type="submit">내 정보 수정</button>
+  <button class="memberInfo-btn">내 정보 수정</button>
+  </form>
 </div>
+
 </body>
 <jsp:include page="${pageContext.request.contextPath}/footer.jsp" />
 </html>
