@@ -18,8 +18,8 @@ public class DoctorOutOkController implements Execute {
    @Override
     public Result execute(HttpServletRequest request, HttpServletResponse response)
             throws IOException, ServletException {
-	   
-	   HttpSession session = request.getSession(false);
+      
+      HttpSession session = request.getSession(false);
         
         request.setCharacterEncoding("UTF-8");
         Result result = new Result();
@@ -41,11 +41,11 @@ public class DoctorOutOkController implements Execute {
         boolean delete = doctorDAO.quitDoctor(doctorId, doctorPw);
         
         if(delete = true) {
-        	System.out.println("탈퇴성공이요");
-        	
+           System.out.println("탈퇴성공이요");
+           
             session.invalidate(); // 세션 무효화
             System.out.println("세션 무효화");
-        	
+           
             Cookie cookie = new Cookie("memberNumber", null);
             cookie.setMaxAge(0);
             response.addCookie(cookie);
@@ -55,8 +55,8 @@ public class DoctorOutOkController implements Execute {
             result.setRedirect(true);
             result.setPath("/index.jsp");
         }else {
-        	System.out.println("탈퇴실패");
-        	response.sendRedirect(request.getContextPath() + "/app/myPage/doctorOut.jsp");
+           System.out.println("탈퇴실패");
+           response.sendRedirect(request.getContextPath() + "/app/myPage/doctorOut.jsp");
         }
         
  
