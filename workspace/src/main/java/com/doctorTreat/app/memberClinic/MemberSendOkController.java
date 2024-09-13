@@ -1,16 +1,21 @@
 package com.doctorTreat.app.memberClinic;
 
 import java.io.IOException;
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
 
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
+import org.json.simple.JSONObject;
+
 import com.doctorTreat.app.Execute;
 import com.doctorTreat.app.Result;
 import com.doctorTreat.app.dto.ChatDTO;
-import com.doctorTreat.app.dto.ChatSessionDTO;
 import com.doctorTreat.app.memberClinic.dao.MemberClinicDAO;
 
 public class MemberSendOkController implements Execute{
@@ -39,6 +44,22 @@ public class MemberSendOkController implements Execute{
         chatDTO.setMemberNumber(memberNumber);
         chatDTO.setChatText(message);
         memberClinicDAO.inputMemberChat(chatDTO);
+        
+        //방금 입력값 조회
+        Map<String, Object> queryMap = new HashMap<>();
+        queryMap.put("sessionNumber", sessionNumber);
+        queryMap.put("memberNumber", memberNumber);
+        List<ChatDTO> memberChatInfo = memberClinicDAO.getChatMemberInfo(queryMap);
+        
+        // JSON 응답 생성
+        JSONObject jsonResponse = new JSONObject();
+        jsonResponse.put("message", message);
+        jsonResponse.put("memberName", memberChatInfo.get(0).getMemberName()); // 실제로는 세션에서 받아올 수 있음
+        jsonResponse.put("timestamp", memberChatInfo.get(0).getChatMsgDate()); // 현재 시간을 사용할 수 있음
+
+        // 비동기 응답
+        response.setContentType("application/json; charset=UTF-8");
+        response.getWriter().write(jsonResponse.toString());
 		
 		return result;
 	}
