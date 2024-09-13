@@ -32,7 +32,7 @@
 			</div>
 			<div class="DoctorpwOk-inputbox">
 				<p class="DoctorpwOk-text">비밀번호 입력</p>
-				<input type="text" name="doctorPw" class="DoctorpwOk-input-field">
+				<input type="password" name="doctorPw" class="DoctorpwOk-input-field">
 			</div>
 			<div class="DoctorpwOk-textbox">
 				<p>현재 비밀번호와 일치하지 않습니다.</p>
