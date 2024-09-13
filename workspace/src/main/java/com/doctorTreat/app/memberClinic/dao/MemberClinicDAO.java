@@ -70,4 +70,9 @@ public class MemberClinicDAO {
 	public void inputMemberChat(ChatDTO chatDTO) {
 		sqlSession.insert("memberClinic.inputMemberChat", chatDTO);
 	}
+	
+	// 환자 입력 채팅 조회
+	public List<ChatDTO> getChatMemberInfo(Map<String, Object> queryMap){
+		return sqlSession.selectList("memberClinic.getChatMemberInfo", queryMap);
+	}
 }
