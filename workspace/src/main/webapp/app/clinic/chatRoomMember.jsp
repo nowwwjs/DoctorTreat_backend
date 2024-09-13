@@ -26,23 +26,7 @@
 				<button id="chatRoom-exitChatBtn">채팅 목록으로</button>
 			</form>
 		</div>
-		<div class="chatRoom-chatBox">
-			<div class="chatRoom-doctorChat">
-				<div class="chatRoom-doctorName">양혁수 의사</div>
-				<div class="chatRoom-doctorMsgContainer">
-					<div class="chatRoom-doctorMsg">안녕하세요 어디가 아프신가요?</div>
-					<div class="chatRoom-doctorMsgDate">2024.08.28 17:46</div>
-				</div>
-			</div>
-			<!-- 환자 -->
-			<div class="chatRoom-memberChat">
-				<div class="chatRoom-memberName">송아성</div>
-				<div class="chatRoom-memberMsgContainer">
-					<div class="chatRoom-memberMsgDate">2024.08.28 17:46</div>
-					<div class="chatRoom-memberMsg">목이 아파여</div>
-				</div>
-			</div>
-		</div>
+		<div class="chatRoom-chatBox">	</div>
 
 		<form class="chatRoom-areaContainer">
 			<input type="text" id="chatRoom-chatArea"
