@@ -47,11 +47,11 @@
 			<br> <br> <span class="Doctor-login-messagetwo">DOCTOR
 				TREAT 계정이 없으신가요? 지금 바로 만들어보세요!</span> <br> <br>
 			<button type="submit" class="Doctor-button">
-				<a href="./../../../html/user/member/memberjoin.html">개인회원 가입하기</a>
+				<a href="${pageContext.request.contextPath}/member/memberJoin.me">개인회원 가입하기</a>
 			</button>
 			<br> <br>
 			<button type="submit" class="Doctor-button">
-				<a href="./../../../html/user/doctor/Doctorjoin.html">의사회원 가입 
+				<a href="${pageContext.request.contextPath}/doctor/doctorJoin.do">의사회원 가입 
 			</button>
 			</a>
 		</div>

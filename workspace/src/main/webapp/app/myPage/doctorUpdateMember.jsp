@@ -20,7 +20,7 @@
         </div>
         <div class="DoctorupdateMember-inputbox">
             <form action="${pageContext.request.contextPath}/doctor/doctorUpdateProcess.dm" method="post">
-				<input type="hidden" name="doctorNumber" value="${doctorShowInfo.doctorNumber}">
+            <input type="hidden" name="doctorNumber" value="${doctorShowInfo.doctorNumber}">
 
                 <label class="DoctorupdateMember-input" for=""> 
                     <span>아이디</span>
@@ -51,7 +51,7 @@
                 <br> 
                 <label class="DoctorupdateMember-input" for=""> 
                     <span>병원 주소</span> 
-                    <input type="text" id="postcode" name="postalCode" placeholder="우편번호" value="${doctorShowInfo.addressPostal}">
+                    <input type="text" id="postcode" name="postalCode" placeholder="우편번호" value="${doctorShowInfo.addressPostal}" readonly>
                 </label> 
                 <br> 
                 <label class="DoctorupdateMember-input" for="">
@@ -60,7 +60,7 @@
                 <br> 
                 <label class="DoctorupdateMember-input" for="">
                     <span></span> 
-                    <input type="text" id="address" name="address" placeholder="주소" value="${doctorShowInfo.addressAddress}">
+                    <input type="text" id="address" name="address" placeholder="주소" value="${doctorShowInfo.addressAddress}" readonly>
                 </label> 
                 <br> 
                 <label class="DoctorupdateMember-input" for="">
