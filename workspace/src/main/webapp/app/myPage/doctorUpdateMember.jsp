@@ -20,7 +20,7 @@
         </div>
         <div class="DoctorupdateMember-inputbox">
             <form action="${pageContext.request.contextPath}/doctor/doctorUpdateProcess.dm" method="post">
-				<input type="hidden" name="doctorNumber" value="${doctorShowInfo.doctorNumber}">
+            <input type="hidden" name="doctorNumber" value="${doctorShowInfo.doctorNumber}">
 
                 <label class="DoctorupdateMember-input" for=""> 
                     <span>아이디</span>

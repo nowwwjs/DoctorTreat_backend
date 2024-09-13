@@ -44,9 +44,13 @@ public class DoctorClinicDAO {
 		return sqlSession.selectList("doctorClinic.getChatRoomNumber", queryMap);
 	}
 
-	// 환자입력 채팅 저장
+	// 의사입력 채팅 저장
 	public void inputDoctorChat(ChatDTO chatDTO) {
 		sqlSession.insert("doctorClinic.inputDoctorChat", chatDTO);
 	}
 
+	// 의사 채팅 정보 조회
+	public List<ChatDTO> getChatDoctorInfo(Map<String, Object> queryMap) {
+		return sqlSession.selectList("doctorClinic.getChatDoctorInfo", queryMap);
+	}
 }
