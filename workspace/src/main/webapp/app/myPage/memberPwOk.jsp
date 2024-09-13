@@ -14,7 +14,7 @@
 <jsp:include page="${pageContext.request.contextPath}/headerMember.jsp" />
 </head>
 <body>
-<form action="${pageContext.request.contextPath}/memberMypage/memberPwOk.mm" method="post">
+
 <div class="memberpwOk-main-container">
         <div class="memberpwOk-titlebox">
             <p class="memberpwOk-title">비밀번호 확인</p>
@@ -33,9 +33,9 @@
             <p>현재 비밀번호와 일치하지 않습니다.</p>
         </div>
     
-        <button class="memberpwOk-btn" type="submit">인증완료</button>
+        <button class="memberpwOk-btn" type="submit"><a href="${pageContext.request.contextPath}/app/myPage/serviceReady.jsp">인증완료</a></button>
     </div>
-</form>
+
     
      <script src="${pageContext.request.contextPath}/static/js/myPage/memberpwok.js"></script>
 </body>
