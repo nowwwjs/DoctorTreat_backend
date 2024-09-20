@@ -35,7 +35,7 @@
                 <label class="DoctorupdateMember-input" for=""> 
                     <span>비밀번호</span>
                     <button type="button" class="DoctorupdateMember-btn">
-                        <a href="${pageContext.request.contextPath}/doctor/DoctorphoneOk.jsp">비밀번호 변경</a>
+                        <a href="${pageContext.request.contextPath}/app/myPage/doctorPhoneOk.jsp">비밀번호 변경</a>
                     </button>
                 </label> 
                 <br> 

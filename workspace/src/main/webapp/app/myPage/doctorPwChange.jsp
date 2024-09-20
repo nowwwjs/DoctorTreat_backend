@@ -16,7 +16,7 @@
 </head>
 <body>
 
-
+	
 	<div class="DoctorpwChange-main-container">
 		<div class="DoctorpwChange-titlebox">
 			<p class="DoctorpwChange-title">비밀번호 변경</p>
@@ -24,7 +24,7 @@
 		</div>
 
 		<div class="DoctorpwChange-inputbox">
-			<form action="">
+			<form action="${request.getContextPath}/doctor/doctorPwChangeOk.dm" method="post">
 				<p class="DoctorpwChange-text">새로운 비밀번호 입력</p>
 				<input type="text" class="DoctorpwChange-input-field">
 				<p class="DoctorpwChange-textbox">암호는 8자 이상(영어 소문자, 특수문자, 숫자 각

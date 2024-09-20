@@ -150,4 +150,25 @@ public class DoctorDAO {
       // 값이 0 이하면 아이디가 존재하지 않음 => true 반환
       // 아이디가 존재하면 false 반환
    }
+   
+   
+// 비밀번호 변경
+public void updatePassword(DoctorDTO doctorDTO) {
+    try {
+        int result = sqlSession.update("doctorMypage.updatePassword", doctorDTO);
+        if (result > 0) {
+            System.out.println("비밀번호 변경 성공");
+            sqlSession.commit();
+        } else {
+            System.out.println("비밀번호 변경 실패");
+            sqlSession.rollback();
+        }
+    } catch (Exception e) {
+        sqlSession.rollback();
+        e.printStackTrace();
+    }
+}
+   
+   
+   
 }

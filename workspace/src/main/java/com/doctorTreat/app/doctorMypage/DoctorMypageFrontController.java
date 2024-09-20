@@ -71,7 +71,10 @@ public class DoctorMypageFrontController extends HttpServlet {
                 result = new DoctorOutOkController().execute(request, response);
                 break;
                 
-           
+            case "/doctor/doctorPwChangeOk.dm":
+                System.out.println("비밀번호 변경 요청 처리 중...");
+                result = new DoctorPwChangeOkController().execute(request, response);
+                break;
         }
 
         // 리다이렉트 또는 forward 처리
