@@ -48,12 +48,8 @@ $submitBtn.on('click', function(event) {
     // 값이 모두 입력되었는지 확인
     if (allFilled) {
         alert('처방전이 등록되었습니다');
-        // 폼을 정상적으로 제출
-        return true; // 폼 제출을 허용
     } else {
-        // 값이 입력되지 않았을 경우 경고를 띄우고 폼 제출을 방지
         alert('오류가 발생했습니다. 값을 입력해주세요.');
-        event.preventDefault(); // 폼 제출을 막음
     }
 });
 
