@@ -66,7 +66,7 @@ public class ClinicApplicationOk implements Execute {
 
 //		결과처리
 		Result result = new Result();
-		result.setRedirect(true);
+		result.setRedirect(false);
 		result.setPath("/app/clinic/chatListMember.jsp");
 		return result;
 	}

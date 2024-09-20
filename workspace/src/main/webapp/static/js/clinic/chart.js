@@ -34,21 +34,27 @@ const formattedDate = `${year}.${month}.${day}`;
 $('.writeChart-clinicDate .writeChart-pullInner').text(formattedDate);
 
 const $submitBtn = $('#writeChart-submit');
-$submitBtn.on('click', function() {
+
+$submitBtn.on('click', function(event) {
     let allFilled = true;
 
+    // 각 input 요소를 순회하면서 값이 입력되지 않은 경우 체크
     $('.writeChart-pushInner').each(function() {
         if ($(this).val() === '') {
             allFilled = false;
         }
     });
 
+    // 값이 모두 입력되었는지 확인
     if (allFilled) {
         alert('처방전이 등록되었습니다');
+        // 폼을 정상적으로 제출
+        return true; // 폼 제출을 허용
     } else {
+        // 값이 입력되지 않았을 경우 경고를 띄우고 폼 제출을 방지
         alert('오류가 발생했습니다. 값을 입력해주세요.');
+        event.preventDefault(); // 폼 제출을 막음
     }
 });
-
 
 

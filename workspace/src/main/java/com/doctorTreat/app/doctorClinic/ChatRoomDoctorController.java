@@ -58,7 +58,7 @@ public class ChatRoomDoctorController implements Execute {
 		
 		// 결과 처리
 		Result result = new Result();
-		result.setRedirect(true);
+		result.setRedirect(false);
 		result.setPath("/app/clinic/chatRoomDoctor.jsp");
 		return result;
 	}
