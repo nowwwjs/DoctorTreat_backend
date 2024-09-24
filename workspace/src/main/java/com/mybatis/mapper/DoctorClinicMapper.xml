@@ -91,7 +91,8 @@
 		resultType="ChatSessionDTO">
 		SELECT
 		CS.SESSION_NUMBER,
-		CS.DOCTOR_NUMBER
+		CS.DOCTOR_NUMBER,
+		CS.MEMBER_NUMBER
 		FROM
 		DT_DOCTOR D
 		JOIN DT_HOSPITAL H ON
@@ -130,19 +131,23 @@
 	</select>
 
 	<!-- 채팅유저 정보, 보낸시간 조회 -->
-	<select id="getChatDoctorInfo" parameterType="Map" resultType="ChatDTO">
+	<select id="getChatDoctorInfo" parameterType="Map"
+		resultType="ChatDTO">
 		SELECT
 		D.DOCTOR_NAME,
-		TO_CHAR(CC.CHAT_MSG_DATE, 'YYYY-MM-DD HH24:MI') AS CHAT_MSG_DATE
+		TO_CHAR(CC.CHAT_MSG_DATE, 'YYYY-MM-DD
+		HH24:MI') AS CHAT_MSG_DATE
 		FROM
 		DT_CHAT_SESSION CS
 		JOIN DT_DOCTOR D ON
 		CS.DOCTOR_NUMBER = D.DOCTOR_NUMBER
 		JOIN DT_CHAT CC ON
-		CS.SESSION_NUMBER = CC.SESSION_NUMBER
+		CS.SESSION_NUMBER
+		= CC.SESSION_NUMBER
 		WHERE
 		CS.SESSION_NUMBER = #{sessionNumber}
-		AND D.DOCTOR_NUMBER = #{doctorNumber}
+		AND
+		D.DOCTOR_NUMBER = #{doctorNumber}
 		AND CC.CHAT_MSG_DATE = (
 		SELECT
 		MAX(CHAT_MSG_DATE)
@@ -152,4 +157,29 @@
 		SESSION_NUMBER = CS.SESSION_NUMBER
 		)
 	</select>
+
+	<!-- 의사가 받을 환자의 최신 메세지 -->
+	<select id="getNewMessages" parameterType="int"
+		resultType="ChatDTO">
+		SELECT CHAT_TEXT,
+		CHAT_MSG_DATE,
+		MEMBER_NAME
+		FROM (
+		SELECT
+		C.CHAT_TEXT,
+		TO_CHAR(C.CHAT_MSG_DATE, 'YYYY-MM-DD HH24:MI') AS
+		CHAT_MSG_DATE,
+		M.MEMBER_NAME
+		FROM DT_CHAT_SESSION CS
+		JOIN DT_CHAT C ON
+		CS.SESSION_NUMBER = C.SESSION_NUMBER
+		JOIN DT_MEMBER M ON
+		C.MEMBER_NUMBER = M.MEMBER_NUMBER
+		WHERE CS.SESSION_NUMBER =
+		#{sessionNumber}
+		ORDER BY C.CHAT_MSG_DATE DESC
+		)
+		WHERE ROWNUM = 1
+	</select>
+
 </mapper>

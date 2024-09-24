@@ -17,26 +17,42 @@ public class MemberClinicChating {
 	private static Session MemberClinicChating = null;
 
 	// 운영자 유저가 접속을 하면 발생하는 이벤트 함수
-	@OnOpen
-	public void handleOpen(Session userSession) {
-		// 기존에 운영자 유저의 소켓이 접속중이라면
-		if (MemberClinicChating != null) {
-			try {
-				// 접속을 끊는다.
-				MemberClinicChating.close();
-			} catch (IOException e) {
+//	@OnOpen
+//	public void handleOpen(Session userSession) {
+//		// 기존에 운영자 유저의 소켓이 접속중이라면
+//		if (MemberClinicChating != null) {
+//			try {
+//				// 접속을 끊는다.
+//				MemberClinicChating.close();
+//			} catch (IOException e) {
+//
+//			}
+//		}
+//		// 운영자 유저의 세션을 바꾼다.
+//		MemberClinicChating = userSession;
+//		// 기존에 접속해 있는 유저의 정보를 운영자 client로 보낸다.
+//		for (String key : DoctorClinicChating.getUserKeys()) {
+//			// 전송.. 전송
+//			visit(key);
+//		}
+//	}
 
-			}
-		}
-		// 운영자 유저의 세션을 바꾼다.
-		MemberClinicChating = userSession;
-		// 기존에 접속해 있는 유저의 정보를 운영자 client로 보낸다.
-		for (String key : DoctorClinicChating.getUserKeys()) {
-			// 전송.. 전송
-			visit(key);
-		}
-	}
+    @OnOpen
+    public void handleOpen(Session userSession) {
+        if (MemberClinicChating != null) {
+            try {
+            	MemberClinicChating.close();
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        }
+        MemberClinicChating = userSession;
 
+        for (String key : DoctorClinicChating.getUserKeys()) {
+            visit(key);
+        }
+    }
+    
 	// 운영자 유저가 메시지를 보내면 발생하는 이벤트
 	@OnMessage
 	public void handleMessage(String message, Session userSession) throws IOException {

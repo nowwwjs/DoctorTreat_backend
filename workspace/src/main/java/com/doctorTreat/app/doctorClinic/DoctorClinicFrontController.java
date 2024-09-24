@@ -88,6 +88,11 @@ public class DoctorClinicFrontController extends HttpServlet {
 		case "/sendOkController.doccl":
 			result = new DoctorSendOkController().execute(request, response);
 			break;
+			
+		//채팅방에서 채팅출력 db저장 (비동기)
+		case "/receiveController.doccl":
+			result = new DoctorReceiveController().execute(request, response);
+			break;
 		}
 
 	}

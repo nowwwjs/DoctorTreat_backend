@@ -32,7 +32,7 @@ public class DoctorSendOkController implements Execute{
 		HttpSession session = request.getSession(false);
 		Integer doctorNumber = (Integer) session.getAttribute("doctorNumber");
 
-		//환자가 보낸 메세지
+		//의사가 보낸 메세지
         String message = request.getParameter("message");
         Integer sessionNumber = Integer.valueOf(request.getParameter("sessionNumber"));
         System.out.println("메세지 : " + message);

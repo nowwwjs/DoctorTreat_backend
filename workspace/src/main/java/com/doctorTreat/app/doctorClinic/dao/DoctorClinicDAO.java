@@ -53,4 +53,9 @@ public class DoctorClinicDAO {
 	public List<ChatDTO> getChatDoctorInfo(Map<String, Object> queryMap) {
 		return sqlSession.selectList("doctorClinic.getChatDoctorInfo", queryMap);
 	}
+	
+	// 의사가 받을 환자의 채팅
+	public List<ChatDTO> getNewMessages(int sessionNumber){
+		return sqlSession.selectList("doctorClinic.getNewMessages", sessionNumber);
+	}
 }

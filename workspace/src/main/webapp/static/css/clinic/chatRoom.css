@@ -12,7 +12,7 @@ main {
 	margin: 0 auto;
 	position: relative;
 }
-#chatRoom-info,#chatRoom-hidden{
+#chatRoom-hidden{
 	color: white;
 }
 .chatRoom-topContainer {

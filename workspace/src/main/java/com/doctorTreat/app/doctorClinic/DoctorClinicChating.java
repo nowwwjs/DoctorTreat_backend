@@ -56,31 +56,57 @@ public class DoctorClinicChating {
 	}
 
 	// browser에서 웹 소켓으로 접속하면 호출되는 함수
-	@OnOpen
-	public void handleOpen(Session userSession) {
-		// 인라인 클래스 User를 생성
-		User user = new User();
-		// Unique키를 발급 ('-'는 제거한다.)
-		user.key = UUID.randomUUID().toString().replace("-", "");
-		// WebSocket의 세션
-		user.session = userSession;
-		// 유저 리스트에 등록한다.
-		sessionUsers.add(user);
-		// 운영자 Client에 유저가 접속한 것을 알린다.
-		MemberClinicChating.visit(user.key);
-	}
+//	@OnOpen
+//	public void handleOpen(Session userSession) {
+//		// 인라인 클래스 User를 생성
+//		User user = new User();
+//		// Unique키를 발급 ('-'는 제거한다.)
+//		user.key = UUID.randomUUID().toString().replace("-", "");
+//		// WebSocket의 세션
+//		user.session = userSession;
+//		// 유저 리스트에 등록한다.
+//		sessionUsers.add(user);
+//		// 운영자 Client에 유저가 접속한 것을 알린다.
+//		MemberClinicChating.visit(user.key);
+//	}
+	
+    @OnOpen
+    public void handleOpen(Session userSession) {
+        User user = new User();
+        user.key = UUID.randomUUID().toString().replace("-", "");
+        user.session = userSession;
+        sessionUsers.add(user);
+        MemberClinicChating.visit(user.key); // 운영자에게 알림
+    }
 
 	// browser에서 웹 소켓을 통해 메시지가 오면 호출되는 함수
-	@OnMessage
-	public void handleMessage(String message, Session userSession) throws IOException {
-		// Session으로 접속 리스트에서 User 클래스를 탐색
-		User user = getUser(userSession);
-		// 접속 리스트에 User가 있으면(당연히 있다. 없으면 버그..)
-		if (user != null) {
-			// 운영자 Client에 유저 key와 메시지를 보낸다.
-			MemberClinicChating.sendMessage(user.key, message);
-		}
-	}
+//	@OnMessage
+//	public void handleMessage(String message, Session userSession) throws IOException {
+//		// Session으로 접속 리스트에서 User 클래스를 탐색
+//		User user = getUser(userSession);
+//		// 접속 리스트에 User가 있으면(당연히 있다. 없으면 버그..)
+//		if (user != null) {
+//			// 운영자 Client에 유저 key와 메시지를 보낸다.
+//			MemberClinicChating.sendMessage(user.key, message);
+//		}
+//	}
+    
+    @OnMessage
+    public void handleMessage(String message, Session userSession) throws IOException {
+        User user = getUser(userSession);
+        if (user != null) {
+            // 메시지를 DB에 저장
+            saveChatToDB(user.key, message);
+
+            // 운영자에게 메시지 전달
+            MemberClinicChating.sendMessage(user.key, message);
+        }
+    }
+    
+    private void saveChatToDB(String userKey, String message) {
+        // DB 저장 로직 구현 (ChatDTO와 DAO 이용)
+    	System.out.println("?");
+    }
 
 	// 운영자 client가 유저에게 메시지를 보내는 함수
 	public static void sendMessage(String key, String message) {
