@@ -46,20 +46,21 @@ public class DoctorSendOkController implements Execute{
         chatDTO.setChatText(message);
         doctorClinicDAO.inputDoctorChat(chatDTO);
         
-        // 최근 채팅정보(이름,시간)조회
-        Map<String,Object> queryMap = new HashMap();
-        queryMap.put("sessionNumber", sessionNumber);
-        queryMap.put("doctorNumber", doctorNumber);
-        List<ChatDTO> doctorChatInfo = doctorClinicDAO.getChatDoctorInfo(queryMap);
-        
-        // 메시지 및 필요한 정보 JSON으로 응답
-        JSONObject jsonResponse = new JSONObject();
-        jsonResponse.put("message", message);
-        jsonResponse.put("doctorName", doctorChatInfo.get(0).getDoctorName());  // 고정된 값으로 예시
-        jsonResponse.put("timestamp", doctorChatInfo.get(0).getChatMsgDate());  // 실제로는 현재 시간을 사용
-
-        response.setContentType("application/json; charset=UTF-8");
-        response.getWriter().write(jsonResponse.toString());
+//        // 최근 채팅정보(이름,시간)조회
+//        Map<String,Object> queryMap = new HashMap();
+//        queryMap.put("sessionNumber", sessionNumber);
+//        queryMap.put("doctorNumber", doctorNumber);
+//        List<ChatDTO> doctorChatInfo = doctorClinicDAO.getChatDoctorInfo(queryMap);
+//        
+//        // 메시지 및 필요한 정보 JSON으로 응답
+//        JSONObject jsonResponse = new JSONObject();
+//        jsonResponse.put("message", message);
+//        jsonResponse.put("doctorName", doctorChatInfo.get(0).getDoctorName());  // 고정된 값으로 예시
+//        jsonResponse.put("timestamp", doctorChatInfo.get(0).getChatMsgDate());  // 실제로는 현재 시간을 사용
+//        
+//        // 비동기 응답
+//        response.setContentType("application/json; charset=UTF-8");
+//        response.getWriter().write(jsonResponse.toString());
 		
 		return result;
 	}

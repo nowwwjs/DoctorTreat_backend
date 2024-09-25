@@ -100,12 +100,7 @@ public class MemberClinicFrontController extends HttpServlet {
 		case "/sendOkController.memcl":
 			result = new MemberSendOkController().execute(request, response);
 			break;
-			
-//		채팅방에서 채팅출력(비동기)
-		case "/receiveController.memcl":
-			result = new MemberReceiveController().execute(request, response);
-			break;
-		}
+					}
 
 	}
 

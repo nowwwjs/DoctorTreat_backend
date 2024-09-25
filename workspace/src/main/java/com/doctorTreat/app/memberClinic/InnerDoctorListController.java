@@ -30,8 +30,6 @@ public class InnerDoctorListController implements Execute {
 		int totalItems = allDoctorList.size(); // 전체 항목 수
 		int maxPages = (int) Math.ceil((double) totalItems / itemsPerPage); // 전체 페이지 수 계산
 
-		System.out.println(allDoctorList);
-
 		// 현재 페이지에 표시할 데이터만 추출
 		int start = (currentPage - 1) * itemsPerPage;
 		int end = Math.min(start + itemsPerPage, totalItems);

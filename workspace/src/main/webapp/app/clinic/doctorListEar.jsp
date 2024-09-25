@@ -23,9 +23,8 @@
 						</div>
 						<div class="doctorList-HospitalName">병원이름 :
 							${doctor.hospitalName}</div>
-						<div class="doctorList-MainNumber">
-							전화번호 : ${doctor.hospitalCall}
-						</div>
+						<div class="doctorList-MainNumber">전화번호 :
+							${doctor.hospitalCall}</div>
 					</a>
 				</div>
 			</c:forEach>

@@ -144,18 +144,22 @@
 
 	<!-- 채팅방 번호 조회 -->
 	<select id="getChatRoomNumber" parameterType="Map"
-		resultType="ChatSessionDTO">
+		resultType="ChatDTO">
 		SELECT
 		CS.SESSION_NUMBER,
 		CS.DOCTOR_NUMBER,
-		CS.MEMBER_NUMBER
+		CS.MEMBER_NUMBER,
+		M.MEMBER_NAME,
+		D.DOCTOR_NAME 
 		FROM
 		DT_DOCTOR D
 		JOIN DT_HOSPITAL H ON
-		D.HOSPITAL_NUMBER = H.HOSPITAL_NUMBER
+		D.HOSPITAL_NUMBER =
+		H.HOSPITAL_NUMBER
 		JOIN
 		DT_CHAT_SESSION CS ON
-		CS.DOCTOR_NUMBER = D.DOCTOR_NUMBER
+		CS.DOCTOR_NUMBER =
+		D.DOCTOR_NUMBER
 		JOIN DT_MEMBER
 		M ON
 		CS.MEMBER_NUMBER = M.MEMBER_NUMBER
@@ -171,7 +175,8 @@
 		DD.HOSPITAL_NUMBER =
 		HH.HOSPITAL_NUMBER
 		WHERE
-		DD.DOCTOR_NAME = #{doctorName}
+		DD.DOCTOR_NAME =
+		#{doctorName}
 		AND
 		HH.HOSPITAL_NAME = #{hospitalName})
 	</select>
@@ -187,19 +192,23 @@
 	</select>
 
 	<!-- 채팅유저 정보, 보낸시간 조회 -->
-	<select id="getChatMemberInfo" parameterType="Map" resultType="ChatDTO">
+	<select id="getChatMemberInfo" parameterType="Map"
+		resultType="ChatDTO">
 		SELECT
 		M.MEMBER_NAME,
-		TO_CHAR(CC.CHAT_MSG_DATE, 'YYYY-MM-DD HH24:MI') AS CHAT_MSG_DATE
+		TO_CHAR(CC.CHAT_MSG_DATE, 'YYYY-MM-DD
+		HH24:MI') AS CHAT_MSG_DATE
 		FROM
 		DT_CHAT_SESSION CS
 		JOIN DT_MEMBER M ON
 		CS.MEMBER_NUMBER = M.MEMBER_NUMBER
 		JOIN DT_CHAT CC ON
-		CS.SESSION_NUMBER = CC.SESSION_NUMBER
+		CS.SESSION_NUMBER
+		= CC.SESSION_NUMBER
 		WHERE
 		CS.SESSION_NUMBER = #{sessionNumber}
-		AND M.MEMBER_NUMBER = #{memberNumber}
+		AND
+		M.MEMBER_NUMBER = #{memberNumber}
 		AND CC.CHAT_MSG_DATE = (
 		SELECT
 		MAX(CHAT_MSG_DATE)
@@ -209,28 +218,5 @@
 		SESSION_NUMBER = CS.SESSION_NUMBER
 		)
 	</select>
-	
-	<!-- 환자가 받을 의사의 최신 메세지 -->
-	<select id="getNewMessages" parameterType="int"
-		resultType="ChatDTO">
-		SELECT CHAT_TEXT,
-		CHAT_MSG_DATE,
-		DOCTOR_NAME
-		FROM (
-		SELECT
-		C.CHAT_TEXT,
-		TO_CHAR(C.CHAT_MSG_DATE, 'YYYY-MM-DD HH24:MI') AS
-		CHAT_MSG_DATE,
-		D.DOCTOR_NAME
-		FROM DT_CHAT_SESSION CS
-		JOIN DT_CHAT C ON
-		CS.SESSION_NUMBER = C.SESSION_NUMBER
-		JOIN DT_DOCTOR D ON
-		C.DOCTOR_NUMBER = D.DOCTOR_NUMBER
-		WHERE CS.SESSION_NUMBER =
-		#{sessionNumber}
-		ORDER BY C.CHAT_MSG_DATE DESC
-		)
-		WHERE ROWNUM = 1
-	</select>
+
 </mapper>

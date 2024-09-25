@@ -45,21 +45,21 @@ public class MemberSendOkController implements Execute{
         chatDTO.setChatText(message);
         memberClinicDAO.inputMemberChat(chatDTO);
         
-        //방금 입력값 조회
-        Map<String, Object> queryMap = new HashMap<>();
-        queryMap.put("sessionNumber", sessionNumber);
-        queryMap.put("memberNumber", memberNumber);
-        List<ChatDTO> memberChatInfo = memberClinicDAO.getChatMemberInfo(queryMap);
-        
-        // JSON 응답 생성
-        JSONObject jsonResponse = new JSONObject();
-        jsonResponse.put("message", message);
-        jsonResponse.put("memberName", memberChatInfo.get(0).getMemberName()); // 실제로는 세션에서 받아올 수 있음
-        jsonResponse.put("timestamp", memberChatInfo.get(0).getChatMsgDate()); // 현재 시간을 사용할 수 있음
-
-        // 비동기 응답
-        response.setContentType("application/json; charset=UTF-8");
-        response.getWriter().write(jsonResponse.toString());
+//        //방금 입력값 조회
+//        Map<String, Object> queryMap = new HashMap<>();
+//        queryMap.put("sessionNumber", sessionNumber);
+//        queryMap.put("memberNumber", memberNumber);
+//        List<ChatDTO> memberChatInfo = memberClinicDAO.getChatMemberInfo(queryMap);
+//        
+//        // JSON 응답 생성
+//        JSONObject jsonResponse = new JSONObject();
+//        jsonResponse.put("message", message);
+//        jsonResponse.put("memberName", memberChatInfo.get(0).getMemberName()); // 실제로는 세션에서 받아올 수 있음
+//        jsonResponse.put("timestamp", memberChatInfo.get(0).getChatMsgDate()); // 현재 시간을 사용할 수 있음
+//
+//        // 비동기 응답
+//        response.setContentType("application/json; charset=UTF-8");
+//        response.getWriter().write(jsonResponse.toString());
 		
 		return result;
 	}

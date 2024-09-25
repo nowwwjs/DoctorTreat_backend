@@ -12,7 +12,7 @@ import javax.servlet.http.HttpSession;
 
 import com.doctorTreat.app.Execute;
 import com.doctorTreat.app.Result;
-import com.doctorTreat.app.dto.ChatSessionDTO;
+import com.doctorTreat.app.dto.ChatDTO;
 import com.doctorTreat.app.memberClinic.dao.MemberClinicDAO;
 
 public class ChatRoomMemberController implements Execute {
@@ -45,7 +45,7 @@ public class ChatRoomMemberController implements Execute {
 		
 		//현재 채팅방 번호
 		MemberClinicDAO memberClinicDAO = new MemberClinicDAO();
-		List<ChatSessionDTO> chatRoom = memberClinicDAO.getChatRoomNumber(queryMap);
+		List<ChatDTO> chatRoom = memberClinicDAO.getChatRoomNumber(queryMap);
 		System.out.println(chatRoom);
 		
 		request.setAttribute("chatRoom", chatRoom);

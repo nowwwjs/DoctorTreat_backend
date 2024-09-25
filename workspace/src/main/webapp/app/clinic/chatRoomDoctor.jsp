@@ -7,7 +7,7 @@
 <meta charset="UTF-8">
 <title>DoctorTreat</title>
 <link rel="stylesheet"
-	href="${pageContext.request.contextPath}/static/css/clinic/chatRoom.css">
+	href="${pageContext.request.contextPath}/static/css/clinic/chatRoom.css?v=1.0">
 <script defer src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 <script defer
 	src="${pageContext.request.contextPath}/static/js/clinic/doctorChating.js"></script>
@@ -21,9 +21,10 @@
 		scope="session" />
 	<c:set var="chatSessionNumber" value="${chatRoom[0].sessionNumber}"
 		scope="session" />
-
-	회원번호 ${sessionScope.memberNumber} 의사번호 ${sessionScope.doctorNumber}
-	채팅방번호 ${sessionScope.chatSessionNumber}
+	<c:set var="doctorName" value="${chatRoom[0].doctorName}"
+		scope="session" />
+	<c:set var="memberName" value="${chatRoom[0].memberName}"
+		scope="session" />
 
 	<!-- 사용자 정보를 JavaScript로 전달하기 위해 hidden input 사용 -->
 	<input type="hidden" id="memberNumber"
@@ -32,14 +33,15 @@
 		value="${sessionScope.doctorNumber}">
 	<input type="hidden" id="chatSessionNumber"
 		value="${sessionScope.chatSessionNumber}">
+	<input type="hidden" id="doctorName" value="${sessionScope.doctorName}">
+	<input type="hidden" id="memberName" value="${sessionScope.memberName}">
+
 	<!-- 채팅창 -->
 	<main>
 		<!-- 의사 -->
 		<div class="chatRoom-topContainer">
 			<div class="chatRoom-title">비대면진료</div>
 			<span id="chatRoom-hidden">채팅방 : <span id="chatRoom-info">${chatRoom[0].sessionNumber}</span>
-				/ 의사 : ${chatRoom[0].doctorNumber} / 환자 :
-				${chatRoom[0].memberNumber}
 			</span>
 			<form
 				action="${pageContext.request.contextPath}/chatListDoctor.doccl"
@@ -55,7 +57,7 @@
 
 		<form class="chatRoom-areaContainer">
 			<input type="text" id="chatRoom-chatArea"
-				placeholder="진료는 순차적으로 진행됩니다. 종료시 채팅이 사라질 수 있습니다.">
+				placeholder="처방 내용을 한번 더 확인하세요. 종료시 채팅이 사라질 수 있습니다.">
 
 			<button type="button" id="chatRoom-submit">보내기</button>
 		</form>
