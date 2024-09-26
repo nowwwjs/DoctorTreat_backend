@@ -85,11 +85,34 @@ public class DoctorFrontController extends HttpServlet {
          new DoctorCheckIdOkController().execute(request, response);
          break;
          
+      case "/doctor/doctorFindId.do":
+         System.out.println("아이디 찾기!");
+         request.getRequestDispatcher("/app/user/doctorFindId.jsp").forward(request, response);
+         break;
+         
+      case "/doctor/doctorFindIdOk.do":
+          System.out.println("아이디 찾기 성공!!");
+          new DoctorFindIdOkController().execute(request, response);
+          request.getRequestDispatcher("/app/user/doctorFindIdFinish.jsp").forward(request, response);
+          break;
+         
       case "/doctor/joinSMS.do":
          System.out.println("sms!!");
          new DoctorJoinSMSController().execute(request, response);
          break;
-
+         
+      case "/doctor/doctorFindPw.do" :
+    	  System.out.println("비밀번호 찾기 왔다 !!");
+    	  request.getRequestDispatcher("/app/user/doctorFindPw.jsp").forward(request, response);
+    	  break;
+    	  
+      case "/doctor/doctorPwChange.do":
+    	  System.out.println("비밀번호 변경 가자!!");
+    	  result = new DoctorFindPwOkController().execute(request, response);
+    	  request.getRequestDispatcher("/app/user/doctorFindPwFinish.jsp").forward(request, response);
+    	  break;
+    	  
       }
+      
    }
 }

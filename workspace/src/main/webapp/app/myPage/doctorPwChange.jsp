@@ -36,16 +36,17 @@
 				<input type="password" name="passwordConfirm"
 					class="DoctorpwChange-input-field" required>
 
+				<c:if test="${not empty errorMessage}">
+					<p class="error-message">${errorMessage}</p>
+				</c:if>
 				<button class="DoctorpwChange-btn" type="submit">변경완료</button>
 			</form>
 		</div>
 
 
-		
 
-		<c:if test="${not empty errorMessage}">
-			<p class="error-message">${errorMessage}</p>
-		</c:if>
+
+
 	</div>
 
 

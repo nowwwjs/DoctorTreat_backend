@@ -35,7 +35,7 @@
                 <label class="DoctorupdateMember-input" for=""> 
                     <span>비밀번호</span>
                     <button type="button" class="DoctorupdateMember-btn">
-                        <a href="${pageContext.request.contextPath}/app/myPage/doctorPhoneOk.jsp">비밀번호 변경</a>
+                        <a href="${pageContext.request.contextPath}/doctor/doctorPwChangeGo.dm">비밀번호 변경</a>
                     </button>
                 </label> 
                 <br> 
@@ -69,8 +69,8 @@
                 </label>
         </div>
         <div class="DoctorupdateMember-botton">
-            <button class="DoctorupdateMember-btn" type=submit>수정완료</button>
-            <a href="${pageContext.request.contextPath}/app/myPage/doctorOut.jsp"><button class="DoctorupdateMember-btn" type="button">
+            <button class="DoctorupdateMember-btn" type=submit style="color: white;">수정완료</button>
+            <a href="${pageContext.request.contextPath}/app/myPage/doctorOut.jsp"><button class="DoctorupdateMember-btn" type="button" style="color: white;">
                회원탈퇴
             </button></a>
             </form>

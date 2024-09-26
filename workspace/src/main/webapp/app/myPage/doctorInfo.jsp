@@ -43,7 +43,7 @@
 				<input type="text" value="${doctorShowInfo.addressPostal} ${doctorShowInfo.addressAddress} ${doctorShowInfo.addressDetail}" readonly></label>
 
 
-				<button type="submit" class="DoctorInfo-btn">병원정보수정</button>
+				<button type="submit" class="DoctorInfo-btn" style="color: white;">병원정보수정</button>
 
 			</form>
 		</div>

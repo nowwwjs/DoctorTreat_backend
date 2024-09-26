@@ -69,3 +69,12 @@
 .DoctorpwChange-input-field.blur{
     border: 1px solid red;
 }
+
+
+.error-message{
+	text-align: center;
+	margin: 0 auto;
+	align-items: center;
+	color: red;
+	
+}

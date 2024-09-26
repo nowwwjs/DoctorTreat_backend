@@ -32,25 +32,27 @@
 			</div>
 			<br>
 			<br>
-			<form action="<%=request.getContextPath()%>/doctor/doctorFindPw.do" method="post">
+		 <form action="${pageContext.request.contextPath}/doctor/doctorPwChange.do"
+				method="POST">
 			<section class="Doctor-findPw-form-one">
-				<form>
+				
 					이름 &nbsp;&nbsp; <input type="text" class="Doctor-findPw-input"
-						placeholder="이름을 입력하세요">
-				</form>
+						placeholder="이름을 입력하세요" name="doctorName">
+				
 			</section>
 			<br>
 			<section class="Doctor-findPw-form-two">
-				<form>
+				
 					아이디 <input type="text" class="Doctor-findPw-input"
-						placeholder="아이디를 입력하세요">
-				</form>
-			</form>
+						placeholder="아이디를 입력하세요" name="doctorId">
+				
+		
 			</section>
 			<br>
 			<br>
-			<br> <a href="${pageContext.request.contextPath}/app/myPage/doctorPhoneOk.jsp"><button
-					type="submit" class="Doctor-findPw-button">휴대폰 인증</button></a>
+			<br> <button
+					type="submit" class="Doctor-findPw-button">비밀번호 찾기</button>
+		 </form>			
 		</div>
 	</main>
 	

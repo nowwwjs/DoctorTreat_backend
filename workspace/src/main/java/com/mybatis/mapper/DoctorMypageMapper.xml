@@ -128,6 +128,18 @@
 		DELETE FROM dt_doctor
 		WHERE doctor_id = #{doctorId} and doctor_pw = #{doctorPw}
 	</delete>
+	
+	
+	<!-- 댓글 삭제 쿼리 -->
+   <delete id="deleteComments" parameterType="doctorDTO">
+      DELETE FROM dt_doctor_comment
+      WHERE doctor_number = (
+      SELECT doctor_number
+      FROM dt_doctor
+      WHERE doctor_id = #{doctorId} AND doctor_pw = #{doctorPw}
+      )
+   </delete>
+	
 
 
 
@@ -139,7 +151,7 @@
 	<update id="updatePassword" parameterType="DoctorDTO">
 		UPDATE dt_doctor
 		SET doctor_pw = #{doctorPw}
-		WHERE doctor_id = #{doctorId}
+		WHERE doctor_number = #{doctorNumber}
 	</update>
 
 

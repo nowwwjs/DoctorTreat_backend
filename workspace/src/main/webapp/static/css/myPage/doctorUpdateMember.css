@@ -63,7 +63,7 @@
   width: 980px;
   margin-top: 50px;
 }
-.DoctorupdateMember-btn{
+.DoctorupdateMember-btn {
   margin: 0 auto;
   width: 350px;
   height: 50px;
@@ -76,19 +76,21 @@
   justify-content: center;
   align-items: center;
   border: none;
+  color: white !important; /* 버튼 내부 텍스트를 하얀색으로 설정 */
 }
 
-button:hover{
-  background-color: #2a8a70;
-}
-.DoctorupdateMember-btn a{
-  color: white;
+.DoctorupdateMember-btn a {
+  color: white !important; /* a 태그 내부 텍스트를 하얀색으로 강제 설정 */
   font-weight: bold;
+  text-decoration: none; /* 링크 밑줄 제거 */
 }
 
-.postcode-search{
-	color: white;
-	align-items: center;
+.DoctorupdateMember-input button a {
+  color: white !important; /* 버튼 내부 링크 텍스트도 하얀색으로 강제 설정 */
+}
+
+button:hover {
+  background-color: #2a8a70;
 }
 
 
