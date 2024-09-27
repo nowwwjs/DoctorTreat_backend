@@ -1,0 +1,94 @@
+@charset "UTF-8";
+
+.memberInfo-main-container {
+  width: 980px;
+  margin: 0 auto;
+  margin-top: 10px;
+  margin-bottom: 70px;
+  height: 800px;
+}
+
+.memberInfo-title {
+  color: #37aa8b;
+  font-size: 25px;
+  font-weight: bold;
+  margin-top: 40px;
+}
+
+.memberInfo-inputbox {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.memberInfo-inputbox form input {
+  margin-top: 10px;
+  margin-bottom: 20px;
+  width: 450px;
+  height: 50px;
+}
+
+.memberInfo-inputbox form {
+  font-size: 14px;
+}
+
+.memberInfo-inputbox form:first-child {
+  margin-top: 60px;
+}
+
+.memberInfo-input {
+  width: 530px;
+  display: flex;
+  line-height: 70px;
+  justify-content: space-between;
+}
+
+.memberInfo-btn {
+  margin: 0 auto;
+  width: 350px;
+  height: 50px;
+  background-color: #37aa8b;
+  border-radius: 7px;
+  text-align: center;
+  line-height: 50px;
+  cursor: pointer;
+  margin-top: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: none;
+}
+
+.memberInfo-btn a {
+  color: white;
+  font-size: 16px;
+  font-weight: bold;
+}
+
+.memberInfo-btn:hover{
+  background-color: #2a8a70;
+}
+
+.memberpostcode-search{
+  width: 100px;
+  height: 35px;
+  background-color: #37aa8b;
+  text-align: center;
+  line-height: 50px;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: none;  
+}
+
+.memberinput-group1{
+  margin-left: 80px;
+  width: 530px;
+}
+
+.memberpostcode-search{
+  color: white;
+}
+
+

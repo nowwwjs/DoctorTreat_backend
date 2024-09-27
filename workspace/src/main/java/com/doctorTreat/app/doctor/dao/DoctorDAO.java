@@ -1,11 +1,8 @@
 package com.doctorTreat.app.doctor.dao;
 
 import java.sql.SQLException;
-<<<<<<< HEAD
 import java.util.HashMap;
 import java.util.Map;
-=======
->>>>>>> 1860fd72a39938e4ea4a037216dfefd0d7028d45
 
 import org.apache.ibatis.session.SqlSession;
 
@@ -200,7 +197,6 @@ public class DoctorDAO {
 	    // selectOne으로 결과를 받아 처리
 	  return  sqlSession.selectOne("doctor.findPassword", params);
 	
-<<<<<<< HEAD
 	    
 	   // 비밀번호가 존재하는 경우 true 반환
 	}
@@ -226,62 +222,6 @@ public class DoctorDAO {
 	        sqlSession.rollback();  // 예외가 발생하면 롤백
 	        e.printStackTrace();
 	    }
-=======
-	
-	public boolean quitDoctor(String doctorId, String doctorPw) {
-	    System.out.println("탈퇴 DAO 실행");
-	    DoctorDTO doctorDTO = new DoctorDTO();
-	    doctorDTO.setDoctorId(doctorId);
-	    doctorDTO.setDoctorPw(doctorPw);
-	    
-	    boolean success = false;
-
-	    try {
-	     
-	        sqlSession.getConnection().setAutoCommit(false);
-
-	        // 의사와 관련된 댓글 삭제
-	        int commentResult = sqlSession.delete("doctorMypage.deleteComments", doctorDTO);
-	        System.out.println(commentResult + "삭제되니?");
-	        // 의사 정보 삭제 쿼리 실행
-	        int result1 = sqlSession.delete("doctorMypage.doctorQuit1", doctorDTO);
-	        // 병원 삭제 쿼리 실행
-	        int result2 = sqlSession.delete("doctorMypage.doctorQuit2", doctorDTO);
-	        // 주소 삭제 쿼리 실행
-	        int result3 = sqlSession.delete("doctorMypage.doctorQuit3", doctorDTO);
-
-	        // 모든 삭제가 성공했는지 확인
-	        if (result1 == 1 && result2 >= 0 && result3 >= 0 && commentResult >= 0) {
-	            sqlSession.commit(); // 모든 작업이 성공하면 커밋
-	            success = true; // 탈퇴 성공
-	        } else {
-	            System.out.println("탈퇴 실패");
-	            sqlSession.rollback(); // 실패하면 롤백
-	        }
-	    } catch (Exception e) {
-	        System.out.println("예외 발생: " + e.getMessage());
-	        sqlSession.rollback(); // 예외 발생 시 롤백
-	    } finally {
-	        try {
-	            sqlSession.getConnection().setAutoCommit(true); // 자동 커밋으로 복원
-	        } catch (SQLException e) {
-	            e.printStackTrace();
-	        }
-	    }
-
-	    return success; // 탈퇴 성공 여부 반환
-	}
-	
-	// 아이디 중복확인
-	public boolean checkId(String doctorId) {
-		System.out.println("중복확인도착");
-		// selectOne() 반환타입은 Object 타입이라 비교를 위해 Integer로 형 변환
-		// DB에서 memberId가 존재하는지 확인하는 쿼리를 실행하고
-		// 존재하면 true, 존재하지 않으면 false로 반환하도록 한다
-		return (Integer) sqlSession.selectOne("doctor.checkId", doctorId) <= 0;
-		// 값이 0 이하면 아이디가 존재하지 않음 => true 반환
-		// 아이디가 존재하면 false 반환
->>>>>>> 1860fd72a39938e4ea4a037216dfefd0d7028d45
 	}
    }
 

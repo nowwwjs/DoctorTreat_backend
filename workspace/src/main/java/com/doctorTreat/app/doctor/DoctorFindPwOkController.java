@@ -13,7 +13,6 @@ import com.doctorTreat.app.dto.DoctorDTO;
 
 public class DoctorFindPwOkController implements Execute {
 
-<<<<<<< HEAD
 	@Override
 	public Result execute(HttpServletRequest request, HttpServletResponse response)
 			throws IOException, ServletException {
@@ -44,10 +43,6 @@ public class DoctorFindPwOkController implements Execute {
 
         return result;
     
-=======
-//    public Result execute(HttpServletRequest request, HttpServletResponse response) {
-     
->>>>>>> 1860fd72a39938e4ea4a037216dfefd0d7028d45
     }
 	
 	

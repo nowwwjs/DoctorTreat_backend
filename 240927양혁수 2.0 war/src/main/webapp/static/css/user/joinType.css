@@ -1,0 +1,66 @@
+@charset "UTF-8";
+
+* {
+    margin: 0;
+    padding: 0;
+    font-family: 'Noto Sans KR', sans-serif;
+}
+
+main {
+    width: 980px;
+    margin: 0 auto;
+    height: 400px;
+}
+
+.jointype-choice {
+    color: #37AA8B;
+    font-weight: bold;
+    font-size: 25px;
+    margin-top: 40px;
+}
+
+.jointype-sort {
+    display: flex;
+    margin-top: 20px;
+    align-items: center;
+    justify-content: center;
+}
+
+.jointype-member {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 250px;
+    height: 200px;
+    border: 1px solid lightgray;
+    background-color: #37AA8B;
+    color: white;
+    font-weight: bold;
+    border-radius: 7px;
+    font-size: 30px;
+    margin-right: 50px;
+    cursor: pointer;
+}
+
+.jointype-doctor {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 250px;
+    height: 200px;
+    border: 1px solid lightgray;
+    background-color: #37AA8B;
+    color: white;
+    font-weight: bold;
+    border-radius: 7px;
+    font-size: 30px;
+    cursor: pointer;
+}
+
+.jointype-member a {
+    color: white;
+}
+
+.jointype-doctor a {
+    color: white;
+}

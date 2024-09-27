@@ -1,0 +1,68 @@
+@charset "UTF-8";
+
+
+/* 푸터시작 */
+
+* {
+	margin: 0;
+	padding: 0;
+	font-family: 'Noto Sans KR', sans-serif;
+}
+
+body {
+	position: relative;
+}
+
+footer {
+	width: 100vw;
+	height: 200px;
+	border-top: 0.7px solid #A9AEB1;
+
+
+}
+
+#footer-footer {
+	width: 50%;
+	margin: 0 auto;
+	font-size: 12px;
+}
+
+.footer-bold-first {
+	color: #71767A;
+	font-weight: bold;
+}
+
+.footer-bold-second {
+	color: #A9AEB1;
+	font-weight: bold;
+}
+
+.footer-medium {
+	color: #A9AEB1;
+	font-weight: 200;
+}
+
+#footer-icon {
+	display: flex;
+	gap: 18px;
+}
+
+.fab {
+	font-size: 25px;
+	cursor: pointer;
+}
+
+.fa-brands {
+	font-size: 25px;
+	cursor: pointer;
+}
+
+.fa-regular {
+	font-size: 25px;
+	cursor: pointer;
+}
+
+a {
+	text-decoration: none;
+	color: black;
+}

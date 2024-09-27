@@ -1,0 +1,80 @@
+.DoctorpwChange-main-container{
+    width: 980px;
+    margin: 0 auto;
+    margin-top: 10px;
+    margin-bottom: 70px;
+    height: 600px;
+}
+
+.DoctorpwChange-title{
+    color: #37aa8b;
+    font-size: 25px;
+    font-weight: bold;
+    margin-top: 40px;
+}
+.DoctorpwChange-text{
+    font-size: 14px;
+    margin-bottom: 10px;
+    margin-top: 10px;
+}
+.DoctorpwChange-inputbox{
+    width: 980px;
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    margin-bottom: 60px;
+    margin-top: 20px;
+}
+.DoctorpwChange-inputbox input{
+    width: 450px;
+    height: 50px;
+    margin-top: 10px;
+}
+.DoctorpwChange-textbox{
+    margin-top: 10px;
+    margin-bottom: 20px;
+    color: red;
+    display: none;
+}
+
+.DoctorpwChange-btn{
+    margin: 0 auto;
+    width: 350px;
+    height: 50px;
+    background-color: #37aa8b;
+    border-radius: 7px;
+    text-align: center;
+    line-height: 50px;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: none;
+}
+
+.DoctorpwChange-btn a{
+    color: white;
+    font-size: 16px;
+    font-weight: bold;
+}
+.DoctorpwChange-btn:hover{
+    background-color: #2a8a70;
+}
+
+
+.DoctorpwChange-input-field.focus{
+    border: 1px solid blue;
+}
+
+.DoctorpwChange-input-field.blur{
+    border: 1px solid red;
+}
+
+
+.error-message{
+	text-align: center;
+	margin: 0 auto;
+	align-items: center;
+	color: red;
+	
+}

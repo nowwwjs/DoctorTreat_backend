@@ -97,7 +97,6 @@
 	</select>
 
 	<!-- 회원탈퇴 -->
-<<<<<<< HEAD
 	<!-- 주소 삭제 쿼리 -->
 	<delete id="doctorQuit3" parameterType="DoctorDTO">
 		DELETE FROM dt_address
@@ -110,49 +109,24 @@
 		WHERE doctor_id = #{doctorId} and doctor_pw = #{doctorPw}
 		)
 		)
-=======
-
-	<!-- 의사 정보 삭제 쿼리 -->
-	<delete id="doctorQuit1" parameterType="doctorDTO">
-		DELETE FROM dt_doctor
-		WHERE doctor_id = #{doctorId} AND doctor_pw = #{doctorPw}
->>>>>>> 1860fd72a39938e4ea4a037216dfefd0d7028d45
 	</delete>
 
 	<!-- 병원 삭제 쿼리 -->
 	<delete id="doctorQuit2" parameterType="DoctorDTO">
 		DELETE FROM dt_hospital
-		WHERE hospital_number IN (
+		WHERE hospital_number = (
 		SELECT hospital_number
 		FROM dt_doctor
-		WHERE
-		doctor_id = #{doctorId} AND doctor_pw = #{doctorPw}
+		WHERE doctor_id = #{doctorId} and doctor_pw = #{doctorPw}
 		)
 	</delete>
 	
 	
 
-<<<<<<< HEAD
 	<!-- 의사 정보 삭제 쿼리 -->
 	<delete id="doctorQuit1" parameterType="DoctorDTO">
 		DELETE FROM dt_doctor
 		WHERE doctor_id = #{doctorId} and doctor_pw = #{doctorPw}
-=======
-	<!-- 주소 삭제 쿼리 -->
-	<delete id="doctorQuit3" parameterType="doctorDTO">
-		DELETE FROM dt_address
-		WHERE address_number IN (
-		SELECT address_number
-		FROM dt_hospital
-		WHERE
-		hospital_number IN (
-		SELECT hospital_number
-		FROM dt_doctor
-		WHERE
-		doctor_id = #{doctorId} AND doctor_pw = #{doctorPw}
-		)
-		)
->>>>>>> 1860fd72a39938e4ea4a037216dfefd0d7028d45
 	</delete>
 	
 	
@@ -181,19 +155,7 @@
 	</update>
 
 
-<<<<<<< HEAD
 
-=======
-	<!-- 댓글 삭제 쿼리 -->
-	<delete id="deleteComments" parameterType="doctorDTO">
-		DELETE FROM dt_doctor_comment
-		WHERE doctor_number = (
-		SELECT doctor_number
-		FROM dt_doctor
-		WHERE doctor_id = #{doctorId} AND doctor_pw = #{doctorPw}
-		)
-	</delete>
->>>>>>> 1860fd72a39938e4ea4a037216dfefd0d7028d45
 
 
 </mapper>
