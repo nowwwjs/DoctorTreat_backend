@@ -88,6 +88,7 @@ public class DoctorClinicFrontController extends HttpServlet {
 		case "/sendOkController.doccl":
 			result = new DoctorSendOkController().execute(request, response);
 			break;
+			
 		}
 
 	}

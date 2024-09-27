@@ -30,7 +30,7 @@ public class DoctorDetailController implements Execute {
 
 //		결과처리
 		Result result = new Result();
-		result.setRedirect(true);
+		result.setRedirect(false);
 		result.setPath("/app/clinic/doctorDetail.jsp");
 		return result;
 	}

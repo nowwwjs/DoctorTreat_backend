@@ -1,5 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-	pageEncoding="UTF-8" %>
+	pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -17,11 +17,13 @@
 				method="post" class="clinicMember-form">
 				<button class="clinicMember-otolaryngology">이비인후과</button>
 			</form>
-			<form action="${pageContext.request.contextPath}/doctorListInner.memcl"
+			<form
+				action="${pageContext.request.contextPath}/doctorListInner.memcl"
 				method="post" class="clinicMember-form">
 				<button class="clinicMember-medicine">내과</button>
 			</form>
 		</div>
-		<jsp:include page="${pageContext.request.contextPath}/footer2.jsp" />
+	</main>
+	<jsp:include page="${pageContext.request.contextPath}/footer.jsp" />
 </body>
 </html>

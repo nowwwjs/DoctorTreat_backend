@@ -62,7 +62,7 @@ public class MemberClinicDAO {
 	}
 	
 	//채팅방 번호 조회
-	public List<ChatSessionDTO> getChatRoomNumber(Map<String, Object> queryMap) {
+	public List<ChatDTO> getChatRoomNumber(Map<String, Object> queryMap) {
 		return sqlSession.selectList("memberClinic.getChatRoomNumber", queryMap);
 	}
 	
@@ -75,4 +75,5 @@ public class MemberClinicDAO {
 	public List<ChatDTO> getChatMemberInfo(Map<String, Object> queryMap){
 		return sqlSession.selectList("memberClinic.getChatMemberInfo", queryMap);
 	}
+	
 }

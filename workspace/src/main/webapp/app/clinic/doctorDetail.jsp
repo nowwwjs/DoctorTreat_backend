@@ -10,8 +10,6 @@
 	href="${pageContext.request.contextPath}/static/css/clinic/doctorDetail.css">
 <script defer
 	src="${pageContext.request.contextPath}/static/js/clinic/doctorDetail.js"></script>
-<script type="text/javascript"
-	src="//dapi.kakao.com/v2/maps/sdk.js?appkey=2f5631b219152660381440f62ca9ef14"></script>
 </head>
 <body>
 	<jsp:include page="${pageContext.request.contextPath}/headerMember.jsp" />
@@ -62,7 +60,7 @@
 						<div class="option">
 							<div>
 								<form onsubmit="searchPlaces(); return false;">
-									키워드 : <input type="text" value="이태원 맛집" id="keyword" size="15">
+									키워드 : <input type="text" value="${doctorDetail[0].hospitalName}" id="keyword" size="15">
 									<button type="submit">검색하기</button>
 								</form>
 							</div>
@@ -79,6 +77,8 @@
 			</form>
 		</div>
 	</main>
-	<jsp:include page="${pageContext.request.contextPath}/footer.jsp" />
+	<script type="text/javascript"
+		src="//dapi.kakao.com/v2/maps/sdk.js?appkey=c5d67dedd71ed926dfe24f7aaa51526d&libraries=services"></script>
 </body>
+<jsp:include page="${pageContext.request.contextPath}/footer.jsp" />
 </html>

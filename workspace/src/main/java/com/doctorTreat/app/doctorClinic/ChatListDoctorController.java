@@ -60,7 +60,7 @@ public class ChatListDoctorController implements Execute {
 
 		// 결과 처리
 		Result result = new Result();
-		result.setRedirect(true);
+		result.setRedirect(false);
 		result.setPath("/app/clinic/chatListDoctor.jsp");
 		return result;
 	}

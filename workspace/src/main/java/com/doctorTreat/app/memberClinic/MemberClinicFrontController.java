@@ -100,7 +100,7 @@ public class MemberClinicFrontController extends HttpServlet {
 		case "/sendOkController.memcl":
 			result = new MemberSendOkController().execute(request, response);
 			break;
-		}
+					}
 
 	}
 
