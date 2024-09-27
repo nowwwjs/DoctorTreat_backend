@@ -31,6 +31,7 @@ public class MemberBoardUpdateController implements Execute {
 
         // DTO 객체 생성 및 값 설정
         MemberBoardDTO memberBoardDTO = new MemberBoardDTO();
+        
         memberBoardDTO.setMedicalInfoNumber(medicalInfoNumber);
         memberBoardDTO.setMedicalInfoTitle(updateTitle);
         memberBoardDTO.setMedicalInfoText(updateText);

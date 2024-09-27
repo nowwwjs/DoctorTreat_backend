@@ -35,11 +35,7 @@
 			<div class="option">
 				<div>
 					<form onsubmit="searchPlaces(); return false;">
-<<<<<<< HEAD
-						키워드 : <input type="text" value="강남 세브란스" id="keyword" size="15">
-=======
-						키워드 : <input type="text" value="역삼 이비인후과" id="keyword" size="15">
->>>>>>> 1860fd72a39938e4ea4a037216dfefd0d7028d45
+						키워드 : <input type="text" value="강남 병원" id="keyword" size="15">
 						<button type="submit">검색하기</button>
 					</form>
 				</div>

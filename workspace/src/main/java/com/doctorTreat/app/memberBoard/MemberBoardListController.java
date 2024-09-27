@@ -38,11 +38,12 @@ public class MemberBoardListController implements Execute {
         request.setAttribute("memberBoardshowlist", memberBoardList);
         request.setAttribute("currentPage", page);
         request.setAttribute("totalPage", totalPage);
-
-   
-        // 리다이렉트 대신 포워딩을 사용하여 뷰로 이동
-        result.setRedirect(true);
-      
+       
+  
+        result.setRedirect(true);	
+        
+        
+        
         // 프론트 컨트롤러에서 포워드 처리
         return result;
     }

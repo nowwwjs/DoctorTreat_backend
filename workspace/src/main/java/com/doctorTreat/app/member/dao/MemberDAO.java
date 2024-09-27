@@ -63,5 +63,11 @@ public class MemberDAO {
    public void quit(int memberNumber) {
       sqlSession.delete("member.quit", memberNumber);
    }
+   
+	// 멤버 아이디 찾기
+	public MemberDTO findId2(String phone) {
+		System.out.println("멤버 findId 도착");
+		return sqlSession.selectOne("member.findId2", phone);
+	}
 
 }

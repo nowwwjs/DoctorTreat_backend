@@ -75,5 +75,13 @@
       where
       member_number = #{memberNumber}
    </delete>
+   
+   <!--멤버아이디 찾기-->
+	<select id="findId2" parameterType="String"
+		resultType="MemberDTO">
+		SELECT MEMBER_NAME , MEMBER_ID
+		FROM DT_MEMBER
+		WHERE MEMBER_PHONE = #{memberPhone}
+	</select>
 
 </mapper>

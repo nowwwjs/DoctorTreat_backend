@@ -15,6 +15,7 @@
 <body>
 	<main>
 		<div class="member-write-update">의료지식인</div>
+
 		<form class="member-write-wrap-update"
 			action="${pageContext.request.contextPath}/updateBoardOk.membo"
 			method="post">
@@ -34,6 +35,12 @@
 			$('#summernote').summernote({
 				height : 300, // 높이 조정
 				placeholder : '내용을 입력해주세요.'
+			});
+
+			$('.member-write-wrap-update').on('submit', function(event) {
+				event.preventDefault(); // 기본 동작 막기
+				alert('게시글이 수정되었습니다.'); // alert 창
+				this.submit(); // 폼 제출
 			});
 		});
 	</script>
