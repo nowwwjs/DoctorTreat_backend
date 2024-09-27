@@ -29,7 +29,7 @@
 
 <body>
 	<div class="map_wrap">
-		<div id="map"
+		<div id="map"	
 			style="width: 100%; height: 100%; position: relative; overflow: hidden;"></div>
 		<div id="menu_wrap" class="bg_white">
 			<div class="option">

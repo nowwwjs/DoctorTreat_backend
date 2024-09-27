@@ -22,10 +22,9 @@ public class DoctorBoardCommentDeleteController implements Execute {
 		Result result = new Result();
 
 		// 댓글 번호와 게시글 번호 파라미터 가져오기
-		int doctorCommentNumber = Integer.parseInt((String) request.getAttribute("doctorCommentNumber"));
-		int medicalInfoNumber = Integer.valueOf(request.getParameter("infoNumber"));
+		int doctorCommentNumber = Integer.parseInt(request.getParameter("doctorCommentNumber"));
+		int medicalInfoNumber = Integer.parseInt(request.getParameter("infoNumber"));
 
-		System.out.println(doctorCommentNumber);
 		System.out.println(medicalInfoNumber);
 		DoctorBoardDAO doctorBoardDAO = new DoctorBoardDAO();
 
@@ -34,7 +33,7 @@ public class DoctorBoardCommentDeleteController implements Execute {
 
 		// 삭제 후 게시글 상세페이지로 리다이렉트
 		result.setRedirect(true);
-		result.setPath("/app/board/boardDetailDoctor?infoNumber=" + medicalInfoNumber);
+		result.setPath("BoardListDetail.docbo?infoNumber=" + medicalInfoNumber);
 
 		return result;
 	}

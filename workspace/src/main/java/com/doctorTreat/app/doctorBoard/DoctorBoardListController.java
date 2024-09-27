@@ -43,14 +43,14 @@ public class DoctorBoardListController implements Execute {
         }
 
         if (hasComments) {
-            // 댓글이 있는 경우 댓글 페이지로 리디렉션
+            // 댓글이 있는 경우 댓글 페이지로
             result.setPath(request.getContextPath() + "/app/board/boardDetailDoctorAuth.jsp?infoNumber=" + infoNumber);
         } else {
-            // 댓글이 없는 경우 기존 리스트 페이지로 리디렉션
+            // 댓글이 없는 경우 기존 리스트 페이지로
             result.setPath(request.getContextPath() + "/app/board/doctorMedicalKnowledgeList.jsp");
         }
 
-        result.setRedirect(true); // 리디렉션을 통해 페이지를 이동
+        result.setRedirect(true);
         return result;
     }
 }

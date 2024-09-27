@@ -53,7 +53,7 @@ public class DoctorOutOkController implements Execute {
             System.out.println("쿠키삭제");
             
             result.setRedirect(true);
-            result.setPath("/index.jsp");
+            result.setPath(request.getContextPath() + "/app/myPage/doctorOut-Caution.jsp");
         }else {
         	System.out.println("탈퇴실패");
         	response.sendRedirect(request.getContextPath() + "/app/myPage/doctorOut.jsp");

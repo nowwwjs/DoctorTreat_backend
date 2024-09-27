@@ -9,6 +9,6 @@ import com.doctorTreat.app.dto.DoctorDTO;
 public class DoctorFindPwOkController {
 
 //    public Result execute(HttpServletRequest request, HttpServletResponse response) {
-        
+     
     }
 //}

@@ -14,38 +14,33 @@ import com.doctorTreat.app.dto.DoctorDTO;
 
 public class DoctorLoginOkController implements Execute {
 
-   @Override
-   public Result execute(HttpServletRequest request, HttpServletResponse response)
-         throws IOException, ServletException {
+    @Override
+    public Result execute(HttpServletRequest request, HttpServletResponse response)
+            throws IOException, ServletException {
 
-      // 인코딩 설정
-      response.setContentType("text/html; charset=utf-8");
+        // 인코딩 설정
+        response.setContentType("text/html; charset=utf-8");
 
-      DoctorDTO doctorDTO = new DoctorDTO();
-      DoctorDAO doctorDAO = new DoctorDAO();
+        DoctorDTO doctorDTO = new DoctorDTO();
+        DoctorDAO doctorDAO = new DoctorDAO();
 
-      doctorDTO.setDoctorId(request.getParameter("doctorId"));
-      doctorDTO.setDoctorPw(request.getParameter("doctorPw"));
-      System.out.println("확인=========");
+        doctorDTO.setDoctorId(request.getParameter("doctorId"));
+        doctorDTO.setDoctorPw(request.getParameter("doctorPw"));
 
-      DoctorDTO doctor = doctorDAO.doctorLogin(doctorDTO);
-      System.out.println(doctor);
-      System.out.println(doctor.getDoctorNumber());
+        DoctorDTO doctor = doctorDAO.doctorLogin(doctorDTO);
+        Result result = new Result();
 
-      Result result = new Result();
+        if (doctor == null) {
+            response.getWriter().print("<script>alert('아이디 또는 비밀번호를 다시 입력해주세요.'); location.href='http://localhost:9000/doctor/doctorLogin.do';</script>");
+            response.getWriter().flush();
+        } else {
+            HttpSession session = request.getSession();
+            session.setAttribute("userType", "doctor");
+            session.setAttribute("doctorNumber", doctor.getDoctorNumber());
 
-      if (doctor == null) {
-         result.setPath("/user/doctorLogin.jsp");
-         result.setRedirect(false);
-      } else {
-          HttpSession session = request.getSession();
-          session.setAttribute("userType", "doctor");
-          session.setAttribute("doctorNumber", doctor.getDoctorNumber());
-
-         result.setPath(request.getContextPath() + "/index.jsp");
-         result.setRedirect(true);
-      }
-       return result;
-
-   }
+            result.setPath(request.getContextPath() + "/index.main");	
+            result.setRedirect(true);
+        }
+        return result;
+    }
 }
