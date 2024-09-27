@@ -15,32 +15,34 @@ import com.doctorTreat.app.member.dao.MemberDAO;
 
 public class DoctorFindIdOkController implements Execute {
 
-	@Override
-	public Result execute(HttpServletRequest request, HttpServletResponse response)
-			throws IOException, ServletException {
+   @Override
+   public Result execute(HttpServletRequest request, HttpServletResponse response)
+         throws IOException, ServletException {
 
-		request.setCharacterEncoding("UTF-8");
-		Result result = new Result();
+      request.setCharacterEncoding("UTF-8");
+      Result result = new Result();
 
-		DoctorDAO doctorDAO = new DoctorDAO();
+      DoctorDAO doctorDAO = new DoctorDAO();
 
-		DoctorDTO doctorDTO = new DoctorDTO();
+      DoctorDTO doctorDTO = new DoctorDTO();
 
-		String phoneNumber = request.getParameter("phoneNum");
-		
-		System.out.println(phoneNumber + "으아ㅏ");
+      String phoneNumber = request.getParameter("phoneNum");
+      
+      System.out.println(phoneNumber + "으아ㅏ");
 
-		doctorDTO = doctorDAO.findId1(phoneNumber);
+      doctorDTO = doctorDAO.findId1(phoneNumber);
 
-		System.out.println("안뇽" + doctorDTO);
+      System.out.println("안뇽" + doctorDTO);
 
-		request.setAttribute("doctorshowId", doctorDTO);
+      request.setAttribute("doctorshowId", doctorDTO);
 
-		result.setRedirect(true);
+      result.setRedirect(true);
 
-		return result;
+      return result;
+      
+      
 
-	}
+   }
 
 }
 

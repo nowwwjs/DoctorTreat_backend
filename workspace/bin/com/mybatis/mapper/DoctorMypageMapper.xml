@@ -88,7 +88,7 @@
 
 
 	<!-- 회원탈퇴 셀렉트 -->
-	<select id="doctorReceive" parameterType="doctorDTO"
+	<select id="doctorReceive" parameterType="DoctorDTO"
 		resultType="int">
 		select doctor_number
 		from dt_doctor
@@ -98,7 +98,7 @@
 
 	<!-- 회원탈퇴 -->
 	<!-- 주소 삭제 쿼리 -->
-	<delete id="doctorQuit3" parameterType="doctorDTO" >
+	<delete id="doctorQuit3" parameterType="DoctorDTO">
 		DELETE FROM dt_address
 		WHERE address_number = (
 		SELECT address_number
@@ -112,7 +112,7 @@
 	</delete>
 
 	<!-- 병원 삭제 쿼리 -->
-	<delete id="doctorQuit2" parameterType="doctorDTO">
+	<delete id="doctorQuit2" parameterType="DoctorDTO">
 		DELETE FROM dt_hospital
 		WHERE hospital_number = (
 		SELECT hospital_number
@@ -120,14 +120,41 @@
 		WHERE doctor_id = #{doctorId} and doctor_pw = #{doctorPw}
 		)
 	</delete>
+	
+	
 
 	<!-- 의사 정보 삭제 쿼리 -->
-	<delete id="doctorQuit1" parameterType="doctorDTO">
+	<delete id="doctorQuit1" parameterType="DoctorDTO">
 		DELETE FROM dt_doctor
 		WHERE doctor_id = #{doctorId} and doctor_pw = #{doctorPw}
 	</delete>
+	
+	
+	<!-- 댓글 삭제 쿼리 -->
+   <delete id="deleteComments" parameterType="doctorDTO">
+      DELETE FROM dt_doctor_comment
+      WHERE doctor_number = (
+      SELECT doctor_number
+      FROM dt_doctor
+      WHERE doctor_id = #{doctorId} AND doctor_pw = #{doctorPw}
+      )
+   </delete>
+	
 
-   
+
+
+
+
+
+
+	<!-- 비밀번호 변경 -->
+	<update id="updatePassword" parameterType="DoctorDTO">
+		UPDATE dt_doctor
+		SET doctor_pw = #{doctorPw}
+		WHERE doctor_number = #{doctorNumber}
+	</update>
+
+
 
 
 

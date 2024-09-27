@@ -1,0 +1,108 @@
+@charset "UTF-8";
+
+.memberOut-main-container {
+    width: 980px;
+    margin: 0 auto;
+    margin-top: 10px;
+    margin-bottom: 70px;
+    height: 600px;
+}
+
+.memberOut-title {
+    color: #37aa8b;
+    font-size: 25px;
+    font-weight: bold;
+    margin-top: 40px;
+}
+
+.memberOut-idtext,
+.memberOut-pwtext {
+    font-size: 14px;
+    margin-bottom: 10px;
+    margin-top: 10px;
+}
+
+.memberOut-inputbox {
+    width: 980px;
+    margin: 0 auto;
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    margin-bottom: 60px;
+    margin-top: 20px;
+}
+
+.memberOut-inputbox input {
+    width: 450px;
+    height: 50px;
+    margin-top: 10px;
+}
+
+.memberOut-btn {
+    margin: 0 auto;
+    width: 350px;
+    height: 50px;
+    background-color: #37aa8b;
+    border-radius: 7px;
+    text-align: center;
+    line-height: 50px;
+    cursor: pointer;
+    color: white;
+    font-size: 16px;
+    font-weight: bold;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: none;
+}
+
+.memberOut-btn:hover {
+    background-color: #2a8a70;
+}
+
+.memberOut-input-field.focus {
+    border: 1px solid blue;
+}
+
+.memberOut-input-field.blur {
+    border: 1px solid red;
+}
+
+.memberOut-btn a {
+    color: white;
+}
+
+
+/* 회원탈퇴 모달창 css */
+
+.memberOut-modal {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 450px;
+    height: 200px;
+    background-color: #37aa8b;
+    border-radius: 7px;
+}
+
+.memberOut-modal-content {
+    width: 300px;
+    height: 100px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+.memberOut-modal button {
+    margin-top: 20px;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 7px;
+    color: black;
+    cursor: pointer;
+}
