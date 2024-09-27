@@ -20,7 +20,11 @@
             <hr class="memberPhoneOk-hr">
         </div>
 
+<<<<<<< HEAD
    <form action="${pageContext.request.contextPath}/member/memberFindId.me" method="post">
+=======
+	<form action="${pageContext.request.contextPath}/member/memberFindId.me" method="post">
+>>>>>>> main
         <div class="memberPhoneOk-inputbox">
                 <p class="memberPhoneOk-text">휴대폰 번호</p>
 
@@ -33,10 +37,17 @@
         </div>
 
         <button class="memberPhoneOk-btn">
+<<<<<<< HEAD
             <p class="memberPhoneOk-btnp" style="color: white;">인증완료</p>
         </button>
       </div>
    </form>
+=======
+            <p>인증완료</p>
+        </button>
+      </div>
+	</form>
+>>>>>>> main
       
       <script src="${pageContext.request.contextPath}/static/js/myPage/memberphoneok.js"></script>
 </body>

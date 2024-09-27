@@ -13,7 +13,7 @@
 </head>
 <body>
 	<main>
-		<div class="member-write">의료지식인</div>
+		<div class="member-write">의료 지식인</div>
 
 		<form class="member-write-wrap"
 			action="${pageContext.request.contextPath}/memberBoardWriteOk.membo"
@@ -33,7 +33,14 @@
 	        height: 300, // 높이 조정
 	        placeholder: '내용을 입력해주세요.'
 	    });
+	    
+	    $('.member-write-wrap').on('submit', function(event) {
+	        event.preventDefault(); // 기본 동작 막기
+	        alert('게시글이 등록되었습니다.'); // alert 창
+	        this.submit(); // 폼 제출
+	    });
 	});
+	
 	</script>
 </body>
 <jsp:include page="/footer.jsp" />

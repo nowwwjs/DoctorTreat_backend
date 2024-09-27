@@ -15,6 +15,7 @@
 <jsp:include page="${pageContext.request.contextPath}/header.jsp" />
 </head>
 <body>
+<<<<<<< HEAD
    <main>
       <div id="member-findFinish-title">아이디 찾기</div>
       <div class="member-findFinish-container">
@@ -30,6 +31,23 @@
          
       </div>
    </main>
+=======
+	<main>
+		<div id="member-findFinish-title">아이디 찾기</div>
+		<div class="member-findFinish-container">
+			<div class="member-findFinish-userName">${membershowId.memberName}님의 아이디 입니다</div>
+			<div class="member-findFinish-user">
+				<span>계정 : </span>
+				<sapn class="member-findFinish-userId">${membershowId.memberId}</sapn>
+			</div>
+			
+				<button id="member-findFinish-goLogin">
+					<a href="${pageContext.request.contextPath}/app/user/doctorLogin.jsp">로그인</a>
+				</button>
+			
+		</div>
+	</main>
+>>>>>>> main
 </body>
 <jsp:include page="${pageContext.request.contextPath}/footer.jsp" />
 </html>

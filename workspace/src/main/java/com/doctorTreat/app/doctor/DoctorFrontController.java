@@ -101,16 +101,16 @@ public class DoctorFrontController extends HttpServlet {
          break;
          
       case "/doctor/doctorFindPw.do" :
-    	  System.out.println("비밀번호 찾기 왔다 !!");
-    	  request.getRequestDispatcher("/app/user/doctorFindPw.jsp").forward(request, response);
-    	  break;
-    	  
+         System.out.println("비밀번호 찾기 왔다 !!");
+         request.getRequestDispatcher("/app/user/doctorFindPw.jsp").forward(request, response);
+         break;
+         
       case "/doctor/doctorPwChange.do":
-    	  System.out.println("비밀번호 변경 가자!!");
-    	  result = new DoctorFindPwOkController().execute(request, response);
-    	  request.getRequestDispatcher("/app/user/doctorFindPwFinish.jsp").forward(request, response);
-    	  break;
-    	  
+         System.out.println("비밀번호 변경 가자!!");
+         result = new DoctorFindPwOkController().execute(request, response);
+         request.getRequestDispatcher("/app/user/doctorFindPwFinish.jsp").forward(request, response);
+         break;
+         
       }
       
    }
