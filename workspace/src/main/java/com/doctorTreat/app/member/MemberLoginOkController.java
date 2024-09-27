@@ -33,16 +33,11 @@ public class MemberLoginOkController implements Execute {
           response.getWriter().flush();
       } else {
           HttpSession session = request.getSession();
-          session.setAttribute("userType", "doctor");
+          session.setAttribute("userType", "member");
           session.setAttribute("memberNumber", member.getMemberNumber());
 
-<<<<<<< HEAD
           result.setPath(request.getContextPath() + "/index.main");   
           result.setRedirect(true);
-=======
-         result.setPath(request.getContextPath() + "/index.main");
-         result.setRedirect(true);
->>>>>>> main
       }
       return result;
   }
