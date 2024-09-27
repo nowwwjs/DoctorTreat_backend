@@ -13,30 +13,30 @@ import com.doctorTreat.app.member.dao.MemberDAO;
 
 public class MemberFindIdController implements Execute {
 
-	@Override
-	public Result execute(HttpServletRequest request, HttpServletResponse response)
-			throws IOException, ServletException {
-		
-		request.setCharacterEncoding("UTF-8");
-		Result result = new Result();
+   @Override
+   public Result execute(HttpServletRequest request, HttpServletResponse response)
+         throws IOException, ServletException {
+      
+      request.setCharacterEncoding("UTF-8");
+      Result result = new Result();
 
-		MemberDAO memberDAO = new MemberDAO();
+      MemberDAO memberDAO = new MemberDAO();
 
-		MemberDTO memberDTO = new MemberDTO();
+      MemberDTO memberDTO = new MemberDTO();
 
-		String phoneNumber = request.getParameter("phoneNum2");
-		
-		System.out.println(phoneNumber + "으아ㅏ");
+      String phoneNumber = request.getParameter("phoneNum2");
+      
+      System.out.println(phoneNumber + "으아ㅏ");
 
-		memberDTO = memberDAO.findId2(phoneNumber);
+      memberDTO = memberDAO.findId2(phoneNumber);
 
-		System.out.println("안뇽" + memberDTO);
+      System.out.println("안뇽" + memberDTO);
 
-		request.setAttribute("membershowId", memberDTO);
+      request.setAttribute("membershowId", memberDTO);
 
-		result.setRedirect(true);
+      result.setRedirect(true);
 
-		return result;
-	}
+      return result;
+   }
 
 }

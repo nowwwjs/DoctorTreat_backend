@@ -1,8 +1,10 @@
 package com.doctorTreat.app.member.dao;
 
+import java.util.HashMap;
+import java.util.Map;
+
 import org.apache.ibatis.session.SqlSession;
 
-import com.doctorTreat.app.dto.DoctorDTO;
 import com.doctorTreat.app.dto.MemberDTO;
 import com.mybatis.config.MyBatisConfig;
 
@@ -64,10 +66,25 @@ public class MemberDAO {
       sqlSession.delete("member.quit", memberNumber);
    }
    
-	// 멤버 아이디 찾기
-	public MemberDTO findId2(String phone) {
-		System.out.println("멤버 findId 도착");
-		return sqlSession.selectOne("member.findId2", phone);
+   // 멤버 아이디 찾기
+   public MemberDTO findId2(String phone) {
+      System.out.println("멤버 findId 도착");
+      return sqlSession.selectOne("member.findId2", phone);
+   }
+   
+   //일반 비밀번호 찾기
+   public MemberDTO findPw2(String memberName, String memberId) {
+	    System.out.println("일반 FindPw 도착했음");
+	    
+	    // Map을 사용하여 매개변수 전달
+	    Map<String, Object> params = new HashMap<>();
+	    params.put("memberName", memberName);
+	    params.put("memberId", memberId);
+	    
+	    System.out.println(params);
+	    System.out.println("findPw2 - memberDAO");
+	    // selectOne으로 결과를 받아 처리
+	  return  sqlSession.selectOne("member.findPw2", params);
 	}
 
 }

@@ -8,7 +8,6 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import com.doctorTreat.app.Result;
-import com.doctorTreat.app.dto.DoctorDTO;
 
 /**
  * Servlet implementation class MemberFrontController

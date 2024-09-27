@@ -51,7 +51,7 @@
     
   </div>
 
-  <button class="memberInfo-btn">내 정보 수정</button>
+  <button class="memberInfo-btn" style="color: white;">내 정보 수정</button>
   </form>
 </div>
 

@@ -77,11 +77,22 @@
    </delete>
    
    <!--멤버아이디 찾기-->
-	<select id="findId2" parameterType="String"
-		resultType="MemberDTO">
-		SELECT MEMBER_NAME , MEMBER_ID
-		FROM DT_MEMBER
-		WHERE MEMBER_PHONE = #{memberPhone}
-	</select>
+   <select id="findId2" parameterType="String"
+      resultType="MemberDTO">
+      SELECT MEMBER_NAME , MEMBER_ID
+      FROM DT_MEMBER
+      WHERE MEMBER_PHONE = #{memberPhone}
+   </select>
+   
+   
+   
+      <!--멤버비밀번호 찾기-->
+   <select id="findPw2" parameterType="map"
+      resultType="MemberDTO">
+      SELECT MEMBER_NAME , MEMBER_Pw
+      FROM DT_MEMBER
+      WHERE MEMBER_NAME = #{memberName} and MEMBER_ID = #{memberId}
+   </select>
+   
 
 </mapper>

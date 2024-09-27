@@ -14,7 +14,6 @@
 </head>
 <body>
 <main>
-    <!-- <h2 class="findId-page-title">아이디 찾기</h2> -->
     <div class="findPw-container">
       <h2 class="findPw-page-title">비밀번호 찾기</h2>
       <br>
@@ -23,19 +22,17 @@
         <div class="findPw-choice"><a href="${pageContext.request.contextPath}/app/user/memberFindPw.jsp">비밀번호찾기</a></div>
       </div>
       <br><br>
+      <form action="${pageContext.request.contextPath}/member/memberFindPwOk.me">
       <section class="findPw-form-one">
-        <form>
-          이름 &nbsp;&nbsp;  <input type="text" class="findPw-input" placeholder="이름을 입력하세요">      
-        </form>
+          이름 &nbsp;&nbsp;  <input type="text" name="memberName" class="findPw-input" placeholder="이름을 입력하세요">      
       </section> 
         <br>
       <section class="findPw-form-two">
-        <form>
-          아이디 <input type="text" class="findPw-input" placeholder="아이디를 입력하세요">      
-        </form>
+          아이디 <input type="text" class="findPw-input"  name="memberId" placeholder="아이디를 입력하세요">      
       </section>
       <br><br><br>
-      <a href="${pageContext.request.contextPath}/app/myPage/memberphoneok.jsp"><button type="submit" class="findPw-button">휴대폰 인증</button></a>
+    	<button type="submit" class="findPw-button">비밀번호찾기</button>
+    	</form>
     </div>
   </main>
 </body>

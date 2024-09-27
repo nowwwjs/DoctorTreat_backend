@@ -41,7 +41,7 @@
             <a
                href="${pageContext.request.contextPath}/app/user/memberFindId.jsp"><span>아이디
                   찾기</span></a> <a
-               href="${pageContext.request.contextPath}/app/user/memberFindPw.jsp"><span>비밀번호
+               href="${pageContext.request.contextPath}/member/memberFindPw.me"><span>비밀번호
                   찾기</span></a>
          </div>
 
