@@ -14,7 +14,7 @@
 </head>
 <body>
 	<main>
-		<div class="member-write-update">의료 지식IN</div>
+		<div class="member-write-update">의료지식인</div>
 		<form class="member-write-wrap-update"
 			action="${pageContext.request.contextPath}/updateBoardOk.membo"
 			method="post">
