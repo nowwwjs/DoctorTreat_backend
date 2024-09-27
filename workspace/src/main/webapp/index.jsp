@@ -45,9 +45,21 @@
 					<c:forEach var="info" items="${medicalInfoList}" varStatus="border">
 						<c:if test="${border.index < 6}">
 							<div class="main-content-detail">
-							${info}
+								<a href=" 
+									<c:choose>
+                                    <c:when test="${not empty sessionScope.memberNumber}">
+                                        ${pageContext.request.contextPath}/memberBoardDetail.membo?infoNumber=${info.medicalInfoNumber}
+                                    </c:when>
+                                    <c:when test="${not empty sessionScope.doctorNumber}">
+                                        ${pageContext.request.contextPath}/BoardListDetail.docbo?infoNumber=${info.medicalInfoNumber}
+                                    </c:when>
+                                    <c:otherwise>
+                                        ${pageContext.request.contextPath}/app/user/loginType.jsp
+                                    </c:otherwise>
+                                </c:choose>">
+									${info.medicalInfoTitle}</a>
 							</div>
-						</c:if>	
+						</c:if>
 					</c:forEach>
 				</div>
 			</div>

@@ -20,7 +20,7 @@
 						</a>
 					</div>
 					<div class="header-btnContainer">
-						<a href="./../../html/clinicMember/choice.html">
+						<a href="${request.contextPath}/app/user/loginType.jsp">
 							<div class="header-quickBtn">
 								<img
 									src="${pageContext.request.contextPath}/static/image/chatBtn.png">
@@ -39,7 +39,7 @@
 									src="${pageContext.request.contextPath}/static/image/memberJoin.png">
 								<div>회원가입</div>
 							</div>
-						</a> <a href="${pageContext.request.contextPath}/doctor/doctorInfo.dm">
+						</a> <a href="${request.contextPath}/app/user/loginType.jsp">
 							<div class="header-quickBtn">
 								<img
 									src="${pageContext.request.contextPath}/static/image/myPage.png">

@@ -13,7 +13,7 @@
 </head>
 <body>
 	<main>
-		<div class="member-write">의료 지식IN</div>
+		<div class="member-write">의료지식인</div>
 
 		<form class="member-write-wrap"
 			action="${pageContext.request.contextPath}/memberBoardWriteOk.membo"

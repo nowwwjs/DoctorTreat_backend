@@ -40,20 +40,16 @@
         <c:choose>
             <c:when test="${not empty comments}">
                 <div class="boardDetail-comentBox">
-                    <div class="boardDetail-name">${doctorBoardshowDetail.doctorMajor}</div>
+                    <div class="boardDetail-name"></div>
                     <c:forEach var="comment" items="${comments}">
-                        <div class="boardDetail-doctorName">전문의 : ${comment.doctorName}</div>
+                        <div class="boardDetail-doctorName">${doctorBoardshowDetail.doctorMajor} : ${comment.doctorName}</div>
                         <div class="boardDetail-doctorComment">
                             ${comment.doctorCommentText}
                         </div>
-
+	
                         <c:if test="${sessionScope.doctorNumber == comment.doctorNumber}">
                             <button onclick="showEditForm(${comment.doctorCommentNumber})" class="boardDetail-comentModify">수정</button>
-                            <form action="${pageContext.request.contextPath}/BoardCommentDelete.docbo" method="post" style="display:inline;">
-                                <input type="hidden" name="doctorCommentNumber" value="${comment.doctorCommentNumber}" />
-                                <input type="hidden" name="infoNumber" value="${doctorBoardshowDetail.medicalInfoNumber}" />
-                                <button type="submit" class="boardDetail-comentDelete">삭제</button>
-                            </form>
+                            <button type="button" onclick="confirmDelete(${comment.doctorCommentNumber}, ${infoNumber})" class="boardDetail-comentDelete">삭제</button>
 
                             <!-- 댓글 수정 폼 -->
                             <div id="editForm${comment.doctorCommentNumber}" class="comment-edit-form">
@@ -85,6 +81,12 @@
         function showEditForm(commentNumber) {
             var form = document.getElementById('editForm' + commentNumber);
             form.style.display = 'block';
+        }
+
+        function confirmDelete(commentNumber, infoNumber) {
+            if (confirm("정말 삭제하시겠습니까?")) {
+                location.href = "${pageContext.request.contextPath}/BoardCommentDelete.docbo?doctorCommentNumber=" + commentNumber + "&infoNumber=" + infoNumber;
+            }
         }
     </script>
 </body>
