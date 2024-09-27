@@ -1,0 +1,66 @@
+@charset "UTF-8";
+* {
+  margin: 0;
+  padding: 0;
+  font-family: 'Noto Sans KR', sans-serif;
+}
+
+main {
+  width: 980px;
+  height: 500px;
+  margin: 0 auto;
+  position: relative;
+}
+
+#member-findFinish-title {
+  font-size: 25px;
+  font-weight: bold;
+  color: #37aa8b;
+  margin-top: 40px;
+}
+
+.member-findFinish-container {
+  width: 80%;
+  height: 300px;
+  border: 1px solid lightgray;
+  margin: 50px auto 0 auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.member-findFinish-userName {
+  font-size: 14px;
+  color: gray;
+  margin-bottom: 5px;
+}
+
+.member-findFinish-user span,
+.member-findFinish-userPw {
+  font-size: 16px;
+  font-weight: bold;
+}
+
+.member-findFinish-userPw {
+  color: darkgreen;
+}
+
+#member-findFinish-goLogin {
+  width: 180px;
+  height: 60px;
+  font-size: 20px;
+  font-weight: bold;
+  border: none;
+  border-radius: 7px;
+  background-color: #37aa8b;
+  color: white;
+  margin-top: 50px;
+}
+
+#member-findFinish-goLogin:hover{
+  background-color: #2e9278
+}
+#member-findFinish-goLogin a{
+	color:white;
+}

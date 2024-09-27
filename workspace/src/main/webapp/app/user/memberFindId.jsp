@@ -12,8 +12,7 @@
 </head>
 <jsp:include page="${pageContext.request.contextPath}/header.jsp" />
 <body>
-	<main>
-        <!-- <h2 class="findId-page-title">아이디 찾기</h2> -->
+   <main>
         <div class="findId-container">
             <h2 class="findId-page-title">아이디 찾기</h2>
             <br>

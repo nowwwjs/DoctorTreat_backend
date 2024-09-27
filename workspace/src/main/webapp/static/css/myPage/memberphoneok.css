@@ -92,3 +92,7 @@
 .memberPhoneOk-input-field.blur {
     border: 1px solid red;
 }
+
+.memberPhoneOk-btnp{
+	color: white;
+}

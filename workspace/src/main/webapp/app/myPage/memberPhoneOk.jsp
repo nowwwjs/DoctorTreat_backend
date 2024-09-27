@@ -14,13 +14,13 @@
 <jsp:include page="${pageContext.request.contextPath}/headerMember.jsp" />
 </head>
 <body>
-	<div class="memberPhoneOk-main-container">
+   <div class="memberPhoneOk-main-container">
         <div class="memberPhoneOk-titlebox">
             <p class="memberPhoneOk-title">본인인증</p>
             <hr class="memberPhoneOk-hr">
         </div>
 
-	<form action="${pageContext.request.contextPath}/member/memberFindId.me" method="post">
+   <form action="${pageContext.request.contextPath}/member/memberFindId.me" method="post">
         <div class="memberPhoneOk-inputbox">
                 <p class="memberPhoneOk-text">휴대폰 번호</p>
 
@@ -33,10 +33,10 @@
         </div>
 
         <button class="memberPhoneOk-btn">
-            <p>인증완료</p>
+            <p class="memberPhoneOk-btnp" style="color: white;">인증완료</p>
         </button>
       </div>
-	</form>
+   </form>
       
       <script src="${pageContext.request.contextPath}/static/js/myPage/memberphoneok.js"></script>
 </body>
