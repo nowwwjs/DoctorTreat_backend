@@ -83,7 +83,6 @@ public class MemberFrontController extends HttpServlet {
          request.getRequestDispatcher("/index.jsp").forward(request, response);
          break;
       case "/member/memberFindId.me":
-<<<<<<< HEAD
          System.out.println("멤버 아이디 찾기 !");
          result = new MemberFindIdController().execute(request, response);
          request.getRequestDispatcher("/app/user/memberFindIdFinish.jsp").forward(request, response);
@@ -101,12 +100,6 @@ public class MemberFrontController extends HttpServlet {
     	  request.getRequestDispatcher("/app/user/memberFindPwFinish.jsp").forward(request, response);
     	  break;
 
-=======
-    	  System.out.println("멤버 아이디 찾기 !");
-    	  result = new MemberFindIdController().execute(request, response);
-    	  request.getRequestDispatcher("/app/user/memberFindIdFinish.jsp").forward(request, response);
-    	  break;
->>>>>>> main
       case "/member/joinSMS.me":
          System.out.println("sms!!");
          new MemberJoinSMSController().execute(request, response);

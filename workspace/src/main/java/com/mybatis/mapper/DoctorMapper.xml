@@ -129,7 +129,6 @@
    </update>
 
 
-<<<<<<< HEAD
    <!-- 의사 비밀번호 찾기 -->
    <select id="findPassword" parameterType="map" resultType="DoctorDTO">
       SELECT doctor_name , doctor_pw
@@ -137,34 +136,19 @@
       WHERE DOCTOR_NAME = #{doctorName}
       AND DOCTOR_ID = #{doctorId}
    </select>
-=======
-	<!-- 의사 비밀번호 찾기 -->
-	<select id="findPassword" parameterType="map" resultType="DoctorDTO">
-		SELECT doctor_name , doctor_pw
-		FROM DT_DOCTOR
-		WHERE DOCTOR_NAME = #{doctorName}
-		AND DOCTOR_ID = #{doctorId}
-	</select>
-	
-	
-	<!--의사아이디 찾기-->
-	<select id="findId1" parameterType="String"
-		resultType="DoctorDTO">
-		SELECT DOCTOR_NAME , DOCTOR_ID
-		FROM DT_DOCTOR
-		WHERE DOCTOR_PHONE = #{doctorPhone}
-	</select>
-	
->>>>>>> main
-
-
-   <!--의사아이디 찾기 -->
+   
+   
+   <!--의사아이디 찾기-->
    <select id="findId1" parameterType="String"
       resultType="DoctorDTO">
       SELECT DOCTOR_NAME , DOCTOR_ID
       FROM DT_DOCTOR
       WHERE DOCTOR_PHONE = #{doctorPhone}
    </select>
+   
+
+
+   
 
 
 

@@ -77,7 +77,6 @@
    </delete>
    
    <!--멤버아이디 찾기-->
-<<<<<<< HEAD
    <select id="findId2" parameterType="String"
       resultType="MemberDTO">
       SELECT MEMBER_NAME , MEMBER_ID
@@ -95,13 +94,5 @@
       WHERE MEMBER_NAME = #{memberName} and MEMBER_ID = #{memberId}
    </select>
    
-=======
-	<select id="findId2" parameterType="String"
-		resultType="MemberDTO">
-		SELECT MEMBER_NAME , MEMBER_ID
-		FROM DT_MEMBER
-		WHERE MEMBER_PHONE = #{memberPhone}
-	</select>
->>>>>>> main
 
 </mapper>
