@@ -29,15 +29,9 @@
             <span class="Doctor-findFinish-userId">${doctorshowId.doctorId}</span>
          </div>
 
-<<<<<<< HEAD
-         <button id="Doctor-findFinish-goLogin">
-            <a
-               href="${pageContext.request.contextPath}/app/user/doctorLogin.jsp">로그인
-=======
          <button id="Doctor-findFinish-goLogin"  >
             <a
                href="${pageContext.request.contextPath}/app/user/doctorLogin.jsp" style="color: white;"  >로그인
->>>>>>> main
             </a>
          </button>
 
