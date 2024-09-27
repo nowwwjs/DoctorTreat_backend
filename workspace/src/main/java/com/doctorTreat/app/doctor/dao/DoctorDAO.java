@@ -1,5 +1,7 @@
 package com.doctorTreat.app.doctor.dao;
 
+import java.sql.SQLException;
+
 import org.apache.ibatis.session.SqlSession;
 import com.doctorTreat.app.dto.DoctorDTO;
 import com.mybatis.config.MyBatisConfig;
@@ -113,33 +115,50 @@ public class DoctorDAO {
 	}
 	
 	
-	
-	
-
-	// 회원 탈퇴
 	public boolean quitDoctor(String doctorId, String doctorPw) {
-		System.out.println("탈퇴 다오 실행");
-		DoctorDTO doctorDTO = new DoctorDTO();
-		doctorDTO.setDoctorId(doctorId);
-		doctorDTO.setDoctorPw(doctorPw);
-		int result1 = sqlSession.delete("doctorMypage.doctorQuit1",doctorDTO);
-		System.out.println(result1);
-		int result2 = sqlSession.delete("doctorMypage.doctorQuit2",doctorDTO);
-		System.out.println(result2);
-		int result3 = sqlSession.delete("doctorMypage.doctorQuit3",doctorDTO);
-		System.out.println(result3);
-		
-		if(result1 == 1 && result2 == 1 && result3 == 1) {
-			return true;
-		} else {
-			return false;
-		}
+	    System.out.println("탈퇴 DAO 실행");
+	    DoctorDTO doctorDTO = new DoctorDTO();
+	    doctorDTO.setDoctorId(doctorId);
+	    doctorDTO.setDoctorPw(doctorPw);
+	    
+	    boolean success = false;
+
+	    try {
+	     
+	        sqlSession.getConnection().setAutoCommit(false);
+
+	        // 의사와 관련된 댓글 삭제
+	        int commentResult = sqlSession.delete("doctorMypage.deleteComments", doctorDTO);
+	        System.out.println(commentResult + "삭제되니?");
+	        // 의사 정보 삭제 쿼리 실행
+	        int result1 = sqlSession.delete("doctorMypage.doctorQuit1", doctorDTO);
+	        // 병원 삭제 쿼리 실행
+	        int result2 = sqlSession.delete("doctorMypage.doctorQuit2", doctorDTO);
+	        // 주소 삭제 쿼리 실행
+	        int result3 = sqlSession.delete("doctorMypage.doctorQuit3", doctorDTO);
+
+	        // 모든 삭제가 성공했는지 확인
+	        if (result1 == 1 && result2 >= 0 && result3 >= 0 && commentResult >= 0) {
+	            sqlSession.commit(); // 모든 작업이 성공하면 커밋
+	            success = true; // 탈퇴 성공
+	        } else {
+	            System.out.println("탈퇴 실패");
+	            sqlSession.rollback(); // 실패하면 롤백
+	        }
+	    } catch (Exception e) {
+	        System.out.println("예외 발생: " + e.getMessage());
+	        sqlSession.rollback(); // 예외 발생 시 롤백
+	    } finally {
+	        try {
+	            sqlSession.getConnection().setAutoCommit(true); // 자동 커밋으로 복원
+	        } catch (SQLException e) {
+	            e.printStackTrace();
+	        }
+	    }
+
+	    return success; // 탈퇴 성공 여부 반환
 	}
 	
-	
-	
-	
-
 	// 아이디 중복확인
 	public boolean checkId(String doctorId) {
 		System.out.println("중복확인도착");
