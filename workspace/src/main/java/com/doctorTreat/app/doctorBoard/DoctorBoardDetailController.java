@@ -30,7 +30,7 @@ public class DoctorBoardDetailController implements Execute {
 		try {
 			infoNumber = Integer.parseInt(infoNumberStr);
 		} catch (NumberFormatException e) {
-			throw new ServletException("infoNumber 파라미터가 유효한 정수가 아닙니다.");
+			throw new ServletException("제발 됬으면");
 		}
 
 		System.out.println(infoNumber);
@@ -43,8 +43,8 @@ public class DoctorBoardDetailController implements Execute {
 		request.setAttribute("infoNumber", infoNumber);
 		request.setAttribute("comments", comments);
 
-		// 포워딩 경로 설정
-		result.setRedirect(true); // 리다이렉트가 아닌 포워딩을 사용
+	
+		result.setRedirect(true);
 		result.setPath("/app/board/boardDetailDoctor.jsp");
 
 		return result;
