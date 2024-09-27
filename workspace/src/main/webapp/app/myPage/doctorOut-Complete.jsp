@@ -18,7 +18,6 @@
 
 <body>
 
-<<<<<<< HEAD
    <main>
       <div class="DoctorOut-complete-title">회원 탈퇴 완료</div>
       <div class="DoctorOut-complete-wrap">
@@ -35,24 +34,6 @@
       </div>
    </main>
    
-=======
-	<main>
-		<div class="DoctorOut-complete-title">회원 탈퇴 완료</div>
-		<div class="DoctorOut-complete-wrap">
-			<div class="DoctorOut-complete-image">
-				<img src="./../../static/image/circlecheck.png">
-			</div>
-			<div class="DoctorOut-complete-text">회원 탈퇴 완료</div>
-			<div class="Doctorout-complete-text-bottom">닥터트리 사이트 회원 탈퇴 신청이
-				완료되었습니다.</div>
-			<div class="DoctorOut-complete-btn">
-				<a href="${pageContext.request.contextPath}/index.main"><button
-						class="DoctorOut-complete-mainbtn">홈으로</button></a>
-			</div>
-		</div>
-	</main>
-	
->>>>>>> 1860fd72a39938e4ea4a037216dfefd0d7028d45
 
 </body>
 <jsp:include page="${pageContext.request.contextPath}/footer.jsp" />
