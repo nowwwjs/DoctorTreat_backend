@@ -49,12 +49,12 @@
          <br> <br> <span class="member-login-messagetwo">DOCTOR
             TREAT 계정이 없으신가요? 지금 바로 만들어보세요!</span> <br> <br>
          <button type="submit" class="member-button">
-            <a href="${pageContext.request.contextPath}/app/user/memberJoin.jsp">개인회원
+            <a href="${pageContext.request.contextPath}/member/memberJoin.me">개인회원
                가입하기</a>
          </button>
          <br> <br>
          <button type="submit" class="member-button">
-            <a href="${pageContext.request.contextPath}/app/user/doctorJoin.jsp">의사회원
+            <a href="${pageContext.request.contextPath}/doctor/doctorJoin.do">의사회원
                가입하기 
          </button>
          </a>

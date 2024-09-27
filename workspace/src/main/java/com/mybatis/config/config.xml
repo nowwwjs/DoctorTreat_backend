@@ -24,7 +24,8 @@
       <typeAlias type="com.doctorTreat.app.dto.MemberBoardDTO" alias="MemberBoardDTO" />
       <typeAlias type="com.doctorTreat.app.dto.MemberDTO" alias="MemberDTO" />
       <typeAlias type="com.doctorTreat.app.dto.DoctorDetailDTO" alias="DoctorDetailDTO" />
-      <typeAlias type="com.doctorTreat.app.dto.DoctorCommentDTO" alias="DoctorCommentDTO"/>  
+      <typeAlias type="com.doctorTreat.app.dto.DoctorCommentDTO" alias="DoctorCommentDTO"/> 
+      <typeAlias type="com.doctorTreat.app.dto.MainDTO" alias="MainDTO" />
    </typeAliases>
 
    <environments default="oracle">

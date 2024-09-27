@@ -77,8 +77,9 @@ public class DoctorBoardFrontController extends HttpServlet {
 			request.setAttribute("comments", request.getAttribute("comments"));
 			request.setAttribute("doctorCommentNumber", request.getParameter("doctorCommentNumber"));
 			result = new DoctorBoardCommentDeleteController().execute(request, response);
-			request.getRequestDispatcher("/index.jsp").forward(request, response);
-			System.out.println("댓글 삭제 안되면 안돼^^");
+		    response.sendRedirect(result.getPath()); 
+		    System.out.println("댓글 삭제 후 상세페이지로 이동");
+		    break;
 		case "/BoardCommentUpdate.docbo":
 			System.out.println(request.getParameter("infoNumber"));
 			request.setAttribute("medicalInfoNumber", request.getParameter("infoNumber"));

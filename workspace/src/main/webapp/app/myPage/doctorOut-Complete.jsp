@@ -28,7 +28,7 @@
 			<div class="Doctorout-complete-text-bottom">닥터트리 사이트 회원 탈퇴 신청이
 				완료되었습니다.</div>
 			<div class="DoctorOut-complete-btn">
-				<a href="./../../../html/main/main.html"><button
+				<a href="${pageContext.request.contextPath}/index.main"><button
 						class="DoctorOut-complete-mainbtn">홈으로</button></a>
 			</div>
 		</div>

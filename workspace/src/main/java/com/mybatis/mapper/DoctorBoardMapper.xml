@@ -10,14 +10,11 @@
 	
 	<!--  게시글 상세페이지 보여주기 -->
 	<select id="showListDetail" parameterType="int" resultType="DoctorBoardDTO">
-	SELECT dmi.MEDICAL_INFO_TITLE, dm.MEMBER_NAME, dmi.MEDICAL_INFO_DATE, dmi.MEDICAL_INFO_TEXT
+	SELECT dmi.MEDICAL_INFO_TITLE, dm.MEMBER_NAME, dmi.MEDICAL_INFO_DATE, dmi.MEDICAL_INFO_TEXT, dd.DOCTOR_MAJOR
     FROM DT_MEDICAL_INFO dmi
     JOIN DT_MEMBER dm ON dmi.MEMBER_NUMBER = dm.MEMBER_NUMBER
+    LEFT JOIN DT_DOCTOR dd ON dd.DOCTOR_NUMBER = dmi.MEMBER_NUMBER
     WHERE dmi.MEDICAL_INFO_NUMBER = #{medicalInfoNumber}
 	</select>
-	
-	
-	
-
 	
 </mapper>

@@ -36,8 +36,13 @@ public class MemberLoginOkController implements Execute {
           session.setAttribute("userType", "doctor");
           session.setAttribute("memberNumber", member.getMemberNumber());
 
+<<<<<<< HEAD
           result.setPath(request.getContextPath() + "/index.main");   
           result.setRedirect(true);
+=======
+         result.setPath(request.getContextPath() + "/index.main");
+         result.setRedirect(true);
+>>>>>>> main
       }
       return result;
   }

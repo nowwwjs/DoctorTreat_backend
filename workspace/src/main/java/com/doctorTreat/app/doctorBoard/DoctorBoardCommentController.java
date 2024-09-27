@@ -46,10 +46,6 @@ public class DoctorBoardCommentController implements Execute {
         request.setAttribute("doctorBoardshowDetail", doctorBoardDetail);
         request.setAttribute("comments", comments);
 
-        // 댓글 삽입 후 게시글 상세페이지로 리다이렉트
-//        result.setRedirect(true);
-//        result.setPath("/app/board/boardDetailDoctor?infoNumber=" + medicalInfoNumber1);
-
         return result;
     }
 }

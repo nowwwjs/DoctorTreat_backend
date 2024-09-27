@@ -36,9 +36,7 @@ public class MainMedicalInfoFrontController extends HttpServlet {
 		MainMedicalInfoDAO mainDAO = new MainMedicalInfoDAO();
 
 		List<MainDTO> medicalInfoList = mainDAO.mainShowList();
-		
-		System.out.println(medicalInfoList + "값 못불러옴?");
-		
+			
 		request.setAttribute("medicalInfoList", medicalInfoList);
 
 		request.getRequestDispatcher("/index.jsp").forward(request, response);
