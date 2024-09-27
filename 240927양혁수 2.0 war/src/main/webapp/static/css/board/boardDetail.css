@@ -1,0 +1,228 @@
+@charset "UTF-8";
+
+* {
+    margin: 0;
+    padding: 0;
+    font-family: 'Noto Sans KR', sans-serif;
+}
+
+main {
+    width: 980px;
+    height: 100%;
+    margin: 0 auto;
+}
+
+.boardDetail-title {
+    font-size: 25px;
+    font-weight: bold;
+    color: #37aa8b;
+    margin-top: 40px;
+}
+
+.boardDetail-boardTextContainer {
+    width: 800px;
+    height: 450px;
+    margin: 50px auto;
+}
+
+.boardDetail-boardTitle {
+    font-size: 18px;
+    font-weight: bold;
+    padding: 20px 0 10px 20px;
+}
+
+.boardDetail-writer {
+    font-size: 14px;
+    display: flex;
+    padding: 0 0 20px 20px;
+}
+
+.boardDetail-name {
+    margin-right: 10px;
+}
+
+.boardDetail-boardText {
+    border-top: 1px solid #ececec;
+    padding: 20px 0 20px 20px;
+}
+
+.boardDetail-comentContainer {
+    width: 800px;
+    height: 150px;
+    margin: 50px auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
+
+.boardDetail-coment {
+    resize: none;
+    width: 650px;
+    height: 70px;
+}
+
+.boardDetail-comentContainer button {
+    font-size: 15px;
+    font-weight: bold;
+    width: 60px;
+    height: 30px;
+    border: none;
+    border-radius: 3px;
+    background-color: #37aa8b;
+    color: white;
+    position: relative;
+    left: 15px;
+    bottom: -20px;
+    cursor: pointer;
+}
+
+.boardDetail-comentBox {
+    width: 800px;
+    height: 150px;
+    margin: 50px auto;
+    border-radius: 7px;
+    background-color: #ececec;
+}
+
+.boardDetail-doctorName {
+    font-size: 16px;
+    font-weight: bold;
+    padding: 10px;
+}
+
+.boardDetail-doctorComent {
+    font-size: 14px;
+    padding: 0 10px 10px 10px;
+}
+
+.boardDetail-modifyBtn,
+.boardDetail-deleteBtn {
+    position: relative;
+    bottom: 50px;
+    left: 700px;
+    cursor: pointer;
+}
+
+.boardDetail-boardTop {
+    width: 800px;
+    height: 100px;
+    position: relative;
+}
+
+.boardDetail-comentModify,
+.boardDetail-comentDelete,
+.boardDetail-modifyBtn,
+.boardDetail-deleteBtn {
+    display: flex;
+    font-size: 15px;
+    font-weight: bold;
+    width: 60px;
+    height: 30px;
+    border: none;
+    border-radius: 3px;
+    background-color: #37aa8b;
+    color: white;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    position: relative;
+}
+
+.boardDetail-deleteBtn {
+    position: relative;
+    bottom: 80px;
+    left: 770px;
+}
+
+.boardDetail-comentModify {
+    left: 675px;
+    bottom: -93px;
+}
+
+.boardDetail-comentDelete {
+    left: 742px;
+    bottom: -62px;
+
+}
+
+.boardDetail-modifyBtn:hover,
+.boardDetail-deleteBtn:hover,
+.boardDetail-comentContainer button:hover,
+.boardDetail-comentModify:hover,
+.boardDetail-comentDelete:hover{
+    background-color: #2e9278
+  }
+  
+.boardDetail-commentContainer textarea {
+    width: 100%;
+    height: 100px;
+    padding: 10px;
+    border: 1px solid #dcdcdc;
+    border-radius: 5px;
+    resize: vertical;
+    box-sizing: border-box;
+    margin-bottom: 10px;
+    font-size: 14px;
+    font-family: 'Noto Sans KR', sans-serif;
+    resize: none;
+}
+
+.boardDetail-commentContainer button {
+	width: 60px;
+    height: 40px;
+    border: none;
+    border-radius: 5px;
+    background-color: #37aa8b;
+    color: white;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+   	margin-left: 920px;
+   	margin-bottom: 20px;
+}
+
+.boardDetail-commentContainer button:hover {
+    background-color: #2e9278;
+}
+
+.boardDetail-comment-modify {
+    width: 100%;
+    height: 100px;
+    padding-left: 10px;
+    border: 1px solid #dcdcdc;
+    border-radius: 5px;
+    resize: none;
+    box-sizing: border-box;
+    margin-bottom: 10px;
+    font-size: 14px;
+    font-family: 'Noto Sans KR', sans-serif;
+}
+
+.doctorModify-complete {
+	width: 80px;
+    height: 40px;
+    border: none;
+    border-radius: 5px;
+    background-color: #37aa8b;
+    color: white;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+   	margin-bottom: 100px;
+   	margin-left: 717px;
+}
+
+.boardDetail-comentBox {
+	margin-bottom: 250px;
+}
+
+.comment-edit-form {
+	margin-top: 80px;
+}
+
+.boardDetail-doctorComment {
+	padding-left: 10px;
+}

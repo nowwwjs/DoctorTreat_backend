@@ -36,8 +36,8 @@
 					<!-- 메시지 표시 공간 -->
 				</div>
 				<div class="login-findmessage">
-					<a href="./../../../html/user/doctor/DoctorfindId.html"><span>아이디
-							찾기</span></a> <a href="./../../../html/user/doctor/DoctorfindPw.html"><span>비밀번호
+					<a href="${pageContext.request.contextPath}/doctor/doctorFindId.do"><span>아이디
+							찾기</span></a> <a href="${pageContext.request.contextPath}/doctor/doctorFindPw.do"><span>비밀번호
 							찾기</span></a>
 				</div>
 
@@ -47,11 +47,19 @@
 			<br> <br> <span class="Doctor-login-messagetwo">DOCTOR
 				TREAT 계정이 없으신가요? 지금 바로 만들어보세요!</span> <br> <br>
 			<button type="submit" class="Doctor-button">
+<<<<<<< HEAD
+				<a href="${pageContext.request.contextPath}/app/user/memberJoin.jsp">개인회원 가입</a>
+			</button>
+			<br> <br>
+			<button type="submit" class="Doctor-button">
+				<a href="${pageContext.request.contextPath}/app/user/doctorJoin.jsp">의료회원 가입 
+=======
 				<a href="${pageContext.request.contextPath}/member/memberJoin.me">개인회원 가입하기</a>
 			</button>
 			<br> <br>
 			<button type="submit" class="Doctor-button">
 				<a href="${pageContext.request.contextPath}/doctor/doctorJoin.do">의사회원 가입 
+>>>>>>> 1860fd72a39938e4ea4a037216dfefd0d7028d45
 			</button>
 			</a>
 		</div>

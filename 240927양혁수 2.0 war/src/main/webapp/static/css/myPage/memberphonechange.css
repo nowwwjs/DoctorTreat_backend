@@ -1,0 +1,90 @@
+@charset "UTF-8";
+
+.memberphoneChange-main-container{
+    width: 980px;
+    margin: 0 auto;
+    margin-top: 10px;
+    margin-bottom: 70px;
+    height: 600px;
+}
+
+.memberphoneChange-title{
+    color: #37aa8b;
+    font-size: 25px;
+    font-weight: bold;
+    margin-top: 40px;
+}
+
+.memberphoneChange-text{
+    font-size: 14px;
+    margin-bottom: 10px;
+    margin-top: 10px;
+}
+
+.memberphoneChange-inputbox{
+    width: 980px;
+    margin: 0 auto;
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    margin-bottom: 60px;
+    margin-top: 20px;
+}
+
+.memberphoneChange-inputbox input{
+    width: 450px;
+    height: 50px;
+    margin-top: 10px;
+}
+
+.memberphoneChange-requestbtn{
+    width: 100px;
+    height: 50px;
+    background-color: #37aa8b;
+    border: none;
+    border-radius: 7px;
+    font-weight: bold;
+    font-size: 14px;
+    color: white;
+    margin-left: 10px;
+}
+
+.memberphoneChange-textbox{
+    margin-top: 10px;
+    margin-bottom: 50px;
+    color: red;
+    display: none;
+}
+
+.memberphoneChange-btn{
+    margin: 0 auto;
+    width: 350px;
+    height: 50px;
+    background-color: #37aa8b;
+    border-radius: 7px;
+    text-align: center;
+    line-height: 50px;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: none;
+}
+
+.memberphoneChange-btn a{
+    color: white;
+    font-weight: bold;
+    font-size: 16px;
+}
+
+.memberphoneChange-btn:hover{
+    background-color: #2a8a70;
+}
+
+.memberphoneChange-requestbtn:hover{
+    background-color: #2a8a70;
+}
+
+.memberphoneChange-textbox {
+    color: black;
+}

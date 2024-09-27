@@ -1,0 +1,160 @@
+@charset "UTF-8";
+
+* {
+	margin: 0;
+	padding: 0;
+	font-family: 'Noto Sans KR', sans-serif;
+}
+
+main {
+	width: 980px;
+	height: 900px;
+	margin: 0 auto;
+	position: relative;
+}
+#chatRoom-info,#chatRoom-hidden{
+	color: white;
+}
+.chatRoom-topContainer {
+	position: relative;
+}
+
+.chatRoom-title {
+	font-size: 25px;
+	font-weight: bold;
+	color: #37aa8b;
+	margin-top: 40px;
+}
+
+#chatRoom-exitChatBtn {
+	width: 120px;
+	height: 30px;
+	background-color: #37aa8b;
+	color: white;
+	font-weight: bold;
+	font-size: 15px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	border: none;
+	border-radius: 7px;
+	position: relative;
+	left: 800px;
+	cursor: pointer;
+}
+
+.chatRoom-chatBox {
+	margin: 15px auto;
+	width: 850px;
+	height: 550px;
+	background-color: #ececec;
+	border-radius: 7px;
+}
+
+.chatRoom-memberName,
+.chatRoom-doctorName {
+	font-weight: bold;
+}
+
+.chatRoom-doctorName,
+.chatRoom-memberName {
+	padding: 20px 20px 0 20px;
+}
+
+.chatRoom-memberMsgContainer,
+.chatRoom-doctorMsgContainer {
+	display: flex;
+	position: relative;
+}
+
+.chatRoom-doctorMsgContainer,
+.chatRoom-memberMsgContainer {
+	padding: 10px 20px 0 20px;
+}
+
+.chatRoom-memberMsg,
+.chatRoom-doctorMsg {
+	width: 250px;
+	height: 40px;
+	background-color: #37aa8b;
+	border-radius: 7px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.chatRoom-memberMsg {
+	background-color: powderblue;
+	position: relative;
+	left: 430px;
+}
+
+.chatRoom-doctorMsgDate,
+.chatRoom-memberMsgDate {
+	height: 18px;
+	font-size: 14px;
+	margin: 0 10px;
+	position: relative;
+	top: 20px;
+}
+
+.chatRoom-memberMsgDate {
+	left: 430px;
+}
+
+.chatRoom-memberName {
+	width: 50px;
+	position: relative;
+	left: 760px;
+}
+
+.chatRoom-areaContainer {
+	width: 850px;
+	height: 100px;
+	margin: 0 auto;
+}
+
+#chatRoom-chatArea {
+	width: 810px;
+	height: 50px;
+	margin: 0 auto 50px auto;
+	padding: 20px;
+	border: none;
+	border-radius: 7px;
+	background-color: #ececec;
+}
+
+#chatRoom-submit {
+	width: 60px;
+	height: 35px;
+	background-color: #37aa8b;
+	color: white;
+	font-weight: bold;
+	border: none;
+	border-radius: 7px;
+	position: relative;
+	left: 790px;
+	top: -40px;
+	cursor: pointer;
+}
+
+#chatRoom-goWriteChart {
+	width: 300px;
+	height: 50px;
+	font-size: 18px;
+	border: none;
+	border-radius: 7px;
+	font-weight: bold;
+	background-color: #37aa8b;
+	color: white;
+	position: relative;
+	left: 360px;
+	bottom: -20px;
+	cursor: pointer;
+}
+
+#chatRoom-goWriteChart:hover,
+#chatRoom-submit:hover,
+#chatRoom-exitChatBtn:hover {
+	background-color: #2e9278
+}

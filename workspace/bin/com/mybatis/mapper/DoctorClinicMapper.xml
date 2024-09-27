@@ -80,7 +80,8 @@
 	<select id="getDoctorInfo" parameterType="int"
 		resultType="DoctorDTO">
 		SELECT
-		H.HOSPITAL_NAME , D.DOCTOR_NAME FROM DT_HOSPITAL H JOIN DT_DOCTOR D ON
+		H.HOSPITAL_NAME , D.DOCTOR_NAME FROM DT_HOSPITAL H
+		JOIN DT_DOCTOR D ON
 		H.HOSPITAL_NUMBER=D.HOSPITAL_NUMBER WHERE
 		D.DOCTOR_NUMBER=#{doctorNumber}
 	</select>
@@ -126,5 +127,29 @@
 		VALUES
 		(CHAT_SEQ.NEXTVAL, #{chatText} , SYSDATE, #{sessionNumber},
 		#{doctorNumber})
+	</select>
+
+	<!-- 채팅유저 정보, 보낸시간 조회 -->
+	<select id="getChatDoctorInfo" parameterType="Map" resultType="ChatDTO">
+		SELECT
+		D.DOCTOR_NAME,
+		TO_CHAR(CC.CHAT_MSG_DATE, 'YYYY-MM-DD HH24:MI') AS CHAT_MSG_DATE
+		FROM
+		DT_CHAT_SESSION CS
+		JOIN DT_DOCTOR D ON
+		CS.DOCTOR_NUMBER = D.DOCTOR_NUMBER
+		JOIN DT_CHAT CC ON
+		CS.SESSION_NUMBER = CC.SESSION_NUMBER
+		WHERE
+		CS.SESSION_NUMBER = #{sessionNumber}
+		AND D.DOCTOR_NUMBER = #{doctorNumber}
+		AND CC.CHAT_MSG_DATE = (
+		SELECT
+		MAX(CHAT_MSG_DATE)
+		FROM
+		DT_CHAT
+		WHERE
+		SESSION_NUMBER = CS.SESSION_NUMBER
+		)
 	</select>
 </mapper>

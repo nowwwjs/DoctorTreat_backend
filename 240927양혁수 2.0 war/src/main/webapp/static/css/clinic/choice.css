@@ -1,0 +1,51 @@
+@charset "UTF-8";
+
+main {
+	width: 980px;
+	margin: 0 auto;
+	height: 400px;
+}
+
+.clinicMember-choice {
+	color: #37AA8B;
+	font-weight: bold;
+	font-size: 25px;
+	margin-top: 40px;
+}
+
+.clinicMember-department {
+	display: flex;
+	margin-top: 20px;
+	align-items: center;
+	justify-content: center;
+}
+
+.clinicMember-form {
+	margin-right: 50px;
+}
+
+.clinicMember-form:last-child {
+	margin-right: 0;
+	/* 마지막 form 요소는 오른쪽 여백 제거 */
+}
+
+.clinicMember-otolaryngology,
+.clinicMember-medicine {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	width: 250px;
+	height: 200px;
+	background-color: #37AA8B;
+	color: white;
+	font-weight: bold;
+	border: none;
+	border-radius: 7px;
+	font-size: 30px;
+	cursor: pointer;
+}
+
+.clinicMember-otolaryngology:hover,
+.clinicMember-medicine:hover {
+	background-color: #2e9278;
+}

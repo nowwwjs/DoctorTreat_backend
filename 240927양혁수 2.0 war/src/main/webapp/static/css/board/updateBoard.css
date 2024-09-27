@@ -1,0 +1,72 @@
+@charset "UTF-8";
+
+* {
+    margin: 0;
+    padding: 0;
+    font-family: 'Noto Sans KR', sans-serif;
+}
+
+main {
+    width: 980px;
+    margin: 0 auto;
+    height: 800px;
+}
+
+.member-write-update {
+    color: #37AA8B;
+    font-weight: bold;
+    font-size: 25px;
+    margin-top: 40px;
+    margin-bottom: 40px;
+}
+
+.member-write-wrap-update {
+    border: 1px solid lightgray;
+    border-radius: 7px;
+    padding-left: 20px;
+    padding-top: 20px;
+}
+
+.member-write-title-update {
+    width: 930px;
+    background-color: lightgray;
+    border: none;
+    border-radius: 7px;
+    outline: none;
+    height: 50px;
+    margin-bottom: 20px;
+    padding-left: 10px;
+}
+
+.member-write-title-update::placeholder {
+    font-weight: bold;
+    font-size: 16px;
+}
+
+.member-write-content-update {
+    width: 930px;
+    height: 500px;
+    resize: none;
+    border-radius: 7px;
+    outline: none;
+    padding-left: 10px;
+    padding-top: 10px;
+}
+
+.member-write-content-update::placeholder {
+    font-weight: bold;
+    font-size: 15px;
+}
+
+.member-write-register-update {
+    font-size: 25px;
+    margin-left: 810px;
+    border-radius: 10px;
+    padding: 10px 10px 10px 10px;
+    border: none;
+    color: white;
+    background-color: #37AA8B;
+    cursor: pointer;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
