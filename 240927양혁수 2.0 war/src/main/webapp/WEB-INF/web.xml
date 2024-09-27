@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns="http://xmlns.jcp.org/xml/ns/javaee"
+	xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_4_0.xsd"
+	id="WebApp_ID" version="4.0">
+	<display-name>workspace</display-name>
+	<welcome-file-list>
+		<welcome-file>index.html</welcome-file>
+		<welcome-file>index.jsp</welcome-file>
+		<welcome-file>index.htm</welcome-file>
+		<welcome-file>default.html</welcome-file>
+		<welcome-file>default.jsp</welcome-file>
+		<welcome-file>default.htm</welcome-file>
+	</welcome-file-list>
+
+	<!-- 닥터 보드 컨트롤러 설정 -->
+	<servlet>
+		<servlet-name>DoctorBoard</servlet-name>
+		<servlet-class>com.doctorTreat.app.doctorBoard.DoctorBoardFrontController</servlet-class>
+	</servlet>
+
+	<servlet-mapping>
+		<servlet-name>DoctorBoard</servlet-name>
+		<url-pattern>*.docbo</url-pattern>
+	</servlet-mapping>
+
+	<!-- 멤버 보드 컨트롤러 설정 -->
+	<servlet>
+		<servlet-name>MemberBoard</servlet-name>
+		<servlet-class>com.doctorTreat.app.memberBoard.MemberBoardFrontController</servlet-class>
+	</servlet>
+
+	<servlet-mapping>
+		<servlet-name>MemberBoard</servlet-name>
+		<url-pattern>*.membo</url-pattern>
+	</servlet-mapping>
+
+	<!-- 닥터 클리닉 컨트롤러 설정 -->
+	<servlet>
+		<servlet-name>DoctorClinic</servlet-name>
+		<servlet-class>com.doctorTreat.app.doctorClinic.DoctorClinicFrontController</servlet-class>
+	</servlet>
+
+	<servlet-mapping>
+		<servlet-name>DoctorClinic</servlet-name>
+		<url-pattern>*.doccl</url-pattern>
+	</servlet-mapping>
+
+	<!-- 멤버 클리닉 컨트롤러 설정 -->
+	<servlet>
+		<servlet-name>MemberClinic</servlet-name>
+		<servlet-class>com.doctorTreat.app.memberClinic.MemberClinicFrontController</servlet-class>
+	</servlet>
+
+	<servlet-mapping>
+		<servlet-name>MemberClinic</servlet-name>
+		<url-pattern>*.memcl</url-pattern>
+	</servlet-mapping>
+
+	<!-- 닥터 컨트롤러 설정 -->
+	<servlet>
+		<servlet-name>Doctor</servlet-name>
+		<servlet-class>com.doctorTreat.app.doctor.DoctorFrontController</servlet-class>
+	</servlet>
+
+	<servlet-mapping>
+		<servlet-name>Doctor</servlet-name>
+		<url-pattern>*.do</url-pattern>
+	</servlet-mapping>
+
+
+	<!-- 닥터 마이페이지 설정 -->
+	<servlet>
+		<servlet-name>DoctorMypage</servlet-name>
+		<servlet-class>com.doctorTreat.app.doctorMypage.DoctorMypageFrontController</servlet-class>
+	</servlet>
+
+	<servlet-mapping>
+		<servlet-name>DoctorMypage</servlet-name>
+		<url-pattern>*.dm</url-pattern>
+	</servlet-mapping>
+
+
+	<!-- 멤버 컨트롤러 설정 -->
+	<servlet>
+		<servlet-name>Member</servlet-name>
+		<servlet-class>com.doctorTreat.app.member.MemberFrontController</servlet-class>
+	</servlet>
+
+	<servlet-mapping>
+		<servlet-name>Member</servlet-name>
+		<url-pattern>*.me</url-pattern>
+	</servlet-mapping>
+
+
+	<!-- 멤버 마이페이지 설정 -->
+	<servlet>
+		<servlet-name>MemberMypage</servlet-name>
+		<servlet-class>com.doctorTreat.app.memberMypage.MemberMypageFrontController</servlet-class>
+	</servlet>
+
+	<servlet-mapping>
+		<servlet-name>MemberMypage</servlet-name>
+		<url-pattern>*.mm</url-pattern>
+	</servlet-mapping>
+
+	<!-- 메인 컨트롤러 설정 -->
+	<servlet>
+		<servlet-name>Main</servlet-name>
+		<servlet-class>com.doctorTreat.app.main.dao.MainMedicalInfoFrontController</servlet-class>
+	</servlet>
+
+	<servlet-mapping>
+		<servlet-name>Main</servlet-name>
+		<url-pattern>*.main</url-pattern>
+	</servlet-mapping>
+
+
+</web-app>

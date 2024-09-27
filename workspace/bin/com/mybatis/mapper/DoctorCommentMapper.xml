@@ -17,6 +17,7 @@
 		SELECT
 		c.DOCTOR_COMMENT_NUMBER,
 		d.DOCTOR_NAME,
+		d.DOCTOR_NUMBER,
 		c.DOCTOR_COMMENT_TEXT,
 		c.MEDICAL_INFO_NUMBER
 		FROM DT_DOCTOR_COMMENT c
@@ -30,5 +31,11 @@
     	WHERE DOCTOR_COMMENT_NUMBER = #{doctorCommentNumber}
 	</delete> 
 	
+	<!--  댓글 수정하기 -->
+	<update id="updateComment" parameterType="DoctorCommentDTO">
+    UPDATE DT_DOCTOR_COMMENT
+    SET DOCTOR_COMMENT_TEXT = #{doctorCommentText}
+    WHERE DOCTOR_COMMENT_NUMBER = #{doctorCommentNumber}
+	</update>
+	
 </mapper>
-

@@ -1,0 +1,150 @@
+@charset "UTF-8";
+
+a {
+	color: black;
+	text-decoration: none;
+}
+
+
+
+* {
+    margin: 0;
+    padding: 0;
+    font-family: 'Noto Sans KR', sans-serif;
+}
+
+main {
+    width: 980px;
+    height: 100%;
+    margin: 0 auto;
+}
+
+.medicalKnowledgeList-title {
+    font-size: 25px;
+    font-weight: bold;
+    color: #37aa8b;
+    margin-top: 40px;
+}
+
+#medicalKnowledgeList-all {
+    width: 40px;
+    margin: 20px 20px 0 15px;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.medicalKnowledgeList-selectContainer {
+    width: 195px;
+    display: flex;
+}
+
+.medicalKnowledgeList-selectBox {
+    width: 120px;
+    height: 25px;
+    margin: 20px 0 0 0;
+    padding-left: 20px;
+    border: none;
+    border-radius: 15px;
+    background-color: lightgrey;
+}
+
+ul,
+li {
+    list-style-type: none;
+}
+
+li {
+    margin-bottom: 60px;
+    cursor: pointer;
+}
+
+.medicalKnowledgeList-board {
+    width: 910px;
+    height: 100%;
+    margin: 50px auto;
+}
+
+.medicalKnowledgeList-boardList {
+    font-size: 18px;
+    font-weight: bold;
+    margin: 10px 0 10px 0;
+}
+
+.medicalKnowledgeList-text {
+    margin: 0 0 0 10px;
+}
+
+.medicalKnowledgeList-writer img {
+    display: block;
+    width: 30px;
+    margin: 0 10px;
+}
+
+.medicalKnowledgeList-writer {
+    margin: 15px 0;
+    display: flex;
+    font-size: 14px;
+}
+
+.medicalKnowledgeList-page {
+    width: 500px;
+    margin: 0 auto;
+    margin-bottom: 20px;
+    font-size: 18px;
+    letter-spacing: 5px;
+}
+
+.medicalKnowledgeList-pagenation {
+    display: flex;
+    justify-content: center;
+    height: 40px;
+}
+
+.medicalKnowledgeList-pagenation a {
+    text-decoration: none;
+    cursor: pointer;
+    letter-spacing: 5px;
+    font-size: 20px;
+    color: black;
+}
+
+.medicalKnowledgeList-pagenation li.active a {
+    font-weight: bold;
+    color: violet; 
+    text-decoration: none; 
+    cursor: pointer;
+    letter-spacing: 5px;
+    font-size: 20px;
+}
+
+
+
+
+.medicalKnowledgeList-goWrite {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 600px;
+    height: 70px;
+    font-size: 18px;
+    font-weight: bold;
+    border: none;
+    border-radius: 7px;
+    margin: 0 auto 20px auto;
+    color: white;
+    background-color: #37aa8b;
+    cursor: pointer;
+}
+
+.medicalKnowledgeList-text {
+	display: block;
+    white-space: nowrap; 
+    overflow: hidden; 
+    text-overflow: ellipsis; 
+    height: 50px;
+}
+
+
+.medicalKnowledgeList-goWrite:hover{
+    background-color: #2e9278
+  }
