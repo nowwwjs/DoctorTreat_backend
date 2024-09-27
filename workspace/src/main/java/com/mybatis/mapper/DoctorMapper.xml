@@ -145,17 +145,5 @@
 		FROM DT_DOCTOR
 		WHERE DOCTOR_PHONE = #{doctorPhone}
 	</select>
-	
-
-
-	<!--의사아이디 찾기 -->
-	<select id="findId1" parameterType="String"
-		resultType="DoctorDTO">
-		SELECT DOCTOR_NAME , DOCTOR_ID
-		FROM DT_DOCTOR
-		WHERE DOCTOR_PHONE = #{doctorPhone}
-	</select>
-
-
 
 </mapper>
