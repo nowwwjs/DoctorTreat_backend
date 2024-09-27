@@ -38,9 +38,9 @@ public class DoctorLoginOkController implements Execute {
             session.setAttribute("userType", "doctor");
             session.setAttribute("doctorNumber", doctor.getDoctorNumber());
 
-            result.setPath(request.getContextPath() + "/index.main");	
+            result.setPath(request.getContextPath() + "/index.main");   
             result.setRedirect(true);
         }
         return result;
     }
-}
+}	

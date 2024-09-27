@@ -36,7 +36,11 @@
             </div>
          </div>
 
+<<<<<<< HEAD
          <button class="DoctorPhoneOk-btn">
+=======
+         <button class="DoctorPhoneOk-btn" style="color: white;">
+>>>>>>> main
             <p>인증완료</p>
          </button>
       </form>

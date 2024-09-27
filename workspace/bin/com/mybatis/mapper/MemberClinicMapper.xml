@@ -142,6 +142,7 @@
 		WHERE ROWNUM = 1
 	</select>
 
+	<!-- 채팅방 번호 조회 -->
 	<select id="getChatRoomNumber" parameterType="Map"
 		resultType="ChatSessionDTO">
 		SELECT
@@ -174,9 +175,37 @@
 		HH.HOSPITAL_NAME = #{hospitalName})
 	</select>
 
+	<!-- 채팅값 저장 -->
 	<select id="inputMemberChat" parameterType="ChatDTO">
-		INSERT INTO DT_CHAT (CHAT_NUMBER, CHAT_TEXT, CHAT_MSG_DATE, SESSION_NUMBER,
-		MEMBER_NUMBER) VALUES
-		(CHAT_SEQ.NEXTVAL, #{chatText} , SYSDATE, #{sessionNumber}, #{memberNumber})
+		INSERT INTO DT_CHAT
+		(CHAT_NUMBER, CHAT_TEXT, CHAT_MSG_DATE, SESSION_NUMBER,
+		MEMBER_NUMBER)
+		VALUES
+		(CHAT_SEQ.NEXTVAL, #{chatText} , SYSDATE, #{sessionNumber},
+		#{memberNumber})
+	</select>
+
+	<!-- 채팅유저 정보, 보낸시간 조회 -->
+	<select id="getChatMemberInfo" parameterType="Map" resultType="ChatDTO">
+		SELECT
+		M.MEMBER_NAME,
+		TO_CHAR(CC.CHAT_MSG_DATE, 'YYYY-MM-DD HH24:MI') AS CHAT_MSG_DATE
+		FROM
+		DT_CHAT_SESSION CS
+		JOIN DT_MEMBER M ON
+		CS.MEMBER_NUMBER = M.MEMBER_NUMBER
+		JOIN DT_CHAT CC ON
+		CS.SESSION_NUMBER = CC.SESSION_NUMBER
+		WHERE
+		CS.SESSION_NUMBER = #{sessionNumber}
+		AND M.MEMBER_NUMBER = #{memberNumber}
+		AND CC.CHAT_MSG_DATE = (
+		SELECT
+		MAX(CHAT_MSG_DATE)
+		FROM
+		DT_CHAT
+		WHERE
+		SESSION_NUMBER = CS.SESSION_NUMBER
+		)
 	</select>
 </mapper>

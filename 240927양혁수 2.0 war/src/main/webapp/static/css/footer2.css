@@ -1,0 +1,66 @@
+@charset "UTF-8";
+
+/* 기본 스타일 초기화 */
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	font-family: 'Noto Sans KR', sans-serif;
+}
+
+body {
+	position: relative;
+	min-height: 100vh;
+}
+
+.content {
+	/* 본문 내용이 푸터에 겹치지 않도록 padding-bottom 설정 */
+	padding-bottom: 200px; /* footer 높이만큼 여백 추가 */
+}
+
+footer {
+	position: relative;
+	left: -462px;
+	bottom: 0;
+	width: 100vw;
+	height: 200px;
+	border-top: 0.7px solid #A9AEB1;
+	background-color: white; /* 배경색 설정 */
+}
+
+#footer-footer {
+	width: 50%;
+	margin: 0 auto;
+	font-size: 12px;
+}
+
+.footer-bold-first {
+	color: #71767A;
+	font-weight: bold;
+}
+
+.footer-bold-second {
+	color: #A9AEB1;
+	font-weight: bold;
+}
+
+.footer-medium {
+	color: #A9AEB1;
+	font-weight: 200;
+}
+
+#footer-icon {
+	display: flex;
+	gap: 18px;
+	justify-content: center; /* 아이콘을 중앙 정렬 */
+}
+
+.fab, .fa-brands, .fa-regular {
+	font-size: 25px;
+	cursor: pointer;
+}
+
+a {
+	text-decoration: none;
+	color: black;
+}

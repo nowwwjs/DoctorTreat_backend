@@ -1,0 +1,79 @@
+@charset "UTF-8";
+.memberpwOk-main-container {
+    width: 980px;
+    margin: 0 auto;
+    margin-top: 10px;
+    margin-bottom: 70px;
+    height: 600px;
+}
+
+.memberpwOk-title {
+    color: #37aa8b;
+    font-size: 25px;
+    font-weight: bold;
+    margin-top: 40px;
+}
+
+.memberpwOk-text {
+    font-size: 14px;
+    margin-bottom: 10px;
+    margin-top: 10px;
+}
+
+.memberpwOk-inputbox {
+    width: 980px;
+    margin: 0 auto;
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    margin-bottom: 60px;
+    margin-top: 20px;
+}
+
+.memberpwOk-inputbox input {
+    width: 450px;
+    height: 50px;
+    margin-top: 10px;
+}
+
+.memberpwOk-textbox {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 30px;
+    color: red;
+    display: none;
+}
+
+.memberpwOk-btn {
+    margin: 0 auto;
+    width: 350px;
+    height: 50px;
+    background-color: #37aa8b;
+    border-radius: 7px;
+    text-align: center;
+    line-height: 50px;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: none;
+}
+
+.memberpwOk-btn:hover {
+    background-color: #2a8a70;
+}
+
+.memberpwOk-btn a {
+    color: white;
+    font-size: 16px;
+    font-weight: bold;
+}
+
+.memberpwOk-input-field.focus {
+    border: 1px solid blue;
+}
+
+.memberpwOk-input-field.blur {
+    border: 1px solid red;
+}
