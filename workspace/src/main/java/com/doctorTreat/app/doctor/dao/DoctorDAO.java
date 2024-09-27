@@ -187,19 +187,19 @@ public class DoctorDAO {
    
    //의사 비밀번호 찾기
    public DoctorDTO findPassword(String doctorName, String doctorId) {
-	    System.out.println("의사 FindPw 도착했음");
-	    
-	    // Map을 사용하여 매개변수 전달
-	    Map<String, Object> params = new HashMap<>();
-	    params.put("doctorName", doctorName);
-	    params.put("doctorId", doctorId);
-	    
-	    // selectOne으로 결과를 받아 처리
-	  return  sqlSession.selectOne("doctor.findPassword", params);
-	
-	    
-	   // 비밀번호가 존재하는 경우 true 반환
-	}
+       System.out.println("의사 FindPw 도착했음");
+       
+       // Map을 사용하여 매개변수 전달
+       Map<String, Object> params = new HashMap<>();
+       params.put("doctorName", doctorName);
+       params.put("doctorId", doctorId);
+       
+       // selectOne으로 결과를 받아 처리
+     return  sqlSession.selectOne("doctor.findPassword", params);
+   
+       
+      // 비밀번호가 존재하는 경우 true 반환
+   }
    
    
    
@@ -210,19 +210,19 @@ public class DoctorDAO {
 
 // 비밀번호 변경
    public void updatePassword(DoctorDTO doctorDTO) {
-	    try {
-	        int rowsUpdated = sqlSession.update("doctorMypage.updatePassword", doctorDTO);
-	        if (rowsUpdated > 0) {
-	            sqlSession.commit();  // 커밋이 정상적으로 발생해야만
-	            System.out.println("비밀번호 업데이트 성공");
-	        } else {
-	            System.out.println("업데이트된 행이 없습니다.");
-	        }
-	    } catch (Exception e) {
-	        sqlSession.rollback();  // 예외가 발생하면 롤백
-	        e.printStackTrace();
-	    }
-	}
+       try {
+           int rowsUpdated = sqlSession.update("doctorMypage.updatePassword", doctorDTO);
+           if (rowsUpdated > 0) {
+               sqlSession.commit();  // 커밋이 정상적으로 발생해야만
+               System.out.println("비밀번호 업데이트 성공");
+           } else {
+               System.out.println("업데이트된 행이 없습니다.");
+           }
+       } catch (Exception e) {
+           sqlSession.rollback();  // 예외가 발생하면 롤백
+           e.printStackTrace();
+       }
+   }
    }
 
 

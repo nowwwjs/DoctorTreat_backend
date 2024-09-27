@@ -30,6 +30,8 @@ public class MemberBoardDeleteController implements Execute {
         memberBoardDAO.delete3(medicalInfoNumber);
         memberBoardDAO.delete4(medicalInfoNumber);
         
+        request.setAttribute("alertMessage", "게시글이 성공적으로 삭제되었습니다.");
+        
         // 삭제 후 리다이렉트 설정
         result.setRedirect(true);
         
