@@ -82,10 +82,28 @@ public class MemberFrontController extends HttpServlet {
          result = new MemberLogoutOkController().execute(request, response);
          request.getRequestDispatcher("/index.jsp").forward(request, response);
          break;
+      case "/member/memberFindId.me":
+         System.out.println("멤버 아이디 찾기 !");
+         result = new MemberFindIdController().execute(request, response);
+         request.getRequestDispatcher("/app/user/memberFindIdFinish.jsp").forward(request, response);
+         break;
+         
+      case "/member/memberFindPw.me" :
+    	  System.out.println("비밀번호 찾기 중 !!");
+    	  System.out.println(request);
+    	  request.getRequestDispatcher("/app/user/memberFindPw.jsp").forward(request, response);
+    	  break;
+    	  
+      case "/member/memberFindPwOk.me":
+    	  System.out.println("비밀번호 찾기 완료!!");
+    	  result = new MemberFindPwController().execute(request, response);
+    	  request.getRequestDispatcher("/app/user/memberFindPwFinish.jsp").forward(request, response);
+    	  break;
+
       case "/member/joinSMS.me":
-			System.out.println("sms!!");
-			new MemberJoinSMSController().execute(request, response);
-			break;
+         System.out.println("sms!!");
+         new MemberJoinSMSController().execute(request, response);
+         break;
       }
    }
 

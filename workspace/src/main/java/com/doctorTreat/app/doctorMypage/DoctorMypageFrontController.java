@@ -69,9 +69,7 @@ public class DoctorMypageFrontController extends HttpServlet {
             case "/doctor/doctorOut.dm":
             	System.out.println("나 회원탈퇴야 !!");
                 result = new DoctorOutOkController().execute(request, response);
-                break;
-                
-           
+                break;           
         }
 
         // 리다이렉트 또는 forward 처리

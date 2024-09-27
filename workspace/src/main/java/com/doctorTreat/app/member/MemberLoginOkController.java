@@ -28,19 +28,17 @@ public class MemberLoginOkController implements Execute {
       MemberDTO member = memberDAO.memberLogin(memberDTO);
       Result result = new Result();
 
-      System.out.println("----------------");
-      if ( member == null) {
-         result.setPath("/user/memberLogin.jsp");
-         result.setRedirect(false);
+      if (member == null) {
+          response.getWriter().print("<script>alert('아이디 또는 비밀번호를 다시 입력해주세요.'); location.href='http://localhost:9000/member/memberLogin.me';</script>");
+          response.getWriter().flush();
       } else {
           HttpSession session = request.getSession();
-          session.setAttribute("userType", "member");
-          session.setAttribute("memberNumber", member.getMemberNumber());   
+          session.setAttribute("userType", "doctor");
+          session.setAttribute("memberNumber", member.getMemberNumber());
 
-         result.setPath(request.getContextPath() + "/index.jsp");
-         result.setRedirect(true);
+          result.setPath(request.getContextPath() + "/index.main");   
+          result.setRedirect(true);
       }
-       return result;
-
-   }
+      return result;
+  }
 }

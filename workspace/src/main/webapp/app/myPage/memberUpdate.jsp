@@ -6,6 +6,7 @@
 <meta charset="UTF-8">
 <title>일반회원마이페이지수정</title>
 <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/static/css/myPage/memberupdate.css">
+ <script src="https://t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>
 <link rel="stylesheet"
    href="${pageContext.request.contextPath}/static/css/main.css" />
 <link rel="stylesheet"
@@ -20,15 +21,17 @@
       <hr class="memberupdateMember-hr">
   </div>
   <div class="memberupdateMember-inputbox">
-      <form action="">
+      <form action="${pageContext.request.contextPath}/memberMypage/memberUpdateProcess.mm" method="post">
+      <input type="hidden" name="memberNumber" value="${showMember.memberNumber}">
+      
           <label class="memberupdateMember-input" for="">
               <span>아이디</span>
-              <input type="text" value="">
+              <input type="text" name="memberId" value="${showMember.memberId}" readonly>
           </label>
           <br>
           <label class="memberupdateMember-input" for="">
               <span>이름</span>
-              <input type="text" value="">
+              <input type="text" name="memberName" value="${showMember.memberName}">
           </label>
           <br>
           <label class="memberupdateMember-input" for="">
@@ -38,28 +41,43 @@
           <br>
           <label class="memberupdateMember-input" for="">
               <span>생년월일</span>
-              <input type="text" value="">
+              <input type="text" name="memberBirth" value="${showMember.memberBirth}">
           </label>
           <br>
           <label class="memberupdateMember-input" for="">
               <span>휴대폰 번호</span>
-              <button><a href="${pageContext.request.contextPath}/app/myPage/memberphonechange.jsp">휴대폰 번호 변경</a></button>
+              <input type="text" name="memberPhone" value="${showMember.memberPhone}">
           </label>
             <br>
-            
           <label class="memberupdateMember-input" for=""> 
-          	<span>주소</span> 
-          	<input type="text" id="Memberaddress" name = "Memberaddress">
+               <span>주소</span> 
+               <input type="text" id="postcode" name="postalCode" placeholder="우편번호" value="${showMember.addressPostal}" readonly>
           </label> 
-      </form>
+             <br> 
+          <label class="memberupdateMember-input" for="">
+                <button type="button" class="postcode-search" onclick="execDaumPostcode()" style="color: white;">주소 찾기</button>
+          </label> 
+             <br> 
+          <label class="memberupdateMember-input" for="">
+               <span></span> 
+               <input type="text" id="address" name="address" placeholder="주소" value="${showMember.addressAddress}" readonly>
+          </label> 
+            <br> 
+          <label class="memberupdateMember-input" for="">
+                <span></span> 
+                <input type="text" id="detailAddress" name="detailAddress" placeholder="상세 주소" value="${showMember.addressDetail}">
+          </label>
+      
   </div>
   <div class="memberupdateMember-botton">          
-      <button class="memberupdateMember-btn"><a href="${pageContext.request.contextPath}/app/myPage/memberInfo.jsp">수정완료</a></button>
+      <button class="memberupdateMember-btn" style="color: white;">수정완료</button>
       			<button class="memberupdateMember-btn" id="memberupdateMember-btn">
 				<a href="${pageContext.request.contextPath}/app/myPage/memberOut.jsp">회원탈퇴</a>
 			</button>
+	</form>		
   </div>  
 </div>
+<script src="${pageContext.request.contextPath}/static/js/myPage/memberUpdate.js"></script>
 </body>
 <jsp:include page="${pageContext.request.contextPath}/footer.jsp" />
 </html>
