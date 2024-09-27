@@ -39,11 +39,8 @@ public class DoctorFindIdOkController implements Execute {
       result.setRedirect(true);
 
       return result;
-<<<<<<< HEAD
-=======
       
       
->>>>>>> main
 
    }
 
