@@ -22,14 +22,12 @@ public class MemberBoardShowController implements Execute {
 		MemberBoardDAO memberBoardDAO = new MemberBoardDAO();
 		MemberBoardDTO memberBoardDTO = new MemberBoardDTO();
 
+		// 세션으로 넘버 가져오기
 		String sessionNumber = (String) request.getSession().getAttribute("medicalInfoNumber");
-
 		int medicalInfoNumber = Integer.valueOf(sessionNumber);
-
+		
+		// 넘버를 통해 해당하는 글과 제목 넘기기
 		memberBoardDTO = memberBoardDAO.show(medicalInfoNumber);
-
-		System.out.println("어 뭐야" + memberBoardDTO);
-
 		request.setAttribute("memberBoardShowPage", memberBoardDTO);
 
 		result.setRedirect(true);

@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+    <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -17,14 +18,16 @@
 	<main>
 		<div id="member-findFinish-title">아이디 찾기</div>
 		<div class="member-findFinish-container">
-			<div class="member-findFinish-userName">차은우 회원님의 아이디 입니다</div>
+			<div class="member-findFinish-userName">${membershowId.memberName}님의 아이디 입니다</div>
 			<div class="member-findFinish-user">
 				<span>계정 : </span>
-				<sapn class="member-findFinish-userId">shjeong1994</sapn>
+				<sapn class="member-findFinish-userId">${membershowId.memberId}</sapn>
 			</div>
-			<form action="${pageContext.request.contextPath}/app/user/memberlogin.jsp" method="">
-				<button id="member-findFinish-goLogin">로그인</button>
-			</form>
+			
+				<button id="member-findFinish-goLogin">
+					<a href="${pageContext.request.contextPath}/app/user/doctorLogin.jsp">로그인</a>
+				</button>
+			
 		</div>
 	</main>
 </body>

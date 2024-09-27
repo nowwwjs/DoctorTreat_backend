@@ -23,7 +23,7 @@
             </div>
             <section class="findId-form">
                 <form>
-                    <button type="submit"><a href="${pageContext.request.contextPath}/app/myPage/memberphoneok.jsp" class="findId-phone-a">본인명의 휴대폰으로 인증</button></a>
+                    <button type="submit"><a href="${pageContext.request.contextPath}/app/myPage/memberPhoneOk.jsp" class="findId-phone-a">본인명의 휴대폰으로 인증</button></a>
                     <br><br>
                     <p>회원님의 명의로 등록된</p>
                     <p>휴대폰으로 본인확인을 진행합니다</p>

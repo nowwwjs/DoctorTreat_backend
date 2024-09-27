@@ -36,42 +36,45 @@ public class MemberBoardFrontController extends HttpServlet {
       switch (target) {
       case "/BoardList.membo":
          System.out.println("의사 지식인 페이지 이동");
-         result = new MemberBoardListController().execute(request, response);
+         new MemberBoardListController().execute(request, response);
          request.getRequestDispatcher("/app/board/medicalKnowledgeList.jsp").forward(request, response);
          break;
+         
       case "/memberBoardDetail.membo":
          System.out.println("상세 페이지 이동");
          result = new MemberBoardDetailController().execute(request, response);
          request.getRequestDispatcher("/app/board/boardDetailAuth.jsp").forward(request, response);
          break;
+         
       case "/memberBoardWrite.membo":
          System.out.println("글 작성 페이지 이동");
          request.getRequestDispatcher("/app/board/write.jsp").forward(request, response);
          break;
+         
       case "/memberBoardWriteOk.membo":
          System.out.println("글 작성!");
          result = new MemberBoardWriteController().execute(request, response);
-         request.getRequestDispatcher("/index.jsp").forward(request, response);
+         request.getRequestDispatcher("/BoardList.membo").forward(request, response);
          break;
          
       case "/updateBoard.membo":
          System.out.println("글 수정!");
-       
          String medicalInfoNumber = request.getParameter("infoNumber3");
          request.getSession().setAttribute("medicalInfoNumber", medicalInfoNumber);
          result = new MemberBoardShowController().execute(request, response);
          request.getRequestDispatcher("/app/board/updateBoard.jsp").forward(request, response);
          break;
+         
       case "/updateBoardOk.membo":
           System.out.println("글 수정임!");
           result = new MemberBoardUpdateController().execute(request, response);
-          request.getRequestDispatcher("/index.jsp").forward(request, response);
+          request.getRequestDispatcher("/BoardList.membo").forward(request, response);
           break;
          
       case "/deleteBoard.membo":
          System.out.println("글 삭제!");
          result = new MemberBoardDeleteController().execute(request, response);
-         request.getRequestDispatcher("/index.jsp").forward(request, response);
+         request.getRequestDispatcher("/BoardList.membo").forward(request, response);
          break;
       }
 

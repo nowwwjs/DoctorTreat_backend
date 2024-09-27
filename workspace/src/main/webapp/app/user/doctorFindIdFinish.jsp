@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
+	<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -18,23 +19,26 @@
 
 <body>
 	<!-- 헤더 -->
-
-
 	<main>
 		<div id="Doctor-findFinish-title">아이디 찾기</div>
 		<div class="Doctor-findFinish-container">
-			<div class="Doctor-findFinish-userName">차은우 회원님의 아이디 입니다</div>
+			<div class="Doctor-findFinish-userName">${doctorshowId.doctorName}님의 아이디 입니다</div>
+			
 			<div class="Doctor-findFinish-user">
 				<span>계정 : </span>
-				<sapn class="Doctor-findFinish-userId">shjeong1994</sapn>
+				<span class="Doctor-findFinish-userId">${doctorshowId.doctorId}</span>
 			</div>
-			<form action="./../../../html/user/member/memberlogin.html" method="">
-				<button id="Doctor-findFinish-goLogin">로그인</button>
-			</form>
+
+			<button id="Doctor-findFinish-goLogin">
+				<a
+					href="${pageContext.request.contextPath}/app/user/doctorLogin.jsp">로그인
+				</a>
+			</button>
+
 		</div>
 	</main>
 
-	<!-- 푸터 -->
+	<!-- 푸터 -->	
 
 </body>
 <jsp:include page="${pageContext.request.contextPath}/footer.jsp" />

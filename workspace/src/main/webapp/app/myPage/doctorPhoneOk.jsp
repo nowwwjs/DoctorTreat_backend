@@ -22,32 +22,25 @@
 			<hr class="DoctorPhoneOk-hr">
 		</div>
 
-		<div class="DoctorPhoneOk-inputbox">
-			<form action="">
-				<p class="DoctorPhoneOk-text">휴대폰 번호 인증</p>
+		<form
+			action="${pageContext.request.contextPath}/doctor/doctorFindIdOk.do"
+			method="post">
+
+			<div class="DoctorPhoneOk-inputbox">
+
+				<p class="DoctorPhoneOk-text">휴대폰 번호</p>
 
 				<div class="DoctorPhoneOk-Okbtn">
 					<input type="text" class="DoctorPhoneOk-input-field"
-						id="phoneInput">
-					<div class="DoctorPhoneOk-textbox" id="errorMessage">
-						<p>010-0000-0000 양식으로 작성해주세요</p>
-					</div>
-					<button class="DoctorPhoneOk-requestbtn">
-						<p>인증요청</p>
-					</button>
+						id="phoneInput" name="phoneNum">
 				</div>
-			</form>
-		</div>
+			</div>
 
-
-		<button class="DoctorPhoneOk-btn">
-			<p>
-				<a href="${pageContext.request.contextPath}/app/myPage/doctorPwChange.jsp">인증완료</a>
-			</p>
-		</button>
+			<button class="DoctorPhoneOk-btn">
+				<p>인증완료</p>
+			</button>
+		</form>
 	</div>
-
-	
 
 	<script
 		src="${pageContext.request.contextPath}/static/js/myPage/doctorPhoneOk.js"></script>

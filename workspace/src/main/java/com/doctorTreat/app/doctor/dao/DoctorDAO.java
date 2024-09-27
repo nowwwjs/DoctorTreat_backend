@@ -136,10 +136,6 @@ public class DoctorDAO {
 		}
 	}
 	
-	
-	
-	
-
 	// 아이디 중복확인
 	public boolean checkId(String doctorId) {
 		System.out.println("중복확인도착");
@@ -150,4 +146,11 @@ public class DoctorDAO {
 		// 값이 0 이하면 아이디가 존재하지 않음 => true 반환
 		// 아이디가 존재하면 false 반환
 	}
+	
+	// 닥터 아이디 찾기
+	public DoctorDTO findId1(String phone) {
+		System.out.println("닥터 findId 도착");
+		return sqlSession.selectOne("doctor.findId1", phone);
+	}
+	
 }
