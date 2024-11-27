@@ -1,11 +1,13 @@
-Spring Boot 프로젝트 맛있는재활용
+JSP DOCTOR TREAT
 =
 
-> 작업기간: 2024.09.27 ~ 2023.11.15 <br>
+> 작업기간: 2024.08.16 ~ 2024.09.13 <br>
 > 참여 인원 : 5명 <br> <br>
-> 음식물 쓰레기 감소를 위한 챗봇 레시피 추천 웹서비스 입니다 <br>
+> 비대면 진료 서비스 <br>
 
-![메인 페이지](https://github.com/user-attachments/assets/d48cbb34-572c-4d88-856d-2941d4dbb4c7)
+![image](https://github.com/user-attachments/assets/a9e72512-9148-4612-9e9d-57cdace6967f)
+![image](https://github.com/user-attachments/assets/38e0d8c1-c210-405f-b981-fdfbfe4e6b0b)
+![image](https://github.com/user-attachments/assets/ee598256-9897-45b4-a08e-5888362c25c8)
 
 ## 📚목차
 - [들어가며](#-들어가며)
@@ -30,17 +32,17 @@ Spring Boot 프로젝트 맛있는재활용
 ## 💬들어가며
 ### 1️⃣ 프로젝트 소개
 
-국비지원 수업의 마지막 과정으로 팀 프로젝트를 진행하게 되었습니다. <br>
-서비스 이용을 진행 할수록 누적되는 적절한 보상과 출석체크 시스템 및 공공데이터를 활용하여 <br>
-유저들의 환경보호 참여의지를 고취시키는 챗봇 서비스 입니다
+국비지원 수업의 중간 과정으로 팀 프로젝트를 진행하게 되었습니다. <br>
+직접 가지 않아도 되는 비대면 진료 서비스를 이용하여 사용자의 편의성을 높였습니다. <br>
+코로나 재유행도 대비하고 , 바쁜 현대인의 삶을 적극 반영한 서비스 입니다. 
 
 ### 2️⃣ 프로젝트 기능
 
 제가 구현한 프로젝트의 주요 기능은 다음과 같습니다.
 
-- **관리자 -** 삭제 기능 , 검색 기능 , 파일 등록 , 파일 삭제 , 상세페이지 연결
-- **레시피 -** 찜 기능 , 추천 기능 , 신고 기능
-- **게시판 -** toast api 이용한 글등록
+- **질병백과 -** 상세페이지 연결
+- **지역별 병원 정보 -** 카카오맵 API 활용
+- **의료지식인(일반회원) -** summerNote api 이용 , DB CRUD 활용
 
 
 ### 3️⃣ 사용 기술
@@ -49,13 +51,9 @@ Spring Boot 프로젝트 맛있는재활용
 
 ##### 주요 프레임워크 / 라이브러리
 - Java 17
-- SpringBoot 3.2.10
+- jsp
 - MyBatis
-- Spring Security
 - OAuth 2.0
-
-##### Build Tool
-- Gradle 7.2
 
 ##### DataBase
 - Oracle 11.2.0.2.0
@@ -64,118 +62,72 @@ Spring Boot 프로젝트 맛있는재활용
 - Html/Css
 - JavaScript
 - Jquery
-- ThymeLeaf
+- jstl
 
 ### 4️⃣ 실행 화면
  <details>
-    <summary>관리자 관련</summary>
+    <summary>질병백과</summary>
      
-  **1. 관리자 대시보드**<br>
-  ![대시보드](https://github.com/user-attachments/assets/5c5f987d-1bca-4a49-85f0-1fce051ad778)<br>
-  로그인한 관리자의 이름이 왼쪽 상단에 뜨고 , 회원 수 , 신고 수 , 오늘 날짜 , 권리자 신원정보를 제공한다.
-  
-  <br><br><br>
+  **1. 질병목록**<br>
+ ![image](https://github.com/user-attachments/assets/6686ef0c-3f9e-4bd9-87ff-3c37c0bb699b)<br>
+   이비인후과 , 내과로 나누어져 있고 각각 5개씩 질병목록이 나열되어 있다.
+  <br><br>
        
-  **2. 회원 관리**<br>
-  ![회원관리-1](https://github.com/user-attachments/assets/9cd79e20-15f9-4651-b7cd-0aa352ee7bf3)<br>
-  회원의 기본 정보와 현재 상태를 보여준다.<br><br>
+  **2. 질병 상세 페이지**<br>
+  ![image](https://github.com/user-attachments/assets/a9332172-704b-49b6-80e6-2f54d11ff8d9)<br>
+  질병에 대한 사진과 기본적인 설명이 나와 있다.
+  <br><br>
 
-  ![회원관리-3](https://github.com/user-attachments/assets/c7834b8e-98bf-4fe1-8df8-1b781de204b5)<br>
- 닉네임 4번 회원이 7일 정지된 모습<br><br>
-
- ![회원관리-4](https://github.com/user-attachments/assets/8f87fafb-9190-4636-8091-9e3ef5bcc317)<br>
- 닉네임 2번 회원이 탈퇴된 모습<br><br> 
-
-![회원관리-2](https://github.com/user-attachments/assets/64484cea-16d6-432f-b383-af32845a5a59)<br>
- 닉네임 12번 회원을 검색한 모습
- 
-<br><br><br>
-
-  **3. 게시글 관리** <br>
-  ![게시글 관리-1](https://github.com/user-attachments/assets/d1e5e9b2-7a5d-4244-b5f1-80fe8ff8e389)<br>
-  제목 , 작성자 , 추천수 , 작성일 , 게시글 종류를 보여준다.<br><br>
-
-  ![게시글 관리-2](https://github.com/user-attachments/assets/d475df98-f18d-4cb4-b2b4-183e5171af0e)<br>
-  30번 게시글의 모습<br><br>
-
- ![게시글 관리-3](https://github.com/user-attachments/assets/a5381bd8-0bc2-4922-a860-ede5701b964f)<br>
-  10번 게시글 삭제된 모습
-
-  <br><br><br>
-
-  **4.레시피 관리** <br> 
-  ![레시피 관리-1](https://github.com/user-attachments/assets/73938b57-00f6-40ce-b43d-605397bcfae9)<br>
-  제목 , 작성자 , 추천수 , 작성일 , 레시피 종류를 보여준다.<br><br>
-
- ![레시피 관리-2](https://github.com/user-attachments/assets/40fff5d6-47bb-4bf7-a23a-238f68ff0f7e)<br>
-  190번 게시글의 모습<br><br>
-
- ![레시피 관리-3](https://github.com/user-attachments/assets/8f2a2c6e-f67c-4e06-b9e6-9aceb2db63b7)<br>
-  103번 게시글 삭제된 모습
-
-  <br><br><br>
-
-  **5.댓글 관리** <br>
- ![댓글 관리-1](https://github.com/user-attachments/assets/a300f3ef-a05a-436e-a63e-cc765f6fef12)<br>
-  댓글내 , 작성자 ,전화번호 , 작성일을 보여준다.<br><br>
-
- ![댓글 관리-2](https://github.com/user-attachments/assets/87239637-efc0-4cd5-acdb-714d2bdb8663)<br>
-  540번 글의 모습<br><br>
-
-![댓글 관리-3](https://github.com/user-attachments/assets/76bdf724-70a9-4f3a-8f51-af924c5f66fc)<br>
-  546번 댓글 삭제된 모습
-
-  <br><br><br>
-
-   **6.포인트 관리** <br>
- ![포인트 관리-1](https://github.com/user-attachments/assets/edfad7f8-68e1-42ea-bf80-e19ede9ab886)<br>
- 닉네임 , 이메일 , 포인트 내용 , 포인트 , 일시 , 포인트 합을 보여준다.<br><br>
- 
-![포인트 관리-2](https://github.com/user-attachments/assets/55e47c05-a8e7-4e8c-894b-7201d6fbb876)<br>
-11월에 해당하는 포인트만 보여진다.<br><br>
-
-![포인트 관리-3](https://github.com/user-attachments/assets/869eea5e-b592-4ebb-a5c1-bdf46a8c6aa6)<br>
-닉네임 10을 검색한 모습  , 포인트내역을 쭉 부여준다.<br><br>
-
-![포인트 관리-4](https://github.com/user-attachments/assets/0e7aea38-8419-431a-a733-d118b7c8a37e)<br>
-50포인트를 회수 했을때의 모습 , 총 포인트 감소<br><br>
-
-![포인트 관리05](https://github.com/user-attachments/assets/00dbf392-a028-4fc1-aae3-325d104f004d)<br>
-3번 닉네임의 포인트가 사라진 모습
-
-<br><br><br>
-
- **7.신고 관리** <br>
- ![신고관리-1](https://github.com/user-attachments/assets/e31bfa34-afd6-4d3f-ab0e-aa9969277d83)<br>
- 게시글 , 댓글 포함한 신고내역이 보여진다. (신고 내역의 번호를 보고 게시글과 , 댓글 관리로 가서 삭제하는 원리)<br><br>
-
- ![신고관리-2](https://github.com/user-attachments/assets/da1bca4b-dde3-45c4-a88c-ae8baeb7569b)<br>
-  49번 번호 삭제
-
-  <br><br><br>
-
-   **8.상품 관리** <br>
-   
-![상품관리-3](https://github.com/user-attachments/assets/cd4feb1d-b394-4a20-884c-c1b66ca4c5b1)<br>
- 상품이름 , 사진 , 가격 , 코드를 입력하고 등록하는 모습<br><br>
- 
-![상품관리-1](https://github.com/user-attachments/assets/2dadfc4f-fc59-4046-a7aa-ba811a38d1c8)<br>
-  현재 등록된 상품을 보여준다.<br><br> 
-
-   ![상품관리-2](https://github.com/user-attachments/assets/e6ab9b98-d660-4946-a28d-a14282acfe22)<br>
-  팬케이크가 삭제된 모습<br><br> 
-
-   ![상품관리-4](https://github.com/user-attachments/assets/04d9920e-3d2f-44dd-a0c7-edfedf257693)<br>
-   상품 추가를 위해 코드를 더 입력하는 모습<br><br>
-
-   ![상품관리-5](https://github.com/user-attachments/assets/ddac0c86-6bfc-4a69-9c1d-151ffb4adc7b)<br>
- 추가된 상품의 개수를 보여준다.
-
-  
-  <br><br><br>
-    
   </details>
 
+ <details>
+    <summary>지역별 병원 정보</summary>
+     
+  **1. 병원 목록**<br>
+  ![image](https://github.com/user-attachments/assets/c1714f15-d8fc-4bfb-b359-5be2398da330)<br>
+ 키워드로 검색한 병원들이 쭉 나열된다.
+  <br><br>
+       
+  **2. 병원 지도 정보**<br>
+  ![image](https://github.com/user-attachments/assets/2315c37a-2bb1-4fba-a4e5-badc931b94f1)<br>
+  키워드로 검색한 병원이 숫자형식으로 쭉 보여진다.
+  <br><br>
+
+  </details>
+
+   <details>
+    <summary>의료지식인 (일반회원)</summary>
+     
+  **1. 게시글 목록**<br>
+ 
+ ![image](https://github.com/user-attachments/assets/e4a364dc-180a-47ee-a5fa-7b9184531965)<br>
+ ![image](https://github.com/user-attachments/assets/2453b841-d974-4c78-80be-306076f4aff6)<br>
+ 작성된 게시글들이 5개씩 보여진다. 아래에는 페이지네이션도 존재한다. 
+  <br><br>
+       
+  **2. 게시글 상세페이지**<br>
+  ![image](https://github.com/user-attachments/assets/7750b589-fad3-4e0a-9479-f4fa84a9da50)<br>
+  게시글에 대한 정보와 댓글이 보여진다.
+  <br><br>
+
+   **3. 게시글 작성**<br>
+  ![image](https://github.com/user-attachments/assets/c29ab29d-46b6-4560-a13a-0db0262e258d)<br>
+  썸머노트 api가 적용된 글작성 페이지이다.
+  <br><br>
+
+   **4. 게시글 수정**<br>
+  ![image](https://github.com/user-attachments/assets/30daaf16-3046-4f55-a679-71f3150cc7a1)<br>
+  기존에 작성한 게시글 내용이 남아있고 수정 페이지가 열린다.
+  <br><br>
+
+   **5. 게시글 삭제**<br>
+  ![image](https://github.com/user-attachments/assets/0173763c-fcab-4152-a654-c3d1f51ccf9e)<br>
+  삭제를 누르게 되면 목록에서 없어진다.
+  <br><br>
+
+  </details>
+
+  
   <br>
   
 ## 구조 및 설계   
