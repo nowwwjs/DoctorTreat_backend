@@ -819,9 +819,10 @@ JSP DOCTOR TREAT
 
 <br/>
 
-### 7️⃣ API 설계
+### 7️⃣ API 설계 & 화면 구상
 
 ![image](https://github.com/user-attachments/assets/76c33a70-8f8d-49f1-8301-d54d04821efa)<br><br>
+![서비스 흐름도](https://github.com/user-attachments/assets/5a470e0c-9364-4a2b-8453-04e67907a3c5)<br>
 
 ## 개발 내용
 
