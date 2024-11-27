@@ -140,395 +140,664 @@ JSP DOCTOR TREAT
  
 
 ```
-📦src
- ┣ 📂main
- ┃ ┣ 📂java
- ┃ ┃ ┗ 📂com.dr
- ┃ ┃ ┃ ┗ 📂api
- ┃ ┃ ┃ ┃ ┗ 📜MyPageApi.java
+📦build
+ ┗ 📂classes
+ ┃ ┗ 📂com
+ ┃ ┃ ┣ 📂doctorTreat
+ ┃ ┃ ┃ ┗ 📂app
+ ┃ ┃ ┃ ┃ ┣ 📂doctor
+ ┃ ┃ ┃ ┃ ┃ ┣ 📂dao
+ ┃ ┃ ┃ ┃ ┃ ┃ ┗ 📜DoctorDAO.class
+ ┃ ┃ ┃ ┃ ┃ ┣ 📜DoctorCheckIdOkController.class
+ ┃ ┃ ┃ ┃ ┃ ┣ 📜DoctorFindIdOkController.class
+ ┃ ┃ ┃ ┃ ┃ ┣ 📜DoctorFindPwOkController.class
+ ┃ ┃ ┃ ┃ ┃ ┣ 📜DoctorFrontController.class
+ ┃ ┃ ┃ ┃ ┃ ┣ 📜DoctorJoinOkController.class
+ ┃ ┃ ┃ ┃ ┃ ┣ 📜DoctorJoinSMSController.class
+ ┃ ┃ ┃ ┃ ┃ ┣ 📜DoctorLoginOkController.class
+ ┃ ┃ ┃ ┃ ┃ ┣ 📜DoctorLogoutOkController.class
+ ┃ ┃ ┃ ┃ ┃ ┗ 📜SMS_Service.class
+ ┃ ┃ ┃ ┃ ┣ 📂doctorBoard
+ ┃ ┃ ┃ ┃ ┃ ┣ 📂dao
+ ┃ ┃ ┃ ┃ ┃ ┃ ┗ 📜DoctorBoardDAO.class
+ ┃ ┃ ┃ ┃ ┃ ┣ 📜DoctorBoardCommentController.class
+ ┃ ┃ ┃ ┃ ┃ ┣ 📜DoctorBoardCommentDeleteController.class
+ ┃ ┃ ┃ ┃ ┃ ┣ 📜DoctorBoardCommentUpdateController.class
+ ┃ ┃ ┃ ┃ ┃ ┣ 📜DoctorBoardDetailController.class
+ ┃ ┃ ┃ ┃ ┃ ┣ 📜DoctorBoardFrontController.class
+ ┃ ┃ ┃ ┃ ┃ ┗ 📜DoctorBoardListController.class
+ ┃ ┃ ┃ ┃ ┣ 📂doctorClinic
+ ┃ ┃ ┃ ┃ ┃ ┣ 📂dao
+ ┃ ┃ ┃ ┃ ┃ ┃ ┗ 📜DoctorClinicDAO.class
+ ┃ ┃ ┃ ┃ ┃ ┣ 📜ChatListDoctorController.class
+ ┃ ┃ ┃ ┃ ┃ ┣ 📜ChatRoomDoctorController.class
+ ┃ ┃ ┃ ┃ ┃ ┣ 📜DoctorClinicFrontController.class
+ ┃ ┃ ┃ ┃ ┃ ┣ 📜DoctorSendOkController.class
+ ┃ ┃ ┃ ┃ ┃ ┣ 📜WriteChartController.class
+ ┃ ┃ ┃ ┃ ┃ ┗ 📜WriteChartOkController.class
+ ┃ ┃ ┃ ┃ ┣ 📂doctorMypage
+ ┃ ┃ ┃ ┃ ┃ ┣ 📜DoctorInfoOkController.class
+ ┃ ┃ ┃ ┃ ┃ ┣ 📜DoctorMypageFrontController.class
+ ┃ ┃ ┃ ┃ ┃ ┣ 📜DoctorOutOkController.class
+ ┃ ┃ ┃ ┃ ┃ ┣ 📜DoctorPhoneChangeOkController.class
+ ┃ ┃ ┃ ┃ ┃ ┣ 📜DoctorPwChangeOkController.class
+ ┃ ┃ ┃ ┃ ┃ ┣ 📜DoctorPwOkController.class
+ ┃ ┃ ┃ ┃ ┃ ┣ 📜DoctorUpdateOkController.class
+ ┃ ┃ ┃ ┃ ┃ ┗ 📜DoctorUpdateProcessController.class
+ ┃ ┃ ┃ ┃ ┣ 📂dto
+ ┃ ┃ ┃ ┃ ┃ ┣ 📜BoardDetailDoctorDTO.class
+ ┃ ┃ ┃ ┃ ┃ ┣ 📜ChartDTO.class
+ ┃ ┃ ┃ ┃ ┃ ┣ 📜ChatDTO.class
+ ┃ ┃ ┃ ┃ ┃ ┣ 📜ChatSessionDTO.class
+ ┃ ┃ ┃ ┃ ┃ ┣ 📜ClinicDoctorListDTO.class
+ ┃ ┃ ┃ ┃ ┃ ┣ 📜DoctorBoardDTO.class
+ ┃ ┃ ┃ ┃ ┃ ┣ 📜DoctorCommentDTO.class
+ ┃ ┃ ┃ ┃ ┃ ┣ 📜DoctorDetailDTO.class
+ ┃ ┃ ┃ ┃ ┃ ┣ 📜DoctorDTO.class
+ ┃ ┃ ┃ ┃ ┃ ┣ 📜HospitalDTO.class
+ ┃ ┃ ┃ ┃ ┃ ┣ 📜MainDTO.class
+ ┃ ┃ ┃ ┃ ┃ ┣ 📜MainMedicalInfoDTO.class
+ ┃ ┃ ┃ ┃ ┃ ┣ 📜MemberBoardDTO.class
+ ┃ ┃ ┃ ┃ ┃ ┗ 📜MemberDTO.class
+ ┃ ┃ ┃ ┃ ┣ 📂main
+ ┃ ┃ ┃ ┃ ┃ ┗ 📂dao
+ ┃ ┃ ┃ ┃ ┃ ┃ ┣ 📜MainMedicalInfoDAO.class
+ ┃ ┃ ┃ ┃ ┃ ┃ ┗ 📜MainMedicalInfoFrontController.class
+ ┃ ┃ ┃ ┃ ┣ 📂member
+ ┃ ┃ ┃ ┃ ┃ ┣ 📂dao
+ ┃ ┃ ┃ ┃ ┃ ┃ ┗ 📜MemberDAO.class
+ ┃ ┃ ┃ ┃ ┃ ┣ 📜MemberCheckIdOkController.class
+ ┃ ┃ ┃ ┃ ┃ ┣ 📜MemberFindIdController.class
+ ┃ ┃ ┃ ┃ ┃ ┣ 📜MemberFindPwController.class
+ ┃ ┃ ┃ ┃ ┃ ┣ 📜MemberFrontController.class
+ ┃ ┃ ┃ ┃ ┃ ┣ 📜MemberJoinOkController.class
+ ┃ ┃ ┃ ┃ ┃ ┣ 📜MemberJoinSMSController.class
+ ┃ ┃ ┃ ┃ ┃ ┣ 📜MemberLoginOkController.class
+ ┃ ┃ ┃ ┃ ┃ ┣ 📜MemberLogoutOkController.class
+ ┃ ┃ ┃ ┃ ┃ ┗ 📜SMS_Service.class
+ ┃ ┃ ┃ ┃ ┣ 📂memberBoard
+ ┃ ┃ ┃ ┃ ┃ ┣ 📂dao
+ ┃ ┃ ┃ ┃ ┃ ┃ ┗ 📜MemberBoardDAO.class
+ ┃ ┃ ┃ ┃ ┃ ┣ 📜MemberBoardDeleteController.class
+ ┃ ┃ ┃ ┃ ┃ ┣ 📜MemberBoardDetailController.class
+ ┃ ┃ ┃ ┃ ┃ ┣ 📜MemberBoardFrontController.class
+ ┃ ┃ ┃ ┃ ┃ ┣ 📜MemberBoardListController.class
+ ┃ ┃ ┃ ┃ ┃ ┣ 📜MemberBoardShowController.class
+ ┃ ┃ ┃ ┃ ┃ ┣ 📜MemberBoardUpdateController.class
+ ┃ ┃ ┃ ┃ ┃ ┗ 📜MemberBoardWriteController.class
+ ┃ ┃ ┃ ┃ ┣ 📂memberClinic
+ ┃ ┃ ┃ ┃ ┃ ┣ 📂dao
+ ┃ ┃ ┃ ┃ ┃ ┃ ┗ 📜MemberClinicDAO.class
+ ┃ ┃ ┃ ┃ ┃ ┣ 📜ChartController.class
+ ┃ ┃ ┃ ┃ ┃ ┣ 📜ChatListMemberController.class
+ ┃ ┃ ┃ ┃ ┃ ┣ 📜ChatRoomMemberController.class
+ ┃ ┃ ┃ ┃ ┃ ┣ 📜ClinicApplicationOk.class
+ ┃ ┃ ┃ ┃ ┃ ┣ 📜DoctorDetailController.class
+ ┃ ┃ ┃ ┃ ┃ ┣ 📜EarDoctorListController.class
+ ┃ ┃ ┃ ┃ ┃ ┣ 📜InnerDoctorListController.class
+ ┃ ┃ ┃ ┃ ┃ ┣ 📜MemberClinicFrontController.class
+ ┃ ┃ ┃ ┃ ┃ ┗ 📜MemberSendOkController.class
+ ┃ ┃ ┃ ┃ ┣ 📂memberMypage
+ ┃ ┃ ┃ ┃ ┃ ┣ 📂dao
+ ┃ ┃ ┃ ┃ ┃ ┃ ┗ 📜MemberMypageDAO.class
+ ┃ ┃ ┃ ┃ ┃ ┣ 📜MemberInfoController.class
+ ┃ ┃ ┃ ┃ ┃ ┣ 📜MemberMypageFrontController.class
+ ┃ ┃ ┃ ┃ ┃ ┣ 📜MemberOutOkController.class
+ ┃ ┃ ┃ ┃ ┃ ┣ 📜MemberPhoneChangeController.class
+ ┃ ┃ ┃ ┃ ┃ ┣ 📜MemberPwChangeController.class
+ ┃ ┃ ┃ ┃ ┃ ┣ 📜MemberPwOkController.class
+ ┃ ┃ ┃ ┃ ┃ ┣ 📜MemberUpdateController.class
+ ┃ ┃ ┃ ┃ ┃ ┗ 📜MemberUpdateProcessController.class
+ ┃ ┃ ┃ ┃ ┣ 📂webSocket
+ ┃ ┃ ┃ ┃ ┃ ┗ 📜ChatWebSocket.class
+ ┃ ┃ ┃ ┃ ┣ 📜Execute.class
+ ┃ ┃ ┃ ┃ ┗ 📜Result.class
+ ┃ ┃ ┗ 📂mybatis
  ┃ ┃ ┃ ┣ 📂config
- ┃ ┃ ┃ ┃ ┗ 📜SecurityConfig.java
- ┃ ┃ ┃ ┣ 📂controller
- ┃ ┃ ┃ ┃ ┣ 📂board
- ┃ ┃ ┃ ┃ ┃ ┗ 📜BoardController.java
- ┃ ┃ ┃ ┃ ┣ 📂chatBot.java
- ┃ ┃ ┃ ┃ ┃ ┣ 📜ChatBotController.java
- ┃ ┃ ┃ ┃ ┃ ┗ 📜NangjangbotController.java
- ┃ ┃ ┃ ┃ ┣ 📂error
- ┃ ┃ ┃ ┃ ┃ ┗ 📜ErrorContorller.java(아직미구현)
- ┃ ┃ ┃ ┃ ┣ 📂main
- ┃ ┃ ┃ ┃ ┃ ┣ 📜MainController.java
- ┃ ┃ ┃ ┃ ┃ ┗ 📜PublicDataApiController.java
- ┃ ┃ ┃ ┃ ┣ 📂manager
- ┃ ┃ ┃ ┃ ┃ ┗ 📜ManagerController.java
- ┃ ┃ ┃ ┃ ┣ 📂myPage
- ┃ ┃ ┃ ┃ ┃ ┗ 📜MyPageController.java
- ┃ ┃ ┃ ┃ ┣ 📂rnak
- ┃ ┃ ┃ ┃ ┃ ┗ 📜RankController.java
- ┃ ┃ ┃ ┃ ┣ 📂recipe
- ┃ ┃ ┃ ┃ ┃ ┣ 📜FileApiController.java
- ┃ ┃ ┃ ┃ ┃ ┗ 📜RecipeController.java
- ┃ ┃ ┃ ┃ ┣ 📂shop
- ┃ ┃ ┃ ┃ ┃ ┗ 📜PointShopController.java
- ┃ ┃ ┃ ┃ ┣ 📂user
- ┃ ┃ ┃ ┃ ┃ ┣ 📜SmsController.java
- ┃ ┃ ┃ ┃ ┃ ┗ 📜UserController.java
- ┃ ┃ ┃ ┣ 📂domain
- ┃ ┃ ┃ ┃ ┣ 📜CustomOAuth2User.java
- ┃ ┃ ┃ ┣ 📂dto
- ┃ ┃ ┃ ┃ ┣ 📂board
- ┃ ┃ ┃ ┃ ┃ ┣ 📜BoardReportDTO.java
- ┃ ┃ ┃ ┃ ┃ ┣ 📜BoardScoreDTO.java
- ┃ ┃ ┃ ┃ ┃ ┣ 📜FreeBoardCommentDTO.java
- ┃ ┃ ┃ ┃ ┃ ┣ 📜FreeBoardDetailDTO.java
- ┃ ┃ ┃ ┃ ┃ ┣ 📜FreeBoardListDTO.java
- ┃ ┃ ┃ ┃ ┃ ┣ 📜FreeBoardWriteDTO.java
- ┃ ┃ ┃ ┃ ┃ ┣ 📜FreeGoodDTO.java
- ┃ ┃ ┃ ┃ ┃ ┣ 📜HoneyBoardCommentDTO.java
- ┃ ┃ ┃ ┃ ┃ ┣ 📜HoneyBoardDetailDTO.java
- ┃ ┃ ┃ ┃ ┃ ┣ 📜HoneyBoardListDTO.java
- ┃ ┃ ┃ ┃ ┃ ┗ 📜HoneyGoodDTO.java
- ┃ ┃ ┃ ┃ ┣ 📂chatBot
- ┃ ┃ ┃ ┃ ┃ ┣ 📜ChatRequest.java
- ┃ ┃ ┃ ┃ ┃ ┣ 📜ChatResponse.java
- ┃ ┃ ┃ ┃ ┃ ┗ 📜NangjangbotDTO.java
- ┃ ┃ ┃ ┃ ┣ 📂main
- ┃ ┃ ┃ ┃ ┃ ┣ 📜ApiDTO.java
- ┃ ┃ ┃ ┃ ┃ ┣ 📜ItemDTO.java
- ┃ ┃ ┃ ┃ ┃ ┗ 📜SearchDTO.java
- ┃ ┃ ┃ ┃ ┣ 📂manager
- ┃ ┃ ┃ ┃ ┃ ┣ 📜DashBoardDTO.java
- ┃ ┃ ┃ ┃ ┃ ┣ 📜ManagerBoardDTO.java
- ┃ ┃ ┃ ┃ ┃ ┣ 📜ManagerCommentDTO.java
- ┃ ┃ ┃ ┃ ┃ ┣ 📜ManagerDTO.java
- ┃ ┃ ┃ ┃ ┃ ┣ 📜ManagerLoginDTO.java
- ┃ ┃ ┃ ┃ ┃ ┣ 📜ManagerPhotoDTO.java
- ┃ ┃ ┃ ┃ ┃ ┣ 📜ManagerPointDTO.java
- ┃ ┃ ┃ ┃ ┃ ┣ 📜ManagerProductDTO.java
- ┃ ┃ ┃ ┃ ┃ ┣ 📜ManagerRecipeDTO.java
- ┃ ┃ ┃ ┃ ┃ ┣ 📜ManagerRegisterDTO.java
- ┃ ┃ ┃ ┃ ┃ ┣ 📜ManagerReportDTO.java
- ┃ ┃ ┃ ┃ ┃ ┣ 📜ManagerSessionDTO.java
- ┃ ┃ ┃ ┃ ┃ ┗ 📜ManagerUserDTO.java
- ┃ ┃ ┃ ┃ ┣ 📂myPage
- ┃ ┃ ┃ ┃ ┃ ┣ 📜CheckDTO.java
- ┃ ┃ ┃ ┃ ┃ ┣ 📜PointCheckDTO.java
- ┃ ┃ ┃ ┃ ┃ ┣ 📜PointDetailDTO.java
- ┃ ┃ ┃ ┃ ┃ ┣ 📜PointRecordDTO.java
- ┃ ┃ ┃ ┃ ┃ ┣ 📜SirenListDTO.java
- ┃ ┃ ┃ ┃ ┃ ┣ 📜UserCheckDTO.java
- ┃ ┃ ┃ ┃ ┃ ┣ 📜UserInfoDTO.java
- ┃ ┃ ┃ ┃ ┃ ┣ 📜UserPosttDTO.java
- ┃ ┃ ┃ ┃ ┃ ┣ 📜UserRecipeDTO.java
- ┃ ┃ ┃ ┃ ┃ ┗ 📜UserSteamDTO.java
- ┃ ┃ ┃ ┃ ┣ 📂rank
- ┃ ┃ ┃ ┃ ┃ ┗ 📜RankDTO.java
- ┃ ┃ ┃ ┃ ┣ 📂recipe
- ┃ ┃ ┃ ┃ ┃ ┣ 📜ChatBotRecipeCommentDTO.java
- ┃ ┃ ┃ ┃ ┃ ┣ 📜ChatBotRecipeDetailDTO.java
- ┃ ┃ ┃ ┃ ┃ ┣ 📜ChatBotRecipeGoodDTO.java
- ┃ ┃ ┃ ┃ ┃ ┣ 📜ChatBotRecipeListDTO.java
- ┃ ┃ ┃ ┃ ┃ ┣ 📜ChatBotRecipeWriteCommentDTO.java
- ┃ ┃ ┃ ┃ ┃ ┣ 📜ChatBotRecipeWriteDTO.java
- ┃ ┃ ┃ ┃ ┃ ┣ 📜MyRecipeCommentDTO.java
- ┃ ┃ ┃ ┃ ┃ ┣ 📜ManagerProductDTO.java
- ┃ ┃ ┃ ┃ ┃ ┣ 📜MyRecipeDetailDTO.java
- ┃ ┃ ┃ ┃ ┃ ┣ 📜MyRecipeGoodDTO.java
- ┃ ┃ ┃ ┃ ┃ ┣ 📜MyRecipeListDTO.java
- ┃ ┃ ┃ ┃ ┃ ┣ 📜MyRecipeWriteDTO.java
- ┃ ┃ ┃ ┃ ┃ ┣ 📜RecipePhotoDTO.java
- ┃ ┃ ┃ ┃ ┃ ┣ 📜RecipeReportDTO.java
- ┃ ┃ ┃ ┃ ┃ ┗ 📜RecipeSteamDTO.java
- ┃ ┃ ┃ ┃ ┣ 📂shop
- ┃ ┃ ┃ ┃ ┃ ┗ 📜PointShopDTO.java
- ┃ ┃ ┃ ┃ ┣ 📂user
- ┃ ┃ ┃ ┃ ┃ ┣ 📜EmailFindDTO.java
- ┃ ┃ ┃ ┃ ┃ ┣ 📜KakaoUsersDTO.java
- ┃ ┃ ┃ ┃ ┃ ┣ 📜PwFindDTO.java
- ┃ ┃ ┃ ┃ ┃ ┣ 📜PwResetDTO.java
- ┃ ┃ ┃ ┃ ┃ ┣ 📜UserDTO.java
- ┃ ┃ ┃ ┃ ┃ ┗ 📜UserSessionDTO.java
- ┃ ┃ ┃ ┣ 📂mapper
- ┃ ┃ ┃ ┃ ┣ 📂board
- ┃ ┃ ┃ ┃ ┃ ┗ 📜BoardMapper.java
- ┃ ┃ ┃ ┃ ┣ 📂chatBot
- ┃ ┃ ┃ ┃ ┃ ┗ 📜NangjangbotMapper.java
- ┃ ┃ ┃ ┃ ┣ 📂main
- ┃ ┃ ┃ ┃ ┃ ┗ 📜SearchMapper.java
- ┃ ┃ ┃ ┃ ┣ 📂manager
- ┃ ┃ ┃ ┃ ┃ ┗ 📜ManagerMapper.java
- ┃ ┃ ┃ ┃ ┣ 📂myPage
- ┃ ┃ ┃ ┃ ┃ ┗ 📜MyPageMapper.java
- ┃ ┃ ┃ ┃ ┣ 📂rank
- ┃ ┃ ┃ ┃ ┃ ┗ 📜RecipeMapper.java
- ┃ ┃ ┃ ┃ ┣ 📂shop
- ┃ ┃ ┃ ┃ ┃ ┗ 📜PointShopMapper.java
- ┃ ┃ ┃ ┃ ┣ 📂user
- ┃ ┃ ┃ ┃ ┃ ┣ 📜KakaoUsers.java
- ┃ ┃ ┃ ┃ ┃ ┗ 📜UserMapper.java
- ┃ ┃ ┃ ┣ 📂mybatis
- ┃ ┃ ┃ ┃ ┗ 📜MyBatisConfig.java
- ┃ ┃ ┃ ┣ 📂service
- ┃ ┃ ┃ ┃ ┣ 📂board
- ┃ ┃ ┃ ┃ ┃ ┗ 📜BoardService.java
- ┃ ┃ ┃ ┃ ┣ 📂chatBot
- ┃ ┃ ┃ ┃ ┃ ┣ 📜ChatBotService.java
- ┃ ┃ ┃ ┃ ┃ ┗ 📜NangjangbotService.java
- ┃ ┃ ┃ ┃ ┣ 📂main
- ┃ ┃ ┃ ┃ ┃ ┣ 📜PublicDataService.java
- ┃ ┃ ┃ ┃ ┃ ┗ 📜SearchService.java
- ┃ ┃ ┃ ┃ ┣ 📂manager
- ┃ ┃ ┃ ┃ ┃ ┗ 📜ManagerService.java
- ┃ ┃ ┃ ┃ ┣ 📂myPage
- ┃ ┃ ┃ ┃ ┃ ┗ 📜MyPageService.java
- ┃ ┃ ┃ ┃ ┣ 📂rank
- ┃ ┃ ┃ ┃ ┃ ┗ 📜RankService.java
- ┃ ┃ ┃ ┃ ┣ 📂recipe
- ┃ ┃ ┃ ┃ ┃ ┗ 📜RecipeService.java
- ┃ ┃ ┃ ┃ ┣ 📂shop
- ┃ ┃ ┃ ┃ ┃ ┗ 📜PointShopService.java
- ┃ ┃ ┃ ┃ ┣ 📂user
- ┃ ┃ ┃ ┃ ┃ ┣ 📜CoolSmsService.java
- ┃ ┃ ┃ ┃ ┃ ┣ 📜CustomOAuth2UserService.java
- ┃ ┃ ┃ ┃ ┃ ┣ 📜RandomStringGeneratorService.java
- ┃ ┃ ┃ ┃ ┃ ┗ 📜UserService.java
- ┃ ┃ ┃ ┗ 📜DrApplication.java
- ┃ ┣ 📂resources
- ┃ ┃ ┣ 📂config
- ┃ ┃ ┃ ┗ 📜config.xml
- ┃ ┃ ┣ 📂mapper
+ ┃ ┃ ┃ ┃ ┣ 📜config.xml
+ ┃ ┃ ┃ ┃ ┗ 📜MyBatisConfig.class
+ ┃ ┃ ┃ ┗ 📂mapper
+ ┃ ┃ ┃ ┃ ┣ 📜DoctorBoardMapper.xml
+ ┃ ┃ ┃ ┃ ┣ 📜DoctorClinicMapper.xml
+ ┃ ┃ ┃ ┃ ┣ 📜DoctorCommentMapper.xml
+ ┃ ┃ ┃ ┃ ┣ 📜DoctorMapper.xml
+ ┃ ┃ ┃ ┃ ┣ 📜DoctorMypageMapper.xml
+ ┃ ┃ ┃ ┃ ┣ 📜Main.xml
+ ┃ ┃ ┃ ┃ ┣ 📜MemberBoardMapper.xml
+ ┃ ┃ ┃ ┃ ┣ 📜MemberClinicMapper.xml
+ ┃ ┃ ┃ ┃ ┣ 📜MemberMapper.xml
+ ┃ ┃ ┃ ┃ ┗ 📜MemberMypageMapper.xml
+ ```
+ ```
+📦src
+ ┗ 📂main
+ ┃ ┣ 📂java
+ ┃ ┃ ┗ 📂com
+ ┃ ┃ ┃ ┣ 📂doctorTreat
+ ┃ ┃ ┃ ┃ ┗ 📂app
+ ┃ ┃ ┃ ┃ ┃ ┣ 📂doctor
+ ┃ ┃ ┃ ┃ ┃ ┃ ┣ 📂dao
+ ┃ ┃ ┃ ┃ ┃ ┃ ┃ ┗ 📜DoctorDAO.java
+ ┃ ┃ ┃ ┃ ┃ ┃ ┣ 📜DoctorCheckIdOkController.java
+ ┃ ┃ ┃ ┃ ┃ ┃ ┣ 📜DoctorFindIdOkController.java
+ ┃ ┃ ┃ ┃ ┃ ┃ ┣ 📜DoctorFindPwOkController.java
+ ┃ ┃ ┃ ┃ ┃ ┃ ┣ 📜DoctorFrontController.java
+ ┃ ┃ ┃ ┃ ┃ ┃ ┣ 📜DoctorJoinOkController.java
+ ┃ ┃ ┃ ┃ ┃ ┃ ┣ 📜DoctorJoinSMSController.java
+ ┃ ┃ ┃ ┃ ┃ ┃ ┣ 📜DoctorLoginOkController.java
+ ┃ ┃ ┃ ┃ ┃ ┃ ┣ 📜DoctorLogoutOkController.java
+ ┃ ┃ ┃ ┃ ┃ ┃ ┗ 📜SMS_Service.java
+ ┃ ┃ ┃ ┃ ┃ ┣ 📂doctorBoard
+ ┃ ┃ ┃ ┃ ┃ ┃ ┣ 📂dao
+ ┃ ┃ ┃ ┃ ┃ ┃ ┃ ┗ 📜DoctorBoardDAO.java
+ ┃ ┃ ┃ ┃ ┃ ┃ ┣ 📜DoctorBoardCommentController.java
+ ┃ ┃ ┃ ┃ ┃ ┃ ┣ 📜DoctorBoardCommentDeleteController.java
+ ┃ ┃ ┃ ┃ ┃ ┃ ┣ 📜DoctorBoardCommentUpdateController.java
+ ┃ ┃ ┃ ┃ ┃ ┃ ┣ 📜DoctorBoardDetailController.java
+ ┃ ┃ ┃ ┃ ┃ ┃ ┣ 📜DoctorBoardFrontController.java
+ ┃ ┃ ┃ ┃ ┃ ┃ ┗ 📜DoctorBoardListController.java
+ ┃ ┃ ┃ ┃ ┃ ┣ 📂doctorClinic
+ ┃ ┃ ┃ ┃ ┃ ┃ ┣ 📂dao
+ ┃ ┃ ┃ ┃ ┃ ┃ ┃ ┗ 📜DoctorClinicDAO.java
+ ┃ ┃ ┃ ┃ ┃ ┃ ┣ 📜ChatListDoctorController.java
+ ┃ ┃ ┃ ┃ ┃ ┃ ┣ 📜ChatRoomDoctorController.java
+ ┃ ┃ ┃ ┃ ┃ ┃ ┣ 📜DoctorClinicFrontController.java
+ ┃ ┃ ┃ ┃ ┃ ┃ ┣ 📜DoctorSendOkController.java
+ ┃ ┃ ┃ ┃ ┃ ┃ ┣ 📜WriteChartController.java
+ ┃ ┃ ┃ ┃ ┃ ┃ ┗ 📜WriteChartOkController.java
+ ┃ ┃ ┃ ┃ ┃ ┣ 📂doctorMypage
+ ┃ ┃ ┃ ┃ ┃ ┃ ┣ 📜DoctorInfoOkController.java
+ ┃ ┃ ┃ ┃ ┃ ┃ ┣ 📜DoctorMypageFrontController.java
+ ┃ ┃ ┃ ┃ ┃ ┃ ┣ 📜DoctorOutOkController.java
+ ┃ ┃ ┃ ┃ ┃ ┃ ┣ 📜DoctorPhoneChangeOkController.java
+ ┃ ┃ ┃ ┃ ┃ ┃ ┣ 📜DoctorPwChangeOkController.java
+ ┃ ┃ ┃ ┃ ┃ ┃ ┣ 📜DoctorPwOkController.java
+ ┃ ┃ ┃ ┃ ┃ ┃ ┣ 📜DoctorUpdateOkController.java
+ ┃ ┃ ┃ ┃ ┃ ┃ ┗ 📜DoctorUpdateProcessController.java
+ ┃ ┃ ┃ ┃ ┃ ┣ 📂dto
+ ┃ ┃ ┃ ┃ ┃ ┃ ┣ 📜BoardDetailDoctorDTO.java
+ ┃ ┃ ┃ ┃ ┃ ┃ ┣ 📜ChartDTO.java
+ ┃ ┃ ┃ ┃ ┃ ┃ ┣ 📜ChatDTO.java
+ ┃ ┃ ┃ ┃ ┃ ┃ ┣ 📜ChatSessionDTO.java
+ ┃ ┃ ┃ ┃ ┃ ┃ ┣ 📜ClinicDoctorListDTO.java
+ ┃ ┃ ┃ ┃ ┃ ┃ ┣ 📜DoctorBoardDTO.java
+ ┃ ┃ ┃ ┃ ┃ ┃ ┣ 📜DoctorCommentDTO.java
+ ┃ ┃ ┃ ┃ ┃ ┃ ┣ 📜DoctorDetailDTO.java
+ ┃ ┃ ┃ ┃ ┃ ┃ ┣ 📜DoctorDTO.java
+ ┃ ┃ ┃ ┃ ┃ ┃ ┣ 📜HospitalDTO.java
+ ┃ ┃ ┃ ┃ ┃ ┃ ┣ 📜MainDTO.java
+ ┃ ┃ ┃ ┃ ┃ ┃ ┣ 📜MainMedicalInfoDTO.java
+ ┃ ┃ ┃ ┃ ┃ ┃ ┣ 📜MemberBoardDTO.java
+ ┃ ┃ ┃ ┃ ┃ ┃ ┗ 📜MemberDTO.java
+ ┃ ┃ ┃ ┃ ┃ ┣ 📂main
+ ┃ ┃ ┃ ┃ ┃ ┃ ┗ 📂dao
+ ┃ ┃ ┃ ┃ ┃ ┃ ┃ ┣ 📜MainMedicalInfoDAO.java
+ ┃ ┃ ┃ ┃ ┃ ┃ ┃ ┗ 📜MainMedicalInfoFrontController.java
+ ┃ ┃ ┃ ┃ ┃ ┣ 📂member
+ ┃ ┃ ┃ ┃ ┃ ┃ ┣ 📂dao
+ ┃ ┃ ┃ ┃ ┃ ┃ ┃ ┗ 📜MemberDAO.java
+ ┃ ┃ ┃ ┃ ┃ ┃ ┣ 📜MemberCheckIdOkController.java
+ ┃ ┃ ┃ ┃ ┃ ┃ ┣ 📜MemberFindIdController.java
+ ┃ ┃ ┃ ┃ ┃ ┃ ┣ 📜MemberFindPwController.java
+ ┃ ┃ ┃ ┃ ┃ ┃ ┣ 📜MemberFrontController.java
+ ┃ ┃ ┃ ┃ ┃ ┃ ┣ 📜MemberJoinOkController.java
+ ┃ ┃ ┃ ┃ ┃ ┃ ┣ 📜MemberJoinSMSController.java
+ ┃ ┃ ┃ ┃ ┃ ┃ ┣ 📜MemberLoginOkController.java
+ ┃ ┃ ┃ ┃ ┃ ┃ ┣ 📜MemberLogoutOkController.java
+ ┃ ┃ ┃ ┃ ┃ ┃ ┗ 📜SMS_Service.java
+ ┃ ┃ ┃ ┃ ┃ ┣ 📂memberBoard
+ ┃ ┃ ┃ ┃ ┃ ┃ ┣ 📂dao
+ ┃ ┃ ┃ ┃ ┃ ┃ ┃ ┗ 📜MemberBoardDAO.java
+ ┃ ┃ ┃ ┃ ┃ ┃ ┣ 📜MemberBoardDeleteController.java
+ ┃ ┃ ┃ ┃ ┃ ┃ ┣ 📜MemberBoardDetailController.java
+ ┃ ┃ ┃ ┃ ┃ ┃ ┣ 📜MemberBoardFrontController.java
+ ┃ ┃ ┃ ┃ ┃ ┃ ┣ 📜MemberBoardListController.java
+ ┃ ┃ ┃ ┃ ┃ ┃ ┣ 📜MemberBoardShowController.java
+ ┃ ┃ ┃ ┃ ┃ ┃ ┣ 📜MemberBoardUpdateController.java
+ ┃ ┃ ┃ ┃ ┃ ┃ ┗ 📜MemberBoardWriteController.java
+ ┃ ┃ ┃ ┃ ┃ ┣ 📂memberClinic
+ ┃ ┃ ┃ ┃ ┃ ┃ ┣ 📂dao
+ ┃ ┃ ┃ ┃ ┃ ┃ ┃ ┗ 📜MemberClinicDAO.java
+ ┃ ┃ ┃ ┃ ┃ ┃ ┣ 📜ChartController.java
+ ┃ ┃ ┃ ┃ ┃ ┃ ┣ 📜ChatListMemberController.java
+ ┃ ┃ ┃ ┃ ┃ ┃ ┣ 📜ChatRoomMemberController.java
+ ┃ ┃ ┃ ┃ ┃ ┃ ┣ 📜ClinicApplicationOk.java
+ ┃ ┃ ┃ ┃ ┃ ┃ ┣ 📜DoctorDetailController.java
+ ┃ ┃ ┃ ┃ ┃ ┃ ┣ 📜EarDoctorListController.java
+ ┃ ┃ ┃ ┃ ┃ ┃ ┣ 📜InnerDoctorListController.java
+ ┃ ┃ ┃ ┃ ┃ ┃ ┣ 📜MemberClinicFrontController.java
+ ┃ ┃ ┃ ┃ ┃ ┃ ┗ 📜MemberSendOkController.java
+ ┃ ┃ ┃ ┃ ┃ ┣ 📂memberMypage
+ ┃ ┃ ┃ ┃ ┃ ┃ ┣ 📂dao
+ ┃ ┃ ┃ ┃ ┃ ┃ ┃ ┗ 📜MemberMypageDAO.java
+ ┃ ┃ ┃ ┃ ┃ ┃ ┣ 📜MemberInfoController.java
+ ┃ ┃ ┃ ┃ ┃ ┃ ┣ 📜MemberMypageFrontController.java
+ ┃ ┃ ┃ ┃ ┃ ┃ ┣ 📜MemberOutOkController.java
+ ┃ ┃ ┃ ┃ ┃ ┃ ┣ 📜MemberPhoneChangeController.java
+ ┃ ┃ ┃ ┃ ┃ ┃ ┣ 📜MemberPwChangeController.java
+ ┃ ┃ ┃ ┃ ┃ ┃ ┣ 📜MemberPwOkController.java
+ ┃ ┃ ┃ ┃ ┃ ┃ ┣ 📜MemberUpdateController.java
+ ┃ ┃ ┃ ┃ ┃ ┃ ┗ 📜MemberUpdateProcessController.java
+ ┃ ┃ ┃ ┃ ┃ ┣ 📂webSocket
+ ┃ ┃ ┃ ┃ ┃ ┃ ┗ 📜ChatWebSocket.java
+ ┃ ┃ ┃ ┃ ┃ ┣ 📜Execute.java
+ ┃ ┃ ┃ ┃ ┃ ┗ 📜Result.java
+ ┃ ┃ ┃ ┗ 📂mybatis
+ ┃ ┃ ┃ ┃ ┣ 📂config
+ ┃ ┃ ┃ ┃ ┃ ┣ 📜config.xml
+ ┃ ┃ ┃ ┃ ┃ ┗ 📜MyBatisConfig.java
+ ┃ ┃ ┃ ┃ ┗ 📂mapper
+ ┃ ┃ ┃ ┃ ┃ ┣ 📜DoctorBoardMapper.xml
+ ┃ ┃ ┃ ┃ ┃ ┣ 📜DoctorClinicMapper.xml
+ ┃ ┃ ┃ ┃ ┃ ┣ 📜DoctorCommentMapper.xml
+ ┃ ┃ ┃ ┃ ┃ ┣ 📜DoctorMapper.xml
+ ┃ ┃ ┃ ┃ ┃ ┣ 📜DoctorMypageMapper.xml
+ ┃ ┃ ┃ ┃ ┃ ┣ 📜Main.xml
+ ┃ ┃ ┃ ┃ ┃ ┣ 📜MemberBoardMapper.xml
+ ┃ ┃ ┃ ┃ ┃ ┣ 📜MemberClinicMapper.xml
+ ┃ ┃ ┃ ┃ ┃ ┣ 📜MemberMapper.xml
+ ┃ ┃ ┃ ┃ ┃ ┗ 📜MemberMypageMapper.xml
+ ┃ ┗ 📂webapp
+ ┃ ┃ ┣ 📂app
  ┃ ┃ ┃ ┣ 📂board
- ┃ ┃ ┃ ┃ ┗📜BoardMapper.xml
- ┃ ┃ ┃ ┣ 📂chatBot
- ┃ ┃ ┃ ┃ ┗📜NangjangbotMapper.xml
- ┃ ┃ ┃ ┣ 📂main
- ┃ ┃ ┃ ┃ ┗📜SearchMapper.xml
- ┃ ┃ ┃ ┣ 📂manager
- ┃ ┃ ┃ ┃ ┗📜ManagerMapper.xml
+ ┃ ┃ ┃ ┃ ┣ 📜boardDetail.jsp
+ ┃ ┃ ┃ ┃ ┣ 📜boardDetailAuth.jsp
+ ┃ ┃ ┃ ┃ ┣ 📜boardDetailDoctor.jsp
+ ┃ ┃ ┃ ┃ ┣ 📜boardDetailDoctorAuth.jsp
+ ┃ ┃ ┃ ┃ ┣ 📜doctorMedicalKnowledgeList.jsp
+ ┃ ┃ ┃ ┃ ┣ 📜medicalKnowledgeList.jsp
+ ┃ ┃ ┃ ┃ ┣ 📜updateBoard.jsp
+ ┃ ┃ ┃ ┃ ┗ 📜write.jsp
+ ┃ ┃ ┃ ┣ 📂book
+ ┃ ┃ ┃ ┃ ┣ 📜bookDetail.jsp
+ ┃ ┃ ┃ ┃ ┗ 📜disease.jsp
+ ┃ ┃ ┃ ┣ 📂clinic
+ ┃ ┃ ┃ ┃ ┣ 📜chart.jsp
+ ┃ ┃ ┃ ┃ ┣ 📜chatListDoctor.jsp
+ ┃ ┃ ┃ ┃ ┣ 📜chatListMember.jsp
+ ┃ ┃ ┃ ┃ ┣ 📜chatRoomDoctor.jsp
+ ┃ ┃ ┃ ┃ ┣ 📜chatRoomMember.jsp
+ ┃ ┃ ┃ ┃ ┣ 📜clinicStartDoctor.jsp
+ ┃ ┃ ┃ ┃ ┣ 📜clinicStartMember.jsp
+ ┃ ┃ ┃ ┃ ┣ 📜doctorDetail.jsp
+ ┃ ┃ ┃ ┃ ┣ 📜doctorListEar.jsp
+ ┃ ┃ ┃ ┃ ┣ 📜doctorListInner.jsp
+ ┃ ┃ ┃ ┃ ┣ 📜test
+ ┃ ┃ ┃ ┃ ┗ 📜writeChart.jsp
+ ┃ ┃ ┃ ┣ 📂hospital
+ ┃ ┃ ┃ ┃ ┗ 📜hospitalInfo.jsp
  ┃ ┃ ┃ ┣ 📂myPage
- ┃ ┃ ┃ ┃ ┗📜MyPageMapper.xml
- ┃ ┃ ┃ ┣ 📂rank
- ┃ ┃ ┃ ┃ ┗📜RankMapper.xml
- ┃ ┃ ┃ ┣ 📂recipe
- ┃ ┃ ┃ ┃ ┗📜RecipeMapper.xml
- ┃ ┃ ┃ ┣ 📂shop
- ┃ ┃ ┃ ┃ ┗📜PointShopMapper.xml
- ┃ ┃ ┃ ┣ 📂user
- ┃ ┃ ┃ ┃ ┣📜KakaoUsersMapper.xml
- ┃ ┃ ┃ ┃ ┗📜UserMapper.xml
+ ┃ ┃ ┃ ┃ ┣ 📜doctorInfo.jsp
+ ┃ ┃ ┃ ┃ ┣ 📜doctorOut-Caution.jsp
+ ┃ ┃ ┃ ┃ ┣ 📜doctorOut-Complete.jsp
+ ┃ ┃ ┃ ┃ ┣ 📜doctorOut.jsp
+ ┃ ┃ ┃ ┃ ┣ 📜doctorPhoneChange.jsp
+ ┃ ┃ ┃ ┃ ┣ 📜doctorPhoneOk.jsp
+ ┃ ┃ ┃ ┃ ┣ 📜doctorPwChange.jsp
+ ┃ ┃ ┃ ┃ ┣ 📜doctorPwOk.jsp
+ ┃ ┃ ┃ ┃ ┣ 📜doctorUpdateMember.jsp
+ ┃ ┃ ┃ ┃ ┣ 📜memberInfo.jsp
+ ┃ ┃ ┃ ┃ ┣ 📜memberOut-Caution.jsp
+ ┃ ┃ ┃ ┃ ┣ 📜memberOut-Complete.jsp
+ ┃ ┃ ┃ ┃ ┣ 📜memberOut.jsp
+ ┃ ┃ ┃ ┃ ┣ 📜memberPhoneChange.jsp
+ ┃ ┃ ┃ ┃ ┣ 📜memberPhoneOk.jsp
+ ┃ ┃ ┃ ┃ ┣ 📜memberPwChange.jsp
+ ┃ ┃ ┃ ┃ ┣ 📜memberPwOk.jsp
+ ┃ ┃ ┃ ┃ ┣ 📜memberUpdate.jsp
+ ┃ ┃ ┃ ┃ ┗ 📜test
+ ┃ ┃ ┃ ┗ 📂user
+ ┃ ┃ ┃ ┃ ┣ 📜doctorFindId.jsp
+ ┃ ┃ ┃ ┃ ┣ 📜doctorFindIdFinish.jsp
+ ┃ ┃ ┃ ┃ ┣ 📜doctorFindPw.jsp
+ ┃ ┃ ┃ ┃ ┣ 📜doctorFindPwFinish.jsp
+ ┃ ┃ ┃ ┃ ┣ 📜doctorJoin.jsp
+ ┃ ┃ ┃ ┃ ┣ 📜doctorJoinFinish.jsp
+ ┃ ┃ ┃ ┃ ┣ 📜doctorLogin.jsp
+ ┃ ┃ ┃ ┃ ┣ 📜joinType.jsp
+ ┃ ┃ ┃ ┃ ┣ 📜loginType.jsp
+ ┃ ┃ ┃ ┃ ┣ 📜memberFindId.jsp
+ ┃ ┃ ┃ ┃ ┣ 📜memberFindIdFinish.jsp
+ ┃ ┃ ┃ ┃ ┣ 📜memberFindPw.jsp
+ ┃ ┃ ┃ ┃ ┣ 📜memberFindPwFinish.jsp
+ ┃ ┃ ┃ ┃ ┣ 📜memberJoin.jsp
+ ┃ ┃ ┃ ┃ ┣ 📜memberJoinFinish.jsp
+ ┃ ┃ ┃ ┃ ┣ 📜memberLogin.jsp
+ ┃ ┃ ┃ ┃ ┗ 📜test
+ ┃ ┃ ┣ 📂META-INF
+ ┃ ┃ ┃ ┗ 📜MANIFEST.MF
  ┃ ┃ ┣ 📂static
  ┃ ┃ ┃ ┣ 📂css
  ┃ ┃ ┃ ┃ ┣ 📂board
- ┃ ┃ ┃ ┃ ┃ ┣📜boardReport.css
- ┃ ┃ ┃ ┃ ┃ ┣📜freeBoardDetail.css
- ┃ ┃ ┃ ┃ ┃ ┣📜freeBoardList.css
- ┃ ┃ ┃ ┃ ┃ ┣📜freeBoardModify.css
- ┃ ┃ ┃ ┃ ┃ ┣📜freeBoardWirte.css
- ┃ ┃ ┃ ┃ ┃ ┣📜honeyBoardDetail.css
- ┃ ┃ ┃ ┃ ┃ ┣📜honeyBoardList.css
- ┃ ┃ ┃ ┃ ┃ ┣📜honeyBoardModify.css
- ┃ ┃ ┃ ┃ ┃ ┗📜honeyBoardWirte.css
- ┃ ┃ ┃ ┃ ┣ 📂chatBot
- ┃ ┃ ┃ ┃ ┃ ┗📜nangjangbot.css
- ┃ ┃ ┃ ┃ ┣ 📂fragment
- ┃ ┃ ┃ ┃ ┃ ┣📜header.css
- ┃ ┃ ┃ ┃ ┃ ┗📜footer.css
- ┃ ┃ ┃ ┃ ┣ 📂main
- ┃ ┃ ┃ ┃ ┃ ┣📜boardSearchList.css
- ┃ ┃ ┃ ┃ ┃ ┣📜main.css
- ┃ ┃ ┃ ┃ ┃ ┣📜privacyPoilcy.css
- ┃ ┃ ┃ ┃ ┃ ┣📜recipeSearchList.css
- ┃ ┃ ┃ ┃ ┃ ┗📜terms.css
- ┃ ┃ ┃ ┃ ┣ 📂manager
- ┃ ┃ ┃ ┃ ┃ ┣📜dashBoard.css
- ┃ ┃ ┃ ┃ ┃ ┣📜manageBoard.css
- ┃ ┃ ┃ ┃ ┃ ┣📜manageComment.css
- ┃ ┃ ┃ ┃ ┃ ┣📜managePoint.css
- ┃ ┃ ┃ ┃ ┃ ┣📜manageProduct.css
- ┃ ┃ ┃ ┃ ┃ ┣📜manageRecipe.css
- ┃ ┃ ┃ ┃ ┃ ┣📜manageReport.css
- ┃ ┃ ┃ ┃ ┃ ┣📜managerLogin.css
- ┃ ┃ ┃ ┃ ┃ ┣📜manageUpdate.css
- ┃ ┃ ┃ ┃ ┃ ┣📜manageUser.css
- ┃ ┃ ┃ ┃ ┃ ┗📜RegisterProduct.css
+ ┃ ┃ ┃ ┃ ┃ ┣ 📜boardDetail.css
+ ┃ ┃ ┃ ┃ ┃ ┣ 📜medicalKnowledgeList.css
+ ┃ ┃ ┃ ┃ ┃ ┣ 📜test
+ ┃ ┃ ┃ ┃ ┃ ┣ 📜updateBoard.css
+ ┃ ┃ ┃ ┃ ┃ ┗ 📜write.css
+ ┃ ┃ ┃ ┃ ┣ 📂book
+ ┃ ┃ ┃ ┃ ┃ ┣ 📜bookDetail.css
+ ┃ ┃ ┃ ┃ ┃ ┣ 📜disease.css
+ ┃ ┃ ┃ ┃ ┃ ┗ 📜test
+ ┃ ┃ ┃ ┃ ┣ 📂clinic
+ ┃ ┃ ┃ ┃ ┃ ┣ 📜chart.css
+ ┃ ┃ ┃ ┃ ┃ ┣ 📜chatListMember.css
+ ┃ ┃ ┃ ┃ ┃ ┣ 📜chatRoom.css
+ ┃ ┃ ┃ ┃ ┃ ┣ 📜choice.css
+ ┃ ┃ ┃ ┃ ┃ ┣ 📜doctorDetail.css
+ ┃ ┃ ┃ ┃ ┃ ┣ 📜doctorList.css
+ ┃ ┃ ┃ ┃ ┃ ┣ 📜patientList.css
+ ┃ ┃ ┃ ┃ ┃ ┣ 📜startClinic.css
+ ┃ ┃ ┃ ┃ ┃ ┗ 📜test
+ ┃ ┃ ┃ ┃ ┣ 📂hospital
+ ┃ ┃ ┃ ┃ ┃ ┣ 📜hospitalInfo.css
+ ┃ ┃ ┃ ┃ ┃ ┗ 📜test
  ┃ ┃ ┃ ┃ ┣ 📂myPage
- ┃ ┃ ┃ ┃ ┃ ┣📜myPageCaution.css
- ┃ ┃ ┃ ┃ ┃ ┣📜myPageCheck.css
- ┃ ┃ ┃ ┃ ┃ ┣📜myPageDelete.css
- ┃ ┃ ┃ ┃ ┃ ┣📜myPageInformation.css
- ┃ ┃ ┃ ┃ ┃ ┣📜myPageMyComplaint.css
- ┃ ┃ ┃ ┃ ┃ ┣📜myPageMyPoint.css
- ┃ ┃ ┃ ┃ ┃ ┣📜myPageMyPost.css
- ┃ ┃ ┃ ┃ ┃ ┣📜myPageMyRecipe.css
- ┃ ┃ ┃ ┃ ┃ ┗📜myPageSteamedList.css
- ┃ ┃ ┃ ┃ ┣ 📂rank
- ┃ ┃ ┃ ┃ ┃ ┗📜userRank.css
- ┃ ┃ ┃ ┃ ┣ 📂recipe
- ┃ ┃ ┃ ┃ ┃ ┣📜chatBotDetailPage.css
- ┃ ┃ ┃ ┃ ┃ ┣📜chatBotDetailPageNone.css
- ┃ ┃ ┃ ┃ ┃ ┣📜chatBotRecipeList.css
- ┃ ┃ ┃ ┃ ┃ ┣📜chatBotRecipeModify.css
- ┃ ┃ ┃ ┃ ┃ ┣📜chatBotRecipeWriter.css
- ┃ ┃ ┃ ┃ ┃ ┣📜myDetailPage.css
- ┃ ┃ ┃ ┃ ┃ ┣📜myDetailPageNone.css
- ┃ ┃ ┃ ┃ ┃ ┣📜myRecipeList.css
- ┃ ┃ ┃ ┃ ┃ ┣📜myRecipeModify.css
- ┃ ┃ ┃ ┃ ┃ ┣📜myRecipeWriter.css
- ┃ ┃ ┃ ┃ ┃ ┗📜report.css
- ┃ ┃ ┃ ┃ ┣ 📂shop
- ┃ ┃ ┃ ┃ ┃ ┗📜pointShop.css
+ ┃ ┃ ┃ ┃ ┃ ┣ 📜doctorInfo.css
+ ┃ ┃ ┃ ┃ ┃ ┣ 📜doctorOut-Caution.css
+ ┃ ┃ ┃ ┃ ┃ ┣ 📜doctorOut-Complete.css
+ ┃ ┃ ┃ ┃ ┃ ┣ 📜doctorOut.css
+ ┃ ┃ ┃ ┃ ┃ ┣ 📜doctorPhoneChange.css
+ ┃ ┃ ┃ ┃ ┃ ┣ 📜doctorPhoneOk.css
+ ┃ ┃ ┃ ┃ ┃ ┣ 📜doctorPwChange.css
+ ┃ ┃ ┃ ┃ ┃ ┣ 📜doctorPwOk.css
+ ┃ ┃ ┃ ┃ ┃ ┣ 📜doctorUpdateMember.css
+ ┃ ┃ ┃ ┃ ┃ ┣ 📜memberinfo.css
+ ┃ ┃ ┃ ┃ ┃ ┣ 📜memberout-caution.css
+ ┃ ┃ ┃ ┃ ┃ ┣ 📜memberout-complete.css
+ ┃ ┃ ┃ ┃ ┃ ┣ 📜memberout.css
+ ┃ ┃ ┃ ┃ ┃ ┣ 📜memberphonechange.css
+ ┃ ┃ ┃ ┃ ┃ ┣ 📜memberphoneok.css
+ ┃ ┃ ┃ ┃ ┃ ┣ 📜memberpwchange.css
+ ┃ ┃ ┃ ┃ ┃ ┣ 📜memberpwok.css
+ ┃ ┃ ┃ ┃ ┃ ┣ 📜memberupdate.css
+ ┃ ┃ ┃ ┃ ┃ ┗ 📜test
  ┃ ┃ ┃ ┃ ┣ 📂user
- ┃ ┃ ┃ ┃ ┃ ┣📜apiJoin.css
- ┃ ┃ ┃ ┃ ┃ ┣📜drJoin.css
- ┃ ┃ ┃ ┃ ┃ ┣📜emailFind.css
- ┃ ┃ ┃ ┃ ┃ ┣📜emailFindFinish.css
- ┃ ┃ ┃ ┃ ┃ ┣📜join.css
- ┃ ┃ ┃ ┃ ┃ ┣📜login.css
- ┃ ┃ ┃ ┃ ┃ ┣📜PwFind.css
- ┃ ┃ ┃ ┃ ┃ ┗📜PwReset.css
+ ┃ ┃ ┃ ┃ ┃ ┣ 📜doctorFindId.css
+ ┃ ┃ ┃ ┃ ┃ ┣ 📜doctorFindIdFinish.css
+ ┃ ┃ ┃ ┃ ┃ ┣ 📜doctorFindPw.css
+ ┃ ┃ ┃ ┃ ┃ ┣ 📜doctorFindPwFinish.css
+ ┃ ┃ ┃ ┃ ┃ ┣ 📜doctorJoin.css
+ ┃ ┃ ┃ ┃ ┃ ┣ 📜doctorJoinFinish.css
+ ┃ ┃ ┃ ┃ ┃ ┣ 📜doctorLogin.css
+ ┃ ┃ ┃ ┃ ┃ ┣ 📜joinType.css
+ ┃ ┃ ┃ ┃ ┃ ┣ 📜memberFindId.css
+ ┃ ┃ ┃ ┃ ┃ ┣ 📜memberFindIdFinish.css
+ ┃ ┃ ┃ ┃ ┃ ┣ 📜memberFindPw.css
+ ┃ ┃ ┃ ┃ ┃ ┣ 📜memberFindPwFinish.css
+ ┃ ┃ ┃ ┃ ┃ ┣ 📜memberJoin.css
+ ┃ ┃ ┃ ┃ ┃ ┣ 📜memberJoinFinish.css
+ ┃ ┃ ┃ ┃ ┃ ┣ 📜memberLogin.css
+ ┃ ┃ ┃ ┃ ┃ ┗ 📜test
+ ┃ ┃ ┃ ┃ ┣ 📜footer.css
+ ┃ ┃ ┃ ┃ ┣ 📜footer2.css
+ ┃ ┃ ┃ ┃ ┣ 📜header.css
+ ┃ ┃ ┃ ┃ ┣ 📜headerDoctor.css
+ ┃ ┃ ┃ ┃ ┣ 📜headerMember.css
+ ┃ ┃ ┃ ┃ ┗ 📜main.css
  ┃ ┃ ┃ ┣ 📂image
- ┃ ┃ ┃ ┃ ┣ 📂myPage
- ┃ ┃ ┃ ┃ ┃ ┗```이미지들
- ┃ ┃ ┃ ┃ ┣ 📂nangjangbot
- ┃ ┃ ┃ ┃ ┃ ┗```이미지들
- ┃ ┃ ┃ ┃ ┣ 📂photo
- ┃ ┃ ┃ ┃ ┃ ┗```이미지들
- ┃ ┃ ┃ ┃ ┣ 📂product
- ┃ ┃ ┃ ┃ ┃ ┗```이미지들
- ┃ ┃ ┃ ┃ ┣ 📂recipe
- ┃ ┃ ┃ ┃ ┃ ┗```이미지들
- ┃ ┃ ┃ ┃ ┣ 📂shop
- ┃ ┃ ┃ ┃ ┃ ┗```이미지들
- ┃ ┃ ┃ ┃ ┣ ```이미지들
+ ┃ ┃ ┃ ┃ ┣ 📜chatBtn.png
+ ┃ ┃ ┃ ┃ ┣ 📜circlecheck.png
+ ┃ ┃ ┃ ┃ ┣ 📜Clinic.png
+ ┃ ┃ ┃ ┃ ┣ 📜cold.png
+ ┃ ┃ ┃ ┃ ┣ 📜cold2.png
+ ┃ ┃ ┃ ┃ ┣ 📜covid.png
+ ┃ ┃ ┃ ┃ ┣ 📜encyclopedia.png
+ ┃ ┃ ┃ ┃ ┣ 📜hospital.png
+ ┃ ┃ ┃ ┃ ┣ 📜hospitalInfo.png
+ ┃ ┃ ┃ ┃ ┣ 📜hospitalMap.png
+ ┃ ┃ ┃ ┃ ┣ 📜Knowledge.png
+ ┃ ┃ ┃ ┃ ┣ 📜login.png
+ ┃ ┃ ┃ ┃ ┣ 📜logo.png
+ ┃ ┃ ┃ ┃ ┣ 📜logo1.png
+ ┃ ┃ ┃ ┃ ┣ 📜memberJoin.png
+ ┃ ┃ ┃ ┃ ┣ 📜myPage.png
+ ┃ ┃ ┃ ┃ ┣ 📜noview.png
+ ┃ ┃ ┃ ┃ ┣ 📜prescription.png
+ ┃ ┃ ┃ ┃ ┣ 📜prescription2.png
+ ┃ ┃ ┃ ┃ ┣ 📜prescription3.png
+ ┃ ┃ ┃ ┃ ┣ 📜prescription4.png
+ ┃ ┃ ┃ ┃ ┣ 📜QnA.png
+ ┃ ┃ ┃ ┃ ┣ 📜row1.jpeg
+ ┃ ┃ ┃ ┃ ┣ 📜row2.jpeg
+ ┃ ┃ ┃ ┃ ┣ 📜row3.jpeg
+ ┃ ┃ ┃ ┃ ┣ 📜sick1.jpeg
+ ┃ ┃ ┃ ┃ ┣ 📜sick10.jpg
+ ┃ ┃ ┃ ┃ ┣ 📜sick2.jpg
+ ┃ ┃ ┃ ┃ ┣ 📜sick3.jpg
+ ┃ ┃ ┃ ┃ ┣ 📜sick4.jpg
+ ┃ ┃ ┃ ┃ ┣ 📜sick5.jpg
+ ┃ ┃ ┃ ┃ ┣ 📜sick6.jpg
+ ┃ ┃ ┃ ┃ ┣ 📜sick7.jpg
+ ┃ ┃ ┃ ┃ ┣ 📜sick8.jpg
+ ┃ ┃ ┃ ┃ ┣ 📜sick9.jpg
+ ┃ ┃ ┃ ┃ ┣ 📜stomach.png
+ ┃ ┃ ┃ ┃ ┣ 📜toTop.png
+ ┃ ┃ ┃ ┃ ┗ 📜view.png
  ┃ ┃ ┃ ┣ 📂js
  ┃ ┃ ┃ ┃ ┣ 📂board
- ┃ ┃ ┃ ┃ ┃ ┣📜boardReport.js
- ┃ ┃ ┃ ┃ ┃ ┣📜freeBoardDetail.js
- ┃ ┃ ┃ ┃ ┃ ┣📜freeBoardList.js
- ┃ ┃ ┃ ┃ ┃ ┣📜freeBoardModify.js
- ┃ ┃ ┃ ┃ ┃ ┣📜freeBoardWirte.js
- ┃ ┃ ┃ ┃ ┃ ┣📜honeyBoardDetail.js
- ┃ ┃ ┃ ┃ ┃ ┣📜honeyBoardList.js
- ┃ ┃ ┃ ┃ ┃ ┣📜honeyBoardModify.js
- ┃ ┃ ┃ ┃ ┃ ┗📜honeyBoardWirte.js
- ┃ ┃ ┃ ┃ ┣ 📂chatBot
- ┃ ┃ ┃ ┃ ┃ ┗📜nangjangbot.js
- ┃ ┃ ┃ ┃ ┣ 📂fragment
- ┃ ┃ ┃ ┃ ┃ ┗📜header.js
- ┃ ┃ ┃ ┃ ┣ 📂main
- ┃ ┃ ┃ ┃ ┃ ┗📜main.js
- ┃ ┃ ┃ ┃ ┣ 📂manager
- ┃ ┃ ┃ ┃ ┃ ┣📜dashBoard.js
- ┃ ┃ ┃ ┃ ┃ ┣📜manageBoard.js
- ┃ ┃ ┃ ┃ ┃ ┣📜manageComment.js
- ┃ ┃ ┃ ┃ ┃ ┣📜managePoint.js
- ┃ ┃ ┃ ┃ ┃ ┣📜manageProduct.js
- ┃ ┃ ┃ ┃ ┃ ┣📜manageRecipe.js
- ┃ ┃ ┃ ┃ ┃ ┣📜manageReport.js
- ┃ ┃ ┃ ┃ ┃ ┣📜managerLogin.js
- ┃ ┃ ┃ ┃ ┃ ┣📜manageUpdate.js
- ┃ ┃ ┃ ┃ ┃ ┣📜manageUser.js
- ┃ ┃ ┃ ┃ ┃ ┗📜RegisterProduct.js
- ┃ ┃ ┃ ┃ ┣ 📂module
- ┃ ┃ ┃ ┃ ┃ ┗📜module.js
+ ┃ ┃ ┃ ┃ ┃ ┣ 📜boardModify.js
+ ┃ ┃ ┃ ┃ ┃ ┣ 📜delete.js
+ ┃ ┃ ┃ ┃ ┃ ┣ 📜updateBoard.js
+ ┃ ┃ ┃ ┃ ┃ ┗ 📜write.js
+ ┃ ┃ ┃ ┃ ┣ 📂book
+ ┃ ┃ ┃ ┃ ┃ ┗ 📜test
+ ┃ ┃ ┃ ┃ ┣ 📂clinic
+ ┃ ┃ ┃ ┃ ┃ ┣ 📜chart.js
+ ┃ ┃ ┃ ┃ ┃ ┣ 📜doctorChating.js
+ ┃ ┃ ┃ ┃ ┃ ┣ 📜doctorDetail.js
+ ┃ ┃ ┃ ┃ ┃ ┣ 📜doctorList.js
+ ┃ ┃ ┃ ┃ ┃ ┣ 📜memberChating.js
+ ┃ ┃ ┃ ┃ ┃ ┗ 📜test
+ ┃ ┃ ┃ ┃ ┣ 📂hospital
+ ┃ ┃ ┃ ┃ ┃ ┣ 📜hospitalInfo.js
+ ┃ ┃ ┃ ┃ ┃ ┗ 📜test
  ┃ ┃ ┃ ┃ ┣ 📂myPage
- ┃ ┃ ┃ ┃ ┃ ┣📜myPageCaution.js
- ┃ ┃ ┃ ┃ ┃ ┣📜myPageCheck.js
- ┃ ┃ ┃ ┃ ┃ ┣📜myPageDelete.js
- ┃ ┃ ┃ ┃ ┃ ┣📜myPageInformation.js
- ┃ ┃ ┃ ┃ ┃ ┣📜myPageMyComplaint.js
- ┃ ┃ ┃ ┃ ┃ ┣📜myPageMyPoint.js
- ┃ ┃ ┃ ┃ ┃ ┣📜myPageMyPost.js
- ┃ ┃ ┃ ┃ ┃ ┣📜myPageMyRecipe.js
- ┃ ┃ ┃ ┃ ┃ ┗📜myPageSteamedList.js
- ┃ ┃ ┃ ┃ ┣ 📂rank
- ┃ ┃ ┃ ┃ ┃ ┗📜userRank.js
- ┃ ┃ ┃ ┃ ┣ 📂recipe
- ┃ ┃ ┃ ┃ ┃ ┣📜chatBotDetailPage.js
- ┃ ┃ ┃ ┃ ┃ ┣📜chatBotDetailPageNone.js
- ┃ ┃ ┃ ┃ ┃ ┣📜chatBotRecipeList.js
- ┃ ┃ ┃ ┃ ┃ ┣📜chatBotRecipeModify.js
- ┃ ┃ ┃ ┃ ┃ ┣📜chatBotRecipeWriter.js
- ┃ ┃ ┃ ┃ ┃ ┣📜myDetailPage.js
- ┃ ┃ ┃ ┃ ┃ ┣📜myDetailPageNone.js
- ┃ ┃ ┃ ┃ ┃ ┣📜myRecipeList.js
- ┃ ┃ ┃ ┃ ┃ ┣📜myRecipeModify.js
- ┃ ┃ ┃ ┃ ┃ ┣📜myRecipeWriter.js
- ┃ ┃ ┃ ┃ ┃ ┗📜report.js
- ┃ ┃ ┃ ┃ ┣ 📂shop
- ┃ ┃ ┃ ┃ ┃ ┗📜pointShop.js
+ ┃ ┃ ┃ ┃ ┃ ┣ 📜doctorOut.js
+ ┃ ┃ ┃ ┃ ┃ ┣ 📜doctorPhoneChange.js
+ ┃ ┃ ┃ ┃ ┃ ┣ 📜doctorPhoneOk.js
+ ┃ ┃ ┃ ┃ ┃ ┣ 📜doctorPwChange.js
+ ┃ ┃ ┃ ┃ ┃ ┣ 📜doctorPwOk.js
+ ┃ ┃ ┃ ┃ ┃ ┣ 📜doctorUpdateMember.js
+ ┃ ┃ ┃ ┃ ┃ ┣ 📜memberInfo.js
+ ┃ ┃ ┃ ┃ ┃ ┣ 📜memberout.js
+ ┃ ┃ ┃ ┃ ┃ ┣ 📜memberphoneok.js
+ ┃ ┃ ┃ ┃ ┃ ┣ 📜memberpwchange.js
+ ┃ ┃ ┃ ┃ ┃ ┣ 📜memberpwok.js
+ ┃ ┃ ┃ ┃ ┃ ┣ 📜memberUpdate.js
+ ┃ ┃ ┃ ┃ ┃ ┗ 📜test
  ┃ ┃ ┃ ┃ ┣ 📂user
- ┃ ┃ ┃ ┃ ┃ ┣📜apiJoin.js
- ┃ ┃ ┃ ┃ ┃ ┣📜drJoin.js
- ┃ ┃ ┃ ┃ ┃ ┣📜emailFind.js
- ┃ ┃ ┃ ┃ ┃ ┣📜emailFindFinish.js
- ┃ ┃ ┃ ┃ ┃ ┣📜join.js
- ┃ ┃ ┃ ┃ ┃ ┣📜login.js
- ┃ ┃ ┃ ┃ ┃ ┣📜PwFind.js
- ┃ ┃ ┃ ┃ ┃ ┗📜PwReset.js
- ┃ ┃ ┣ 📂templates
- ┃ ┃ ┃ ┣ 📂board
- ┃ ┃ ┃ ┃ ┣📜boardReport.html
- ┃ ┃ ┃ ┃ ┣📜freeBoardDetail.html
- ┃ ┃ ┃ ┃ ┣📜freeBoardList.html
- ┃ ┃ ┃ ┃ ┣📜freeBoardModify.html
- ┃ ┃ ┃ ┃ ┣📜freeBoardWirte.html
- ┃ ┃ ┃ ┃ ┣📜honeyBoardDetail.html
- ┃ ┃ ┃ ┃ ┣📜honeyBoardList.html
- ┃ ┃ ┃ ┃ ┣📜honeyBoardModify.html
- ┃ ┃ ┃ ┃ ┗📜honeyBoardWirte.html
- ┃ ┃ ┃ ┣ 📂chatBot
- ┃ ┃ ┃ ┃ ┗📜nangjangbot.html
- ┃ ┃ ┃ ┣ 📂error
- ┃ ┃ ┃ ┃ ┗📜미구현
- ┃ ┃ ┃ ┣ 📂fragment
- ┃ ┃ ┃ ┃ ┣📜footer.html
- ┃ ┃ ┃ ┃ ┗📜header.html
- ┃ ┃ ┃ ┣ 📂board
- ┃ ┃ ┃ ┃ ┣📜boardSearchList.html
- ┃ ┃ ┃ ┃ ┣📜privacyPolicy.html
- ┃ ┃ ┃ ┃ ┣📜recipeSearchList.html
- ┃ ┃ ┃ ┃ ┗📜terms.html
- ┃ ┃ ┃ ┣ 📂manager
- ┃ ┃ ┃ ┃ ┣📜dashBoard.html
- ┃ ┃ ┃ ┃ ┣📜manageBoard.html
- ┃ ┃ ┃ ┃ ┣📜manageComment.html
- ┃ ┃ ┃ ┃ ┣📜managePoint.html
- ┃ ┃ ┃ ┃ ┣📜manageProduct.html
- ┃ ┃ ┃ ┃ ┣📜manageRecipe.html
- ┃ ┃ ┃ ┃ ┣📜manageReport.html
- ┃ ┃ ┃ ┃ ┣📜managerLogin.html
- ┃ ┃ ┃ ┃ ┣📜manageUpdate.html
- ┃ ┃ ┃ ┃ ┣📜manageUser.html
- ┃ ┃ ┃ ┃ ┗📜registerProduct.html
- ┃ ┃ ┃ ┣ 📂rank
- ┃ ┃ ┃ ┃ ┗📜userRank.html
- ┃ ┃ ┃ ┣ 📂manager
- ┃ ┃ ┃ ┃ ┣📜chatBotDetailPage.html
- ┃ ┃ ┃ ┃ ┣📜chatBotDetailPageNone.html
- ┃ ┃ ┃ ┃ ┣📜chatBotRecipeList.html
- ┃ ┃ ┃ ┃ ┣📜chatBotRecipeModify.html
- ┃ ┃ ┃ ┃ ┣📜chatBotRecipeWirte.html
- ┃ ┃ ┃ ┃ ┣📜myDetailPage.html
- ┃ ┃ ┃ ┃ ┣📜myDetailPageNone.html
- ┃ ┃ ┃ ┃ ┣📜myRecipeList.html
- ┃ ┃ ┃ ┃ ┣📜myRecipeModify.html
- ┃ ┃ ┃ ┃ ┣📜myRecipeWirter.html
- ┃ ┃ ┃ ┃ ┗📜report.html
- ┃ ┃ ┃ ┣ 📂shop
- ┃ ┃ ┃ ┃ ┗📜pointShop.html
- ┃ ┃ ┃ ┣ 📂user
- ┃ ┃ ┃ ┃ ┣📜apiJoin.html
- ┃ ┃ ┃ ┃ ┣📜drJoin.html
- ┃ ┃ ┃ ┃ ┣📜emailFind.html
- ┃ ┃ ┃ ┃ ┣📜emailFindFinish.html
- ┃ ┃ ┃ ┃ ┣📜join.html
- ┃ ┃ ┃ ┃ ┣📜login.html
- ┃ ┃ ┃ ┃ ┣📜PwFind.html
- ┃ ┃ ┃ ┃ ┗📜PwReset.html
- ┃ ┃ ┗ 📜application.properties
+ ┃ ┃ ┃ ┃ ┃ ┣ 📜doctorJoin.js
+ ┃ ┃ ┃ ┃ ┃ ┣ 📜doctorLogin.js
+ ┃ ┃ ┃ ┃ ┃ ┣ 📜memberJoin.js
+ ┃ ┃ ┃ ┃ ┃ ┣ 📜memberLogin.js
+ ┃ ┃ ┃ ┃ ┃ ┗ 📜test
+ ┃ ┃ ┃ ┃ ┗ 📜main.js
+ ┃ ┃ ┃ ┗ 📂summernote
+ ┃ ┃ ┃ ┃ ┣ 📂font
+ ┃ ┃ ┃ ┃ ┃ ┣ 📜summernote.eot
+ ┃ ┃ ┃ ┃ ┃ ┣ 📜summernote.ttf
+ ┃ ┃ ┃ ┃ ┃ ┣ 📜summernote.woff
+ ┃ ┃ ┃ ┃ ┃ ┗ 📜summernote.woff2
+ ┃ ┃ ┃ ┃ ┣ 📂lang
+ ┃ ┃ ┃ ┃ ┃ ┣ 📜summernote-ar-AR.js
+ ┃ ┃ ┃ ┃ ┃ ┣ 📜summernote-ar-AR.min.js
+ ┃ ┃ ┃ ┃ ┃ ┣ 📜summernote-ar-AR.min.js.LICENSE.txt
+ ┃ ┃ ┃ ┃ ┃ ┣ 📜summernote-az-AZ.js
+ ┃ ┃ ┃ ┃ ┃ ┣ 📜summernote-az-AZ.min.js
+ ┃ ┃ ┃ ┃ ┃ ┣ 📜summernote-az-AZ.min.js.LICENSE.txt
+ ┃ ┃ ┃ ┃ ┃ ┣ 📜summernote-bg-BG.js
+ ┃ ┃ ┃ ┃ ┃ ┣ 📜summernote-bg-BG.min.js
+ ┃ ┃ ┃ ┃ ┃ ┣ 📜summernote-bg-BG.min.js.LICENSE.txt
+ ┃ ┃ ┃ ┃ ┃ ┣ 📜summernote-ca-ES.js
+ ┃ ┃ ┃ ┃ ┃ ┣ 📜summernote-ca-ES.min.js
+ ┃ ┃ ┃ ┃ ┃ ┣ 📜summernote-ca-ES.min.js.LICENSE.txt
+ ┃ ┃ ┃ ┃ ┃ ┣ 📜summernote-cs-CZ.js
+ ┃ ┃ ┃ ┃ ┃ ┣ 📜summernote-cs-CZ.min.js
+ ┃ ┃ ┃ ┃ ┃ ┣ 📜summernote-cs-CZ.min.js.LICENSE.txt
+ ┃ ┃ ┃ ┃ ┃ ┣ 📜summernote-da-DK.js
+ ┃ ┃ ┃ ┃ ┃ ┣ 📜summernote-da-DK.min.js
+ ┃ ┃ ┃ ┃ ┃ ┣ 📜summernote-da-DK.min.js.LICENSE.txt
+ ┃ ┃ ┃ ┃ ┃ ┣ 📜summernote-de-DE.js
+ ┃ ┃ ┃ ┃ ┃ ┣ 📜summernote-de-DE.min.js
+ ┃ ┃ ┃ ┃ ┃ ┣ 📜summernote-de-DE.min.js.LICENSE.txt
+ ┃ ┃ ┃ ┃ ┃ ┣ 📜summernote-el-GR.js
+ ┃ ┃ ┃ ┃ ┃ ┣ 📜summernote-el-GR.min.js
+ ┃ ┃ ┃ ┃ ┃ ┣ 📜summernote-el-GR.min.js.LICENSE.txt
+ ┃ ┃ ┃ ┃ ┃ ┣ 📜summernote-es-ES.js
+ ┃ ┃ ┃ ┃ ┃ ┣ 📜summernote-es-ES.min.js
+ ┃ ┃ ┃ ┃ ┃ ┣ 📜summernote-es-ES.min.js.LICENSE.txt
+ ┃ ┃ ┃ ┃ ┃ ┣ 📜summernote-es-EU.js
+ ┃ ┃ ┃ ┃ ┃ ┣ 📜summernote-es-EU.min.js
+ ┃ ┃ ┃ ┃ ┃ ┣ 📜summernote-es-EU.min.js.LICENSE.txt
+ ┃ ┃ ┃ ┃ ┃ ┣ 📜summernote-fa-IR.js
+ ┃ ┃ ┃ ┃ ┃ ┣ 📜summernote-fa-IR.min.js
+ ┃ ┃ ┃ ┃ ┃ ┣ 📜summernote-fa-IR.min.js.LICENSE.txt
+ ┃ ┃ ┃ ┃ ┃ ┣ 📜summernote-fi-FI.js
+ ┃ ┃ ┃ ┃ ┃ ┣ 📜summernote-fi-FI.min.js
+ ┃ ┃ ┃ ┃ ┃ ┣ 📜summernote-fi-FI.min.js.LICENSE.txt
+ ┃ ┃ ┃ ┃ ┃ ┣ 📜summernote-fr-FR.js
+ ┃ ┃ ┃ ┃ ┃ ┣ 📜summernote-fr-FR.min.js
+ ┃ ┃ ┃ ┃ ┃ ┣ 📜summernote-fr-FR.min.js.LICENSE.txt
+ ┃ ┃ ┃ ┃ ┃ ┣ 📜summernote-gl-ES.js
+ ┃ ┃ ┃ ┃ ┃ ┣ 📜summernote-gl-ES.min.js
+ ┃ ┃ ┃ ┃ ┃ ┣ 📜summernote-gl-ES.min.js.LICENSE.txt
+ ┃ ┃ ┃ ┃ ┃ ┣ 📜summernote-he-IL.js
+ ┃ ┃ ┃ ┃ ┃ ┣ 📜summernote-he-IL.min.js
+ ┃ ┃ ┃ ┃ ┃ ┣ 📜summernote-he-IL.min.js.LICENSE.txt
+ ┃ ┃ ┃ ┃ ┃ ┣ 📜summernote-hr-HR.js
+ ┃ ┃ ┃ ┃ ┃ ┣ 📜summernote-hr-HR.min.js
+ ┃ ┃ ┃ ┃ ┃ ┣ 📜summernote-hr-HR.min.js.LICENSE.txt
+ ┃ ┃ ┃ ┃ ┃ ┣ 📜summernote-hu-HU.js
+ ┃ ┃ ┃ ┃ ┃ ┣ 📜summernote-hu-HU.min.js
+ ┃ ┃ ┃ ┃ ┃ ┣ 📜summernote-hu-HU.min.js.LICENSE.txt
+ ┃ ┃ ┃ ┃ ┃ ┣ 📜summernote-id-ID.js
+ ┃ ┃ ┃ ┃ ┃ ┣ 📜summernote-id-ID.min.js
+ ┃ ┃ ┃ ┃ ┃ ┣ 📜summernote-id-ID.min.js.LICENSE.txt
+ ┃ ┃ ┃ ┃ ┃ ┣ 📜summernote-it-IT.js
+ ┃ ┃ ┃ ┃ ┃ ┣ 📜summernote-it-IT.min.js
+ ┃ ┃ ┃ ┃ ┃ ┣ 📜summernote-it-IT.min.js.LICENSE.txt
+ ┃ ┃ ┃ ┃ ┃ ┣ 📜summernote-ja-JP.js
+ ┃ ┃ ┃ ┃ ┃ ┣ 📜summernote-ja-JP.min.js
+ ┃ ┃ ┃ ┃ ┃ ┣ 📜summernote-ja-JP.min.js.LICENSE.txt
+ ┃ ┃ ┃ ┃ ┃ ┣ 📜summernote-ko-KR.js
+ ┃ ┃ ┃ ┃ ┃ ┣ 📜summernote-ko-KR.min.js
+ ┃ ┃ ┃ ┃ ┃ ┣ 📜summernote-ko-KR.min.js.LICENSE.txt
+ ┃ ┃ ┃ ┃ ┃ ┣ 📜summernote-lt-LT.js
+ ┃ ┃ ┃ ┃ ┃ ┣ 📜summernote-lt-LT.min.js
+ ┃ ┃ ┃ ┃ ┃ ┣ 📜summernote-lt-LT.min.js.LICENSE.txt
+ ┃ ┃ ┃ ┃ ┃ ┣ 📜summernote-lt-LV.js
+ ┃ ┃ ┃ ┃ ┃ ┣ 📜summernote-lt-LV.min.js
+ ┃ ┃ ┃ ┃ ┃ ┣ 📜summernote-lt-LV.min.js.LICENSE.txt
+ ┃ ┃ ┃ ┃ ┃ ┣ 📜summernote-mn-MN.js
+ ┃ ┃ ┃ ┃ ┃ ┣ 📜summernote-mn-MN.min.js
+ ┃ ┃ ┃ ┃ ┃ ┣ 📜summernote-mn-MN.min.js.LICENSE.txt
+ ┃ ┃ ┃ ┃ ┃ ┣ 📜summernote-nb-NO.js
+ ┃ ┃ ┃ ┃ ┃ ┣ 📜summernote-nb-NO.min.js
+ ┃ ┃ ┃ ┃ ┃ ┣ 📜summernote-nb-NO.min.js.LICENSE.txt
+ ┃ ┃ ┃ ┃ ┃ ┣ 📜summernote-nl-NL.js
+ ┃ ┃ ┃ ┃ ┃ ┣ 📜summernote-nl-NL.min.js
+ ┃ ┃ ┃ ┃ ┃ ┣ 📜summernote-nl-NL.min.js.LICENSE.txt
+ ┃ ┃ ┃ ┃ ┃ ┣ 📜summernote-pl-PL.js
+ ┃ ┃ ┃ ┃ ┃ ┣ 📜summernote-pl-PL.min.js
+ ┃ ┃ ┃ ┃ ┃ ┣ 📜summernote-pl-PL.min.js.LICENSE.txt
+ ┃ ┃ ┃ ┃ ┃ ┣ 📜summernote-pt-BR.js
+ ┃ ┃ ┃ ┃ ┃ ┣ 📜summernote-pt-BR.min.js
+ ┃ ┃ ┃ ┃ ┃ ┣ 📜summernote-pt-BR.min.js.LICENSE.txt
+ ┃ ┃ ┃ ┃ ┃ ┣ 📜summernote-pt-PT.js
+ ┃ ┃ ┃ ┃ ┃ ┣ 📜summernote-pt-PT.min.js
+ ┃ ┃ ┃ ┃ ┃ ┣ 📜summernote-pt-PT.min.js.LICENSE.txt
+ ┃ ┃ ┃ ┃ ┃ ┣ 📜summernote-ro-RO.js
+ ┃ ┃ ┃ ┃ ┃ ┣ 📜summernote-ro-RO.min.js
+ ┃ ┃ ┃ ┃ ┃ ┣ 📜summernote-ro-RO.min.js.LICENSE.txt
+ ┃ ┃ ┃ ┃ ┃ ┣ 📜summernote-ru-RU.js
+ ┃ ┃ ┃ ┃ ┃ ┣ 📜summernote-ru-RU.min.js
+ ┃ ┃ ┃ ┃ ┃ ┣ 📜summernote-ru-RU.min.js.LICENSE.txt
+ ┃ ┃ ┃ ┃ ┃ ┣ 📜summernote-sk-SK.js
+ ┃ ┃ ┃ ┃ ┃ ┣ 📜summernote-sk-SK.min.js
+ ┃ ┃ ┃ ┃ ┃ ┣ 📜summernote-sk-SK.min.js.LICENSE.txt
+ ┃ ┃ ┃ ┃ ┃ ┣ 📜summernote-sl-SI.js
+ ┃ ┃ ┃ ┃ ┃ ┣ 📜summernote-sl-SI.min.js
+ ┃ ┃ ┃ ┃ ┃ ┣ 📜summernote-sl-SI.min.js.LICENSE.txt
+ ┃ ┃ ┃ ┃ ┃ ┣ 📜summernote-sr-RS-Latin.js
+ ┃ ┃ ┃ ┃ ┃ ┣ 📜summernote-sr-RS-Latin.min.js
+ ┃ ┃ ┃ ┃ ┃ ┣ 📜summernote-sr-RS-Latin.min.js.LICENSE.txt
+ ┃ ┃ ┃ ┃ ┃ ┣ 📜summernote-sr-RS.js
+ ┃ ┃ ┃ ┃ ┃ ┣ 📜summernote-sr-RS.min.js
+ ┃ ┃ ┃ ┃ ┃ ┣ 📜summernote-sr-RS.min.js.LICENSE.txt
+ ┃ ┃ ┃ ┃ ┃ ┣ 📜summernote-sv-SE.js
+ ┃ ┃ ┃ ┃ ┃ ┣ 📜summernote-sv-SE.min.js
+ ┃ ┃ ┃ ┃ ┃ ┣ 📜summernote-sv-SE.min.js.LICENSE.txt
+ ┃ ┃ ┃ ┃ ┃ ┣ 📜summernote-ta-IN.js
+ ┃ ┃ ┃ ┃ ┃ ┣ 📜summernote-ta-IN.min.js
+ ┃ ┃ ┃ ┃ ┃ ┣ 📜summernote-ta-IN.min.js.LICENSE.txt
+ ┃ ┃ ┃ ┃ ┃ ┣ 📜summernote-th-TH.js
+ ┃ ┃ ┃ ┃ ┃ ┣ 📜summernote-th-TH.min.js
+ ┃ ┃ ┃ ┃ ┃ ┣ 📜summernote-th-TH.min.js.LICENSE.txt
+ ┃ ┃ ┃ ┃ ┃ ┣ 📜summernote-tr-TR.js
+ ┃ ┃ ┃ ┃ ┃ ┣ 📜summernote-tr-TR.min.js
+ ┃ ┃ ┃ ┃ ┃ ┣ 📜summernote-tr-TR.min.js.LICENSE.txt
+ ┃ ┃ ┃ ┃ ┃ ┣ 📜summernote-uk-UA.js
+ ┃ ┃ ┃ ┃ ┃ ┣ 📜summernote-uk-UA.min.js
+ ┃ ┃ ┃ ┃ ┃ ┣ 📜summernote-uk-UA.min.js.LICENSE.txt
+ ┃ ┃ ┃ ┃ ┃ ┣ 📜summernote-uz-UZ.js
+ ┃ ┃ ┃ ┃ ┃ ┣ 📜summernote-uz-UZ.min.js
+ ┃ ┃ ┃ ┃ ┃ ┣ 📜summernote-uz-UZ.min.js.LICENSE.txt
+ ┃ ┃ ┃ ┃ ┃ ┣ 📜summernote-vi-VN.js
+ ┃ ┃ ┃ ┃ ┃ ┣ 📜summernote-vi-VN.min.js
+ ┃ ┃ ┃ ┃ ┃ ┣ 📜summernote-vi-VN.min.js.LICENSE.txt
+ ┃ ┃ ┃ ┃ ┃ ┣ 📜summernote-zh-CN.js
+ ┃ ┃ ┃ ┃ ┃ ┣ 📜summernote-zh-CN.min.js
+ ┃ ┃ ┃ ┃ ┃ ┣ 📜summernote-zh-CN.min.js.LICENSE.txt
+ ┃ ┃ ┃ ┃ ┃ ┣ 📜summernote-zh-TW.js
+ ┃ ┃ ┃ ┃ ┃ ┣ 📜summernote-zh-TW.min.js
+ ┃ ┃ ┃ ┃ ┃ ┗ 📜summernote-zh-TW.min.js.LICENSE.txt
+ ┃ ┃ ┃ ┃ ┣ 📂plugin
+ ┃ ┃ ┃ ┃ ┃ ┣ 📂databasic
+ ┃ ┃ ┃ ┃ ┃ ┃ ┣ 📜summernote-ext-databasic.css
+ ┃ ┃ ┃ ┃ ┃ ┃ ┗ 📜summernote-ext-databasic.js
+ ┃ ┃ ┃ ┃ ┃ ┣ 📂hello
+ ┃ ┃ ┃ ┃ ┃ ┃ ┗ 📜summernote-ext-hello.js
+ ┃ ┃ ┃ ┃ ┃ ┗ 📂specialchars
+ ┃ ┃ ┃ ┃ ┃ ┃ ┗ 📜summernote-ext-specialchars.js
+ ┃ ┃ ┃ ┃ ┣ 📜summernote-bs4.css
+ ┃ ┃ ┃ ┃ ┣ 📜summernote-bs4.js
+ ┃ ┃ ┃ ┃ ┣ 📜summernote-bs4.js.map
+ ┃ ┃ ┃ ┃ ┣ 📜summernote-bs4.min.css
+ ┃ ┃ ┃ ┃ ┣ 📜summernote-bs4.min.js
+ ┃ ┃ ┃ ┃ ┣ 📜summernote-bs4.min.js.LICENSE.txt
+ ┃ ┃ ┃ ┃ ┣ 📜summernote-bs4.min.js.map
+ ┃ ┃ ┃ ┃ ┣ 📜summernote-lite.css
+ ┃ ┃ ┃ ┃ ┣ 📜summernote-lite.js
+ ┃ ┃ ┃ ┃ ┣ 📜summernote-lite.js.map
+ ┃ ┃ ┃ ┃ ┣ 📜summernote-lite.min.css
+ ┃ ┃ ┃ ┃ ┣ 📜summernote-lite.min.js
+ ┃ ┃ ┃ ┃ ┣ 📜summernote-lite.min.js.LICENSE.txt
+ ┃ ┃ ┃ ┃ ┣ 📜summernote-lite.min.js.map
+ ┃ ┃ ┃ ┃ ┣ 📜summernote.css
+ ┃ ┃ ┃ ┃ ┣ 📜summernote.js
+ ┃ ┃ ┃ ┃ ┣ 📜summernote.js.map
+ ┃ ┃ ┃ ┃ ┣ 📜summernote.min.css
+ ┃ ┃ ┃ ┃ ┣ 📜summernote.min.js
+ ┃ ┃ ┃ ┃ ┣ 📜summernote.min.js.LICENSE.txt
+ ┃ ┃ ┃ ┃ ┗ 📜summernote.min.js.map
+ ┃ ┃ ┣ 📂WEB-INF
+ ┃ ┃ ┃ ┣ 📂lib
+ ┃ ┃ ┃ ┃ ┣ 📜javaSDK-2.2.jar
+ ┃ ┃ ┃ ┃ ┣ 📜json-simple-1.1.1.jar
+ ┃ ┃ ┃ ┃ ┣ 📜jstl.jar
+ ┃ ┃ ┃ ┃ ┣ 📜mybatis-3.5.11.jar
+ ┃ ┃ ┃ ┃ ┣ 📜ojdbc6.jar
+ ┃ ┃ ┃ ┃ ┣ 📜standard.jar
+ ┃ ┃ ┃ ┃ ┗ 📜tomcat-dbcp.jar
+ ┃ ┃ ┃ ┗ 📜web.xml
+ ┃ ┃ ┣ 📜footer.jsp
+ ┃ ┃ ┣ 📜footer2.jsp
+ ┃ ┃ ┣ 📜header.jsp
+ ┃ ┃ ┣ 📜headerDoctor.jsp
+ ┃ ┃ ┣ 📜headerMember.jsp
+ ┃ ┃ ┣ 📜index.jsp
+ ┃ ┃ ┗ 📜test.jsp
  ```
-  
  </details>   
  <br/>    
    
