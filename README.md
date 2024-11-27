@@ -535,79 +535,63 @@ JSP DOCTOR TREAT
      
  ### 6️⃣ DB 설계
  
-![ERD](https://github.com/user-attachments/assets/3f72fc6e-dcac-4a73-83cb-4cb9baa6a438)
-※엔티티 관계도 이미지 클릭후 확대 가능합니다
+![image](https://github.com/user-attachments/assets/68a95369-990d-4a78-8480-1b1343763ab3)<br>
 
-![ERD_USER](https://github.com/user-attachments/assets/aeb7fd4b-5c23-49fe-ad2c-feb8958e95bd)
-![ERD_MANAGER](https://github.com/user-attachments/assets/f5056cf2-90a0-46a1-9403-0676ceacc6f6)
-![ERD_BOARD](https://github.com/user-attachments/assets/3164ca6d-c73e-4425-baa9-d3b5381eb5a2)
-![ERD_RECIPE](https://github.com/user-attachments/assets/39fe62cc-e2fe-467f-8976-7d79509495cd)
-![ERD_PRODUCT](https://github.com/user-attachments/assets/73bf54c8-f5f9-41e9-8381-0431c3a1e594)
-![ERD_PHOTO](https://github.com/user-attachments/assets/5d7022fb-7f6b-4bf9-80dc-eddc92c03e94)
-![ERD_SCORE](https://github.com/user-attachments/assets/c7702d30-61f7-4260-97d1-fcadf9f7277f)
-![ERD_POINT](https://github.com/user-attachments/assets/a6c8b216-8d20-45e4-838c-08a7e5c567ec)
-![ERD_STEAM](https://github.com/user-attachments/assets/b0bb863a-4627-4b66-a095-e6f6763141b8)
-![ERD_GOOD](https://github.com/user-attachments/assets/ef3ebdd8-3d41-4d75-9cee-41758eb67caa)
-![ERD_REPLY](https://github.com/user-attachments/assets/245d0748-0d98-4358-bf26-6cee077ba998)
-![ERD_SIREN](https://github.com/user-attachments/assets/f30dd0eb-c5c9-47f9-b801-7db8854a91ad)
-![ERD_DAILY](https://github.com/user-attachments/assets/03143311-5563-4842-92eb-cc79e245fad9)
-![ERD_CHATSESSION](https://github.com/user-attachments/assets/d3648641-3890-4ba3-9ace-c93befcc083c)
-![ERD_CHAT](https://github.com/user-attachments/assets/715f2092-95dc-44fa-8881-4715add9245b)
+
+![image](https://github.com/user-attachments/assets/6ac0295d-3632-4d0b-85e0-d50124c1a591)
+![image](https://github.com/user-attachments/assets/0b7c5f8d-82db-4560-a33d-21a6f9d7a68d)
+![image](https://github.com/user-attachments/assets/82726fb7-c2ce-4b98-a942-de64a990de50)
+![image](https://github.com/user-attachments/assets/77c5c42e-0d00-4580-8e1f-d13ba46da591)
+![image](https://github.com/user-attachments/assets/ac2fe633-05ee-4f2b-be33-59b9bb40edc9)
+![image](https://github.com/user-attachments/assets/32633068-c58a-452b-a5de-576122334830)
+![image](https://github.com/user-attachments/assets/5066ea53-d31f-4f5e-b67c-201a841384b6)
+![image](https://github.com/user-attachments/assets/2f5aa702-5941-4a8e-abe2-9a025ed02504)
+![image](https://github.com/user-attachments/assets/7aa1652d-9de7-46ba-9016-e70dcec16310)
 
 <br/>
 
 ### 7️⃣ API 설계
 
-![apiImage](https://github.com/user-attachments/assets/746233b8-ccf0-4b9d-832d-b21b0ea88e05)<br><br>
+![image](https://github.com/user-attachments/assets/76c33a70-8f8d-49f1-8301-d54d04821efa)<br><br>
 
 ## 개발 내용
 
-- <a href="https://blog.naver.com/starve1304" target="_blank">맛있는 재활용 기술 블로그</a>
+- <a href="https://blog.naver.com/starve1304" target="_blank">doctorTreat 기술 블로그</a>
 <br>
 
 ## 마치며   
 ### 8️⃣ 프로젝트 보완사항   
 
-처음 기획한 데로 구현을 하다보니 기능적으로 빠진 부분이 많습니다. <br>
-관리자 쪽을 처음으로 구상하다 보니 멀리서 바라 봤을 때 관리자 로써의 역할을 다 하지 못하는 것 같습니다.<br>
-현재 구현한 관리자 페이지는 부족한 점은 3가지로 볼 수 있습니다. <br> <br>
+첫째 , 의료지식인 페이지에서 수정 , 삭제 , 작성을 했을 때 event 가 없습니다. <br>
+CRUD를 구현하는데 급급하다 보니 디테일한 부분을 신경을 못썼습니다 . <br>
+따라서 alert 창을 띄우는 방식으로 해결하겠습니다. <br>
 
-첫째 , 관리자 수가 많아졌을 때 페이지 레이아웃에 어려움이 있습니다. <br>
-팀원을 기준으로 레이아웃을 짜다보니 관리자가 늘어났을 때의 대처가 부족합니다. <br>
-따라서 슬라이드 api를 넣어 관리자가 많아지더라도 편하게 넘길수 있도록 구현하겠습니다.<br>
-
-둘째 , 관리자와 유저간의 소통 공간이 부족합니다. <br>
-따라서 소통공간인 쪽찌 보내기 기능을 만들어 웹 페이지를 사용하면서 불편한 점이 있다면 관리자에게 문의 할 수 있도록 구현하겠습니다. <br>
-
-셋째 , 홈페이지의 업데이트를 알리는 공지사항이 없습니다. <br>
-따라서 공지사항을 추가로 만들어 공식적인 이벤트나 웹 페이지의 기능 업데이트가 있을 때 유용하도록 구현하겠습니다. <br>
+둘째 , 질병백과의 페이지 다양화 입니다. <br>
+지금은 정적인 페이지로 이루어져 있지만 테이블도 만들고 더 다양하게 질병을 추가해서 <br>
+사람들이 많이 사용할 수 있는 서비스로 만들겠습니다. <br>
 
 <br>   
    <details>
   <summary>추가할 기능 (Click)</summary>
      
-- 슬라이드 api 이용한 대시보드 화면 업데이트
-- 쪽찌 보내기 기능
-- 공지사항 기능
+- 모든 event에 대한 alert 구현
+- 질병백과 다양화
   
 </details>  
 <br>
 
 ### 9️⃣ 후기   
-이번 프로젝트는 단순히 결과물을 만들어내는 데에 그치지 않고, 기획부터 설계, 구현, 개선까지 모든 과정을 스스로 처음부터 끝까지 주도적으로 경험해본 뜻깊은 도전이었습니다.<br>  
-처음에는 방대한 작업의 범위와 미숙함에 대한 두려움도 있었지만, 이를 하나씩 해결해 나가며 개발자로서의 자신감과 역량을 키울 수 있었습니다.<br>  
-또한 문제를 발견하고 개선해 나가는 과정에서 나만의 개발 철학과 방향성을 찾을 수 있었습니다.<br>  
-이번 프로젝트는 단순히 기술적인 경험만이 아니라, 협업의 가치와 개발자로서의 책임감을 느낄 수 있었던 귀중한 여정이었습니다.<br><br>  
 
-1) **협업의 중요성**<br>  
-개발은 혼자 하는 작업이라는 인식이 있었지만, 실제로는 기획, 설계, 구현, 테스트까지 전 과정에서 협업이 핵심이라는 것을 깨달았습니다.<br>  
-각자 맡은 역할에 책임을 다하면서도, 팀원들과 아이디어를 나누고 문제를 해결하는 과정이 프로젝트 성공의 열쇠임을 실감했습니다.<br>  
-특히 다양한 의견을 조율하고, 각자의 장점을 살리는 과정에서 팀워크의 중요성을 다시금 느꼈습니다.<br>  
-앞으로는 단순히 개인적인 역량뿐만 아니라, 팀 내에서 효과적으로 소통하고 협력하는 능력을 더욱 발전시켜야겠다는 다짐을 하게 되었습니다.<br><br> 
+처음으로 웹 개발 프로젝트를 진행하면서 MVC 패턴을 접했는데, 처음이라 그런지 데이터 흐름을 이해하고 화면에 출력하기까지 꽤 어려웠습니다. <br>
+JSP로 데이터를 주고받는 과정에서 로직 분리가 중요하다는 걸 많이 느꼈습니다. <br>
+처음이라 힘들었지만, 점점 익숙해지면 훨씬 수월해질 것 같아 더 연습해야겠다고 다짐했습니다. <br>
 
-2) **기술적 학습과 개선사항**<br>  
-이번 프로젝트를 통해 여러 기술적 측면에서도 큰 발전이 있었습니다.<br>  
-**파일 구조와 관리**: 프로젝트를 체계적으로 관리하기 위해 파일과 디렉터리 구조를 설계하는 방법을 익혔습니다.<br>  
-이로 인해 협업 시 코드의 가독성과 유지보수가 크게 향상되었습니다.<br>  
-**MVC 패턴**: MVC(Model-View-Controller) 아키텍처를 적용하며, 코드의 역할 분리를 통해 보다 효율적인 코딩과 유지보수를 실현할 수 있었습니다.<br>  
-MVC 패턴을 실제 프로젝트에 적용해보니, 사용자 인터페이스와 데이터 처리 사이의 의존성을 줄일 수 있어 확장성과 안정성을 확보할 수 있었습니다.<br>  
+1) 협업
+이번 4주간의 프로젝트를 진행하면서 제 파트에 집중한 나머지 다른 팀원들의 성취도와 진척 상황을 꼼꼼하게 살피지 못한 부분이 아쉬웠습니다. <br>
+앞으로는 프로젝트 전체 흐름을 더 잘 조율하며, 팀원들과 보조를 맞춰 진행할 수 있도록 더욱 신경 쓰겠습니다. <br>
+
+2) 기술 및 개선사항
+기술적인 면에서는 첫번째로 세션 값을 이용하는 것이 처음엔 다소 어려웠지만, 쿼리 스트링을 통해 데이터를 전달하고 전체 흐름을 하나씩 이해하며 문제를 해결했습니다. <br>
+두번째로 삭제를 하는 과정에서 여러 테이블이 연결되어 있어 어려움이 있었는데 , 참조값을 확인하며 여러 개의 delete를 순서대로 진행하며 해결했습니다.<br>
+의료 지식인 페이지에서 수정/삭제를 했을 때 js 처리를 제대로 안한 것과 지도 api를 그대로 가져와서 사용한 부분이 아쉬웠습니다.<br>
+앞으로는 모든 event처리에 대해서 꼼꼼히 처리를 하고 , api에 대해서 응용력을 높이는 방향으로 나아가겠습니다. <br>
