@@ -826,7 +826,7 @@ JSP DOCTOR TREAT
 
 ## 개발 내용
 
-- <a href="https://blog.naver.com/starve1304" target="_blank">doctorTreat 기술 블로그</a>
+- <a href="https://blog.naver.com/starve1304/223677221923" target="_blank">doctorTreat 기술 블로그</a>
 <br>
 
 ## 마치며   
